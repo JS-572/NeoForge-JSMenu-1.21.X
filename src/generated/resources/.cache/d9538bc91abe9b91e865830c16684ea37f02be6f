@@ -1,0 +1,5 @@
+// 1.21	2025-09-10T15:09:14.1654648	Tags for minecraft:block mod id jsmenu
+929983277783a78ddac15b08dcbd8166b5b211d5 data/minecraft/tags/block/mineable/pickaxe.json
+8f988ec2feb07c04e07d49202462b8f7cc9f264b data/minecraft/tags/block/needs_diamond_tool.json
+9415b2abfd14bbc1382a5e6923c36a59a32d6c68 data/minecraft/tags/block/needs_iron_tool.json
+ddc27f3f517125c2f2cf98f9dc86cab3fbcb9fe4 data/minecraft/tags/block/needs_stone_tool.json
