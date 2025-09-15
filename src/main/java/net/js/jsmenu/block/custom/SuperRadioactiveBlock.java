@@ -20,8 +20,8 @@ public class SuperRadioactiveBlock extends Block {
 
     @Override
     public void stepOn(Level level, @NotNull BlockPos pos, @NotNull BlockState state, @NotNull Entity entity) {
-        if (!level.isClientSide && entity instanceof Player player) {
-            player.hurt(level.damageSources().generic(), 12F);
+        if (!level.isClientSide && entity instanceof Entity entity1) {
+            entity.hurt(level.damageSources().generic(), 12F);
         }
         super.stepOn(level, pos, state, entity);
     }
@@ -29,7 +29,7 @@ public class SuperRadioactiveBlock extends Block {
     @Override
     protected void entityInside(@NotNull BlockState state, Level level, @NotNull BlockPos pos, @NotNull Entity entity) {
         if (!level.isClientSide && entity instanceof Player player) {
-            player.hurt(level.damageSources().generic(), 12F);
+            entity.hurt(level.damageSources().generic(), 12F);
         }
         super.entityInside(state, level, pos, entity);
     }
