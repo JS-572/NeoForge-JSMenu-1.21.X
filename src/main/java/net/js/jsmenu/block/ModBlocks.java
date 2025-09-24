@@ -18,7 +18,7 @@ import java.util.function.Supplier;
 public class ModBlocks {
     public static final DeferredRegister.Blocks BLOCKS =
             DeferredRegister.createBlocks(JSMenu.MOD_ID);
-    public static final DeferredBlock<Block> HYDROGEN_ORE = registerBlock("hydrogen_ore", () -> new Block(BlockBehaviour.Properties.of().strength(0.75f).air()));
+    public static final DeferredBlock<Block> HYDROGEN_ORE = registerBlock("hydrogen_ore", () -> new Block(BlockBehaviour.Properties.of().strength(0.75f)));
     public static final DeferredBlock<Block> LITHIUM_ORE = registerBlock("lithium_ore", () -> new Block(BlockBehaviour.Properties.of().strength(1.175f).requiresCorrectToolForDrops()));
     public static final DeferredBlock<Block> BERYLLIUM_ORE = registerBlock("beryllium_ore", () -> new Block(BlockBehaviour.Properties.of().strength(1.2f).requiresCorrectToolForDrops()));
     public static final DeferredBlock<Block> BORON_ORE = registerBlock("boron_ore", () -> new Block(BlockBehaviour.Properties.of().strength(2f).requiresCorrectToolForDrops()));
@@ -131,7 +131,7 @@ public class ModBlocks {
     public static final DeferredBlock<Block> TENNESSINE_ORE = registerBlock("tennessine_ore", () -> new RadioactiveBlock(BlockBehaviour.Properties.of().strength(6f).requiresCorrectToolForDrops()));
     public static final DeferredBlock<Block> OGANESSON_ORE = registerBlock("oganesson_ore", () -> new RadioactiveBlock(BlockBehaviour.Properties.of().strength(6f).requiresCorrectToolForDrops()));
 
-    public static final DeferredBlock<Block> HYDROGEN_BLOCK = registerBlock("hydrogen_block", () -> new Block(BlockBehaviour.Properties.of().strength(.75f).requiresCorrectToolForDrops()));
+    public static final DeferredBlock<Block> HYDROGEN_BLOCK = registerBlock("hydrogen_block", () -> new Block(BlockBehaviour.Properties.of().strength(.75f).requiresCorrectToolForDrops().air()));
     public static final DeferredBlock<Block> HELIUM_BLOCK = registerBlock("helium_block", () -> new Block(BlockBehaviour.Properties.of().strength(1.175f).requiresCorrectToolForDrops()));
     public static final DeferredBlock<Block> LITHIUM_BLOCK = registerBlock("lithium_block", () -> new Block(BlockBehaviour.Properties.of().strength(1.2f).requiresCorrectToolForDrops()));
     public static final DeferredBlock<Block> BERYLLIUM_BLOCK = registerBlock("beryllium_block", () -> new Block(BlockBehaviour.Properties.of().strength(2f).requiresCorrectToolForDrops()));
@@ -267,6 +267,7 @@ public class ModBlocks {
     public static final DeferredBlock<Block> LIVERMORIUM_BLOCK = registerBlock("livermorium_block", () -> new SuperRadioactiveBlock(BlockBehaviour.Properties.of().strength(6f).requiresCorrectToolForDrops()));
     public static final DeferredBlock<Block> TENNESSINE_BLOCK = registerBlock("tennessine_block", () -> new SuperRadioactiveBlock(BlockBehaviour.Properties.of().strength(6f).requiresCorrectToolForDrops()));
     public static final DeferredBlock<Block> OGANESSON_BLOCK = registerBlock("oganesson_block", () -> new SuperRadioactiveBlock(BlockBehaviour.Properties.of().strength(6f).requiresCorrectToolForDrops()));
+
     private static <T extends Block> DeferredBlock<T> registerBlock(String name, Supplier<T> block) {
         DeferredBlock<T> toReturn = BLOCKS.register(name, block);
         registerBlockItem(name, toReturn);
