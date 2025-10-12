@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "jsmenu:item/metalloids_ore_turner"
+  }
+}

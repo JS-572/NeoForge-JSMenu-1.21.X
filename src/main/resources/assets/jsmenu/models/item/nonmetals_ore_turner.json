@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "jsmenu:item/other_non_metals_ore_turner"
+  }
+}

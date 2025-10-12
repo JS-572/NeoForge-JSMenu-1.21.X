@@ -5,6 +5,7 @@ import net.js.jsmenu.item.ModItems;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.*;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.level.ItemLike;
 
 import java.util.List;
@@ -947,6 +948,14 @@ public class ModRecipeProvider extends RecipeProvider {
                 .pattern("###")
                 .define('#', ModItems.OGANESSON.get())
                 .unlockedBy("has_oganesson", has(ModItems.OGANESSON)).save(recipeOutput);
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModBlocks.CARBON_COMPRESSOR.get())
+                .pattern("###")
+                .pattern("#C#")
+                .pattern("#D#")
+                .define('C', ModItems.CARBON.get())
+                .define('D', Items.DIAMOND)
+                .define('#', Items.COBBLESTONE)
+                .unlockedBy("has_carbon_cobblestone_and_diamond_for_diamond_duplicator", has(ModBlocks.CARBON_COMPRESSOR)).save(recipeOutput);
 
         ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModItems.HYDROGEN.get(), 9)
             .requires(ModBlocks.HYDROGEN_BLOCK)

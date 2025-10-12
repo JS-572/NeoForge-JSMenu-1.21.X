@@ -1,7 +1,10 @@
 package net.js.jsmenu.item;
 
 import net.js.jsmenu.JSMenu;
+import net.js.jsmenu.item.custom.*;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.SwordItem;
+import net.minecraft.world.item.Tiers;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredItem;
 import net.neoforged.neoforge.registries.DeferredRegister;
@@ -148,6 +151,26 @@ public class ModItems {
     public static final DeferredItem<Item> TENNESSINE = ITEMS.register("tennessine", () -> new Item(new Item.Properties()));
     public static final DeferredItem<Item> OGANESSON = ITEMS.register("oganesson", () -> new Item(new Item.Properties()));
 
+    public static final DeferredItem<SwordItem> HELIUM_SWORD = ITEMS.register("helium_sword", ()  -> new HeliumSwordItem(Tiers.IRON, 1, -2.4F, new Item.Properties().stacksTo(1)));
+
+    public static final DeferredItem<OreTurnerItem> ORE_TURNER = ITEMS.register("ore_turner", () -> new OreTurnerItem(new Item.Properties().stacksTo(1).durability(1)));
+    public static final DeferredItem<DeepslateOreTurnerItem> DEEPSLATE_ORE_TURNER = ITEMS.register("deepslate_ore_turner", () -> new DeepslateOreTurnerItem(new Item.Properties().stacksTo(1).durability(1)));
+    public static final DeferredItem<NetherOreTurnerItem> NETHER_ORE_TURNER = ITEMS.register("nether_ore_turner", () -> new NetherOreTurnerItem(new Item.Properties().stacksTo(1).durability(1)));
+    public static final DeferredItem<AlkaliOreTurnerItem> ALKALI_ORE_TURNER = ITEMS.register("alkali_ore_turner", () -> new AlkaliOreTurnerItem(new Item.Properties().stacksTo(1).durability(1)));
+    public static final DeferredItem<AlkalineEarthOreTurnerItem> ALKALINE_ORE_TURNER = ITEMS.register("alkaline_earth_ore_turner", () -> new AlkalineEarthOreTurnerItem(new Item.Properties().stacksTo(1).durability(1)));
+    public static final DeferredItem<GraniteOreTurnerItem> GRANITE_ORE_TURNER = ITEMS.register("granite_ore_turner", () -> new GraniteOreTurnerItem(new Item.Properties().stacksTo(1).durability(1)));
+    public static final DeferredItem<DioriteOreTurnerItem> DIORITE_ORE_TURNER = ITEMS.register("diorite_ore_turner", () -> new DioriteOreTurnerItem(new Item.Properties().stacksTo(1).durability(1)));
+    public static final DeferredItem<AndesiteOreTurnerItem> ANDESITE_ORE_TURNER = ITEMS.register("andesite_ore_turner", () -> new AndesiteOreTurnerItem(new Item.Properties().stacksTo(1).durability(1)));
+    public static final DeferredItem<TuffOreTurnerItem> TUFF_ORE_TURNER = ITEMS.register("tuff_ore_turner", () -> new TuffOreTurnerItem(new Item.Properties().stacksTo(1).durability(1)));
+    public static final DeferredItem<LanthanoidOreTurnerItem> LANTHANOID_ORE_TURNER = ITEMS.register("lanthanoid_ore_turner", () -> new LanthanoidOreTurnerItem(new Item.Properties().stacksTo(1).durability(1)));
+    public static final DeferredItem<ActinideOreTurnerItem> ACTINIDE_ORE_TURNER = ITEMS.register("actinides_ore_turner", () -> new ActinideOreTurnerItem(new Item.Properties().stacksTo(1).durability(1)));
+    public static final DeferredItem<PostTransitionOreTurnerItem> POST_TRANSITION_ORE_TURNER = ITEMS.register("post_transition_ore_turner", () -> new PostTransitionOreTurnerItem(new Item.Properties().stacksTo(1).durability(1)));
+    public static final DeferredItem<MetalloidOreTurnerItem> METALLOID_ORE_TURNER = ITEMS.register("metalloid_ore_turner", () -> new MetalloidOreTurnerItem(new Item.Properties().stacksTo(1).durability(1)));
+    public static final DeferredItem<NonmetalOreTurnerItem> OTHER_NONMETALS_ORE_TURNER = ITEMS.register("nonmetals_ore_turner", () -> new NonmetalOreTurnerItem(new Item.Properties().stacksTo(1).durability(1)));
+    public static final DeferredItem<HalegonicOreTurnerItem> HALOGENS_ORE_TURNER = ITEMS.register("halogens_ore_turner", () -> new HalegonicOreTurnerItem(new Item.Properties().stacksTo(1).durability(1)));
+    public static final DeferredItem<NobleOreTurnerItem> NOBLE_GASSES_ORE_TURNER = ITEMS.register("noble_ore_turner", () -> new NobleOreTurnerItem(new Item.Properties().stacksTo(1).durability(1)));
+
+    public static final DeferredItem<Item> FUNNY_JS_ITEM = ITEMS.register("funny_js_item", () -> new Item(new Item.Properties()));
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);
     }

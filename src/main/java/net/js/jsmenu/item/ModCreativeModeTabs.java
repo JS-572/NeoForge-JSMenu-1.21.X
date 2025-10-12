@@ -421,6 +421,26 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.OGANESSON);
                         output.accept(ModBlocks.OGANESSON_BLOCK);
                         output.accept(ModBlocks.OGANESSON_ORE);
+                        output.accept(ModItems.HELIUM_SWORD);
+                        output.accept(ModBlocks.CARBON_COMPRESSOR);
+                        output.accept(ModItems.ORE_TURNER);
+                        output.accept(ModItems.DEEPSLATE_ORE_TURNER);
+                        output.accept(ModItems.NETHER_ORE_TURNER);
+                        output.accept(ModItems.ALKALI_ORE_TURNER);
+                        output.accept(ModItems.ALKALINE_ORE_TURNER);
+                        output.accept(ModItems.GRANITE_ORE_TURNER);
+                        output.accept(ModItems.DIORITE_ORE_TURNER);
+                        output.accept(ModItems.ANDESITE_ORE_TURNER);
+                        output.accept(ModItems.TUFF_ORE_TURNER);
+                        output.accept(ModItems.LANTHANOID_ORE_TURNER);
+                        output.accept(ModItems.ACTINIDE_ORE_TURNER);
+                        output.accept(ModItems.POST_TRANSITION_ORE_TURNER);
+                        output.accept(ModItems.METALLOID_ORE_TURNER);
+                        output.accept(ModItems.OTHER_NONMETALS_ORE_TURNER);
+                        output.accept(ModItems.HALOGENS_ORE_TURNER);
+                        output.accept(ModItems.NOBLE_GASSES_ORE_TURNER);
+                        output.accept(ModBlocks.FUNNY_JS_BLOCK);
+                        output.accept(ModItems.FUNNY_JS_ITEM);
                     }).build());
 
     public static final Supplier<CreativeModeTab> PERIODIC_MOD = CREATIVE_MODE_TAB.register("periodicmod",
