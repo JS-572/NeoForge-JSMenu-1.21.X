@@ -1,6 +1,7 @@
 package net.js.jsmenu.block;
 
 import net.js.jsmenu.JSMenu;
+import net.js.jsmenu.block.custom.CarbonCompressorBlock;
 import net.js.jsmenu.block.custom.RadioactiveBlock;
 import net.js.jsmenu.block.custom.SuperRadioactiveBlock;
 import net.js.jsmenu.item.ModItems;
@@ -267,6 +268,10 @@ public class ModBlocks {
     public static final DeferredBlock<Block> LIVERMORIUM_BLOCK = registerBlock("livermorium_block", () -> new SuperRadioactiveBlock(BlockBehaviour.Properties.of().strength(6f).requiresCorrectToolForDrops()));
     public static final DeferredBlock<Block> TENNESSINE_BLOCK = registerBlock("tennessine_block", () -> new SuperRadioactiveBlock(BlockBehaviour.Properties.of().strength(6f).requiresCorrectToolForDrops()));
     public static final DeferredBlock<Block> OGANESSON_BLOCK = registerBlock("oganesson_block", () -> new SuperRadioactiveBlock(BlockBehaviour.Properties.of().strength(6f).requiresCorrectToolForDrops()));
+
+    public static final DeferredBlock<Block> CARBON_COMPRESSOR = registerBlock("carbon_compressor", () -> new CarbonCompressorBlock(BlockBehaviour.Properties.of().strength(2f)));
+
+    public static final DeferredBlock<Block> FUNNY_JS_BLOCK = registerBlock("funny_js_block", () -> new Block(BlockBehaviour.Properties.of().strength(2.5f)));
 
     private static <T extends Block> DeferredBlock<T> registerBlock(String name, Supplier<T> block) {
         DeferredBlock<T> toReturn = BLOCKS.register(name, block);
