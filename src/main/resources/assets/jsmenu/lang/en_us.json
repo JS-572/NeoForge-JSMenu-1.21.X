@@ -138,6 +138,24 @@
 
   "item.minecraft.lead": "Rope",
 
+  "item.jsmenu.ore_turner": "Ore Turner",
+  "item.jsmenu.deepslate_ore_turner": "Deepslate Ore Turner",
+  "item.jsmenu.nether_ore_turner": "Nether Ore Turner",
+
+  "item.jsmenu.alkali_ore_turner": "Alkali Metals' Ore Turner",
+  "item.jsmenu.alkaline_earth_ore_turner": "Alkaline Earth Metals' Ore Turner",
+  "item.jsmenu.granite_ore_turner": "Transition Metals' Ore Turner",
+  "item.jsmenu.diorite_ore_turner": "Transition Metals' Ore Turner",
+  "item.jsmenu.andesite_ore_turner": "Transition Metals' Ore Turner",
+  "item.jsmenu.tuff_ore_turner": "Transition Metals' Ore Turner",
+  "item.jsmenu.lanthanoid_ore_turner": "Lanthanoid Metals' Ore Turner",
+  "item.jsmenu.actinides_ore_turner": "Actinide Metals' Ore Turner",
+  "item.jsmenu.post_transition_ore_turner": "Post-Transition Metals' Ore Turner",
+  "item.jsmenu.metalloid_ore_turner": "Metalloid Metals' Ore Turner",
+  "item.jsmenu.nonmetals_ore_turner": "Non Metals' Ore Turner",
+  "item.jsmenu.halogens_ore_turner": "Halogen Metals' Ore Turner",
+  "item.jsmenu.noble_ore_turner": "Noble Gas Metals' Ore Turner",
+
   "block.jsmenu.hydrogen_ore": "Hydrogen Ore",
   "block.jsmenu.lithium_ore": "Lithium Ore",
   "block.jsmenu.beryllium_ore": "Beryllium Ore",
@@ -333,7 +351,7 @@
   "block.jsmenu.gadolinium_block": "Block of Gadolinium",
   "block.jsmenu.terbium_block": "Block of Terbium",
   "block.jsmenu.dysprosium_block": "Block of Dysprosium",
-  "block.jsmenu.holmium": "Block of Holmium",
+  "block.jsmenu.holmium_block": "Block of Holmium",
   "block.jsmenu.erbium_block": "Block of Erbium",
   "block.jsmenu.thulium_block": "Block of Thulium",
   "block.jsmenu.ytterbium_block": "Block of Ytterbium",
