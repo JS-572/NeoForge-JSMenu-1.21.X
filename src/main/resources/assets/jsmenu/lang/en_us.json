@@ -423,5 +423,8 @@
   "creativetab.jsmenu.metalloids": "Metalloids",
   "creativetab.jsmenu.other_non_metals": "Other Non-Metals",
   "creativetab.jsmenu.halogens": "Halogens",
-  "creativetab.jsmenu.noble_gasses": "Noble Gasses"
+  "creativetab.jsmenu.noble_gasses": "Noble Gasses",
+
+  "item.jsmenu.funny_js_item": "Funny JS Item",
+  "block.jsmenu.funny_js_block": "Funny JS Block"
 }
