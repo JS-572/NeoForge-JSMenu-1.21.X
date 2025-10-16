@@ -2,6 +2,8 @@ package net.js.jsmenu.item;
 
 import net.js.jsmenu.JSMenu;
 import net.js.jsmenu.item.custom.*;
+import net.js.jsmenu.item.custom.bucket.*;
+import net.js.jsmenu.item.custom.ore_turners.*;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.SwordItem;
 import net.minecraft.world.item.Tiers;
@@ -52,7 +54,7 @@ public class ModItems {
     public static final DeferredItem<Item> GERMANIUM = ITEMS.register("germanium", () -> new Item(new Item.Properties()));
     public static final DeferredItem<Item> ARSENIC = ITEMS.register("arsenic", () -> new Item(new Item.Properties()));
     public static final DeferredItem<Item> SELENIUM = ITEMS.register("selenium", () -> new Item(new Item.Properties()));
-
+    public static final DeferredItem<Item> BROMINE_BUCKET = ITEMS.register("bromine_bucket", BromineItem::new);
     public static final DeferredItem<Item> KRYPTON = ITEMS.register("krypton", () -> new Item(new Item.Properties()));
     public static final DeferredItem<Item> RUBIDIUM = ITEMS.register("rubidium", () -> new Item(new Item.Properties()));
     public static final DeferredItem<Item> STRONTIUM = ITEMS.register("strontium", () -> new Item(new Item.Properties()));
@@ -111,7 +113,7 @@ public class ModItems {
     public static final DeferredItem<Item> RAW_IRIDIUM = ITEMS.register("raw_iridium", () -> new Item(new Item.Properties()));
     public static final DeferredItem<Item> IRIDIUM_INGOT = ITEMS.register("iridium_ingot", () -> new Item(new Item.Properties()));
     public static final DeferredItem<Item> PLATINUM = ITEMS.register("platinum", () -> new Item(new Item.Properties()));
-
+    public static final DeferredItem<Item> MERCURY_BUCKET = ITEMS.register("mercury_bucket", MercuryItem::new);
     public static final DeferredItem<Item> THALLIUM = ITEMS.register("thallium", () -> new Item(new Item.Properties()));
     public static final DeferredItem<Item> LEAD = ITEMS.register("lead", () -> new Item(new Item.Properties()));
     public static final DeferredItem<Item> BISMUTH = ITEMS.register("bismuth", () -> new Item(new Item.Properties()));
@@ -171,6 +173,7 @@ public class ModItems {
     public static final DeferredItem<NobleOreTurnerItem> NOBLE_GASSES_ORE_TURNER = ITEMS.register("noble_ore_turner", () -> new NobleOreTurnerItem(new Item.Properties().stacksTo(1).durability(1)));
 
     public static final DeferredItem<Item> FUNNY_JS_ITEM = ITEMS.register("funny_js_item", () -> new Item(new Item.Properties()));
+
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);
     }

@@ -2,6 +2,7 @@ package net.js.jsmenu.item;
 
 import net.js.jsmenu.JSMenu;
 import net.js.jsmenu.block.ModBlocks;
+import net.js.jsmenu.fluid.ModFluids;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
@@ -143,6 +144,7 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.SELENIUM);
                         output.accept(ModBlocks.SELENIUM_BLOCK);
                         output.accept(ModBlocks.SELENIUM_ORE);
+                        output.accept(ModItems.BROMINE_BUCKET);
                         output.accept(ModItems.KRYPTON);
                         output.accept(ModBlocks.KRYPTON_BLOCK);
                         output.accept(ModBlocks.KRYPTON_ORE);
@@ -307,6 +309,7 @@ public class ModCreativeModeTabs {
                         output.accept(Blocks.RAW_GOLD_BLOCK);
                         output.accept(Blocks.GOLD_BLOCK);
                         output.accept(Blocks.GOLD_ORE);
+                        output.accept(ModItems.MERCURY_BUCKET);
                         output.accept(ModItems.THALLIUM);
                         output.accept(ModBlocks.THALLIUM_BLOCK);
                         output.accept(ModBlocks.THALLIUM_ORE);

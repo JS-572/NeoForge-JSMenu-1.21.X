@@ -1,12 +1,15 @@
 package net.js.jsmenu;
 
 import net.js.jsmenu.block.ModBlocks;
+import net.js.jsmenu.fluid.types.ModFluidTypes;
 import net.js.jsmenu.item.ModCreativeModeTabs;
 import net.js.jsmenu.item.ModItems;
 import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent;
 import org.slf4j.Logger;
 
 import com.mojang.logging.LogUtils;
+
+import net.js.jsmenu.fluid.ModFluids;
 
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.IEventBus;
@@ -41,6 +44,9 @@ public class JSMenu {
 
         ModItems.register(modEventBus);
         ModBlocks.register(modEventBus);
+
+        ModFluids.REGISTRY.register(modEventBus);
+        ModFluidTypes.REGISTRY.register(modEventBus);
 
         // Register the item to a creative tab
         modEventBus.addListener(this::addCreative);

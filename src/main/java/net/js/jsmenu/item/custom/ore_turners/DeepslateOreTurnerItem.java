@@ -1,4 +1,4 @@
-package net.js.jsmenu.item.custom;
+package net.js.jsmenu.item.custom.ore_turners;
 
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvents;

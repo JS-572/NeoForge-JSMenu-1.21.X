@@ -1,4 +1,4 @@
-package net.js.jsmenu.item.custom;
+package net.js.jsmenu.item.custom.ore_turners;
 
 import net.js.jsmenu.block.ModBlocks;
 import net.minecraft.server.level.ServerLevel;

@@ -1,4 +1,4 @@
-package net.js.jsmenu.item.custom;
+package net.js.jsmenu.item.custom.ore_turners;
 
 import net.js.jsmenu.block.ModBlocks;
 import net.minecraft.server.level.ServerLevel;
@@ -14,17 +14,19 @@ import net.neoforged.neoforge.registries.DeferredBlock;
 
 import java.util.Map;
 
-public class NobleOreTurnerItem extends Item {
-    private static final Map<DeferredBlock<Block>, DeferredBlock<Block>> NOBLE_ORE_TURNER_MAP =
+public class GraniteOreTurnerItem extends Item {
+    private static final Map<DeferredBlock<Block>, DeferredBlock<Block>> GRANITE_ORE_TURNER_MAP =
             Map.of(
-                    ModBlocks.NEON_ORE, ModBlocks.NEON_BLOCK,
-                    ModBlocks.ARGON_ORE, ModBlocks.ARGON_BLOCK,
-                    ModBlocks.KRYPTON_ORE, ModBlocks.KRYPTON_BLOCK,
-                    ModBlocks.XENON_ORE, ModBlocks.XENON_BLOCK,
-                    ModBlocks.RADON_ORE, ModBlocks.RADON_BLOCK,
-                    ModBlocks.OGANESSON_ORE, ModBlocks.OGANESSON_BLOCK
+                    ModBlocks.SCANDIUM_ORE, ModBlocks.SCANDIUM_BLOCK,
+                    ModBlocks.TITANIUM_ORE, ModBlocks.TITANIUM_BLOCK,
+                    ModBlocks.VANADIUM_ORE, ModBlocks.VANADIUM_BLOCK,
+                    ModBlocks.CHROMIUM_ORE, ModBlocks.CHROMIUM_BLOCK,
+                    ModBlocks.MANGANESE_ORE, ModBlocks.MANGANESE_BLOCK,
+                    ModBlocks.COBALT_ORE, ModBlocks.COBALT_BLOCK,
+                    ModBlocks.NICKEL_ORE, ModBlocks.NICKEL_BLOCK,
+                    ModBlocks.ZINC_ORE, ModBlocks.ZINC_BLOCK
             );
-    public NobleOreTurnerItem(Properties properties) {
+    public GraniteOreTurnerItem(Properties properties) {
         super(properties);
     }
     @Override
@@ -32,9 +34,9 @@ public class NobleOreTurnerItem extends Item {
         Level level = context.getLevel();
         Block clickedBlock = level.getBlockState(context.getClickedPos()).getBlock();
 
-        if(NOBLE_ORE_TURNER_MAP.containsKey(clickedBlock)) {
+        if(GRANITE_ORE_TURNER_MAP.containsKey(clickedBlock)) {
             if(!level.isClientSide()) {
-                level.setBlockAndUpdate(context.getClickedPos(), NOBLE_ORE_TURNER_MAP.get(clickedBlock).get().defaultBlockState());
+                level.setBlockAndUpdate(context.getClickedPos(), GRANITE_ORE_TURNER_MAP.get(clickedBlock).get().defaultBlockState());
 
                 context.getItemInHand().hurtAndBreak(0, ((ServerLevel) level), context.getPlayer(),
                         item -> context.getPlayer().onEquippedItemBroken(item, EquipmentSlot.MAINHAND));

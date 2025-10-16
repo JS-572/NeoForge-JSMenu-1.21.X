@@ -1,4 +1,4 @@
-package net.js.jsmenu.item.custom;
+package net.js.jsmenu.item.custom.ore_turners;
 
 import net.js.jsmenu.block.ModBlocks;
 import net.minecraft.server.level.ServerLevel;
@@ -14,17 +14,18 @@ import net.neoforged.neoforge.registries.DeferredBlock;
 
 import java.util.Map;
 
-public class AlkaliOreTurnerItem extends Item {
-    private static final Map<DeferredBlock<Block>, DeferredBlock<Block>> ALKALI_ORE_TURNER_MAP =
+public class MetalloidOreTurnerItem extends Item {
+    private static final Map<DeferredBlock<Block>, DeferredBlock<Block>> METALLOID_ORE_TURNER_MAP =
             Map.of(
-                    ModBlocks.LITHIUM_ORE, ModBlocks.LITHIUM_BLOCK,
-                    ModBlocks.SODIUM_ORE, ModBlocks.SODIUM_BLOCK,
-                    ModBlocks.POTASSIUM_ORE, ModBlocks.POTASSIUM_BLOCK,
-                    ModBlocks.RUBIDIUM_ORE, ModBlocks.RUBIDIUM_BLOCK,
-                    ModBlocks.CAESIUM_ORE, ModBlocks.CAESIUM_BLOCK,
-                    ModBlocks.FRANCIUM_ORE, ModBlocks.FRANCIUM_BLOCK
+                    ModBlocks.BORON_ORE, ModBlocks.BORON_BLOCK,
+                    ModBlocks.SILICON_ORE, ModBlocks.SILICON_BLOCK,
+                    ModBlocks.GERMANIUM_ORE, ModBlocks.GERMANIUM_BLOCK,
+                    ModBlocks.ARSENIC_ORE, ModBlocks.ARSENIC_BLOCK,
+                    ModBlocks.ANTIMONY_ORE, ModBlocks.ANTIMONY_BLOCK,
+                    ModBlocks.TELLURIUM_ORE, ModBlocks.TELLURIUM_BLOCK,
+                    ModBlocks.POLONIUM_ORE, ModBlocks.POLONIUM_BLOCK
             );
-    public AlkaliOreTurnerItem(Properties properties) {
+    public MetalloidOreTurnerItem(Properties properties) {
         super(properties);
     }
     @Override
@@ -32,9 +33,9 @@ public class AlkaliOreTurnerItem extends Item {
         Level level = context.getLevel();
         Block clickedBlock = level.getBlockState(context.getClickedPos()).getBlock();
 
-        if(ALKALI_ORE_TURNER_MAP.containsKey(clickedBlock)) {
+        if(METALLOID_ORE_TURNER_MAP.containsKey(clickedBlock)) {
             if(!level.isClientSide()) {
-                level.setBlockAndUpdate(context.getClickedPos(), ALKALI_ORE_TURNER_MAP.get(clickedBlock).get().defaultBlockState());
+                level.setBlockAndUpdate(context.getClickedPos(), METALLOID_ORE_TURNER_MAP.get(clickedBlock).get().defaultBlockState());
 
                 context.getItemInHand().hurtAndBreak(0, ((ServerLevel) level), context.getPlayer(),
                         item -> context.getPlayer().onEquippedItemBroken(item, EquipmentSlot.MAINHAND));
