@@ -426,5 +426,15 @@
   "creativetab.jsmenu.noble_gasses": "Noble Gasses",
 
   "item.jsmenu.funny_js_item": "Funny JS Item",
-  "block.jsmenu.funny_js_block": "Funny JS Block"
+  "block.jsmenu.funny_js_block": "Funny JS Block",
+
+  "block.jsmenu.bromine": "Bromine",
+  "item.jsmenu.bromine_bucket": "Bromine Bucket",
+  "fluid.jsmenu.bromine": "Bromine",
+  "fluid_type.jsmenu.bromine": "Bromine",
+
+  "block.jsmenu.mercury": "Mercury",
+  "item.jsmenu.mercury_bucket": "Mercury Bucket",
+  "fluid.jsmenu.mercury": "Mercury",
+  "fluid_type.jsmenu.mercury": "Mercury"
 }

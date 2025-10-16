@@ -1,9 +1,7 @@
 package net.js.jsmenu.block;
 
 import net.js.jsmenu.JSMenu;
-import net.js.jsmenu.block.custom.CarbonCompressorBlock;
-import net.js.jsmenu.block.custom.RadioactiveBlock;
-import net.js.jsmenu.block.custom.SuperRadioactiveBlock;
+import net.js.jsmenu.block.custom.*;
 import net.js.jsmenu.item.ModItems;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
@@ -50,6 +48,7 @@ public class ModBlocks {
     public static final DeferredBlock<Block> GERMANIUM_ORE = registerBlock("germanium_ore", () -> new Block(BlockBehaviour.Properties.of().strength(3.1565f).requiresCorrectToolForDrops()));
     public static final DeferredBlock<Block> ARSENIC_ORE = registerBlock("arsenic_ore", () -> new Block(BlockBehaviour.Properties.of().strength(3.1575f).requiresCorrectToolForDrops()));
     public static final DeferredBlock<Block> SELENIUM_ORE = registerBlock("selenium_ore", () -> new Block(BlockBehaviour.Properties.of().strength(3.185f).requiresCorrectToolForDrops()));
+    public static final DeferredBlock<Block> BROMINE = registerBlock("bromine", BromineBlock::new);
     public static final DeferredBlock<Block> KRYPTON_ORE = registerBlock("krypton_ore", () -> new Block(BlockBehaviour.Properties.of().strength(3.625f).requiresCorrectToolForDrops()));
     public static final DeferredBlock<Block> RUBIDIUM_ORE = registerBlock("rubidium_ore", () -> new Block(BlockBehaviour.Properties.of().strength(3.85f).requiresCorrectToolForDrops()));
     public static final DeferredBlock<Block> STRONTIUM_ORE = registerBlock("strontium_ore", () -> new Block(BlockBehaviour.Properties.of().strength(3.875f).requiresCorrectToolForDrops()));
@@ -93,6 +92,7 @@ public class ModBlocks {
     public static final DeferredBlock<Block> OSMIUM_ORE = registerBlock("osmium_ore", () -> new Block(BlockBehaviour.Properties.of().strength(5.2f).requiresCorrectToolForDrops()));
     public static final DeferredBlock<Block> IRIDIUM_ORE = registerBlock("iridium_ore", () -> new Block(BlockBehaviour.Properties.of().strength(5.25f).requiresCorrectToolForDrops()));
     public static final DeferredBlock<Block> PLATINUM_ORE = registerBlock("platinum_ore", () -> new Block(BlockBehaviour.Properties.of().strength(5.3f).requiresCorrectToolForDrops()));
+    public static final DeferredBlock<Block> MERCURY = registerBlock("mercury", MercuryBlock::new);
     public static final DeferredBlock<Block> THALLIUM_ORE = registerBlock("thallium_ore", () -> new Block(BlockBehaviour.Properties.of().strength(5.3575f).requiresCorrectToolForDrops().sound(SoundType.DEEPSLATE)));
     public static final DeferredBlock<Block> LEAD_ORE = registerBlock("lead_ore", () -> new Block(BlockBehaviour.Properties.of().strength(5.5f).requiresCorrectToolForDrops().sound(SoundType.DEEPSLATE)));
     public static final DeferredBlock<Block> BISMUTH_ORE = registerBlock("bismuth_ore", () -> new Block(BlockBehaviour.Properties.of().strength(5.75f).requiresCorrectToolForDrops().sound(SoundType.DEEPSLATE)));

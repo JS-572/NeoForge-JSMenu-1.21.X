@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "jsmenu:item/bromine_bucket"
+    "layer0": "jsmenu:item/mercury_bucket"
   }
 }
