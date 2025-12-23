@@ -28,6 +28,7 @@ public class ModCreativeModeTabs {
                         output.accept(ModBlocks.HYDROGEN_ORE);
                         output.accept(ModItems.HELIUM);
                         output.accept(ModBlocks.HELIUM_BLOCK);
+                        output.accept(ModItems.HELIUM_SWORD);
                         output.accept(ModItems.LITHIUM);
                         output.accept(ModBlocks.LITHIUM_BLOCK);
                         output.accept(ModBlocks.LITHIUM_ORE);
@@ -87,6 +88,11 @@ public class ModCreativeModeTabs {
                         output.accept(ModBlocks.RAW_SCANDIUM_BLOCK);
                         output.accept(ModBlocks.SCANDIUM_BLOCK);
                         output.accept(ModBlocks.SCANDIUM_ORE);
+                        output.accept(ModItems.SCANDIUM_PICKAXE);
+                        output.accept(ModItems.SCANDIUM_AXE);
+                        output.accept(ModItems.SCANDIUM_SHOVEL);
+                        output.accept(ModItems.SCANDIUM_HOE);
+                        output.accept(ModItems.SCANDIUM_SWORD);
                         output.accept(ModItems.RAW_TITANIUM);
                         output.accept(ModItems.TITANIUM_INGOT);
                         output.accept(ModBlocks.RAW_TITANIUM_BLOCK);
@@ -424,9 +430,9 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.OGANESSON);
                         output.accept(ModBlocks.OGANESSON_BLOCK);
                         output.accept(ModBlocks.OGANESSON_ORE);
-                        output.accept(ModItems.HELIUM_SWORD);
                         output.accept(ModBlocks.CARBON_COMPRESSOR);
                         output.accept(ModItems.ORE_TURNER);
+                        output.accept(ModItems.ADVANCED_ORE_TURNER);
                         output.accept(ModItems.DEEPSLATE_ORE_TURNER);
                         output.accept(ModItems.NETHER_ORE_TURNER);
                         output.accept(ModItems.ALKALI_ORE_TURNER);
@@ -444,6 +450,18 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.NOBLE_GASSES_ORE_TURNER);
                         output.accept(ModBlocks.FUNNY_JS_BLOCK);
                         output.accept(ModItems.FUNNY_JS_ITEM);
+                        output.accept(ModItems.RED_LAVA_BUCKET);
+                        output.accept(ModItems.ORANGE_LAVA_BUCKET);
+                        output.accept(ModItems.LIGHT_YELLOW_LAVA_BUCKET);
+                        output.accept(ModItems.YELLOW_LAVA_BUCKET);
+                        output.accept(ModItems.GREEN_LAVA_BUCKET);
+                        output.accept(ModItems.LIGHT_BLUE_LAVA_BUCKET);
+                        output.accept(ModItems.BLUE_LAVA_BUCKET);
+                        output.accept(ModItems.PURPLE_LAVA_BUCKET);
+                        output.accept(ModItems.PINK_LAVA_BUCKET);
+                        output.accept(ModItems.WHITE_LAVA_BUCKET);
+                        output.accept(ModItems.BROWN_LAVA_BUCKET);
+                        output.accept(ModItems.BLACK_LAVA_BUCKET);
                     }).build());
 
     public static final Supplier<CreativeModeTab> PERIODIC_MOD = CREATIVE_MODE_TAB.register("periodicmod",

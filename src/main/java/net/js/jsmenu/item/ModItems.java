@@ -1,12 +1,11 @@
 package net.js.jsmenu.item;
 
 import net.js.jsmenu.JSMenu;
-import net.js.jsmenu.item.custom.*;
 import net.js.jsmenu.item.custom.bucket.*;
 import net.js.jsmenu.item.custom.ore_turners.*;
-import net.minecraft.world.item.Item;
-import net.minecraft.world.item.SwordItem;
-import net.minecraft.world.item.Tiers;
+import net.js.jsmenu.item.custom.tools.HeliumSwordItem;
+import net.js.jsmenu.item.custom.tools.transition_metals.scandium.*;
+import net.minecraft.world.item.*;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredItem;
 import net.neoforged.neoforge.registries.DeferredRegister;
@@ -156,6 +155,7 @@ public class ModItems {
     public static final DeferredItem<SwordItem> HELIUM_SWORD = ITEMS.register("helium_sword", ()  -> new HeliumSwordItem(Tiers.IRON, 1, -2.4F, new Item.Properties().stacksTo(1)));
 
     public static final DeferredItem<OreTurnerItem> ORE_TURNER = ITEMS.register("ore_turner", () -> new OreTurnerItem(new Item.Properties().stacksTo(1).durability(1)));
+    public static final DeferredItem<AdvancedOreTurnerItem> ADVANCED_ORE_TURNER = ITEMS.register("advanced_ore_turner", () -> new AdvancedOreTurnerItem(new Item.Properties().stacksTo(1).durability(1)));
     public static final DeferredItem<DeepslateOreTurnerItem> DEEPSLATE_ORE_TURNER = ITEMS.register("deepslate_ore_turner", () -> new DeepslateOreTurnerItem(new Item.Properties().stacksTo(1).durability(1)));
     public static final DeferredItem<NetherOreTurnerItem> NETHER_ORE_TURNER = ITEMS.register("nether_ore_turner", () -> new NetherOreTurnerItem(new Item.Properties().stacksTo(1).durability(1)));
     public static final DeferredItem<AlkaliOreTurnerItem> ALKALI_ORE_TURNER = ITEMS.register("alkali_ore_turner", () -> new AlkaliOreTurnerItem(new Item.Properties().stacksTo(1).durability(1)));
@@ -173,6 +173,25 @@ public class ModItems {
     public static final DeferredItem<NobleOreTurnerItem> NOBLE_GASSES_ORE_TURNER = ITEMS.register("noble_ore_turner", () -> new NobleOreTurnerItem(new Item.Properties().stacksTo(1).durability(1)));
 
     public static final DeferredItem<Item> FUNNY_JS_ITEM = ITEMS.register("funny_js_item", () -> new Item(new Item.Properties()));
+
+    public static final DeferredItem<Item> RED_LAVA_BUCKET = ITEMS.register("red_lava_bucket", RedLavaItem::new);
+    public static final DeferredItem<Item> ORANGE_LAVA_BUCKET = ITEMS.register("orange_lava_bucket", OrangeLavaItem::new);
+    public static final DeferredItem<Item> LIGHT_YELLOW_LAVA_BUCKET = ITEMS.register("light_yellow_lava_bucket", LightYellowLavaItem::new);
+    public static final DeferredItem<Item> YELLOW_LAVA_BUCKET = ITEMS.register("yellow_lava_bucket", YellowLavaItem::new);
+    public static final DeferredItem<Item> GREEN_LAVA_BUCKET = ITEMS.register("green_lava_bucket", GreenLavaItem::new);
+    public static final DeferredItem<Item> LIGHT_BLUE_LAVA_BUCKET = ITEMS.register("light_blue_lava_bucket", LightBlueLavaItem::new);
+    public static final DeferredItem<Item> BLUE_LAVA_BUCKET = ITEMS.register("blue_lava_bucket", BlueLavaItem::new);
+    public static final DeferredItem<Item> PURPLE_LAVA_BUCKET = ITEMS.register("purple_lava_bucket", PurpleLavaItem::new);
+    public static final DeferredItem<Item> PINK_LAVA_BUCKET = ITEMS.register("pink_lava_bucket", PinkLavaItem::new);
+    public static final DeferredItem<Item> WHITE_LAVA_BUCKET = ITEMS.register("white_lava_bucket", WhiteLavaItem::new);
+    public static final DeferredItem<Item> BROWN_LAVA_BUCKET = ITEMS.register("brown_lava_bucket", BrownLavaItem::new);
+    public static final DeferredItem<Item> BLACK_LAVA_BUCKET = ITEMS.register("black_lava_bucket", BlackLavaItem::new);
+
+    public static final DeferredItem<Item> SCANDIUM_SWORD = ITEMS.register("scandium_sword", ScandiumSword::new);
+    public static final DeferredItem<Item> SCANDIUM_PICKAXE = ITEMS.register("scandium_pickaxe", ScandiumPickaxe::new);
+    public static final DeferredItem<Item> SCANDIUM_AXE = ITEMS.register("scandium_axe", ScandiumAxe::new);
+    public static final DeferredItem<Item> SCANDIUM_SHOVEL = ITEMS.register("scandium_shovel", ScandiumShovel::new);
+    public static final DeferredItem<Item> SCANDIUM_HOE = ITEMS.register("scandium_hoe", ScandiumHoe::new);
 
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);
