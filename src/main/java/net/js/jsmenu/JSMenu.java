@@ -1,9 +1,11 @@
 package net.js.jsmenu;
 
 import net.js.jsmenu.block.ModBlocks;
+import net.js.jsmenu.client.HeldLightSphereHandler;
 import net.js.jsmenu.fluid.types.ModFluidTypes;
 import net.js.jsmenu.item.ModCreativeModeTabs;
 import net.js.jsmenu.item.ModItems;
+import net.js.jsmenu.world.space.StarRegistry;
 import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent;
 import org.slf4j.Logger;
 
@@ -47,15 +49,17 @@ public class JSMenu {
 
         ModFluids.REGISTRY.register(modEventBus);
         ModFluidTypes.REGISTRY.register(modEventBus);
-
         // Register the item to a creative tab
         modEventBus.addListener(this::addCreative);
         // Register our mod's ModConfigSpec so that FML can create and load the config file for us
         modContainer.registerConfig(ModConfig.Type.COMMON, Config.SPEC);
+        JSMenuClient.init(modEventBus);
     }
 
     private void commonSetup(FMLCommonSetupEvent event) {
-
+        event.enqueueWork(() -> {
+            StarRegistry.registerStars();
+        });
     }
 
     // Add the example block item to the building blocks tab
@@ -74,7 +78,7 @@ public class JSMenu {
     public static class ClientModEvents {
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event) {
-
+            HeldLightSphereHandler.register();
         }
     }
 }

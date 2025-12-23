@@ -3,7 +3,9 @@ package net.js.jsmenu.block;
 import net.js.jsmenu.JSMenu;
 import net.js.jsmenu.block.custom.CarbonCompressorBlock;
 import net.js.jsmenu.block.custom.RadioactiveBlock;
+import net.js.jsmenu.block.custom.SpaceAirBlock;
 import net.js.jsmenu.block.custom.SuperRadioactiveBlock;
+import net.js.jsmenu.block.custom.fluid.*;
 import net.js.jsmenu.item.ModItems;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
@@ -50,6 +52,7 @@ public class ModBlocks {
     public static final DeferredBlock<Block> GERMANIUM_ORE = registerBlock("germanium_ore", () -> new Block(BlockBehaviour.Properties.of().strength(3.1565f).requiresCorrectToolForDrops()));
     public static final DeferredBlock<Block> ARSENIC_ORE = registerBlock("arsenic_ore", () -> new Block(BlockBehaviour.Properties.of().strength(3.1575f).requiresCorrectToolForDrops()));
     public static final DeferredBlock<Block> SELENIUM_ORE = registerBlock("selenium_ore", () -> new Block(BlockBehaviour.Properties.of().strength(3.185f).requiresCorrectToolForDrops()));
+    public static final DeferredBlock<Block> BROMINE = registerBlock("bromine", BromineBlock::new);
     public static final DeferredBlock<Block> KRYPTON_ORE = registerBlock("krypton_ore", () -> new Block(BlockBehaviour.Properties.of().strength(3.625f).requiresCorrectToolForDrops()));
     public static final DeferredBlock<Block> RUBIDIUM_ORE = registerBlock("rubidium_ore", () -> new Block(BlockBehaviour.Properties.of().strength(3.85f).requiresCorrectToolForDrops()));
     public static final DeferredBlock<Block> STRONTIUM_ORE = registerBlock("strontium_ore", () -> new Block(BlockBehaviour.Properties.of().strength(3.875f).requiresCorrectToolForDrops()));
@@ -93,6 +96,7 @@ public class ModBlocks {
     public static final DeferredBlock<Block> OSMIUM_ORE = registerBlock("osmium_ore", () -> new Block(BlockBehaviour.Properties.of().strength(5.2f).requiresCorrectToolForDrops()));
     public static final DeferredBlock<Block> IRIDIUM_ORE = registerBlock("iridium_ore", () -> new Block(BlockBehaviour.Properties.of().strength(5.25f).requiresCorrectToolForDrops()));
     public static final DeferredBlock<Block> PLATINUM_ORE = registerBlock("platinum_ore", () -> new Block(BlockBehaviour.Properties.of().strength(5.3f).requiresCorrectToolForDrops()));
+    public static final DeferredBlock<Block> MERCURY = registerBlock("mercury", MercuryBlock::new);
     public static final DeferredBlock<Block> THALLIUM_ORE = registerBlock("thallium_ore", () -> new Block(BlockBehaviour.Properties.of().strength(5.3575f).requiresCorrectToolForDrops().sound(SoundType.DEEPSLATE)));
     public static final DeferredBlock<Block> LEAD_ORE = registerBlock("lead_ore", () -> new Block(BlockBehaviour.Properties.of().strength(5.5f).requiresCorrectToolForDrops().sound(SoundType.DEEPSLATE)));
     public static final DeferredBlock<Block> BISMUTH_ORE = registerBlock("bismuth_ore", () -> new Block(BlockBehaviour.Properties.of().strength(5.75f).requiresCorrectToolForDrops().sound(SoundType.DEEPSLATE)));
@@ -132,7 +136,7 @@ public class ModBlocks {
     public static final DeferredBlock<Block> TENNESSINE_ORE = registerBlock("tennessine_ore", () -> new RadioactiveBlock(BlockBehaviour.Properties.of().strength(6f).requiresCorrectToolForDrops()));
     public static final DeferredBlock<Block> OGANESSON_ORE = registerBlock("oganesson_ore", () -> new RadioactiveBlock(BlockBehaviour.Properties.of().strength(6f).requiresCorrectToolForDrops()));
 
-    public static final DeferredBlock<Block> HYDROGEN_BLOCK = registerBlock("hydrogen_block", () -> new Block(BlockBehaviour.Properties.of().strength(.75f).requiresCorrectToolForDrops().air()));
+    public static final DeferredBlock<Block> HYDROGEN_BLOCK = registerBlock("hydrogen_block", () -> new Block(BlockBehaviour.Properties.of().strength(.75f).requiresCorrectToolForDrops()));
     public static final DeferredBlock<Block> HELIUM_BLOCK = registerBlock("helium_block", () -> new Block(BlockBehaviour.Properties.of().strength(1.175f).requiresCorrectToolForDrops()));
     public static final DeferredBlock<Block> LITHIUM_BLOCK = registerBlock("lithium_block", () -> new Block(BlockBehaviour.Properties.of().strength(1.2f).requiresCorrectToolForDrops()));
     public static final DeferredBlock<Block> BERYLLIUM_BLOCK = registerBlock("beryllium_block", () -> new Block(BlockBehaviour.Properties.of().strength(2f).requiresCorrectToolForDrops()));
@@ -273,6 +277,22 @@ public class ModBlocks {
 
     public static final DeferredBlock<Block> FUNNY_JS_BLOCK = registerBlock("funny_js_block", () -> new Block(BlockBehaviour.Properties.of().strength(2.5f)));
 
+    public static final DeferredBlock<Block> RED_LAVA = registerBlock("red_lava", RedLavaBlock::new);
+    public static final DeferredBlock<Block> ORANGE_LAVA = registerBlock("orange_lava", OrangeLavaBlock::new);
+    public static final DeferredBlock<Block> LIGHT_YELLOW_LAVA = registerBlock("light_yellow_lava", LightYellowLavaBlock::new);
+    public static final DeferredBlock<Block> YELLOW_LAVA = registerBlock("yellow_lava", YellowLavaBlock::new);
+    public static final DeferredBlock<Block> GREEN_LAVA = registerBlock("green_lava", GreenLavaBlock::new);
+    public static final DeferredBlock<Block> LIGHT_BLUE_LAVA = registerBlock("light_blue_lava", LightBlueLavaBlock::new);
+    public static final DeferredBlock<Block> BLUE_LAVA = registerBlock("blue_lava", BlueLavaBlock::new);
+    public static final DeferredBlock<Block> PURPLE_LAVA = registerBlock("purple_lava", PurpleLavaBlock::new);
+    public static final DeferredBlock<Block> PINK_LAVA = registerBlock("pink_lava", PinkLavaBlock::new);
+    public static final DeferredBlock<Block> WHITE_LAVA = registerBlock("white_lava", WhiteLavaBlock::new);
+    public static final DeferredBlock<Block> BROWN_LAVA = registerBlock("brown_lava", BrownLavaBlock::new);
+    public static final DeferredBlock<Block> BLACK_LAVA = registerBlock("black_lava", BlackLavaBlock::new);
+
+    public static final DeferredBlock<Block> LIGHT_YELLOW_CONCRETE = registerBlock("light_yellow_concrete", () -> new Block(BlockBehaviour.Properties.of().strength(2f).requiresCorrectToolForDrops()));
+
+    public static final DeferredBlock<SpaceAirBlock> SPACE = registerBlock("space", () -> new SpaceAirBlock(BlockBehaviour.Properties.of().air().noCollission().noLootTable().strength(-1.0F).explosionResistance(360000.0F)));
     private static <T extends Block> DeferredBlock<T> registerBlock(String name, Supplier<T> block) {
         DeferredBlock<T> toReturn = BLOCKS.register(name, block);
         registerBlockItem(name, toReturn);
