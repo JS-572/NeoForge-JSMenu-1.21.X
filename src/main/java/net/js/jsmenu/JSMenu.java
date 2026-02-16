@@ -5,7 +5,6 @@ import net.js.jsmenu.client.HeldLightSphereHandler;
 import net.js.jsmenu.fluid.types.ModFluidTypes;
 import net.js.jsmenu.item.ModCreativeModeTabs;
 import net.js.jsmenu.item.ModItems;
-import net.js.jsmenu.world.space.StarRegistry;
 import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent;
 import org.slf4j.Logger;
 
@@ -58,7 +57,6 @@ public class JSMenu {
 
     private void commonSetup(FMLCommonSetupEvent event) {
         event.enqueueWork(() -> {
-            StarRegistry.registerStars();
         });
     }
 

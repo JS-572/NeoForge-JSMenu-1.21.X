@@ -2,7 +2,6 @@ package net.js.jsmenu.item;
 
 import net.js.jsmenu.JSMenu;
 import net.js.jsmenu.block.ModBlocks;
-import net.js.jsmenu.fluid.ModFluids;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
@@ -462,6 +461,7 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.WHITE_LAVA_BUCKET);
                         output.accept(ModItems.BROWN_LAVA_BUCKET);
                         output.accept(ModItems.BLACK_LAVA_BUCKET);
+                        output.accept(ModItems.ALUMOSIUM_LITHIUM_ALLOY);
                     }).build());
 
     public static final Supplier<CreativeModeTab> PERIODIC_MOD = CREATIVE_MODE_TAB.register("periodicmod",
@@ -1340,8 +1340,201 @@ public class ModCreativeModeTabs {
                         output.accept(ModBlocks.OGANESSON_ORE);
                     }).build());
 
+    public static final Supplier<CreativeModeTab> NFL_TEAMS = CREATIVE_MODE_TAB.register("nfl_teams",
+            () -> CreativeModeTab.builder().icon(() -> new ItemStack(ModBlocks.NFL_SEATTLE.get()))
+                    .displayItems((itemDisplayParameters, output) -> {
+                        output.accept(ModBlocks.NFL_SEATTLE);
+                        output.accept(ModBlocks.NFL_LA1);
+                        output.accept(ModBlocks.NFL_SF);
+                        output.accept(ModBlocks.NFL_ARIZONA);
+                        output.accept(ModBlocks.NFL_CHICAGO);
+                        output.accept(ModBlocks.NFL_GB);
+                        output.accept(ModBlocks.NFL_MINNESOTA);
+                        output.accept(ModBlocks.NFL_DETROIT);
+                        output.accept(ModBlocks.NFL_CAROLINA);
+                        output.accept(ModBlocks.NFL_TB);
+                        output.accept(ModBlocks.NFL_ATLANTA);
+                        output.accept(ModBlocks.NFL_NO);
+                        output.accept(ModBlocks.NFL_PHILADELPHIA);
+                        output.accept(ModBlocks.NFL_DALLAS);
+                        output.accept(ModBlocks.NFL_WASHINGTON);
+                        output.accept(ModBlocks.NFL_NY1);
+                        output.accept(ModBlocks.NFL_DENVER);
+                        output.accept(ModBlocks.NFL_LA2);
+                        output.accept(ModBlocks.NFL_KC);
+                        output.accept(ModBlocks.NFL_LV);
+                        output.accept(ModBlocks.NFL_PITTSBURGH);
+                        output.accept(ModBlocks.NFL_BALTIMORE);
+                        output.accept(ModBlocks.NFL_CINCINNATI);
+                        output.accept(ModBlocks.NFL_CLEVELAND);
+                        output.accept(ModBlocks.NFL_JACKSONVILLE);
+                        output.accept(ModBlocks.NFL_HOUSTON);
+                        output.accept(ModBlocks.NFL_INDIANA);
+                        output.accept(ModBlocks.NFL_TENNESSEE);
+                        output.accept(ModBlocks.NFL_NE);
+                        output.accept(ModBlocks.NFL_BUFFALO);
+                        output.accept(ModBlocks.NFL_MIAMI);
+                        output.accept(ModBlocks.NFL_NY2);
+                    }).build());
 
+    public static final Supplier<CreativeModeTab> NBA_TEAMS = CREATIVE_MODE_TAB.register("nba_teams",
+            () -> CreativeModeTab.builder().icon(() -> new ItemStack(ModBlocks.NBA_OKC.get()))
+                    .displayItems((itemDisplayParameters, output) -> {
+                        output.accept(ModBlocks.NBA_BOSTON);
+                        output.accept(ModBlocks.NBA_NY);
+                        output.accept(ModBlocks.NBA_PHILADELPHIA);
+                        output.accept(ModBlocks.NBA_TORONTO);
+                        output.accept(ModBlocks.NBA_BROOKLYN);
+                        output.accept(ModBlocks.NBA_CLEVELAND);
+                        output.accept(ModBlocks.NBA_INDIANA);
+                        output.accept(ModBlocks.NBA_MILWAUKEE);
+                        output.accept(ModBlocks.NBA_DETROIT);
+                        output.accept(ModBlocks.NBA_CHICAGO);
+                        output.accept(ModBlocks.NBA_OKC);
+                        output.accept(ModBlocks.NBA_MINNESOTA);
+                        output.accept(ModBlocks.NBA_DENVER);
+                        output.accept(ModBlocks.NBA_PORTLAND);
+                        output.accept(ModBlocks.NBA_UTAH);
+                        output.accept(ModBlocks.NBA_LA1);
+                        output.accept(ModBlocks.NBA_LA2);
+                        output.accept(ModBlocks.NBA_GS);
+                        output.accept(ModBlocks.NBA_SACRAMENTO);
+                        output.accept(ModBlocks.NBA_PHOENIX);
+                        output.accept(ModBlocks.NBA_ORLANDO);
+                        output.accept(ModBlocks.NBA_MIAMI);
+                        output.accept(ModBlocks.NBA_ATLANTA);
+                        output.accept(ModBlocks.NBA_CHARLOTTE);
+                        output.accept(ModBlocks.NBA_WASHINGTON);
+                        output.accept(ModBlocks.NBA_HOUSTON);
+                        output.accept(ModBlocks.NBA_MEMPHIS);
+                        output.accept(ModBlocks.NBA_DALLAS);
+                        output.accept(ModBlocks.NBA_SA);
+                        output.accept(ModBlocks.NBA_NO);
+                    }).build());
 
+    public static final Supplier<CreativeModeTab> NHL_TEAMS = CREATIVE_MODE_TAB.register("nhl_teams",
+            () -> CreativeModeTab.builder().icon(() -> new ItemStack(ModBlocks.NHL_FLORIDA.get()))
+                    .displayItems((itemDisplayParameters, output) -> {
+                        output.accept(ModBlocks.NHL_TORONTO);
+                        output.accept(ModBlocks.NHL_TB);
+                        output.accept(ModBlocks.NHL_FLORIDA);
+                        output.accept(ModBlocks.NHL_OTTAWA);
+                        output.accept(ModBlocks.NHL_MONTREAL);
+                        output.accept(ModBlocks.NHL_DETROIT);
+                        output.accept(ModBlocks.NHL_BUFFALO);
+                        output.accept(ModBlocks.NHL_BOSTON);
+                        output.accept(ModBlocks.NHL_WASHINGTON);
+                        output.accept(ModBlocks.NHL_CAROLINA);
+                        output.accept(ModBlocks.NHL_NJ);
+                        output.accept(ModBlocks.NHL_COLUMBUS);
+                        output.accept(ModBlocks.NHL_NY2);
+                        output.accept(ModBlocks.NHL_NY1);
+                        output.accept(ModBlocks.NHL_PITTSBURGH);
+                        output.accept(ModBlocks.NHL_PHILADELPHIA);
+                        output.accept(ModBlocks.NHL_WINNIPEG);
+                        output.accept(ModBlocks.NHL_DALLAS);
+                        output.accept(ModBlocks.NHL_COLORADO);
+                        output.accept(ModBlocks.NHL_MINNESOTA);
+                        output.accept(ModBlocks.NHL_STL);
+                        output.accept(ModBlocks.NHL_UTAH);
+                        output.accept(ModBlocks.NHL_NASHVILLE);
+                        output.accept(ModBlocks.NHL_CHICAGO);
+                        output.accept(ModBlocks.NHL_VEGAS);
+                        output.accept(ModBlocks.NHL_LA);
+                        output.accept(ModBlocks.NHL_EDMONTON);
+                        output.accept(ModBlocks.NHL_CALGARY);
+                        output.accept(ModBlocks.NHL_VANCOUVER);
+                        output.accept(ModBlocks.NHL_ANAHEIM);
+                        output.accept(ModBlocks.NHL_SEATTLE);
+                        output.accept(ModBlocks.NHL_SJ);
+                    }).build());
+
+    public static final Supplier<CreativeModeTab> MLB_TEAMS = CREATIVE_MODE_TAB.register("mlb_teams",
+            () -> CreativeModeTab.builder().icon(() -> new ItemStack(ModBlocks.MLB_LA1.get()))
+                    .displayItems((itemDisplayParameters, output) -> {
+                        output.accept(ModBlocks.MLB_TORONTO);
+                        output.accept(ModBlocks.MLB_NY1);
+                        output.accept(ModBlocks.MLB_BOSTON);
+                        output.accept(ModBlocks.MLB_TB);
+                        output.accept(ModBlocks.MLB_BALTIMORE);
+                        output.accept(ModBlocks.MLB_CLEVELAND);
+                        output.accept(ModBlocks.MLB_DETROIT);
+                        output.accept(ModBlocks.MLB_KC);
+                        output.accept(ModBlocks.MLB_MINNESOTA);
+                        output.accept(ModBlocks.MLB_CHI2);
+                        output.accept(ModBlocks.MLB_SEATTLE);
+                        output.accept(ModBlocks.MLB_HOUSTON);
+                        output.accept(ModBlocks.MLB_TEXAS);
+                        output.accept(ModBlocks.MLB_OAKLAND);
+                        output.accept(ModBlocks.MLB_LA2);
+                        output.accept(ModBlocks.MLB_PHILADELPHIA);
+                        output.accept(ModBlocks.MLB_NY2);
+                        output.accept(ModBlocks.MLB_MIAMI);
+                        output.accept(ModBlocks.MLB_ATLANTA);
+                        output.accept(ModBlocks.MLB_WASHINGTON);
+                        output.accept(ModBlocks.MLB_MILWAUKEE);
+                        output.accept(ModBlocks.MLB_CHI1);
+                        output.accept(ModBlocks.MLB_CINCINNATI);
+                        output.accept(ModBlocks.MLB_STL);
+                        output.accept(ModBlocks.MLB_PITTSBURGH);
+                        output.accept(ModBlocks.MLB_LA1);
+                        output.accept(ModBlocks.MLB_SD);
+                        output.accept(ModBlocks.MLB_SF);
+                        output.accept(ModBlocks.MLB_ARIZONA);
+                        output.accept(ModBlocks.MLB_COLORADO);
+                    }).build());
+
+    public static final Supplier<CreativeModeTab> MLS_TEAMS = CREATIVE_MODE_TAB.register("mls_teams",
+            () -> CreativeModeTab.builder().icon(() -> new ItemStack(ModBlocks.MLS_IMCF.get()))
+                    .displayItems((itemDisplayParameters, output) -> {
+                        output.accept(ModBlocks.MLS_PU);
+                        output.accept(ModBlocks.MLS_FCC);
+                        output.accept(ModBlocks.MLS_IMCF);
+                        output.accept(ModBlocks.MLS_CHARLOTTE);
+                        output.accept(ModBlocks.MLS_NYCFC);
+                        output.accept(ModBlocks.MLS_NSC);
+                        output.accept(ModBlocks.MLS_COLUMBUS);
+                        output.accept(ModBlocks.MLS_CFF);
+                        output.accept(ModBlocks.MLS_OCSC);
+                        output.accept(ModBlocks.MLS_NYRB);
+                        output.accept(ModBlocks.MLS_NER);
+                        output.accept(ModBlocks.MLS_TFC);
+                        output.accept(ModBlocks.MLS_CFM);
+                        output.accept(ModBlocks.MLS_ATLANTA);
+                        output.accept(ModBlocks.MLS_DCU);
+                        output.accept(ModBlocks.MLS_SDFC);
+                        output.accept(ModBlocks.MLS_VANCOUVER);
+                        output.accept(ModBlocks.MLS_LAFC);
+                        output.accept(ModBlocks.MLS_MUFC);
+                        output.accept(ModBlocks.MLS_SSFC);
+                        output.accept(ModBlocks.MLS_AUSTIN);
+                        output.accept(ModBlocks.MLS_FCD);
+                        output.accept(ModBlocks.MLS_PT);
+                        output.accept(ModBlocks.MLS_RSL);
+                        output.accept(ModBlocks.MLS_SJE);
+                        output.accept(ModBlocks.MLS_COLORADO);
+                        output.accept(ModBlocks.MLS_HDFC);
+                        output.accept(ModBlocks.MLS_SLCSC);
+                        output.accept(ModBlocks.MLS_LAG);
+                        output.accept(ModBlocks.MLS_SKC);
+                    }).build());
+
+    public static final Supplier<CreativeModeTab> SCOREBOARD_BLOCKS = CREATIVE_MODE_TAB.register("scoreboard_blocks",
+            () -> CreativeModeTab.builder().icon(() -> new ItemStack(Items.BOOK))
+                    .displayItems((itemDisplayParameters, output) -> {
+                        output.accept(ModBlocks.ONE);
+                        output.accept(ModBlocks.TWO);
+                        output.accept(ModBlocks.THREE);
+                        output.accept(ModBlocks.FOUR);
+                        output.accept(ModBlocks.FIVE);
+                        output.accept(ModBlocks.SIX);
+                        output.accept(ModBlocks.SEVEN);
+                        output.accept(ModBlocks.EIGHT);
+                        output.accept(ModBlocks.NINE);
+                        output.accept(ModBlocks.ZERO);
+                        output.accept(ModBlocks.UNLOADED_BASE);
+                        output.accept(ModBlocks.LOADED_BASE);
+                    }).build());
 
     public static void register(IEventBus eventBus) {
         CREATIVE_MODE_TAB.register(eventBus);
