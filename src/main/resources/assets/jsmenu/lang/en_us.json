@@ -499,7 +499,6 @@
   "item.jsmenu.scandium_hoe": "Scandium Hoe",
 
   "death.attack.helium_pop": "%1$s was popped on the floor",
-  "death.attack.helium_pop.player": "%1$s was popped on the floor by %2$s"
   "death.attack.helium_pop.player": "%1$s was popped on the floor by %2$s",
 
   "item.minecraft.ender_pearl": "Oil Pastel",

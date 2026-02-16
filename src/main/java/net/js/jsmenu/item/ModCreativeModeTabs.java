@@ -461,7 +461,6 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.WHITE_LAVA_BUCKET);
                         output.accept(ModItems.BROWN_LAVA_BUCKET);
                         output.accept(ModItems.BLACK_LAVA_BUCKET);
-                        output.accept(ModItems.ALUMOSIUM_LITHIUM_ALLOY);
                     }).build());
 
     public static final Supplier<CreativeModeTab> PERIODIC_MOD = CREATIVE_MODE_TAB.register("periodicmod",
@@ -1342,6 +1341,8 @@ public class ModCreativeModeTabs {
 
     public static final Supplier<CreativeModeTab> NFL_TEAMS = CREATIVE_MODE_TAB.register("nfl_teams",
             () -> CreativeModeTab.builder().icon(() -> new ItemStack(ModBlocks.NFL_SEATTLE.get()))
+                    .withTabsBefore(ResourceLocation.fromNamespaceAndPath(JSMenu.MOD_ID, "noble_gasses"))
+                    .title(Component.translatable("creativetab.jsmenu.nfl_teams"))
                     .displayItems((itemDisplayParameters, output) -> {
                         output.accept(ModBlocks.NFL_SEATTLE);
                         output.accept(ModBlocks.NFL_LA1);
@@ -1379,6 +1380,8 @@ public class ModCreativeModeTabs {
 
     public static final Supplier<CreativeModeTab> NBA_TEAMS = CREATIVE_MODE_TAB.register("nba_teams",
             () -> CreativeModeTab.builder().icon(() -> new ItemStack(ModBlocks.NBA_OKC.get()))
+                    .withTabsBefore(ResourceLocation.fromNamespaceAndPath(JSMenu.MOD_ID, "nfl_teams"))
+                    .title(Component.translatable("creativetab.jsmenu.nba_teams"))
                     .displayItems((itemDisplayParameters, output) -> {
                         output.accept(ModBlocks.NBA_BOSTON);
                         output.accept(ModBlocks.NBA_NY);
@@ -1414,6 +1417,8 @@ public class ModCreativeModeTabs {
 
     public static final Supplier<CreativeModeTab> NHL_TEAMS = CREATIVE_MODE_TAB.register("nhl_teams",
             () -> CreativeModeTab.builder().icon(() -> new ItemStack(ModBlocks.NHL_FLORIDA.get()))
+                    .withTabsBefore(ResourceLocation.fromNamespaceAndPath(JSMenu.MOD_ID, "nba_teams"))
+                    .title(Component.translatable("creativetab.jsmenu.nhl_teams"))
                     .displayItems((itemDisplayParameters, output) -> {
                         output.accept(ModBlocks.NHL_TORONTO);
                         output.accept(ModBlocks.NHL_TB);
@@ -1451,6 +1456,8 @@ public class ModCreativeModeTabs {
 
     public static final Supplier<CreativeModeTab> MLB_TEAMS = CREATIVE_MODE_TAB.register("mlb_teams",
             () -> CreativeModeTab.builder().icon(() -> new ItemStack(ModBlocks.MLB_LA1.get()))
+                    .withTabsBefore(ResourceLocation.fromNamespaceAndPath(JSMenu.MOD_ID, "nhl_teams"))
+                    .title(Component.translatable("creativetab.jsmenu.mlb_teams"))
                     .displayItems((itemDisplayParameters, output) -> {
                         output.accept(ModBlocks.MLB_TORONTO);
                         output.accept(ModBlocks.MLB_NY1);
@@ -1486,6 +1493,8 @@ public class ModCreativeModeTabs {
 
     public static final Supplier<CreativeModeTab> MLS_TEAMS = CREATIVE_MODE_TAB.register("mls_teams",
             () -> CreativeModeTab.builder().icon(() -> new ItemStack(ModBlocks.MLS_IMCF.get()))
+                    .withTabsBefore(ResourceLocation.fromNamespaceAndPath(JSMenu.MOD_ID, "mlb_teams"))
+                    .title(Component.translatable("creativetab.jsmenu.mls_teams"))
                     .displayItems((itemDisplayParameters, output) -> {
                         output.accept(ModBlocks.MLS_PU);
                         output.accept(ModBlocks.MLS_FCC);
@@ -1521,6 +1530,8 @@ public class ModCreativeModeTabs {
 
     public static final Supplier<CreativeModeTab> SCOREBOARD_BLOCKS = CREATIVE_MODE_TAB.register("scoreboard_blocks",
             () -> CreativeModeTab.builder().icon(() -> new ItemStack(Items.BOOK))
+                    .withTabsBefore(ResourceLocation.fromNamespaceAndPath(JSMenu.MOD_ID, "mls_teams"))
+                    .title(Component.translatable("creativetab.jsmenu.scoreboard_blocks"))
                     .displayItems((itemDisplayParameters, output) -> {
                         output.accept(ModBlocks.ONE);
                         output.accept(ModBlocks.TWO);
