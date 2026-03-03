@@ -1,0 +1,26 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "#": [
+      {
+        "item": "minecraft:stone"
+      },
+      {
+        "item": "minecraft:cobblestone"
+      }
+    ],
+    "O": {
+      "item": "jsmenu:nether_ore_turner"
+    }
+  },
+  "pattern": [
+    "###",
+    "#O#",
+    "###"
+  ],
+  "result": {
+    "count": 1,
+    "id": "jsmenu:ore_turner"
+  }
+}

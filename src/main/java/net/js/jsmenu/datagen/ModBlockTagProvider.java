@@ -2,6 +2,7 @@ package net.js.jsmenu.datagen;
 
 import net.js.jsmenu.JSMenu;
 import net.js.jsmenu.block.ModBlocks;
+import net.js.jsmenu.util.ModTags;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.tags.BlockTags;
@@ -195,7 +196,9 @@ public class ModBlockTagProvider extends BlockTagsProvider {
                 .add(ModBlocks.HAFNIUM_ORE.get())
                 .add(ModBlocks.TANTALUM_ORE.get())
                 .add(ModBlocks.TUNGSTEN_ORE.get())
-                .add(ModBlocks.RHENIUM_ORE.get())
+                .add(ModBlocks.RHENIUM_ORE.get());
+
+        tag(ModTags.Blocks.NEEDS_SCANDIUM_TOOL)
                 .add(ModBlocks.OSMIUM_ORE.get())
                 .add(ModBlocks.IRIDIUM_ORE.get())
                 .add(ModBlocks.PLATINUM_ORE.get())

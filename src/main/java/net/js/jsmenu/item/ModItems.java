@@ -152,7 +152,7 @@ public class ModItems {
     public static final DeferredItem<Item> TENNESSINE = ITEMS.register("tennessine", () -> new Item(new Item.Properties()));
     public static final DeferredItem<Item> OGANESSON = ITEMS.register("oganesson", () -> new Item(new Item.Properties()));
 
-    public static final DeferredItem<SwordItem> HELIUM_SWORD = ITEMS.register("helium_sword", ()  -> new HeliumSwordItem(Tiers.IRON, 1, -2.4F, new Item.Properties().stacksTo(1)));
+    public static final DeferredItem<SwordItem> HELIUM_SWORD = ITEMS.register("helium_sword", ()  -> new HeliumSwordItem(ModToolTiers.HELIUM, 1, -2.4F, new Item.Properties().stacksTo(1)));
 
     public static final DeferredItem<OreTurnerItem> ORE_TURNER = ITEMS.register("ore_turner", () -> new OreTurnerItem(new Item.Properties().stacksTo(1).durability(1)));
     public static final DeferredItem<AdvancedOreTurnerItem> ADVANCED_ORE_TURNER = ITEMS.register("advanced_ore_turner", () -> new AdvancedOreTurnerItem(new Item.Properties().stacksTo(1).durability(1)));
@@ -175,7 +175,6 @@ public class ModItems {
     public static final DeferredItem<Item> FUNNY_JS_ITEM = ITEMS.register("funny_js_item", () -> new Item(new Item.Properties()));
 
     public static final DeferredItem<Item> RED_LAVA_BUCKET = ITEMS.register("red_lava_bucket", RedLavaItem::new);
-    public static final DeferredItem<Item> ORANGE_LAVA_BUCKET = ITEMS.register("orange_lava_bucket", OrangeLavaItem::new);
     public static final DeferredItem<Item> LIGHT_YELLOW_LAVA_BUCKET = ITEMS.register("light_yellow_lava_bucket", LightYellowLavaItem::new);
     public static final DeferredItem<Item> YELLOW_LAVA_BUCKET = ITEMS.register("yellow_lava_bucket", YellowLavaItem::new);
     public static final DeferredItem<Item> GREEN_LAVA_BUCKET = ITEMS.register("green_lava_bucket", GreenLavaItem::new);

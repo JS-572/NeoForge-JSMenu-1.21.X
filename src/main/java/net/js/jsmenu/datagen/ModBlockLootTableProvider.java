@@ -162,6 +162,7 @@ public class ModBlockLootTableProvider extends BlockLootSubProvider {
         dropSelf(ModBlocks.LIVERMORIUM_BLOCK.get());
         dropSelf(ModBlocks.TENNESSINE_BLOCK.get());
         dropSelf(ModBlocks.OGANESSON_BLOCK.get());
+        dropSelf(ModBlocks.CARBON_COMPRESSOR.get());
 
         add(ModBlocks.HYDROGEN_ORE.get(), block -> createOreDrop(ModBlocks.HYDROGEN_ORE.get(), ModItems.HYDROGEN.get()));
         add(ModBlocks.LITHIUM_ORE.get(), block -> createOreDrop(ModBlocks.LITHIUM_ORE.get(), ModItems.LITHIUM.get()));

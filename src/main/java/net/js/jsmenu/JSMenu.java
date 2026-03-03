@@ -5,6 +5,10 @@ import net.js.jsmenu.client.HeldLightSphereHandler;
 import net.js.jsmenu.fluid.types.ModFluidTypes;
 import net.js.jsmenu.item.ModCreativeModeTabs;
 import net.js.jsmenu.item.ModItems;
+import net.minecraft.world.item.CreativeModeTab;
+import net.minecraft.world.item.CreativeModeTabs;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Items;
 import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent;
 import org.slf4j.Logger;
 
@@ -62,7 +66,13 @@ public class JSMenu {
 
     // Add the example block item to the building blocks tab
     private void addCreative(BuildCreativeModeTabContentsEvent event) {
-
+        if (event.getTabKey() == CreativeModeTabs.COLORED_BLOCKS) {
+            event.insertAfter(
+                    new ItemStack(Items.YELLOW_CONCRETE),
+                    new ItemStack(ModBlocks.LIGHT_YELLOW_CONCRETE.get()),
+                    CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS
+            );
+        }
     }
 
     // You can use SubscribeEvent and let the Event Bus discover methods to call

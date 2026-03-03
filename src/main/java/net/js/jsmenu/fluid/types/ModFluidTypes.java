@@ -12,7 +12,6 @@ public class ModFluidTypes {
     public static final DeferredHolder<FluidType, FluidType> MERCURY_TYPE = REGISTRY.register("mercury", () -> new MercuryFluidType());
 
     public static final DeferredHolder<FluidType, FluidType> RED_LAVA_TYPE = REGISTRY.register("red_lava_type", () -> new RedLavaFluidType());
-    public static final DeferredHolder<FluidType, FluidType> ORANGE_LAVA_TYPE = REGISTRY.register("orange_lava_type", () -> new OrangeLavaFluidType());
     public static final DeferredHolder<FluidType, FluidType> LIGHT_YELLOW_LAVA_TYPE = REGISTRY.register("light_yellow_lava_type", () -> new LightYellowLavaFluidType());
     public static final DeferredHolder<FluidType, FluidType> YELLOW_LAVA_TYPE = REGISTRY.register("yellow_lava_type", () -> new YellowLavaFluidType());
     public static final DeferredHolder<FluidType, FluidType> GREEN_LAVA_TYPE = REGISTRY.register("green_lava_type", () -> new GreenLavaFluidType());

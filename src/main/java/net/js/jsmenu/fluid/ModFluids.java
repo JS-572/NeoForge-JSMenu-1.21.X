@@ -24,8 +24,6 @@ public class ModFluids {
 
     public static final DeferredHolder<Fluid, FlowingFluid> RED_LAVA = REGISTRY.register("red_lava", () -> new RedLavaFluid.Source());
     public static final DeferredHolder<Fluid, FlowingFluid> FLOWING_RED_LAVA = REGISTRY.register("flowing_red_lava", () -> new RedLavaFluid.Flowing());
-    public static final DeferredHolder<Fluid, FlowingFluid> ORANGE_LAVA = REGISTRY.register("orange_lava", () -> new OrangeLavaFluid.Source());
-    public static final DeferredHolder<Fluid, FlowingFluid> FLOWING_ORANGE_LAVA = REGISTRY.register("flowing_orange_lava", () -> new OrangeLavaFluid.Flowing());
     public static final DeferredHolder<Fluid, FlowingFluid> LIGHT_YELLOW_LAVA = REGISTRY.register("light_yellow_lava", () -> new LightYellowLavaFluid.Source());
     public static final DeferredHolder<Fluid, FlowingFluid> FLOWING_LIGHT_YELLOW_LAVA = REGISTRY.register("flowing_light_yellow_lava", () -> new LightYellowLavaFluid.Flowing());
     public static final DeferredHolder<Fluid, FlowingFluid> YELLOW_LAVA = REGISTRY.register("yellow_lava", () -> new YellowLavaFluid.Source());
@@ -58,8 +56,6 @@ public class ModFluids {
 
             ItemBlockRenderTypes.setRenderLayer(RED_LAVA.get(), RenderType.translucent());
             ItemBlockRenderTypes.setRenderLayer(FLOWING_RED_LAVA.get(), RenderType.translucent());
-            ItemBlockRenderTypes.setRenderLayer(ORANGE_LAVA.get(), RenderType.translucent());
-            ItemBlockRenderTypes.setRenderLayer(FLOWING_ORANGE_LAVA.get(), RenderType.translucent());
             ItemBlockRenderTypes.setRenderLayer(LIGHT_YELLOW_LAVA.get(), RenderType.translucent());
             ItemBlockRenderTypes.setRenderLayer(FLOWING_LIGHT_YELLOW_LAVA.get(), RenderType.translucent());
             ItemBlockRenderTypes.setRenderLayer(YELLOW_LAVA.get(), RenderType.translucent());
