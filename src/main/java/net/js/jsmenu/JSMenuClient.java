@@ -1,5 +1,6 @@
 package net.js.jsmenu;
 
+import net.js.jsmenu.client.DynamicHeldLightHandler;
 import net.js.jsmenu.client.HeldLightSphereHandler;
 import net.neoforged.bus.api.IEventBus;
 
@@ -9,6 +10,7 @@ import net.neoforged.bus.api.IEventBus;
  */
 public class JSMenuClient {
     public static void init(IEventBus modBus) {
+        DynamicHeldLightHandler.register();
         HeldLightSphereHandler.register();
     }
 }
