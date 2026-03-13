@@ -1,6 +1,7 @@
 package net.js.jsmenu.client;
 
 import net.js.jsmenu.item.ModItems;
+import net.minecraft.world.item.Items;
 import net.minecraft.client.Minecraft;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.entity.EquipmentSlot;
@@ -33,7 +34,11 @@ public class DynamicHeldLightHandler {
                         mc.player.getItemBySlot(EquipmentSlot.OFFHAND).is(ModItems.SCANDIUM_PICKAXE.get()) ||
                         mc.player.getItemBySlot(EquipmentSlot.OFFHAND).is(ModItems.SCANDIUM_SHOVEL.get()) ||
                         mc.player.getItemBySlot(EquipmentSlot.OFFHAND).is(ModItems.SCANDIUM_AXE.get()) ||
-                        mc.player.getItemBySlot(EquipmentSlot.OFFHAND).is(ModItems.SCANDIUM_HOE.get());
+                        mc.player.getItemBySlot(EquipmentSlot.OFFHAND).is(ModItems.SCANDIUM_HOE.get()) ||
+                        mc.player.getItemBySlot(EquipmentSlot.MAINHAND).is(Items.TORCH) ||
+                        mc.player.getItemBySlot(EquipmentSlot.OFFHAND).is(Items.TORCH) ||
+                        mc.player.getItemBySlot(EquipmentSlot.MAINHAND).is(Items.REDSTONE_TORCH) ||
+                        mc.player.getItemBySlot(EquipmentSlot.OFFHAND).is(Items.REDSTONE_TORCH);
 
         BlockPos pos = mc.player.blockPosition();
 
