@@ -1668,6 +1668,108 @@ public class ModCreativeModeTabs {
                         output.accept(ModBlocks.LOADED_BASE);
                     }).build());
 
+    public static final Supplier<CreativeModeTab> FRUITS = CREATIVE_MODE_TAB.register("fruits",
+            () -> CreativeModeTab.builder().icon(() -> new ItemStack(Items.APPLE))
+                    .withTabsBefore(ResourceLocation.fromNamespaceAndPath(JSMenu.MOD_ID, "scoreboard_blocks"))
+                    .title(Component.translatable("creativetab.jsmenu.fruits"))
+                    .displayItems((itemDisplayParameters, output) -> {
+                        output.accept(ModItems.STRAWBERRY);
+                        output.accept(ModItems.RASPBERRY);
+                        output.accept(ModItems.CHERRY);
+                        output.accept(ModItems.CRANBERRY);
+                        output.accept(ModItems.POMEGRANATE);
+                        output.accept(ModItems.DRAGON_FRUIT);
+                        output.accept(ModItems.LYCHEE);
+                        output.accept(ModItems.ORANGE);
+                        output.accept(ModItems.TANGERINE);
+                        output.accept(ModItems.PEACH);
+                        output.accept(ModItems.MANDARIN);
+                        output.accept(ModItems.CLEMENTINE);
+                        output.accept(ModItems.SATSUMA);
+                        output.accept(ModItems.POMEGRANATE);
+                        output.accept(ModItems.DRAGON_FRUIT);
+                        output.accept(ModItems.LYCHEE);
+                        output.accept(ModItems.RAMBUTAN);
+                        output.accept(ModItems.APRICOT);
+                        output.accept(ModItems.NECTARINE);
+                        output.accept(ModItems.MANGO);
+                        output.accept(ModItems.PAPAYA);
+                        output.accept(ModItems.CANTALOUPE);
+                        output.accept(ModItems.PERSIMMON);
+                        output.accept(ModItems.KUMQUAT);
+                        output.accept(ModItems.BUTTERNUT);
+                        output.accept(ModItems.KABOCHA);
+                        output.accept(ModItems.BANANA);
+                        output.accept(ModItems.LEMON);
+                        output.accept(ModItems.PINEAPPLE);
+                        output.accept(ModItems.GOLDEN_KIWI);
+                        output.accept(ModItems.STARFRUIT);
+                        output.accept(ModItems.DURIAN);
+                        output.accept(ModItems.JACKFRUIT);
+                        output.accept(ModItems.QUINCE);
+                        output.accept(ModItems.YUZU);
+                        output.accept(ModItems.CANARY_MELON);
+                        output.accept(ModItems.PEAR);
+                        output.accept(ModItems.KIWI);
+                        output.accept(ModItems.HONEYDEW_MELON);
+                        output.accept(ModItems.LIME);
+                        output.accept(ModItems.POMELO);
+                        output.accept(ModItems.AVOCADO);
+                        output.accept(ModItems.BREADFRUIT);
+                        output.accept(ModItems.SOURSOP);
+                        output.accept(ModItems.CHAYOTE);
+                        output.accept(ModItems.BLUEBERRY);
+                        output.accept(ModItems.BILBERRY);
+                        output.accept(ModItems.ELDERBERRY);
+                        output.accept(ModItems.HUCKLEBERRY);
+                        output.accept(ModItems.HONEYBERRY);
+                        output.accept(ModItems.CONCORD_GRAPE);
+                        output.accept(ModItems.DAMSON_PLUM);
+                        output.accept(ModItems.BLUE_MARBLE_FRUIT);
+                        output.accept(ModItems.BLUE_SAUSAGE_FRUIT);
+                        output.accept(ModItems.GRAPE);
+                        output.accept(ModItems.PLUM);
+                        output.accept(ModItems.PRUNE);
+                        output.accept(ModItems.FIG);
+                        output.accept(ModItems.PASSION_FRUIT);
+                        output.accept(ModItems.MANGOSTEEN);
+                        output.accept(ModItems.ACAI_BERRY);
+                        output.accept(ModItems.COCONUT);
+                        output.accept(ModItems.LONGAN);
+                        output.accept(ModItems.CHERIMOYA);
+                        output.accept(ModItems.PINEBERRY);
+                        output.accept(ModItems.SNOWBERRY);
+                        output.accept(ModItems.YA_PEAR);
+                        output.accept(ModItems.DATES);
+                        output.accept(ModItems.BOSC_PEAR);
+                        output.accept(ModItems.SAPODILLA);
+                        output.accept(ModItems.TAMARIND);
+                        output.accept(ModItems.SALAK);
+                        output.accept(ModItems.ASIAN_BROWN_PEAR);
+                        output.accept(ModItems.BLACK_SAPOTE);
+                        output.accept(ModItems.MEDLAR);
+                        output.accept(ModItems.BAOBAB);
+                        output.accept(ModItems.CHESTNUT);
+                        output.accept(ModItems.CACAO_PODS);
+                        output.accept(ModItems.KUMATO);
+                        output.accept(ModItems.BLACKBERRY);
+                        output.accept(ModItems.BLACKCURRANT);
+                        output.accept(ModItems.BLACK_RASPBERRY);
+                        output.accept(ModItems.ARONIA);
+                        output.accept(ModItems.BLACK_CHERRY);
+                        output.accept(ModItems.BLACK_PLUM);
+                        output.accept(ModItems.BLACK_MISSION_FIG);
+                        output.accept(ModItems.BLACK_VELVET_TAMARIND);
+                        output.accept(ModItems.BLACK_DIAMOND_APPLE);
+                    }).build());
+
+    public static final Supplier<CreativeModeTab> VEGETABLES = CREATIVE_MODE_TAB.register("vegetables",
+            () -> CreativeModeTab.builder().icon(() -> new ItemStack(Items.BEETROOT))
+                    .withTabsBefore(ResourceLocation.fromNamespaceAndPath(JSMenu.MOD_ID, "fruits"))
+                    .title(Component.translatable("creativetab.jsmenu.vegetables"))
+                    .displayItems((itemDisplayParameters, output) -> {
+
+                    }).build());
     public static void register(IEventBus eventBus) {
         CREATIVE_MODE_TAB.register(eventBus);
     }

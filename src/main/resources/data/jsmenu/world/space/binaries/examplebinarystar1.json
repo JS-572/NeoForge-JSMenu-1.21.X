@@ -1,0 +1,11 @@
+{
+  "type": {
+    "class": "K3",
+    "luminosity": "V",
+    "type": "binary"
+  },
+  "size": {
+    "solar_mass": 1.8,
+    "solar_radii": 1.4
+  }
+}

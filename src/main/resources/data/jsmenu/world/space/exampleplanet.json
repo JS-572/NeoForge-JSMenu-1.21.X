@@ -1,0 +1,15 @@
+{
+  "size": {
+    "earth_masses": 4,
+    "earth_radii": 10
+  },
+  "moons": [
+    "jsmenu:world/space/moons/examplemoon"
+  ],
+  "star": [
+    {
+      "distance": 0.6
+    },
+    "jsmenu:world/world/space/examplestar"
+  ]
+}

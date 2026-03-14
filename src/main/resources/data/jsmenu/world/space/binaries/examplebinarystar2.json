@@ -1,0 +1,11 @@
+{
+  "type": {
+    "class": "M7",
+    "luminosity": "V",
+    "type": "binary"
+  },
+  "size": {
+    "solar_mass": 0.8,
+    "solar_radii": 0.2
+  }
+}

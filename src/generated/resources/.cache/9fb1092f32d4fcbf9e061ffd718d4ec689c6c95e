@@ -1,4 +1,4 @@
-// 1.21	2025-09-11T21:07:00.1740468	Recipes
+// 1.21	2026-03-08T14:08:55.519115	Recipes
 7c6130116ad442588eab7275c0e545c620c390ed data/jsmenu/advancement/recipes/misc/actinium.json
 af5fcded4b60b8d1774ab08517e634af20bac930 data/jsmenu/advancement/recipes/misc/actinium_block.json
 2e7211cc41ef387c0be3a7a48da744ac53c60cbc data/jsmenu/advancement/recipes/misc/aluminum.json
@@ -35,6 +35,7 @@ f0044facfd779bbbd149fcf2b5cc38f7caed3865 data/jsmenu/advancement/recipes/misc/ca
 9e560686f1bdf4a642464540aa3eff441cadc6a2 data/jsmenu/advancement/recipes/misc/californium_block.json
 b832282003db9c8398ed5c340eeaa6817b591965 data/jsmenu/advancement/recipes/misc/carbon.json
 22e992e284c49d095d0ccefb64de98973b8f94b7 data/jsmenu/advancement/recipes/misc/carbon_block.json
+ce2cef308c2b3a883b6acac266e0ce32db1e445a data/jsmenu/advancement/recipes/misc/carbon_compressor.json
 ca956d4642fe4af1637492c2ab56cbadaa032c16 data/jsmenu/advancement/recipes/misc/cerium.json
 e452c42d0342ffd0e8ebd4421a3c01801d8933e4 data/jsmenu/advancement/recipes/misc/cerium_block.json
 e384e88fce8f59c8c09094c94e3baa6d36016034 data/jsmenu/advancement/recipes/misc/chlorine.json
@@ -307,6 +308,7 @@ e0e4b0ec2af05b67cfc88431a6f0918202238e67 data/jsmenu/recipe/calcium_block.json
 c799ed773b5f2148cdd304ae1f7db12583359b94 data/jsmenu/recipe/californium_block.json
 476da0c64924ad539893b79447b2b5407c1c8204 data/jsmenu/recipe/carbon.json
 5f1f5bf29ec63b7d7cf670035b5aaa9867f0299b data/jsmenu/recipe/carbon_block.json
+085af1cef274ee75d5810fa6202bc766a51a025d data/jsmenu/recipe/carbon_compressor.json
 239d11ba2fec27033123967e19db77be3b87374f data/jsmenu/recipe/cerium.json
 aecab1a651e60ca52ffe357dc45ce01cc237a12c data/jsmenu/recipe/cerium_block.json
 1be55c388cbe2afd5a21cd600dbcb1f3d57c302a data/jsmenu/recipe/chlorine.json

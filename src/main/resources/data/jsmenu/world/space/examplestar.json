@@ -1,0 +1,22 @@
+{
+  "type": {
+    "class": "G2",
+    "luminosity": "K",
+    "type": "main_sequence"
+  },
+  "size": {
+    "solar_mass": 1,
+    "solar_radii": 1
+  },
+  "planets": [
+    "jsmenu:mercury",
+    "jsmenu:venus",
+    "jsmenu:earth",
+    "jsmenu:mars",
+    "jsmenu:jupiter",
+    "jsmenu:saturn",
+    "jsmenu:uranus",
+    "jsmenu:neptune"
+  ],
+  "constellation": ""
+}
