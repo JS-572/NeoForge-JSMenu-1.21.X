@@ -29,7 +29,6 @@ public class DynamicHeldLightHandler {
                         mc.player.getItemBySlot(EquipmentSlot.MAINHAND).is(ModItems.SCANDIUM_SHOVEL.get()) ||
                         mc.player.getItemBySlot(EquipmentSlot.MAINHAND).is(ModItems.SCANDIUM_AXE.get()) ||
                         mc.player.getItemBySlot(EquipmentSlot.MAINHAND).is(ModItems.SCANDIUM_HOE.get()) ||
-
                         mc.player.getItemBySlot(EquipmentSlot.OFFHAND).is(ModItems.SCANDIUM_SWORD.get()) ||
                         mc.player.getItemBySlot(EquipmentSlot.OFFHAND).is(ModItems.SCANDIUM_PICKAXE.get()) ||
                         mc.player.getItemBySlot(EquipmentSlot.OFFHAND).is(ModItems.SCANDIUM_SHOVEL.get()) ||
@@ -37,6 +36,8 @@ public class DynamicHeldLightHandler {
                         mc.player.getItemBySlot(EquipmentSlot.OFFHAND).is(ModItems.SCANDIUM_HOE.get()) ||
                         mc.player.getItemBySlot(EquipmentSlot.MAINHAND).is(Items.TORCH) ||
                         mc.player.getItemBySlot(EquipmentSlot.OFFHAND).is(Items.TORCH) ||
+                        mc.player.getItemBySlot(EquipmentSlot.MAINHAND).is(Items.SOUL_TORCH) ||
+                        mc.player.getItemBySlot(EquipmentSlot.OFFHAND).is(Items.SOUL_TORCH) ||
                         mc.player.getItemBySlot(EquipmentSlot.MAINHAND).is(Items.REDSTONE_TORCH) ||
                         mc.player.getItemBySlot(EquipmentSlot.OFFHAND).is(Items.REDSTONE_TORCH);
 

@@ -586,6 +586,7 @@ public class ModBlocks {
     public static final DeferredBlock<Block> SOFT_ORANGE_CONCRETE = registerBlock("soft_orange_concrete", () -> new Block(BlockBehaviour.Properties.of().strength(1.8f).requiresCorrectToolForDrops()));
     public static final DeferredBlock<Block> SOFT_PURPLE_CONCRETE = registerBlock("soft_purple_concrete", () -> new Block(BlockBehaviour.Properties.of().strength(1.8f).requiresCorrectToolForDrops()));
     public static final DeferredBlock<Block> SOFT_RED_CONCRETE = registerBlock("soft_red_concrete", () -> new Block(BlockBehaviour.Properties.of().strength(1.8f).requiresCorrectToolForDrops()));
+    public static final DeferredBlock<Block> ADIRONDACK_BLUE_CONCRETE = registerBlock("adirondack_blue_concrete", () -> new Block(BlockBehaviour.Properties.of().strength(1.8f).requiresCorrectToolForDrops()));
     private static <T extends Block> DeferredBlock<T> registerBlock(String name, Supplier<T> block) {
         DeferredBlock<T> toReturn = BLOCKS.register(name, block);
         registerBlockItem(name, toReturn);
