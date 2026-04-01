@@ -425,6 +425,8 @@
 
   "item.jsmenu.funny_js_item": "Funny JS Item",
   "block.jsmenu.funny_js_block": "Funny JS Block",
+  "item.jsmenu.funny_js_item": "Funny JS Item\n???",
+  "block.jsmenu.funny_js_block": "Funny JS Block\n???",
 
   "block.jsmenu.bromine": "Bromine",
   "item.jsmenu.bromine_bucket": "Bromine Bucket",
@@ -494,7 +496,7 @@
   "death.attack.helium_pop": "%1$s was popped on the floor",
   "death.attack.helium_pop.player": "%1$s was popped on the floor by %2$s",
 
-  "item.minecraft.ender_pearl": "Oil Pastel",
+  "item.minecraft.ender_pearl": "Onion Ring",
   "block.jsmenu.nfl_ari": "Arizona Cardinals",
   "block.jsmenu.nfl_lar": "Los Angeles Rams",
   "block.jsmenu.nfl_sea": "Seattle Seahawks",
@@ -988,4 +990,17 @@
   "block.jsmenu.soft_red_concrete": "Soft Red Concrete"
   "block.jsmenu.soft_red_concrete": "Soft Red Concrete",
   "block.jsmenu.adirondack_blue_concrete": "Adirondack Blue Concrete",
+  "block.minecraft.oak_button": "Butt",
+  "block.minecraft.spruce_button": "Butt",
+  "block.minecraft.birch_button": "Butt",
+  "block.minecraft.jungle_button": "Butt",
+  "block.minecraft.acacia_button": "Butt",
+  "block.minecraft.dark_oak_button": "Butt",
+  "block.minecraft.mangrove_button": "Butt",
+  "block.minecraft.cherry_button": "Butt",
+  "block.minecraft.bamboo_button": "Butt",
+  "block.minecraft.crimson_button": "Butt",
+  "block.minecraft.warped_button": "Butt",
+  "block.minecraft.stone_button": "Butt",
+  "block.minecraft.polished_blackstone_button": "Butt"
 }
