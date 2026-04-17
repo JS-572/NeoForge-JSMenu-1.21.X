@@ -1850,6 +1850,82 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.BLACK_OLIVE);
                         output.accept(ModItems.FORBIDDEN_RICE);
                     }).build());
+
+    public static final Supplier<CreativeModeTab> FLOWERS = CREATIVE_MODE_TAB.register("flowers",
+            () -> CreativeModeTab.builder().icon(() -> new ItemStack(Items.DANDELION))
+                    .withTabsBefore(ResourceLocation.fromNamespaceAndPath(JSMenu.MOD_ID, "vegetables"))
+                    .title(Component.translatable("creativetab.jsmenu.flowers"))
+                    .displayItems((itemDisplayParameters, output) -> {
+                        output.accept(ModBlocks.MOUNTAIN_DAISY);
+                        output.accept(ModBlocks.SPRING_MORNING);
+                        output.accept(ModBlocks.TIGER_BELL);
+                        output.accept(ModBlocks.STARBURST);
+                        output.accept(ModBlocks.RAIN_DROP);
+                        output.accept(ModBlocks.DEW_CRYSTAL);
+                        output.accept(ModBlocks.EMPEROR);
+                        output.accept(ModBlocks.SNOW_LILY);
+                        output.accept(ModBlocks.MEADOW_LILY);
+                        output.accept(ModBlocks.GOLDEN_RAYS);
+                        output.accept(ModBlocks.LANTERN_BOWL);
+                        output.accept(ModBlocks.SUNSET_TULIP);
+                        output.accept(ModBlocks.IRIS_MANTLE);
+                        output.accept(ModBlocks.CALA);
+                        output.accept(ModBlocks.RAINBOW_STARS);
+                        output.accept(ModBlocks.FIRE_LILY);
+                        output.accept(ModBlocks.ROYAL_ROSE);
+                        output.accept(ModBlocks.WILD_ROSE);
+                        output.accept(ModBlocks.PARADISE_FLOWER);
+                        output.accept(ModBlocks.SUGARPLUM);
+                        output.accept(ModBlocks.SPARKLE);
+                        output.accept(ModBlocks.EVENSONG);
+                        output.accept(ModBlocks.WARM_WELCOME);
+                        output.accept(ModBlocks.WEDDING_BELL);
+                        output.accept(ModBlocks.BUNNY_EARS);
+                        output.accept(ModBlocks.SUNSET_DAISY);
+                        output.accept(ModBlocks.XMAS_THISTLE);
+                        output.accept(ModBlocks.LADYS_GOWN);
+                        output.accept(ModBlocks.FROST_BERRY);
+                        output.accept(ModBlocks.SPRING_BUTTERCUP);
+                        output.accept(ModBlocks.LADYS_BUTTON);
+                        output.accept(ModBlocks.HEART_BOWL);
+                        output.accept(ModBlocks.PINK_GRACE);
+                        output.accept(ModBlocks.MOTHERS_ROSE);
+                        output.accept(ModBlocks.INNER_PEACE);
+                        output.accept(ModBlocks.WISHING_TULIP);
+                        output.accept(ModBlocks.ORANGE_BELL);
+                        output.accept(ModBlocks.DREAM_STARS);
+                        output.accept(ModBlocks.ARADIA);
+                        output.accept(ModBlocks.SEMPITERNAL);
+                        output.accept(ModBlocks.NOON_DREAM);
+                        output.accept(ModBlocks.PRAIRIE_HEART);
+                        output.accept(ModBlocks.AURORA);
+                        output.accept(ModBlocks.FRIENDSHIP_ROSE);
+                        output.accept(ModBlocks.XANAS_CHARM);
+                        output.accept(ModBlocks.LOVE_EVERLASTING);
+                        output.accept(ModBlocks.REMEMBRANCE);
+                        output.accept(ModBlocks.ICY_DROP);
+                        output.accept(ModBlocks.WINTER_SOLACE);
+                        output.accept(ModBlocks.POINSETTIA);
+                        output.accept(ModBlocks.EDELWEISS);
+                        output.accept(ModBlocks.LAVENDER_STAR);
+                        output.accept(ModBlocks.BLUE_LYS);
+                        output.accept(ModBlocks.QUEENS_GUARD);
+                        output.accept(ModBlocks.WINTERS_END);
+                        output.accept(ModBlocks.NEW_YEARS_WISH);
+                        output.accept(ModBlocks.SKYS_EDGE);
+                        output.accept(ModBlocks.FOYS_TREASURE);
+                        output.accept(ModBlocks.SNAPPY_FLOWER);
+                        output.accept(ModBlocks.MAY_FLOWER);
+                        output.accept(ModBlocks.OFEPETALS);
+                        output.accept(ModBlocks.SUMMER_FINGERS);
+                        output.accept(ModBlocks.P_GAMERALUM);
+                        output.accept(ModBlocks.PURPLE_TENDRILS);
+                        output.accept(ModBlocks.MOON_CRAVER);
+                        output.accept(ModBlocks.APPERA_BLOSSOM);
+                        output.accept(ModBlocks.TULIP_GAMEORA);
+                        output.accept(ModBlocks.SPRING_TOUCH);
+                        output.accept(ModBlocks.ALL_HALLOWS_EVE);
+                    }).build());
     public static void register(IEventBus eventBus) {
         CREATIVE_MODE_TAB.register(eventBus);
     }

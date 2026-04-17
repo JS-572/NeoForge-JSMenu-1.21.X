@@ -83,6 +83,8 @@ public class ModTags {
 
         public static final TagKey<Block> TRANSITION_METAL_ORES = createTag("transition_metal_ores");
         public static final TagKey<Block> SHOVEL_MINEABLES = createTag("shovel_mineables");
+
+        public static final TagKey<Block> ORES = createTag("ores");
         private static TagKey<Block> createTag(String name) {
             return BlockTags.create(ResourceLocation.fromNamespaceAndPath(JSMenu.MOD_ID, name));
         }

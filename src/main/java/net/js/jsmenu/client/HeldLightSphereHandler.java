@@ -15,7 +15,5 @@ public class HeldLightSphereHandler {
     public void onClientTick(ClientTickEvent.Post event) {
         Minecraft mc = Minecraft.getInstance();
         if (mc.player == null) return;
-
-        // vanilla light logic will go here later
     }
 }

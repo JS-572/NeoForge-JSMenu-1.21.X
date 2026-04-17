@@ -12,6 +12,8 @@ import net.neoforged.neoforge.common.world.BiomeModifier;
 import net.neoforged.neoforge.common.world.BiomeModifiers;
 import net.neoforged.neoforge.registries.NeoForgeRegistries;
 
+import java.util.stream.Collectors;
+
 public class ModBiomeModifiers {
     public static final ResourceKey<BiomeModifier> ADD_HYDROGEN_ORE = registerKey("add_hydrogen_ore");
     public static final ResourceKey<BiomeModifier> ADD_LITHIUM_ORE = registerKey("add_lithium_ore");
@@ -242,6 +244,13 @@ public class ModBiomeModifiers {
         context.register(ADD_LIVERMORIUM_ORE, new BiomeModifiers.AddFeaturesBiomeModifier(biomes.getOrThrow(BiomeTags.IS_OVERWORLD), HolderSet.direct(placedFeatures.getOrThrow(ModPlacedFeatures.LIVERMORIUM_ORE_PLACED_KEY)), GenerationStep.Decoration.UNDERGROUND_ORES));
         context.register(ADD_TENNESSINE_ORE, new BiomeModifiers.AddFeaturesBiomeModifier(biomes.getOrThrow(BiomeTags.IS_OVERWORLD), HolderSet.direct(placedFeatures.getOrThrow(ModPlacedFeatures.TENNESSINE_ORE_PLACED_KEY)), GenerationStep.Decoration.UNDERGROUND_ORES));
         context.register(ADD_OGANESSON_ORE, new BiomeModifiers.AddFeaturesBiomeModifier(biomes.getOrThrow(BiomeTags.IS_OVERWORLD), HolderSet.direct(placedFeatures.getOrThrow(ModPlacedFeatures.OGANESSON_ORE_PLACED_KEY)), GenerationStep.Decoration.UNDERGROUND_ORES));
+
+        FlowerSpawnData.FLOWERS.forEach(definition ->
+                context.register(definition.modifierKey(), new BiomeModifiers.AddFeaturesBiomeModifier(
+                        HolderSet.direct(definition.biomes().stream().map(biomes::getOrThrow).collect(Collectors.toList())),
+                        HolderSet.direct(placedFeatures.getOrThrow(definition.placedKey())),
+                        GenerationStep.Decoration.VEGETAL_DECORATION)));
+
     }
 
     private static ResourceKey<BiomeModifier> registerKey(String name) {
