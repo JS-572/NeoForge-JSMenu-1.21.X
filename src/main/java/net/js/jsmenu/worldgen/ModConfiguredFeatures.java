@@ -4,6 +4,7 @@ import net.js.jsmenu.JSMenu;
 import net.js.jsmenu.block.ModBlocks;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.worldgen.BootstrapContext;
+import net.minecraft.data.worldgen.features.FeatureUtils;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.BlockTags;
@@ -12,6 +13,8 @@ import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
 import net.minecraft.world.level.levelgen.feature.Feature;
 import net.minecraft.world.level.levelgen.feature.configurations.FeatureConfiguration;
 import net.minecraft.world.level.levelgen.feature.configurations.OreConfiguration;
+import net.minecraft.world.level.levelgen.feature.configurations.SimpleBlockConfiguration;
+import net.minecraft.world.level.levelgen.feature.stateproviders.BlockStateProvider;
 import net.minecraft.world.level.levelgen.structure.templatesystem.BlockMatchTest;
 import net.minecraft.world.level.levelgen.structure.templatesystem.RuleTest;
 import net.minecraft.world.level.levelgen.structure.templatesystem.TagMatchTest;
@@ -131,6 +134,7 @@ public class ModConfiguredFeatures {
     public static final ResourceKey<ConfiguredFeature<?, ?>> LIVERMORIUM_ORE_KEY = registerKey("livermorium_ore");
     public static final ResourceKey<ConfiguredFeature<?, ?>> TENNESSINE_ORE_KEY = registerKey("tennessine_ore");
     public static final ResourceKey<ConfiguredFeature<?, ?>> OGANESSON_ORE_KEY = registerKey("oganesson_ore");
+    public static final ResourceKey<ConfiguredFeature<?, ?>> MOON_CRATERS_KEY = registerKey("moon_craters");
 
     public static void bootstrap(BootstrapContext<ConfiguredFeature<?, ?>> context) {
 
@@ -357,6 +361,17 @@ public class ModConfiguredFeatures {
         register(context, LIVERMORIUM_ORE_KEY, Feature.ORE, new OreConfiguration(overworldOres, 4));
         register(context, TENNESSINE_ORE_KEY, Feature.ORE, new OreConfiguration(overworldOres, 5));
         register(context, OGANESSON_ORE_KEY, Feature.ORE, new OreConfiguration(overworldOres, 3));
+
+        register(context, MOON_CRATERS_KEY, Feature.RANDOM_PATCH,
+                FeatureUtils.simplePatchConfiguration(Feature.SIMPLE_BLOCK,
+                        new SimpleBlockConfiguration(BlockStateProvider.simple(Blocks.CAVE_AIR.defaultBlockState())),
+                        List.of(Blocks.END_STONE)));
+
+        FlowerSpawnData.FLOWERS.forEach(definition ->
+                register(context, definition.configuredKey(), Feature.RANDOM_PATCH,
+                        FeatureUtils.simplePatchConfiguration(Feature.SIMPLE_BLOCK,
+                                new SimpleBlockConfiguration(BlockStateProvider.simple(definition.block().get().defaultBlockState())),
+                                List.of(Blocks.GRASS_BLOCK))));
     }
 
 

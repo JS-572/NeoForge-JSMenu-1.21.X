@@ -4,13 +4,12 @@ import net.js.jsmenu.JSMenu;
 import net.minecraft.core.Holder;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.worldgen.BootstrapContext;
+import net.minecraft.data.worldgen.placement.PlacementUtils;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.levelgen.VerticalAnchor;
 import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
-import net.minecraft.world.level.levelgen.placement.HeightRangePlacement;
-import net.minecraft.world.level.levelgen.placement.PlacedFeature;
-import net.minecraft.world.level.levelgen.placement.PlacementModifier;
+import net.minecraft.world.level.levelgen.placement.*;
 
 import java.util.List;
 
@@ -127,6 +126,7 @@ public class ModPlacedFeatures {
     public static final ResourceKey<PlacedFeature> LIVERMORIUM_ORE_PLACED_KEY = registerKey("livermorium_ore_placed");
     public static final ResourceKey<PlacedFeature> TENNESSINE_ORE_PLACED_KEY = registerKey("tennessine_ore_placed");
     public static final ResourceKey<PlacedFeature> OGANESSON_ORE_PLACED_KEY = registerKey("oganesson_ore_placed");
+    public static final ResourceKey<PlacedFeature> MOON_CRATERS_PLACED_KEY = registerKey("moon_craters_placed");
 
     public static void bootstrap(BootstrapContext<PlacedFeature> context) {
         var configuredFeatures = context.lookup(Registries.CONFIGURED_FEATURE);
@@ -243,6 +243,22 @@ public class ModPlacedFeatures {
         register(context, LIVERMORIUM_ORE_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.LIVERMORIUM_ORE_KEY), ModOrePlacement.commonOrePlacement(10, HeightRangePlacement.uniform(VerticalAnchor.absolute(-56), VerticalAnchor.absolute(0))));
         register(context, TENNESSINE_ORE_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.TENNESSINE_ORE_KEY), ModOrePlacement.commonOrePlacement(3, HeightRangePlacement.uniform(VerticalAnchor.absolute(-1), VerticalAnchor.absolute(16))));
         register(context, OGANESSON_ORE_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.OGANESSON_ORE_KEY), ModOrePlacement.commonOrePlacement(15, HeightRangePlacement.uniform(VerticalAnchor.absolute(26), VerticalAnchor.absolute(38))));
+
+        register(context, MOON_CRATERS_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.MOON_CRATERS_KEY),
+                List.of(
+                        CountPlacement.of(10),
+                        InSquarePlacement.spread(),
+                        PlacementUtils.HEIGHTMAP_WORLD_SURFACE,
+                        BiomeFilter.biome()
+                ));
+
+        FlowerSpawnData.FLOWERS.forEach(definition ->
+                register(context, definition.placedKey(), configuredFeatures.getOrThrow(definition.configuredKey()),
+                        List.of(RarityFilter.onAverageOnceEvery(definition.rarity()),
+                                InSquarePlacement.spread(),
+                                PlacementUtils.HEIGHTMAP_WORLD_SURFACE,
+                                HeightRangePlacement.uniform(VerticalAnchor.absolute(definition.minY()), VerticalAnchor.absolute(definition.maxY())),
+                                BiomeFilter.biome())));
     }
 
     private static ResourceKey<PlacedFeature> registerKey(String name) {

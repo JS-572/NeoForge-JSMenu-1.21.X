@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:random_patch",
+  "config": {
+    "attempts": 32,
+    "feature": {
+      "feature": {
+        "type": "minecraft:simple_block",
+        "config": {
+          "to_place": {
+            "type": "minecraft:simple_state_provider",
+            "state": {
+              "Name": "minecraft:cave_air"
+            }
+          }
+        }
+      },
+      "placement": []
+    },
+    "xz_spread": 5,
+    "y_spread": 2
+  }
+}
