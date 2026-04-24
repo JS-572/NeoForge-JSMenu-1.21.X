@@ -91,7 +91,7 @@ public class ModTags {
     }
 
     public static class Items {
-
+        public static final TagKey<Item> FIRE_RESISTANT = createTag("fire_resistant");
         private static TagKey<Item> createTag(String name) {
             return ItemTags.create(ResourceLocation.fromNamespaceAndPath(JSMenu.MOD_ID, name));
         }

@@ -122,6 +122,14 @@
     "minecraft:diamond_ore",
     "minecraft:nether_quartz_ore",
     "minecraft:nether_gold_ore",
-    "minecraft:ancient_debris"
+    "minecraft:ancient_debris",
+    "jsmenu:blazestone_ore",
+    "jsmenu:core_fragment_ore",
+    "jsmenu:radiant_crystal_ore",
+    "jsmenu:solarite_ore",
+    "jsmenu:crisra_ore",
+    "jsmenu:lunar_ore",
+    "jsmenu:gradient_ore",
+    "jsmenu:bragstone_ore"
   ]
 }

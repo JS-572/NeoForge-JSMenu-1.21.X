@@ -1,7 +1,7 @@
 {
   "type": "minecraft:random_patch",
   "config": {
-    "attempts": 32,
+    "attempts": 64,
     "feature": {
       "feature": {
         "type": "minecraft:simple_block",
@@ -16,7 +16,13 @@
       },
       "placement": []
     },
-    "xz_spread": 5,
-    "y_spread": 2
+    "xzspread": 6,
+    "yspread": 2,
+    "whitelist": [
+      "jsmenu:lunar_stone",
+      "jsmenu:lunar_soil",
+      "jsmenu:lunar_grass",
+      "jsmenu:glowgrass"
+    ]
   }
 }

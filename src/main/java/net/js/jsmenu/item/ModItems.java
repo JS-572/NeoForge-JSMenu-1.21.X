@@ -1,8 +1,8 @@
 package net.js.jsmenu.item;
 
 import net.js.jsmenu.JSMenu;
+import net.js.jsmenu.item.custom.OreTurnerItem;
 import net.js.jsmenu.item.custom.bucket.*;
-import net.js.jsmenu.item.custom.ore_turners.*;
 import net.js.jsmenu.item.custom.tools.HeliumSwordItem;
 import net.js.jsmenu.item.custom.tools.transition_metals.scandium.*;
 import net.minecraft.world.item.*;
@@ -358,6 +358,15 @@ public class ModItems {
     public static final DeferredItem<Item> BLACK_OLIVE = ITEMS.register("black_olive", () -> new Item(new Item.Properties().food(ModFoodProperties.BLACK_OLIVE)));
     public static final DeferredItem<Item> FORBIDDEN_RICE = ITEMS.register("forbidden_rice", () -> new Item(new Item.Properties().food(ModFoodProperties.FORBIDDEN_RICE)));
 
+    public static final DeferredItem<Item> SOLARITE = ITEMS.register("solarite", () -> new Item(new Item.Properties().fireResistant()));
+    public static final DeferredItem<Item> BLAZESTONE = ITEMS.register("blazestone", () -> new Item(new Item.Properties().fireResistant()));
+    public static final DeferredItem<Item> RADIANT_CRYSTAL = ITEMS.register("radiant_crystal", () -> new Item(new Item.Properties().fireResistant()));
+    public static final DeferredItem<Item> CORE_FRAGMENT = ITEMS.register("core_fragment", () -> new Item(new Item.Properties().fireResistant()));
+
+    public static final DeferredItem<Item> BRAGSTONE = ITEMS.register("bragstone", () -> new Item(new Item.Properties()));
+    public static final DeferredItem<Item> CRISRA = ITEMS.register("crisra", () -> new Item(new Item.Properties()));
+    public static final DeferredItem<Item> LUNAR_GEM = ITEMS.register("lunar_gem", () -> new Item(new Item.Properties()));
+    public static final DeferredItem<Item> GRADIENT_MOON_GEM = ITEMS.register("gradient_moon_gem", () -> new Item(new Item.Properties()));
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);
     }

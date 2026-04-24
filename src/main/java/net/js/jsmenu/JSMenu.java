@@ -1,6 +1,7 @@
 package net.js.jsmenu;
 
 import net.js.jsmenu.block.ModBlocks;
+import net.js.jsmenu.block.StarBlocks;
 import net.js.jsmenu.client.HeldLightSphereHandler;
 import net.js.jsmenu.fluid.types.ModFluidTypes;
 import net.js.jsmenu.item.ModCreativeModeTabs;
@@ -49,6 +50,7 @@ public class JSMenu {
 
         ModItems.register(modEventBus);
         ModBlocks.register(modEventBus);
+        StarBlocks.register(modEventBus);
 
         ModFluids.REGISTRY.register(modEventBus);
         ModFluidTypes.REGISTRY.register(modEventBus);

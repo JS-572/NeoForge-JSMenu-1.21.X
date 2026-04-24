@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:block/cross",
   "textures": {
-    "cross": "sunset_tulip"
+    "cross": "jsmenu:block/sunset_tulip"
   }
 }

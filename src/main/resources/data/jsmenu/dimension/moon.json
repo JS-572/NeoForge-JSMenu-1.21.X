@@ -6,7 +6,7 @@
       "type": "minecraft:multi_noise",
       "biomes": [
         {
-          "biome": "minecraft:the_void",
+          "biome": "jsmenu:crater_gardens",
           "parameters": {
             "temperature": 0.0,
             "humidity": 0.0,

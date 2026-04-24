@@ -2,13 +2,14 @@ package net.js.jsmenu.item;
 
 import net.js.jsmenu.JSMenu;
 import net.js.jsmenu.block.ModBlocks;
+import net.js.jsmenu.block.StarBlocks;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
-import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.*;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredRegister;
 
@@ -18,16 +19,15 @@ public class ModCreativeModeTabs {
     public static final DeferredRegister<CreativeModeTab> CREATIVE_MODE_TAB =
             DeferredRegister.create(Registries.CREATIVE_MODE_TAB, JSMenu.MOD_ID);
 
-    public static final Supplier<CreativeModeTab> JSMENU = CREATIVE_MODE_TAB.register("jsmenu",
-            () -> CreativeModeTab.builder().icon(() -> new ItemStack(ModItems.ACTINIUM.get()))
-                    .title(Component.translatable("creativetab.jsmenu.jsmenu"))
+    public static final Supplier<CreativeModeTab> PERIODIC_UPDATE = CREATIVE_MODE_TAB.register("periodic_update",
+            () -> CreativeModeTab.builder().icon(() -> new ItemStack(ModItems.HYDROGEN.get()))
+                    .title(Component.translatable("creativetab.jsmenu.periodic_update"))
                     .displayItems((itemDisplayParameters, output) -> {
                         output.accept(ModItems.HYDROGEN);
                         output.accept(ModBlocks.HYDROGEN_BLOCK);
                         output.accept(ModBlocks.HYDROGEN_ORE);
                         output.accept(ModItems.HELIUM);
                         output.accept(ModBlocks.HELIUM_BLOCK);
-                        output.accept(ModItems.HELIUM_SWORD);
                         output.accept(ModItems.LITHIUM);
                         output.accept(ModBlocks.LITHIUM_BLOCK);
                         output.accept(ModBlocks.LITHIUM_ORE);
@@ -87,11 +87,6 @@ public class ModCreativeModeTabs {
                         output.accept(ModBlocks.RAW_SCANDIUM_BLOCK);
                         output.accept(ModBlocks.SCANDIUM_BLOCK);
                         output.accept(ModBlocks.SCANDIUM_ORE);
-                        output.accept(ModItems.SCANDIUM_PICKAXE);
-                        output.accept(ModItems.SCANDIUM_AXE);
-                        output.accept(ModItems.SCANDIUM_SHOVEL);
-                        output.accept(ModItems.SCANDIUM_HOE);
-                        output.accept(ModItems.SCANDIUM_SWORD);
                         output.accept(ModItems.RAW_TITANIUM);
                         output.accept(ModItems.TITANIUM_INGOT);
                         output.accept(ModBlocks.RAW_TITANIUM_BLOCK);
@@ -149,7 +144,6 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.SELENIUM);
                         output.accept(ModBlocks.SELENIUM_BLOCK);
                         output.accept(ModBlocks.SELENIUM_ORE);
-                        output.accept(ModItems.BROMINE_BUCKET);
                         output.accept(ModItems.KRYPTON);
                         output.accept(ModBlocks.KRYPTON_BLOCK);
                         output.accept(ModBlocks.KRYPTON_ORE);
@@ -314,7 +308,6 @@ public class ModCreativeModeTabs {
                         output.accept(Blocks.RAW_GOLD_BLOCK);
                         output.accept(Blocks.GOLD_BLOCK);
                         output.accept(Blocks.GOLD_ORE);
-                        output.accept(ModItems.MERCURY_BUCKET);
                         output.accept(ModItems.THALLIUM);
                         output.accept(ModBlocks.THALLIUM_BLOCK);
                         output.accept(ModBlocks.THALLIUM_ORE);
@@ -429,14 +422,49 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.OGANESSON);
                         output.accept(ModBlocks.OGANESSON_BLOCK);
                         output.accept(ModBlocks.OGANESSON_ORE);
-                        output.accept(ModBlocks.CARBON_COMPRESSOR);
+                    }).build());
+
+    public static final Supplier<CreativeModeTab> HELIUM_UPDATE = CREATIVE_MODE_TAB.register("helium_update",
+            () -> CreativeModeTab.builder().icon(() -> new ItemStack(ModItems.HELIUM.get()))
+                    .withTabsBefore(ResourceLocation.fromNamespaceAndPath(JSMenu.MOD_ID, "periodic_update"))
+                    .title(Component.translatable("creativetab.jsmenu.helium_update"))
+                    .displayItems((itemDisplayParameters, output) -> {
+                        output.accept(ModItems.HELIUM_SWORD);
+                    }).build());
+
+    public static final Supplier<CreativeModeTab> ORE_TURNER_UPDATE = CREATIVE_MODE_TAB.register("ore_turner_update",
+            () -> CreativeModeTab.builder().icon(() -> new ItemStack(ModItems.ORE_TURNER.get()))
+                    .withTabsBefore(ResourceLocation.fromNamespaceAndPath(JSMenu.MOD_ID, "helium_update"))
+                    .title(Component.translatable("creativetab.jsmenu.ore_turner_update"))
+                    .displayItems((itemDisplayParameters, output) -> {
                         output.accept(ModItems.ORE_TURNER);
-                        output.accept(ModBlocks.FUNNY_JS_BLOCK);
+                    }).build());
+
+    public static final Supplier<CreativeModeTab> CARBON_UPDATE = CREATIVE_MODE_TAB.register("transition_metals",
+            () -> CreativeModeTab.builder().icon(() -> new ItemStack(ModItems.CARBON.get()))
+                    .withTabsBefore(ResourceLocation.fromNamespaceAndPath(JSMenu.MOD_ID, "ore_turner_update"))
+                    .title(Component.translatable("creativetab.jsmenu.carbon_update"))
+                    .displayItems((itemDisplayParameters, output) -> {
+                        output.accept(ModBlocks.CARBON_COMPRESSOR);
+                    }).build());
+
+    public static final Supplier<CreativeModeTab> ANIMATED_TEST = CREATIVE_MODE_TAB.register("animated_test",
+            () -> CreativeModeTab.builder().icon(() -> new ItemStack(ModItems.FUNNY_JS_ITEM.get()))
+                    .withTabsBefore(ResourceLocation.fromNamespaceAndPath(JSMenu.MOD_ID, "carbon_update"))
+                    .title(Component.translatable("creativetab.jsmenu.animated_test"))
+                    .displayItems((itemDisplayParameters, output) -> {
                         output.accept(ModItems.FUNNY_JS_ITEM);
+                        output.accept(ModBlocks.FUNNY_JS_BLOCK);
+                    }).build());
+
+    public static final Supplier<CreativeModeTab> FLUIDS_ADDITION = CREATIVE_MODE_TAB.register("fluids_addition",
+            () -> CreativeModeTab.builder().icon(() -> new ItemStack(ModItems.RED_LAVA_BUCKET.get()))
+                    .withTabsBefore(ResourceLocation.fromNamespaceAndPath(JSMenu.MOD_ID, "animated_test"))
+                    .title(Component.translatable("creativetab.jsmenu.fluids_addition"))
+                    .displayItems((itemDisplayParameters, output) -> {
                         output.accept(ModItems.RED_LAVA_BUCKET);
-                        output.accept(Items.LAVA_BUCKET);
-                        output.accept(ModItems.LIGHT_YELLOW_LAVA_BUCKET);
                         output.accept(ModItems.YELLOW_LAVA_BUCKET);
+                        output.accept(ModItems.LIGHT_YELLOW_LAVA_BUCKET);
                         output.accept(ModItems.GREEN_LAVA_BUCKET);
                         output.accept(ModItems.LIGHT_BLUE_LAVA_BUCKET);
                         output.accept(ModItems.BLUE_LAVA_BUCKET);
@@ -445,1011 +473,12 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.WHITE_LAVA_BUCKET);
                         output.accept(ModItems.BROWN_LAVA_BUCKET);
                         output.accept(ModItems.BLACK_LAVA_BUCKET);
-                        output.accept(ModBlocks.PURPLE_HEART_CONCRETE);
-                        output.accept(ModBlocks.ROBIN_EGG_BLUE_CONCRETE);
-                        output.accept(ModBlocks.VIVID_TANGERINE_CONCRETE);
-                        output.accept(ModBlocks.NEON_CARROT_CONCRETE);
-                        output.accept(ModBlocks.CARIBBEAN_GREEN_CONCRETE);
-                        output.accept(ModBlocks.SILVER_CONCRETE);
-                        output.accept(ModBlocks.GRANNY_SMITH_APPLE_CONCRETE);
-                        output.accept(ModBlocks.GREEN_YELLOW_CONCRETE);
-                        output.accept(ModBlocks.VIOLET_RED_CONCRETE);
-                        output.accept(ModBlocks.LASER_LEMON_CONCRETE);
-                        output.accept(ModBlocks.SALMON_CONCRETE);
-                        output.accept(ModBlocks.ALMOND_CONCRETE);
-                        output.accept(ModBlocks.BEAVER_CONCRETE);
-                        output.accept(ModBlocks.MOUNTAIN_MEADOW_CONCRETE);
-                        output.accept(ModBlocks.MAUVELOUS_CONCRETE);
-                        output.accept(ModBlocks.PINE_GREEN_CONCRETE);
-                        output.accept(ModBlocks.WISTERIA_CONCRETE);
-                        output.accept(ModBlocks.INDIGO_CONCRETE);
-                        output.accept(ModBlocks.PINK_SHERBET_CONCRETE);
-                        output.accept(ModBlocks.WILD_WATERMELON_CONCRETE);
-                        output.accept(ModBlocks.SPRING_GREEN_CONCRETE);
-                        output.accept(ModBlocks.AQUAMARINE_CONCRETE);
-                        output.accept(ModBlocks.SHOCKING_PINK_CONCRETE);
-                        output.accept(ModBlocks.LAVENDER_CONCRETE);
-                        output.accept(ModBlocks.SEPIA_CONCRETE);
-                        output.accept(ModBlocks.COPPER_CONCRETE);
-                        output.accept(ModBlocks.BURNT_ORANGE_CONCRETE);
-                        output.accept(ModBlocks.MANGO_TANGO_CONCRETE);
-                        output.accept(ModBlocks.TIMBERWOLF_CONCRETE);
-                        output.accept(ModBlocks.HOT_MAGENTA_CONCRETE);
-                        output.accept(ModBlocks.RAZZMATAZZ_CONCRETE);
-                        output.accept(ModBlocks.CADET_BLUE_CONCRETE);
-                        output.accept(ModBlocks.WILD_STRAWBERRY_CONCRETE);
-                        output.accept(ModBlocks.SCREAMIN_GREEN_CONCRETE);
-                        output.accept(ModBlocks.OUTRAGEOUS_ORANGE_CONCRETE);
-                        output.accept(ModBlocks.CHESTNUT_CONCRETE);
-                        output.accept(ModBlocks.SEA_GREEN_CONCRETE);
-                        output.accept(ModBlocks.CANARY_CONCRETE);
-                        output.accept(ModBlocks.APRICOT_CONCRETE);
-                        output.accept(ModBlocks.DENIM_CONCRETE);
-                        output.accept(ModBlocks.FERN_CONCRETE);
-                        output.accept(ModBlocks.FUZZY_WUZZY_CONCRETE);
-                        output.accept(ModBlocks.BLUE_GREEN_CONCRETE);
-                        output.accept(ModBlocks.NAVY_BLUE_CONCRETE);
-                        output.accept(ModBlocks.RED_ORANGE_CONCRETE);
-                        output.accept(ModBlocks.ASPARAGUS_CONCRETE);
-                        output.accept(ModBlocks.CERISE_CONCRETE);
-                        output.accept(ModBlocks.YELLOW_GREEN_CONCRETE);
-                        output.accept(ModBlocks.OUTER_SPACE_CONCRETE);
-                        output.accept(ModBlocks.SUNSET_ORANGE_CONCRETE);
-                        output.accept(ModBlocks.BLUE_VIOLET_CONCRETE);
-                        output.accept(ModBlocks.PACIFIC_BLUE_CONCRETE);
-                        output.accept(ModBlocks.TURQUOISE_BLUE_CONCRETE);
-                        output.accept(ModBlocks.CARNATION_PINK_CONCRETE);
-                        output.accept(ModBlocks.SKY_BLUE_CONCRETE);
-                        output.accept(ModBlocks.RADICAL_RED_CONCRETE);
-                        output.accept(ModBlocks.PERIWINKLE_CONCRETE);
-                        output.accept(ModBlocks.VIVID_PURPLE_CONCRETE);
-                        output.accept(ModBlocks.YELLOW_ORANGE_CONCRETE);
-                        output.accept(ModBlocks.UNMELLOW_YELLOW_CONCRETE);
-                        output.accept(ModBlocks.PLUM_CONCRETE);
-                        output.accept(ModBlocks.GOLD_CONCRETE);
-                        output.accept(ModBlocks.PIGGY_PINK_CONCRETE);
-                        output.accept(ModBlocks.RAW_SIENNA_CONCRETE);
-                        output.accept(ModBlocks.RED_VIOLET_CONCRETE);
-                        output.accept(ModBlocks.RAZZLE_DAZZLE_ROSE_CONCRETE);
-                        output.accept(ModBlocks.JAZZBERRY_JAM_CONCRETE);
-                        output.accept(ModBlocks.PURPLE_PIZZAZZ_CONCRETE);
-                        output.accept(ModBlocks.TUMBLEWEED_CONCRETE);
-                        output.accept(ModBlocks.INCHWORM_CONCRETE);
-                        output.accept(ModBlocks.MANATEE_CONCRETE);
-                        output.accept(ModBlocks.MAROON_CONCRETE);
-                        output.accept(ModBlocks.TICKLE_ME_PINK_CONCRETE);
-                        output.accept(ModBlocks.OLIVE_GREEN_CONCRETE);
-                        output.accept(ModBlocks.CORNFLOWER_CONCRETE);
-                        output.accept(ModBlocks.PURPLE_MOUNTAINS_MAJESTY_CONCRETE);
-                        output.accept(ModBlocks.BANANA_MANIA_CONCRETE);
-                        output.accept(ModBlocks.TROPICAL_RAIN_FOREST_CONCRETE);
-                        output.accept(ModBlocks.DESERT_SAND_CONCRETE);
-                        output.accept(ModBlocks.CERULEAN_CONCRETE);
-                        output.accept(ModBlocks.ROYAL_PURPLE_CONCRETE);
-                        output.accept(ModBlocks.PEACH_CONCRETE);
-                        output.accept(ModBlocks.SCARLET_CONCRETE);
-                        output.accept(ModBlocks.SHAMROCK_CONCRETE);
-                        output.accept(ModBlocks.MELON_CONCRETE);
-                        output.accept(ModBlocks.ANTIQUE_BRASS_CONCRETE);
-                        output.accept(ModBlocks.BLUSH_CONCRETE);
-                        output.accept(ModBlocks.WILD_BLUE_YONDER_CONCRETE);
-                        output.accept(ModBlocks.SHADOW_CONCRETE);
-                        output.accept(ModBlocks.BURNT_SIENNA_CONCRETE);
-                        output.accept(ModBlocks.TAN_CONCRETE);
-                        output.accept(ModBlocks.BITTERSWEET_CONCRETE);
-                        output.accept(ModBlocks.BLUE_BELL_CONCRETE);
-                        output.accept(ModBlocks.BLUETIFUL_CONCRETE);
-                        output.accept(ModBlocks.COTTON_CANDY_CONCRETE);
-                        output.accept(ModBlocks.FUCHSIA_CONCRETE);
-                        output.accept(ModBlocks.MACARONI_AND_CHEESE_CONCRETE);
-                        output.accept(ModBlocks.ORCHID_CONCRETE);
-                        output.accept(ModBlocks.EGGPLANT_CONCRETE);
-                        output.accept(ModBlocks.GOLDENROD_CONCRETE);
-                        output.accept(ModBlocks.MIDNIGHT_BLUE_CONCRETE);
-                        output.accept(ModBlocks.ELECTRIC_LIME_CONCRETE);
-                        output.accept(ModBlocks.ATOMIC_TANGERINE_CONCRETE);
-                        output.accept(ModBlocks.JUNGLE_GREEN_CONCRETE);
-                        output.accept(ModBlocks.MAHOGANY_CONCRETE);
-                        output.accept(ModBlocks.PINK_FLAMINGO_CONCRETE);
-                        output.accept(ModBlocks.BRICK_RED_CONCRETE);
-                        output.accept(ModBlocks.PALE_CYAN_CONCRETE);
-                        output.accept(ModBlocks.LIGHT_MAGENTA_CONCRETE);
-                        output.accept(ModBlocks.BRIGHT_CYAN_CONCRETE);
-                        output.accept(ModBlocks.BRIGHT_GREEN_CONCRETE);
-                        output.accept(ModBlocks.BRIGHT_PINK_CONCRETE);
-                        output.accept(ModBlocks.DEEP_PURPLE_CONCRETE);
-                        output.accept(ModBlocks.LIGHT_PINK_CONCRETE);
-                        output.accept(ModBlocks.MINT_GREEN_CONCRETE);
-                        output.accept(ModBlocks.PALE_GREEN_CONCRETE);
-                        output.accept(ModBlocks.PALE_YELLOW_CONCRETE);
-                        output.accept(ModBlocks.PINK_LACE_CHIFFON_CONCRETE);
-                        output.accept(ModBlocks.SOFT_BLUE_CONCRETE);
-                        output.accept(ModBlocks.SOFT_ORANGE_CONCRETE);
-                        output.accept(ModBlocks.SOFT_PURPLE_CONCRETE);
-                        output.accept(ModBlocks.SOFT_RED_CONCRETE);
-                        output.accept(ModBlocks.ADIRONDACK_BLUE_CONCRETE);
                     }).build());
 
-    public static final Supplier<CreativeModeTab> PERIODIC_MOD = CREATIVE_MODE_TAB.register("periodicmod",
-            () -> CreativeModeTab.builder().icon(() -> new ItemStack(ModItems.HYDROGEN.get()))
-                    .withTabsBefore(ResourceLocation.fromNamespaceAndPath(JSMenu.MOD_ID, "jsmenu"))
-                    .title(Component.translatable("creativetab.jsmenu.periodicmod"))
-                    .displayItems((itemDisplayParameters, output) -> {
-                        output.accept(ModItems.HYDROGEN);
-                        output.accept(ModBlocks.HYDROGEN_BLOCK);
-                        output.accept(ModBlocks.HYDROGEN_ORE);
-                        output.accept(ModItems.HELIUM);
-                        output.accept(ModBlocks.HELIUM_BLOCK);
-                        output.accept(ModItems.LITHIUM);
-                        output.accept(ModBlocks.LITHIUM_BLOCK);
-                        output.accept(ModBlocks.LITHIUM_ORE);
-                        output.accept(ModItems.BERYLLIUM);
-                        output.accept(ModBlocks.BERYLLIUM_BLOCK);
-                        output.accept(ModBlocks.BERYLLIUM_ORE);
-                        output.accept(ModItems.BORON);
-                        output.accept(ModBlocks.BORON_BLOCK);
-                        output.accept(ModBlocks.BORON_ORE);
-                        output.accept(ModItems.CARBON);
-                        output.accept(ModBlocks.CARBON_BLOCK);
-                        output.accept(ModBlocks.CARBON_ORE);
-                        output.accept(ModItems.NITROGEN);
-                        output.accept(ModBlocks.NITROGEN_BLOCK);
-                        output.accept(ModBlocks.NITROGEN_ORE);
-                        output.accept(ModItems.OXYGEN);
-                        output.accept(ModBlocks.OXYGEN_BLOCK);
-                        output.accept(ModBlocks.OXYGEN_ORE);
-                        output.accept(ModItems.FLUORINE);
-                        output.accept(ModBlocks.FLUORINE_BLOCK);
-                        output.accept(ModBlocks.FLUORINE_ORE);
-                        output.accept(ModItems.NEON);
-                        output.accept(ModBlocks.NEON_BLOCK);
-                        output.accept(ModBlocks.NEON_ORE);
-                        output.accept(ModItems.ARGON);
-                        output.accept(ModBlocks.ARGON_BLOCK);
-                        output.accept(ModBlocks.ARGON_ORE);
-                        output.accept(ModItems.SODIUM);
-                        output.accept(ModBlocks.SODIUM_BLOCK);
-                        output.accept(ModBlocks.SODIUM_ORE);
-                        output.accept(ModItems.MAGNESIUM);
-                        output.accept(ModBlocks.MAGNESIUM_BLOCK);
-                        output.accept(ModBlocks.MAGNESIUM_ORE);
-                        output.accept(ModItems.ALUMINUM);
-                        output.accept(ModBlocks.ALUMINUM_BLOCK);
-                        output.accept(ModBlocks.ALUMINUM_ORE);
-                        output.accept(ModItems.SILICON);
-                        output.accept(ModBlocks.SILICON_BLOCK);
-                        output.accept(ModBlocks.SILICON_ORE);
-                        output.accept(ModItems.PHOSPHORUS);
-                        output.accept(ModBlocks.PHOSPHORUS_BLOCK);
-                        output.accept(ModBlocks.PHOSPHORUS_ORE);
-                        output.accept(ModItems.SULFUR);
-                        output.accept(ModBlocks.SULFUR_BLOCK);
-                        output.accept(ModBlocks.SULFUR_ORE);
-                        output.accept(ModItems.CHLORINE);
-                        output.accept(ModBlocks.CHLORINE_BLOCK);
-                        output.accept(ModBlocks.CHLORINE_ORE);
-                        output.accept(ModItems.POTASSIUM);
-                        output.accept(ModBlocks.POTASSIUM_BLOCK);
-                        output.accept(ModBlocks.POTASSIUM_ORE);
-                        output.accept(ModItems.CALCIUM);
-                        output.accept(ModBlocks.CALCIUM_BLOCK);
-                        output.accept(ModBlocks.CALCIUM_ORE);
-                        output.accept(ModItems.RAW_SCANDIUM);
-                        output.accept(ModItems.SCANDIUM_INGOT);
-                        output.accept(ModBlocks.RAW_SCANDIUM_BLOCK);
-                        output.accept(ModBlocks.SCANDIUM_BLOCK);
-                        output.accept(ModBlocks.SCANDIUM_ORE);
-                        output.accept(ModItems.RAW_TITANIUM);
-                        output.accept(ModItems.TITANIUM_INGOT);
-                        output.accept(ModBlocks.RAW_TITANIUM_BLOCK);
-                        output.accept(ModBlocks.TITANIUM_BLOCK);
-                        output.accept(ModBlocks.TITANIUM_ORE);
-                        output.accept(ModItems.RAW_VANADIUM);
-                        output.accept(ModItems.VANADIUM_INGOT);
-                        output.accept(ModBlocks.RAW_VANADIUM_BLOCK);
-                        output.accept(ModBlocks.VANADIUM_BLOCK);
-                        output.accept(ModBlocks.VANADIUM_ORE);
-                        output.accept(ModItems.RAW_CHROMIUM);
-                        output.accept(ModItems.CHROMIUM_INGOT);
-                        output.accept(ModBlocks.RAW_CHROMIUM_BLOCK);
-                        output.accept(ModBlocks.CHROMIUM_BLOCK);
-                        output.accept(ModBlocks.CHROMIUM_ORE);
-                        output.accept(ModItems.RAW_MANGANESE);
-                        output.accept(ModItems.MANGANESE_INGOT);
-                        output.accept(ModBlocks.RAW_MANGANESE_BLOCK);
-                        output.accept(ModBlocks.MANGANESE_BLOCK);
-                        output.accept(ModBlocks.MANGANESE_ORE);
-                        output.accept(Items.RAW_IRON);
-                        output.accept(Items.IRON_INGOT);
-                        output.accept(Blocks.RAW_IRON_BLOCK);
-                        output.accept(Blocks.IRON_BLOCK);
-                        output.accept(Blocks.IRON_ORE);
-                        output.accept(ModItems.RAW_COBALT);
-                        output.accept(ModItems.COBALT_INGOT);
-                        output.accept(ModBlocks.RAW_COBALT_BLOCK);
-                        output.accept(ModBlocks.COBALT_BLOCK);
-                        output.accept(ModBlocks.COBALT_ORE);
-                        output.accept(ModItems.RAW_NICKEL);
-                        output.accept(ModItems.NICKEL_INGOT);
-                        output.accept(ModBlocks.RAW_NICKEL_BLOCK);
-                        output.accept(ModBlocks.NICKEL_BLOCK);
-                        output.accept(ModBlocks.NICKEL_ORE);
-                        output.accept(Items.RAW_COPPER);
-                        output.accept(Items.COPPER_INGOT);
-                        output.accept(Blocks.RAW_COPPER_BLOCK);
-                        output.accept(Blocks.COPPER_BLOCK);
-                        output.accept(Blocks.COPPER_ORE);
-                        output.accept(ModItems.RAW_ZINC);
-                        output.accept(ModItems.ZINC_INGOT);
-                        output.accept(ModBlocks.RAW_ZINC_BLOCK);
-                        output.accept(ModBlocks.ZINC_BLOCK);
-                        output.accept(ModBlocks.ZINC_ORE);
-                        output.accept(ModItems.GALLIUM);
-                        output.accept(ModBlocks.GALLIUM_BLOCK);
-                        output.accept(ModBlocks.GALLIUM_ORE);
-                        output.accept(ModItems.GERMANIUM);
-                        output.accept(ModBlocks.GERMANIUM_BLOCK);
-                        output.accept(ModBlocks.GERMANIUM_ORE);
-                        output.accept(ModItems.ARSENIC);
-                        output.accept(ModBlocks.ARSENIC_BLOCK);
-                        output.accept(ModBlocks.ARSENIC_ORE);
-                        output.accept(ModItems.SELENIUM);
-                        output.accept(ModBlocks.SELENIUM_BLOCK);
-                        output.accept(ModBlocks.SELENIUM_ORE);
-                        output.accept(ModItems.KRYPTON);
-                        output.accept(ModBlocks.KRYPTON_BLOCK);
-                        output.accept(ModBlocks.KRYPTON_ORE);
-                        output.accept(ModItems.RUBIDIUM);
-                        output.accept(ModBlocks.RUBIDIUM_BLOCK);
-                        output.accept(ModBlocks.RUBIDIUM_ORE);
-                        output.accept(ModItems.STRONTIUM);
-                        output.accept(ModBlocks.STRONTIUM_BLOCK);
-                        output.accept(ModBlocks.STRONTIUM_ORE);
-                        output.accept(ModItems.RAW_YTTRIUM);
-                        output.accept(ModItems.YTTRIUM_INGOT);
-                        output.accept(ModBlocks.RAW_YTTRIUM_BLOCK);
-                        output.accept(ModBlocks.YTTRIUM_BLOCK);
-                        output.accept(ModBlocks.YTTRIUM_ORE);
-                        output.accept(ModItems.RAW_ZIRCONIUM);
-                        output.accept(ModItems.ZIRCONIUM_INGOT);
-                        output.accept(ModBlocks.RAW_ZIRCONIUM_BLOCK);
-                        output.accept(ModBlocks.ZIRCONIUM_BLOCK);
-                        output.accept(ModBlocks.ZIRCONIUM_ORE);
-                        output.accept(ModItems.RAW_NIOBIUM);
-                        output.accept(ModItems.NIOBIUM_INGOT);
-                        output.accept(ModBlocks.RAW_NIOBIUM_BLOCK);
-                        output.accept(ModBlocks.NIOBIUM_BLOCK);
-                        output.accept(ModBlocks.NIOBIUM_ORE);
-                        output.accept(ModItems.RAW_MOLYBDENUM);
-                        output.accept(ModItems.MOLYBDENUM_INGOT);
-                        output.accept(ModBlocks.RAW_MOLYBDENUM_BLOCK);
-                        output.accept(ModBlocks.MOLYBDENUM_BLOCK);
-                        output.accept(ModBlocks.MOLYBDENUM_ORE);
-                        output.accept(ModItems.TECHNETIUM);
-                        output.accept(ModBlocks.TECHNETIUM_BLOCK);
-                        output.accept(ModBlocks.TECHNETIUM_ORE);
-                        output.accept(ModItems.RAW_RUTHENIUM);
-                        output.accept(ModItems.RUTHENIUM_INGOT);
-                        output.accept(ModBlocks.RAW_RUTHENIUM_BLOCK);
-                        output.accept(ModBlocks.RUTHENIUM_BLOCK);
-                        output.accept(ModBlocks.RUTHENIUM_ORE);
-                        output.accept(ModItems.RAW_RHODIUM);
-                        output.accept(ModItems.RHODIUM_INGOT);
-                        output.accept(ModBlocks.RAW_RHODIUM_BLOCK);
-                        output.accept(ModBlocks.RHODIUM_BLOCK);
-                        output.accept(ModBlocks.RHODIUM_ORE);
-                        output.accept(ModItems.RAW_PALLADIUM);
-                        output.accept(ModItems.PALLADIUM_INGOT);
-                        output.accept(ModBlocks.RAW_PALLADIUM_BLOCK);
-                        output.accept(ModBlocks.PALLADIUM_BLOCK);
-                        output.accept(ModBlocks.PALLADIUM_ORE);
-                        output.accept(ModItems.RAW_SILVER);
-                        output.accept(ModItems.SILVER_INGOT);
-                        output.accept(ModBlocks.RAW_SILVER_BLOCK);
-                        output.accept(ModBlocks.SILVER_BLOCK);
-                        output.accept(ModBlocks.SILVER_ORE);
-                        output.accept(ModItems.RAW_CADMIUM);
-                        output.accept(ModItems.CADMIUM_INGOT);
-                        output.accept(ModBlocks.RAW_CADMIUM_BLOCK);
-                        output.accept(ModBlocks.CADMIUM_BLOCK);
-                        output.accept(ModBlocks.CADMIUM_ORE);
-                        output.accept(ModItems.INDIUM);
-                        output.accept(ModBlocks.INDIUM_BLOCK);
-                        output.accept(ModBlocks.INDIUM_ORE);
-                        output.accept(ModItems.TIN);
-                        output.accept(ModBlocks.TIN_BLOCK);
-                        output.accept(ModBlocks.TIN_ORE);
-                        output.accept(ModItems.ANTIMONY);
-                        output.accept(ModBlocks.ANTIMONY_BLOCK);
-                        output.accept(ModBlocks.ANTIMONY_ORE);
-                        output.accept(ModItems.TELLURIUM);
-                        output.accept(ModBlocks.TELLURIUM_BLOCK);
-                        output.accept(ModBlocks.TELLURIUM_ORE);
-                        output.accept(ModItems.IODINE);
-                        output.accept(ModBlocks.IODINE_BLOCK);
-                        output.accept(ModBlocks.IODINE_ORE);
-                        output.accept(ModItems.XENON);
-                        output.accept(ModBlocks.XENON_BLOCK);
-                        output.accept(ModBlocks.XENON_ORE);
-                        output.accept(ModItems.CAESIUM);
-                        output.accept(ModBlocks.CAESIUM_BLOCK);
-                        output.accept(ModBlocks.CAESIUM_ORE);
-                        output.accept(ModItems.BARIUM);
-                        output.accept(ModBlocks.BARIUM_BLOCK);
-                        output.accept(ModBlocks.BARIUM_ORE);
-                        output.accept(ModItems.LANTHANUM);
-                        output.accept(ModBlocks.LANTHANUM_BLOCK);
-                        output.accept(ModBlocks.LANTHANUM_ORE);
-                        output.accept(ModItems.CERIUM);
-                        output.accept(ModBlocks.CERIUM_BLOCK);
-                        output.accept(ModBlocks.CERIUM_ORE);
-                        output.accept(ModItems.PRASEODYMIUM);
-                        output.accept(ModBlocks.PRASEODYMIUM_BLOCK);
-                        output.accept(ModBlocks.PRASEODYMIUM_ORE);
-                        output.accept(ModItems.NEODYMIUM);
-                        output.accept(ModBlocks.NEODYMIUM_BLOCK);
-                        output.accept(ModBlocks.NEODYMIUM_ORE);
-                        output.accept(ModItems.PROMETHIUM);
-                        output.accept(ModBlocks.PROMETHIUM_BLOCK);
-                        output.accept(ModBlocks.PROMETHIUM_ORE);
-                        output.accept(ModItems.SAMARIUM);
-                        output.accept(ModBlocks.SAMARIUM_BLOCK);
-                        output.accept(ModBlocks.SAMARIUM_ORE);
-                        output.accept(ModItems.EUROPIUM);
-                        output.accept(ModBlocks.EUROPIUM_BLOCK);
-                        output.accept(ModBlocks.EUROPIUM_ORE);
-                        output.accept(ModItems.GADOLINIUM);
-                        output.accept(ModBlocks.GADOLINIUM_BLOCK);
-                        output.accept(ModBlocks.GADOLINIUM_ORE);
-                        output.accept(ModItems.TERBIUM);
-                        output.accept(ModBlocks.TERBIUM_BLOCK);
-                        output.accept(ModBlocks.TERBIUM_ORE);
-                        output.accept(ModItems.DYSPROSIUM);
-                        output.accept(ModBlocks.DYSPROSIUM_BLOCK);
-                        output.accept(ModBlocks.DYSPROSIUM_ORE);
-                        output.accept(ModItems.HOLMIUM);
-                        output.accept(ModBlocks.HOLMIUM_BLOCK);
-                        output.accept(ModBlocks.HOLMIUM_ORE);
-                        output.accept(ModItems.ERBIUM);
-                        output.accept(ModBlocks.ERBIUM_BLOCK);
-                        output.accept(ModBlocks.ERBIUM_ORE);
-                        output.accept(ModItems.THULIUM);
-                        output.accept(ModBlocks.THULIUM_ORE);
-                        output.accept(ModBlocks.THULIUM_BLOCK);
-                        output.accept(ModItems.YTTERBIUM);
-                        output.accept(ModBlocks.YTTERBIUM_BLOCK);
-                        output.accept(ModBlocks.YTTERBIUM_ORE);
-                        output.accept(ModItems.LUTETIUM);
-                        output.accept(ModBlocks.LUTETIUM_BLOCK);
-                        output.accept(ModBlocks.LUTETIUM_ORE);
-                        output.accept(ModItems.RAW_HAFNIUM);
-                        output.accept(ModItems.HAFNIUM_INGOT);
-                        output.accept(ModBlocks.RAW_HAFNIUM_BLOCK);
-                        output.accept(ModBlocks.HAFNIUM_BLOCK);
-                        output.accept(ModBlocks.HAFNIUM_ORE);
-                        output.accept(ModItems.RAW_TANTALUM);
-                        output.accept(ModItems.TANTALUM_INGOT);
-                        output.accept(ModBlocks.RAW_TANTALUM_BLOCK);
-                        output.accept(ModBlocks.TANTALUM_BLOCK);
-                        output.accept(ModBlocks.TANTALUM_ORE);
-                        output.accept(ModItems.RAW_TUNGSTEN);
-                        output.accept(ModItems.TUNGSTEN_INGOT);
-                        output.accept(ModBlocks.RAW_TUNGSTEN_BLOCK);
-                        output.accept(ModBlocks.TUNGSTEN_BLOCK);
-                        output.accept(ModBlocks.TUNGSTEN_ORE);
-                        output.accept(ModItems.RAW_RHENIUM);
-                        output.accept(ModItems.RHENIUM_INGOT);
-                        output.accept(ModBlocks.RAW_RHENIUM_BLOCK);
-                        output.accept(ModBlocks.RHENIUM_BLOCK);
-                        output.accept(ModBlocks.RHENIUM_ORE);
-                        output.accept(ModItems.RAW_OSMIUM);
-                        output.accept(ModItems.OSMIUM_INGOT);
-                        output.accept(ModBlocks.RAW_OSMIUM_BLOCK);
-                        output.accept(ModBlocks.OSMIUM_BLOCK);
-                        output.accept(ModBlocks.OSMIUM_ORE);
-                        output.accept(ModItems.RAW_IRIDIUM);
-                        output.accept(ModItems.IRIDIUM_INGOT);
-                        output.accept(ModBlocks.RAW_IRIDIUM_BLOCK);
-                        output.accept(ModBlocks.IRIDIUM_BLOCK);
-                        output.accept(ModBlocks.IRIDIUM_ORE);
-                        output.accept(ModItems.PLATINUM);
-                        output.accept(ModBlocks.PLATINUM_BLOCK);
-                        output.accept(ModBlocks.PLATINUM_ORE);
-                        output.accept(Items.RAW_GOLD);
-                        output.accept(Items.GOLD_INGOT);
-                        output.accept(Blocks.RAW_GOLD_BLOCK);
-                        output.accept(Blocks.GOLD_BLOCK);
-                        output.accept(Blocks.GOLD_ORE);
-                        output.accept(ModItems.THALLIUM);
-                        output.accept(ModBlocks.THALLIUM_BLOCK);
-                        output.accept(ModBlocks.THALLIUM_ORE);
-                        output.accept(ModItems.LEAD);
-                        output.accept(ModBlocks.LEAD_BLOCK);
-                        output.accept(ModBlocks.LEAD_ORE);
-                        output.accept(ModItems.BISMUTH);
-                        output.accept(ModBlocks.BISMUTH_BLOCK);
-                        output.accept(ModBlocks.BISMUTH_ORE);
-                        output.accept(ModItems.POLONIUM);
-                        output.accept(ModBlocks.POLONIUM_BLOCK);
-                        output.accept(ModBlocks.POLONIUM_ORE);
-                        output.accept(ModItems.ASTATINE);
-                        output.accept(ModBlocks.ASTATINE_BLOCK);
-                        output.accept(ModBlocks.ASTATINE_ORE);
-                        output.accept(ModItems.RADON);
-                        output.accept(ModBlocks.RADON_BLOCK);
-                        output.accept(ModBlocks.RADON_ORE);
-                        output.accept(ModItems.FRANCIUM);
-                        output.accept(ModBlocks.FRANCIUM_BLOCK);
-                        output.accept(ModBlocks.FRANCIUM_ORE);
-                        output.accept(ModItems.RADIUM);
-                        output.accept(ModBlocks.RADIUM_BLOCK);
-                        output.accept(ModBlocks.RADIUM_ORE);
-                        output.accept(ModItems.ACTINIUM);
-                        output.accept(ModBlocks.ACTINIUM_BLOCK);
-                        output.accept(ModBlocks.ACTINIUM_ORE);
-                        output.accept(ModItems.THORIUM);
-                        output.accept(ModBlocks.THORIUM_BLOCK);
-                        output.accept(ModBlocks.THORIUM_ORE);
-                        output.accept(ModItems.PROTACTINIUM);
-                        output.accept(ModBlocks.PROTACTINIUM_BLOCK);
-                        output.accept(ModBlocks.PROTACTINIUM_ORE);
-                        output.accept(ModItems.URANIUM);
-                        output.accept(ModBlocks.URANIUM_BLOCK);
-                        output.accept(ModBlocks.URANIUM_ORE);
-                        output.accept(ModItems.NEPTUNIUM);
-                        output.accept(ModBlocks.NEPTUNIUM_BLOCK);
-                        output.accept(ModBlocks.NEPTUNIUM_ORE);
-                        output.accept(ModItems.PLUTONIUM);
-                        output.accept(ModBlocks.PLUTONIUM_BLOCK);
-                        output.accept(ModBlocks.PLUTONIUM_ORE);
-                        output.accept(ModItems.AMERICIUM);
-                        output.accept(ModBlocks.AMERICIUM_BLOCK);
-                        output.accept(ModBlocks.AMERICIUM_ORE);
-                        output.accept(ModItems.CURIUM);
-                        output.accept(ModBlocks.CURIUM_BLOCK);
-                        output.accept(ModBlocks.CURIUM_ORE);
-                        output.accept(ModItems.BERKELIUM);
-                        output.accept(ModBlocks.BERKELIUM_BLOCK);
-                        output.accept(ModBlocks.BERKELIUM_ORE);
-                        output.accept(ModItems.CALIFORNIUM);
-                        output.accept(ModBlocks.CALIFORNIUM_BLOCK);
-                        output.accept(ModBlocks.CALIFORNIUM_ORE);
-                        output.accept(ModItems.EINSTEINIUM);
-                        output.accept(ModBlocks.EINSTEINIUM_BLOCK);
-                        output.accept(ModBlocks.EINSTEINIUM_ORE);
-                        output.accept(ModItems.FERMIUM);
-                        output.accept(ModBlocks.FERMIUM_BLOCK);
-                        output.accept(ModBlocks.FERMIUM_ORE);
-                        output.accept(ModItems.MENDELEVIUM);
-                        output.accept(ModBlocks.MENDELEVIUM_ORE);
-                        output.accept(ModBlocks.MENDELEVIUM_BLOCK);
-                        output.accept(ModItems.NOBELIUM);
-                        output.accept(ModBlocks.NOBELIUM_BLOCK);
-                        output.accept(ModBlocks.NOBELIUM_ORE);
-                        output.accept(ModItems.LAWRENCIUM);
-                        output.accept(ModBlocks.LAWRENCIUM_BLOCK);
-                        output.accept(ModBlocks.LAWRENCIUM_ORE);
-                        output.accept(ModItems.RUTHERFORDIUM);
-                        output.accept(ModBlocks.RUTHERFORDIUM_BLOCK);
-                        output.accept(ModBlocks.RUTHERFORDIUM_ORE);
-                        output.accept(ModItems.DUBNIUM);
-                        output.accept(ModBlocks.DUBNIUM_BLOCK);
-                        output.accept(ModBlocks.DUBNIUM_ORE);
-                        output.accept(ModItems.SEABORGIUM);
-                        output.accept(ModBlocks.SEABORGIUM_BLOCK);
-                        output.accept(ModBlocks.SEABORGIUM_ORE);
-                        output.accept(ModItems.BOHRIUM);
-                        output.accept(ModBlocks.BOHRIUM_BLOCK);
-                        output.accept(ModBlocks.BOHRIUM_ORE);
-                        output.accept(ModItems.HASSIUM);
-                        output.accept(ModBlocks.HASSIUM_BLOCK);
-                        output.accept(ModBlocks.HASSIUM_ORE);
-                        output.accept(ModItems.MEITNERIUM);
-                        output.accept(ModBlocks.MEITNERIUM_BLOCK);
-                        output.accept(ModBlocks.MEITNERIUM_ORE);
-                        output.accept(ModItems.DARMSTADTIUM);
-                        output.accept(ModBlocks.DARMSTADTIUM_BLOCK);
-                        output.accept(ModBlocks.DARMSTADTIUM_ORE);
-                        output.accept(ModItems.ROENTGENIUM);
-                        output.accept(ModBlocks.ROENTGENIUM_BLOCK);
-                        output.accept(ModBlocks.ROENTGENIUM_ORE);
-                        output.accept(ModItems.COPERNICIUM);
-                        output.accept(ModBlocks.COPERNICIUM_BLOCK);
-                        output.accept(ModBlocks.COPERNICIUM_ORE);
-                        output.accept(ModItems.NIHONIUM);
-                        output.accept(ModBlocks.NIHONIUM_BLOCK);
-                        output.accept(ModBlocks.NIHONIUM_ORE);
-                        output.accept(ModItems.FLEROVIUM);
-                        output.accept(ModBlocks.FLEROVIUM_BLOCK);
-                        output.accept(ModBlocks.FLEROVIUM_ORE);
-                        output.accept(ModItems.MOSCOVIUM);
-                        output.accept(ModBlocks.MOSCOVIUM_BLOCK);
-                        output.accept(ModBlocks.MOSCOVIUM_ORE);
-                        output.accept(ModItems.LIVERMORIUM);
-                        output.accept(ModBlocks.LIVERMORIUM_BLOCK);
-                        output.accept(ModBlocks.LIVERMORIUM_ORE);
-                        output.accept(ModItems.TENNESSINE);
-                        output.accept(ModBlocks.TENNESSINE_BLOCK);
-                        output.accept(ModBlocks.TENNESSINE_ORE);
-                        output.accept(ModItems.OGANESSON);
-                        output.accept(ModBlocks.OGANESSON_BLOCK);
-                        output.accept(ModBlocks.OGANESSON_ORE);
-
-                    }).build());
-
-    public static final Supplier<CreativeModeTab> ALKALI_METALS = CREATIVE_MODE_TAB.register("alkali_metals",
-            () -> CreativeModeTab.builder().icon(() -> new ItemStack(ModItems.LITHIUM.get()))
-                    .withTabsBefore(ResourceLocation.fromNamespaceAndPath(JSMenu.MOD_ID, "periodicmod"))
-                    .title(Component.translatable("creativetab.jsmenu.alkali_metals"))
-                    .displayItems((itemDisplayParameters, output) -> {
-                        output.accept(ModItems.LITHIUM);
-                        output.accept(ModBlocks.LITHIUM_BLOCK);
-                        output.accept(ModBlocks.LITHIUM_ORE);
-                        output.accept(ModItems.SODIUM);
-                        output.accept(ModBlocks.SODIUM_BLOCK);
-                        output.accept(ModBlocks.SODIUM_ORE);
-                        output.accept(ModItems.POTASSIUM);
-                        output.accept(ModBlocks.POTASSIUM_BLOCK);
-                        output.accept(ModBlocks.POTASSIUM_ORE);
-                        output.accept(ModItems.RUBIDIUM);
-                        output.accept(ModBlocks.RUBIDIUM_BLOCK);
-                        output.accept(ModBlocks.RUBIDIUM_ORE);
-                        output.accept(ModItems.CAESIUM);
-                        output.accept(ModBlocks.CAESIUM_BLOCK);
-                        output.accept(ModBlocks.CAESIUM_ORE);
-                        output.accept(ModItems.FRANCIUM);
-                        output.accept(ModBlocks.FRANCIUM_BLOCK);
-                        output.accept(ModBlocks.FRANCIUM_ORE);
-                    }).build());
-
-    public static final Supplier<CreativeModeTab> ALKALINE_EARTH = CREATIVE_MODE_TAB.register("alkaline_earth",
-            () -> CreativeModeTab.builder().icon(() -> new ItemStack(ModItems.BERYLLIUM.get()))
-                    .withTabsBefore(ResourceLocation.fromNamespaceAndPath(JSMenu.MOD_ID, "alkali_metals"))
-                    .title(Component.translatable("creativetab.jsmenu.alkaline_earth"))
-                    .displayItems((itemDisplayParameters, output) -> {
-                        output.accept(ModItems.BERYLLIUM);
-                        output.accept(ModBlocks.BERYLLIUM_BLOCK);
-                        output.accept(ModBlocks.BERYLLIUM_BLOCK);
-                        output.accept(ModItems.MAGNESIUM);
-                        output.accept(ModBlocks.MAGNESIUM_BLOCK);
-                        output.accept(ModBlocks.MAGNESIUM_BLOCK);
-                        output.accept(ModItems.CALCIUM);
-                        output.accept(ModBlocks.CALCIUM_BLOCK);
-                        output.accept(ModBlocks.CALCIUM_BLOCK);
-                        output.accept(ModItems.STRONTIUM);
-                        output.accept(ModBlocks.STRONTIUM_BLOCK);
-                        output.accept(ModBlocks.STRONTIUM_BLOCK);
-                        output.accept(ModItems.BARIUM);
-                        output.accept(ModBlocks.BARIUM_BLOCK);
-                        output.accept(ModBlocks.BARIUM_BLOCK);
-                        output.accept(ModItems.RADIUM);
-                        output.accept(ModBlocks.RADIUM_BLOCK);
-                        output.accept(ModBlocks.RADIUM_ORE);
-                    }).build());
-
-    public static final Supplier<CreativeModeTab> TRANSITION_METALS = CREATIVE_MODE_TAB.register("transition_metals",
-            () -> CreativeModeTab.builder().icon(() -> new ItemStack(ModBlocks.SCANDIUM_BLOCK.get()))
-                    .withTabsBefore(ResourceLocation.fromNamespaceAndPath(JSMenu.MOD_ID, "alkaline_earth"))
-                    .title(Component.translatable("creativetab.jsmenu.transition_metals"))
-                    .displayItems((itemDisplayParameters, output) -> {
-                        output.accept(ModItems.RAW_SCANDIUM);
-                        output.accept(ModItems.SCANDIUM_INGOT);
-                        output.accept(ModBlocks.RAW_SCANDIUM_BLOCK);
-                        output.accept(ModBlocks.SCANDIUM_BLOCK);
-                        output.accept(ModBlocks.SCANDIUM_ORE);
-                        output.accept(ModItems.RAW_TITANIUM);
-                        output.accept(ModItems.TITANIUM_INGOT);
-                        output.accept(ModBlocks.RAW_TITANIUM_BLOCK);
-                        output.accept(ModBlocks.TITANIUM_BLOCK);
-                        output.accept(ModBlocks.TITANIUM_ORE);
-                        output.accept(ModItems.RAW_VANADIUM);
-                        output.accept(ModItems.VANADIUM_INGOT);
-                        output.accept(ModBlocks.RAW_VANADIUM_BLOCK);
-                        output.accept(ModBlocks.VANADIUM_BLOCK);
-                        output.accept(ModBlocks.VANADIUM_ORE);
-                        output.accept(ModItems.RAW_CHROMIUM);
-                        output.accept(ModItems.CHROMIUM_INGOT);
-                        output.accept(ModBlocks.RAW_CHROMIUM_BLOCK);
-                        output.accept(ModBlocks.CHROMIUM_BLOCK);
-                        output.accept(ModBlocks.CHROMIUM_ORE);
-                        output.accept(ModItems.RAW_MANGANESE);
-                        output.accept(ModItems.MANGANESE_INGOT);
-                        output.accept(ModBlocks.RAW_MANGANESE_BLOCK);
-                        output.accept(ModBlocks.MANGANESE_BLOCK);
-                        output.accept(ModBlocks.MANGANESE_ORE);
-                        output.accept(Items.RAW_IRON);
-                        output.accept(Items.IRON_INGOT);
-                        output.accept(Blocks.RAW_IRON_BLOCK);
-                        output.accept(Blocks.IRON_BLOCK);
-                        output.accept(Blocks.IRON_ORE);
-                        output.accept(ModItems.RAW_COBALT);
-                        output.accept(ModItems.COBALT_INGOT);
-                        output.accept(ModBlocks.RAW_COBALT_BLOCK);
-                        output.accept(ModBlocks.COBALT_BLOCK);
-                        output.accept(ModBlocks.COBALT_ORE);
-                        output.accept(ModItems.RAW_NICKEL);
-                        output.accept(ModItems.NICKEL_INGOT);
-                        output.accept(ModBlocks.RAW_NICKEL_BLOCK);
-                        output.accept(ModBlocks.NICKEL_BLOCK);
-                        output.accept(ModBlocks.NICKEL_ORE);
-                        output.accept(Items.RAW_COPPER);
-                        output.accept(Items.COPPER_INGOT);
-                        output.accept(Blocks.RAW_COPPER_BLOCK);
-                        output.accept(Blocks.COPPER_BLOCK);
-                        output.accept(Blocks.COPPER_ORE);
-                        output.accept(ModItems.RAW_ZINC);
-                        output.accept(ModItems.ZINC_INGOT);
-                        output.accept(ModBlocks.RAW_ZINC_BLOCK);
-                        output.accept(ModBlocks.ZINC_BLOCK);
-                        output.accept(ModBlocks.ZINC_ORE);
-                        output.accept(ModItems.RAW_YTTRIUM);
-                        output.accept(ModItems.YTTRIUM_INGOT);
-                        output.accept(ModBlocks.RAW_YTTRIUM_BLOCK);
-                        output.accept(ModBlocks.YTTRIUM_BLOCK);
-                        output.accept(ModBlocks.YTTRIUM_ORE);
-                        output.accept(ModItems.RAW_ZIRCONIUM);
-                        output.accept(ModItems.ZIRCONIUM_INGOT);
-                        output.accept(ModBlocks.RAW_ZIRCONIUM_BLOCK);
-                        output.accept(ModBlocks.ZIRCONIUM_BLOCK);
-                        output.accept(ModBlocks.ZIRCONIUM_ORE);
-                        output.accept(ModItems.RAW_NIOBIUM);
-                        output.accept(ModItems.NIOBIUM_INGOT);
-                        output.accept(ModBlocks.RAW_NIOBIUM_BLOCK);
-                        output.accept(ModBlocks.NIOBIUM_BLOCK);
-                        output.accept(ModBlocks.NIOBIUM_ORE);
-                        output.accept(ModItems.RAW_MOLYBDENUM);
-                        output.accept(ModItems.MOLYBDENUM_INGOT);
-                        output.accept(ModBlocks.RAW_MOLYBDENUM_BLOCK);
-                        output.accept(ModBlocks.MOLYBDENUM_BLOCK);
-                        output.accept(ModBlocks.MOLYBDENUM_ORE);
-                        output.accept(ModItems.TECHNETIUM);
-                        output.accept(ModBlocks.TECHNETIUM_BLOCK);
-                        output.accept(ModBlocks.TECHNETIUM_ORE);
-                        output.accept(ModItems.RAW_RUTHENIUM);
-                        output.accept(ModItems.RUTHENIUM_INGOT);
-                        output.accept(ModBlocks.RAW_RUTHENIUM_BLOCK);
-                        output.accept(ModBlocks.RUTHENIUM_BLOCK);
-                        output.accept(ModBlocks.RUTHENIUM_ORE);
-                        output.accept(ModItems.RAW_RHODIUM);
-                        output.accept(ModItems.RHODIUM_INGOT);
-                        output.accept(ModBlocks.RAW_RHODIUM_BLOCK);
-                        output.accept(ModBlocks.RHODIUM_BLOCK);
-                        output.accept(ModBlocks.RHODIUM_ORE);
-                        output.accept(ModItems.RAW_PALLADIUM);
-                        output.accept(ModItems.PALLADIUM_INGOT);
-                        output.accept(ModBlocks.RAW_PALLADIUM_BLOCK);
-                        output.accept(ModBlocks.PALLADIUM_BLOCK);
-                        output.accept(ModBlocks.PALLADIUM_ORE);
-                        output.accept(ModItems.RAW_SILVER);
-                        output.accept(ModItems.SILVER_INGOT);
-                        output.accept(ModBlocks.RAW_SILVER_BLOCK);
-                        output.accept(ModBlocks.SILVER_BLOCK);
-                        output.accept(ModBlocks.SILVER_ORE);
-                        output.accept(ModItems.RAW_CADMIUM);
-                        output.accept(ModItems.CADMIUM_INGOT);
-                        output.accept(ModBlocks.RAW_CADMIUM_BLOCK);
-                        output.accept(ModBlocks.CADMIUM_BLOCK);
-                        output.accept(ModBlocks.CADMIUM_ORE);
-                        output.accept(ModItems.RAW_HAFNIUM);
-                        output.accept(ModItems.HAFNIUM_INGOT);
-                        output.accept(ModBlocks.RAW_HAFNIUM_BLOCK);
-                        output.accept(ModBlocks.HAFNIUM_BLOCK);
-                        output.accept(ModBlocks.HAFNIUM_ORE);
-                        output.accept(ModItems.RAW_TANTALUM);
-                        output.accept(ModItems.TANTALUM_INGOT);
-                        output.accept(ModBlocks.RAW_TANTALUM_BLOCK);
-                        output.accept(ModBlocks.TANTALUM_BLOCK);
-                        output.accept(ModBlocks.TANTALUM_ORE);
-                        output.accept(ModItems.RAW_TUNGSTEN);
-                        output.accept(ModItems.TUNGSTEN_INGOT);
-                        output.accept(ModBlocks.RAW_TUNGSTEN_BLOCK);
-                        output.accept(ModBlocks.TUNGSTEN_BLOCK);
-                        output.accept(ModBlocks.TUNGSTEN_ORE);
-                        output.accept(ModItems.RAW_RHENIUM);
-                        output.accept(ModItems.RHENIUM_INGOT);
-                        output.accept(ModBlocks.RAW_RHENIUM_BLOCK);
-                        output.accept(ModBlocks.RHENIUM_BLOCK);
-                        output.accept(ModBlocks.RHENIUM_ORE);
-                        output.accept(ModItems.RAW_OSMIUM);
-                        output.accept(ModItems.OSMIUM_INGOT);
-                        output.accept(ModBlocks.RAW_OSMIUM_BLOCK);
-                        output.accept(ModBlocks.OSMIUM_BLOCK);
-                        output.accept(ModBlocks.OSMIUM_ORE);
-                        output.accept(ModItems.RAW_IRIDIUM);
-                        output.accept(ModItems.IRIDIUM_INGOT);
-                        output.accept(ModBlocks.RAW_IRIDIUM_BLOCK);
-                        output.accept(ModBlocks.IRIDIUM_BLOCK);
-                        output.accept(ModBlocks.IRIDIUM_ORE);
-                        output.accept(ModItems.PLATINUM);
-                        output.accept(ModBlocks.PLATINUM_BLOCK);
-                        output.accept(ModBlocks.PLATINUM_ORE);
-                        output.accept(Items.RAW_GOLD);
-                        output.accept(Items.GOLD_INGOT);
-                        output.accept(Blocks.RAW_GOLD_BLOCK);
-                        output.accept(Blocks.GOLD_BLOCK);
-                        output.accept(Blocks.GOLD_ORE);
-                        output.accept(ModItems.RUTHERFORDIUM);
-                        output.accept(ModBlocks.RUTHERFORDIUM_BLOCK);
-                        output.accept(ModBlocks.RUTHERFORDIUM_ORE);
-                        output.accept(ModItems.DUBNIUM);
-                        output.accept(ModBlocks.DUBNIUM_BLOCK);
-                        output.accept(ModBlocks.DUBNIUM_ORE);
-                        output.accept(ModItems.SEABORGIUM);
-                        output.accept(ModBlocks.SEABORGIUM_BLOCK);
-                        output.accept(ModBlocks.SEABORGIUM_ORE);
-                        output.accept(ModItems.BOHRIUM);
-                        output.accept(ModBlocks.BOHRIUM_BLOCK);
-                        output.accept(ModBlocks.BOHRIUM_ORE);
-                        output.accept(ModItems.HASSIUM);
-                        output.accept(ModBlocks.HASSIUM_BLOCK);
-                        output.accept(ModBlocks.HASSIUM_ORE);
-                        output.accept(ModItems.MEITNERIUM);
-                        output.accept(ModBlocks.MEITNERIUM_BLOCK);
-                        output.accept(ModBlocks.MEITNERIUM_ORE);
-                        output.accept(ModItems.DARMSTADTIUM);
-                        output.accept(ModBlocks.DARMSTADTIUM_BLOCK);
-                        output.accept(ModBlocks.DARMSTADTIUM_ORE);
-                        output.accept(ModItems.ROENTGENIUM);
-                        output.accept(ModBlocks.ROENTGENIUM_BLOCK);
-                        output.accept(ModBlocks.ROENTGENIUM_ORE);
-                        output.accept(ModItems.COPERNICIUM);
-                        output.accept(ModBlocks.COPERNICIUM_BLOCK);
-                        output.accept(ModBlocks.COPERNICIUM_ORE);
-                    }).build());
-
-    public static final Supplier<CreativeModeTab> LANTHANOIDS = CREATIVE_MODE_TAB.register("lanthanoids",
-            () -> CreativeModeTab.builder().icon(() -> new ItemStack(ModItems.LANTHANUM.get()))
-                    .withTabsBefore(ResourceLocation.fromNamespaceAndPath(JSMenu.MOD_ID, "transition_metals"))
-                    .title(Component.translatable("creativetab.jsmenu.lanthanoids"))
-                    .displayItems((itemDisplayParameters, output) -> {
-                        output.accept(ModItems.LANTHANUM);
-                        output.accept(ModBlocks.LANTHANUM_BLOCK);
-                        output.accept(ModBlocks.LANTHANUM_ORE);
-                        output.accept(ModItems.CERIUM);
-                        output.accept(ModBlocks.CERIUM_BLOCK);
-                        output.accept(ModBlocks.CERIUM_ORE);
-                        output.accept(ModItems.PRASEODYMIUM);
-                        output.accept(ModBlocks.PRASEODYMIUM_BLOCK);
-                        output.accept(ModBlocks.PRASEODYMIUM_ORE);
-                        output.accept(ModItems.NEODYMIUM);
-                        output.accept(ModBlocks.NEODYMIUM_BLOCK);
-                        output.accept(ModBlocks.NEODYMIUM_ORE);
-                        output.accept(ModItems.PROMETHIUM);
-                        output.accept(ModBlocks.PROMETHIUM_BLOCK);
-                        output.accept(ModBlocks.PROMETHIUM_ORE);
-                        output.accept(ModItems.SAMARIUM);
-                        output.accept(ModBlocks.SAMARIUM_BLOCK);
-                        output.accept(ModBlocks.SAMARIUM_ORE);
-                        output.accept(ModItems.EUROPIUM);
-                        output.accept(ModBlocks.EUROPIUM_BLOCK);
-                        output.accept(ModBlocks.EUROPIUM_ORE);
-                        output.accept(ModItems.GADOLINIUM);
-                        output.accept(ModBlocks.GADOLINIUM_BLOCK);
-                        output.accept(ModBlocks.GADOLINIUM_ORE);
-                        output.accept(ModItems.TERBIUM);
-                        output.accept(ModBlocks.TERBIUM_BLOCK);
-                        output.accept(ModBlocks.TERBIUM_ORE);
-                        output.accept(ModItems.DYSPROSIUM);
-                        output.accept(ModBlocks.DYSPROSIUM_BLOCK);
-                        output.accept(ModBlocks.DYSPROSIUM_ORE);
-                        output.accept(ModItems.HOLMIUM);
-                        output.accept(ModBlocks.HOLMIUM_BLOCK);
-                        output.accept(ModBlocks.HOLMIUM_ORE);
-                        output.accept(ModItems.ERBIUM);
-                        output.accept(ModBlocks.ERBIUM_BLOCK);
-                        output.accept(ModBlocks.ERBIUM_ORE);
-                        output.accept(ModItems.THULIUM);
-                        output.accept(ModBlocks.THULIUM_ORE);
-                        output.accept(ModBlocks.THULIUM_BLOCK);
-                        output.accept(ModItems.YTTERBIUM);
-                        output.accept(ModBlocks.YTTERBIUM_BLOCK);
-                        output.accept(ModBlocks.YTTERBIUM_ORE);
-                        output.accept(ModItems.LUTETIUM);
-                        output.accept(ModBlocks.LUTETIUM_BLOCK);
-                        output.accept(ModBlocks.LUTETIUM_ORE);
-                    }).build());
-
-    public static final Supplier<CreativeModeTab> ACTINIDES = CREATIVE_MODE_TAB.register("actinides",
-            () -> CreativeModeTab.builder().icon(() -> new ItemStack(ModItems.ACTINIUM.get()))
-                    .withTabsBefore(ResourceLocation.fromNamespaceAndPath(JSMenu.MOD_ID, "lanthanoids"))
-                    .title(Component.translatable("creativetab.jsmenu.actinides"))
-                    .displayItems((itemDisplayParameters, output) -> {
-                        output.accept(ModItems.ACTINIUM);
-                        output.accept(ModBlocks.ACTINIUM_BLOCK);
-                        output.accept(ModBlocks.ACTINIUM_ORE);
-                        output.accept(ModItems.THORIUM);
-                        output.accept(ModBlocks.THORIUM_BLOCK);
-                        output.accept(ModBlocks.THORIUM_ORE);
-                        output.accept(ModItems.PROTACTINIUM);
-                        output.accept(ModBlocks.PROTACTINIUM_BLOCK);
-                        output.accept(ModBlocks.PROTACTINIUM_ORE);
-                        output.accept(ModItems.URANIUM);
-                        output.accept(ModBlocks.URANIUM_BLOCK);
-                        output.accept(ModBlocks.URANIUM_ORE);
-                        output.accept(ModItems.NEPTUNIUM);
-                        output.accept(ModBlocks.NEPTUNIUM_BLOCK);
-                        output.accept(ModBlocks.NEPTUNIUM_ORE);
-                        output.accept(ModItems.PLUTONIUM);
-                        output.accept(ModBlocks.PLUTONIUM_BLOCK);
-                        output.accept(ModBlocks.PLUTONIUM_ORE);
-                        output.accept(ModItems.AMERICIUM);
-                        output.accept(ModBlocks.AMERICIUM_BLOCK);
-                        output.accept(ModBlocks.AMERICIUM_ORE);
-                        output.accept(ModItems.CURIUM);
-                        output.accept(ModBlocks.CURIUM_BLOCK);
-                        output.accept(ModBlocks.CURIUM_ORE);
-                        output.accept(ModItems.BERKELIUM);
-                        output.accept(ModBlocks.BERKELIUM_BLOCK);
-                        output.accept(ModBlocks.BERKELIUM_ORE);
-                        output.accept(ModItems.CALIFORNIUM);
-                        output.accept(ModBlocks.CALIFORNIUM_BLOCK);
-                        output.accept(ModBlocks.CALIFORNIUM_ORE);
-                        output.accept(ModItems.EINSTEINIUM);
-                        output.accept(ModBlocks.EINSTEINIUM_BLOCK);
-                        output.accept(ModBlocks.EINSTEINIUM_ORE);
-                        output.accept(ModItems.FERMIUM);
-                        output.accept(ModBlocks.FERMIUM_BLOCK);
-                        output.accept(ModBlocks.FERMIUM_ORE);
-                        output.accept(ModItems.MENDELEVIUM);
-                        output.accept(ModBlocks.MENDELEVIUM_ORE);
-                        output.accept(ModBlocks.MENDELEVIUM_BLOCK);
-                        output.accept(ModItems.NOBELIUM);
-                        output.accept(ModBlocks.NOBELIUM_BLOCK);
-                        output.accept(ModBlocks.NOBELIUM_ORE);
-                        output.accept(ModItems.LAWRENCIUM);
-                        output.accept(ModBlocks.LAWRENCIUM_BLOCK);
-                        output.accept(ModBlocks.LAWRENCIUM_ORE);
-                    }).build());
-
-    public static final Supplier<CreativeModeTab> POST_TRANSITION_METALS = CREATIVE_MODE_TAB.register("post_transition_metals",
-            () -> CreativeModeTab.builder().icon(() -> new ItemStack(ModItems.ALUMINUM.get()))
-                    .withTabsBefore(ResourceLocation.fromNamespaceAndPath(JSMenu.MOD_ID, "actinides"))
-                    .title(Component.translatable("creativetab.jsmenu.post_transition_metals"))
-                    .displayItems((itemDisplayParameters, output) -> {
-                        output.accept(ModItems.ALUMINUM);
-                        output.accept(ModBlocks.ALUMINUM_BLOCK);
-                        output.accept(ModBlocks.ALUMINUM_ORE);
-                        output.accept(ModItems.GALLIUM);
-                        output.accept(ModBlocks.GALLIUM_BLOCK);
-                        output.accept(ModBlocks.GALLIUM_ORE);
-                        output.accept(ModItems.INDIUM);
-                        output.accept(ModBlocks.INDIUM_BLOCK);
-                        output.accept(ModBlocks.INDIUM_ORE);
-                        output.accept(ModItems.TIN);
-                        output.accept(ModBlocks.TIN_BLOCK);
-                        output.accept(ModBlocks.TIN_ORE);
-                        output.accept(ModItems.THALLIUM);
-                        output.accept(ModBlocks.THALLIUM_BLOCK);
-                        output.accept(ModBlocks.THALLIUM_ORE);
-                        output.accept(ModItems.LEAD);
-                        output.accept(ModBlocks.LEAD_BLOCK);
-                        output.accept(ModBlocks.LEAD_ORE);
-                        output.accept(ModItems.BISMUTH);
-                        output.accept(ModBlocks.BISMUTH_BLOCK);
-                        output.accept(ModBlocks.BISMUTH_ORE);
-                        output.accept(ModItems.NIHONIUM);
-                        output.accept(ModBlocks.NIHONIUM_BLOCK);
-                        output.accept(ModBlocks.NIHONIUM_ORE);
-                        output.accept(ModItems.FLEROVIUM);
-                        output.accept(ModBlocks.FLEROVIUM_BLOCK);
-                        output.accept(ModBlocks.FLEROVIUM_ORE);
-                        output.accept(ModItems.MOSCOVIUM);
-                        output.accept(ModBlocks.MOSCOVIUM_BLOCK);
-                        output.accept(ModBlocks.MOSCOVIUM_ORE);
-                        output.accept(ModItems.LIVERMORIUM);
-                        output.accept(ModBlocks.LIVERMORIUM_BLOCK);
-                        output.accept(ModBlocks.LIVERMORIUM_ORE);
-                    }).build());
-
-    public static final Supplier<CreativeModeTab> METALLOIDS = CREATIVE_MODE_TAB.register("metalloids",
-            () -> CreativeModeTab.builder().icon(() -> new ItemStack(ModItems.BORON.get()))
-                    .withTabsBefore(ResourceLocation.fromNamespaceAndPath(JSMenu.MOD_ID, "post_transition_metals"))
-                    .title(Component.translatable("creativetab.jsmenu.metalloids"))
-                    .displayItems((itemDisplayParameters, output) -> {
-                        output.accept(ModItems.BORON);
-                        output.accept(ModBlocks.BORON_BLOCK);
-                        output.accept(ModBlocks.BORON_ORE);
-                        output.accept(ModItems.SILICON);
-                        output.accept(ModBlocks.SILICON_BLOCK);
-                        output.accept(ModBlocks.SILICON_ORE);
-                        output.accept(ModItems.GERMANIUM);
-                        output.accept(ModBlocks.GERMANIUM_BLOCK);
-                        output.accept(ModBlocks.GERMANIUM_ORE);
-                        output.accept(ModItems.ARSENIC);
-                        output.accept(ModBlocks.ARSENIC_BLOCK);
-                        output.accept(ModBlocks.ARSENIC_ORE);
-                        output.accept(ModItems.ANTIMONY);
-                        output.accept(ModBlocks.ANTIMONY_BLOCK);
-                        output.accept(ModBlocks.ANTIMONY_ORE);
-                        output.accept(ModItems.TELLURIUM);
-                        output.accept(ModBlocks.TELLURIUM_BLOCK);
-                        output.accept(ModBlocks.TELLURIUM_ORE);
-                        output.accept(ModItems.POLONIUM);
-                        output.accept(ModBlocks.POLONIUM_BLOCK);
-                        output.accept(ModBlocks.POLONIUM_ORE);
-                    }).build());
-
-    public static final Supplier<CreativeModeTab> OTHER_NON_METALS = CREATIVE_MODE_TAB.register("other_non_metals",
-            () -> CreativeModeTab.builder().icon(() -> new ItemStack(ModItems.HYDROGEN.get()))
-                    .withTabsBefore(ResourceLocation.fromNamespaceAndPath(JSMenu.MOD_ID, "metalloids"))
-                    .title(Component.translatable("creativetab.jsmenu.other_non_metals"))
-                    .displayItems((itemDisplayParameters, output) -> {
-                        output.accept(ModItems.HYDROGEN);
-                        output.accept(ModBlocks.HYDROGEN_BLOCK);
-                        output.accept(ModBlocks.HYDROGEN_ORE);
-                        output.accept(ModItems.CARBON);
-                        output.accept(ModBlocks.CARBON_BLOCK);
-                        output.accept(ModBlocks.CARBON_ORE);
-                        output.accept(ModItems.NITROGEN);
-                        output.accept(ModBlocks.NITROGEN_BLOCK);
-                        output.accept(ModBlocks.NITROGEN_ORE);
-                        output.accept(ModItems.OXYGEN);
-                        output.accept(ModBlocks.OXYGEN_BLOCK);
-                        output.accept(ModBlocks.OXYGEN_ORE);
-                        output.accept(ModItems.PHOSPHORUS);
-                        output.accept(ModBlocks.PHOSPHORUS_BLOCK);
-                        output.accept(ModBlocks.PHOSPHORUS_ORE);
-                        output.accept(ModItems.SULFUR);
-                        output.accept(ModBlocks.SULFUR_BLOCK);
-                        output.accept(ModBlocks.SULFUR_ORE);
-                        output.accept(ModItems.SELENIUM);
-                        output.accept(ModBlocks.SELENIUM_BLOCK);
-                        output.accept(ModBlocks.SELENIUM_ORE);
-                    }).build());
-
-    public static final Supplier<CreativeModeTab> HALOGENS = CREATIVE_MODE_TAB.register("halogens",
-            () -> CreativeModeTab.builder().icon(() -> new ItemStack(ModItems.FLUORINE.get()))
-                    .withTabsBefore(ResourceLocation.fromNamespaceAndPath(JSMenu.MOD_ID, "other_non_metals"))
-                    .title(Component.translatable("creativetab.jsmenu.halogens"))
-                    .displayItems((itemDisplayParameters, output) -> {
-                        output.accept(ModItems.FLUORINE);
-                        output.accept(ModBlocks.FLUORINE_BLOCK);
-                        output.accept(ModBlocks.FLUORINE_ORE);
-                        output.accept(ModItems.CHLORINE);
-                        output.accept(ModBlocks.CHLORINE_BLOCK);
-                        output.accept(ModBlocks.CHLORINE_ORE);
-                        output.accept(ModItems.IODINE);
-                        output.accept(ModBlocks.IODINE_BLOCK);
-                        output.accept(ModBlocks.IODINE_ORE);
-                        output.accept(ModItems.ASTATINE);
-                        output.accept(ModBlocks.ASTATINE_BLOCK);
-                        output.accept(ModBlocks.ASTATINE_ORE);
-                        output.accept(ModItems.TENNESSINE);
-                        output.accept(ModBlocks.TENNESSINE_BLOCK);
-                        output.accept(ModBlocks.TENNESSINE_ORE);
-                    }).build());
-
-    public static final Supplier<CreativeModeTab> NOBLE_GASSES = CREATIVE_MODE_TAB.register("noble_gasses",
-            () -> CreativeModeTab.builder().icon(() -> new ItemStack(ModItems.HELIUM.get()))
-                    .withTabsBefore(ResourceLocation.fromNamespaceAndPath(JSMenu.MOD_ID, "halogens"))
-                    .title(Component.translatable("creativetab.jsmenu.noble_gasses"))
-                    .displayItems((itemDisplayParameters, output) -> {
-                        output.accept(ModItems.HELIUM);
-                        output.accept(ModBlocks.HELIUM_BLOCK);
-                        output.accept(ModItems.NEON);
-                        output.accept(ModBlocks.NEON_BLOCK);
-                        output.accept(ModBlocks.NEON_ORE);
-                        output.accept(ModItems.ARGON);
-                        output.accept(ModBlocks.ARGON_BLOCK);
-                        output.accept(ModBlocks.ARGON_ORE);
-                        output.accept(ModItems.KRYPTON);
-                        output.accept(ModBlocks.KRYPTON_BLOCK);
-                        output.accept(ModBlocks.KRYPTON_ORE);
-                        output.accept(ModItems.XENON);
-                        output.accept(ModBlocks.XENON_BLOCK);
-                        output.accept(ModBlocks.XENON_ORE);
-                        output.accept(ModItems.RADON);
-                        output.accept(ModBlocks.RADON_BLOCK);
-                        output.accept(ModBlocks.RADON_ORE);
-                        output.accept(ModItems.OGANESSON);
-                        output.accept(ModBlocks.OGANESSON_BLOCK);
-                        output.accept(ModBlocks.OGANESSON_ORE);
-                    }).build());
-
-    public static final Supplier<CreativeModeTab> NFL_TEAMS = CREATIVE_MODE_TAB.register("nfl_teams",
-            () -> CreativeModeTab.builder().icon(() -> new ItemStack(ModBlocks.NFL_SEATTLE.get()))
-                    .withTabsBefore(ResourceLocation.fromNamespaceAndPath(JSMenu.MOD_ID, "noble_gasses"))
-                    .title(Component.translatable("creativetab.jsmenu.nfl_teams"))
+    public static final Supplier<CreativeModeTab> SPORTS_UPDATE = CREATIVE_MODE_TAB.register("sports_update",
+            () -> CreativeModeTab.builder().icon(() -> new ItemStack(ModBlocks.MLB_LA1.get()))
+                    .withTabsBefore(ResourceLocation.fromNamespaceAndPath(JSMenu.MOD_ID, "fluids_addition"))
+                    .title(Component.translatable("creativetab.jsmenu.sports_update"))
                     .displayItems((itemDisplayParameters, output) -> {
                         output.accept(ModBlocks.NFL_SEATTLE);
                         output.accept(ModBlocks.NFL_LA1);
@@ -1483,13 +512,6 @@ public class ModCreativeModeTabs {
                         output.accept(ModBlocks.NFL_BUFFALO);
                         output.accept(ModBlocks.NFL_MIAMI);
                         output.accept(ModBlocks.NFL_NY2);
-                    }).build());
-
-    public static final Supplier<CreativeModeTab> NBA_TEAMS = CREATIVE_MODE_TAB.register("nba_teams",
-            () -> CreativeModeTab.builder().icon(() -> new ItemStack(ModBlocks.NBA_OKC.get()))
-                    .withTabsBefore(ResourceLocation.fromNamespaceAndPath(JSMenu.MOD_ID, "nfl_teams"))
-                    .title(Component.translatable("creativetab.jsmenu.nba_teams"))
-                    .displayItems((itemDisplayParameters, output) -> {
                         output.accept(ModBlocks.NBA_BOSTON);
                         output.accept(ModBlocks.NBA_NY);
                         output.accept(ModBlocks.NBA_PHILADELPHIA);
@@ -1520,13 +542,6 @@ public class ModCreativeModeTabs {
                         output.accept(ModBlocks.NBA_DALLAS);
                         output.accept(ModBlocks.NBA_SA);
                         output.accept(ModBlocks.NBA_NO);
-                    }).build());
-
-    public static final Supplier<CreativeModeTab> NHL_TEAMS = CREATIVE_MODE_TAB.register("nhl_teams",
-            () -> CreativeModeTab.builder().icon(() -> new ItemStack(ModBlocks.NHL_FLORIDA.get()))
-                    .withTabsBefore(ResourceLocation.fromNamespaceAndPath(JSMenu.MOD_ID, "nba_teams"))
-                    .title(Component.translatable("creativetab.jsmenu.nhl_teams"))
-                    .displayItems((itemDisplayParameters, output) -> {
                         output.accept(ModBlocks.NHL_TORONTO);
                         output.accept(ModBlocks.NHL_TB);
                         output.accept(ModBlocks.NHL_FLORIDA);
@@ -1559,13 +574,6 @@ public class ModCreativeModeTabs {
                         output.accept(ModBlocks.NHL_ANAHEIM);
                         output.accept(ModBlocks.NHL_SEATTLE);
                         output.accept(ModBlocks.NHL_SJ);
-                    }).build());
-
-    public static final Supplier<CreativeModeTab> MLB_TEAMS = CREATIVE_MODE_TAB.register("mlb_teams",
-            () -> CreativeModeTab.builder().icon(() -> new ItemStack(ModBlocks.MLB_LA1.get()))
-                    .withTabsBefore(ResourceLocation.fromNamespaceAndPath(JSMenu.MOD_ID, "nhl_teams"))
-                    .title(Component.translatable("creativetab.jsmenu.mlb_teams"))
-                    .displayItems((itemDisplayParameters, output) -> {
                         output.accept(ModBlocks.MLB_TORONTO);
                         output.accept(ModBlocks.MLB_NY1);
                         output.accept(ModBlocks.MLB_BOSTON);
@@ -1596,13 +604,6 @@ public class ModCreativeModeTabs {
                         output.accept(ModBlocks.MLB_SF);
                         output.accept(ModBlocks.MLB_ARIZONA);
                         output.accept(ModBlocks.MLB_COLORADO);
-                    }).build());
-
-    public static final Supplier<CreativeModeTab> MLS_TEAMS = CREATIVE_MODE_TAB.register("mls_teams",
-            () -> CreativeModeTab.builder().icon(() -> new ItemStack(ModBlocks.MLS_IMCF.get()))
-                    .withTabsBefore(ResourceLocation.fromNamespaceAndPath(JSMenu.MOD_ID, "mlb_teams"))
-                    .title(Component.translatable("creativetab.jsmenu.mls_teams"))
-                    .displayItems((itemDisplayParameters, output) -> {
                         output.accept(ModBlocks.MLS_PU);
                         output.accept(ModBlocks.MLS_FCC);
                         output.accept(ModBlocks.MLS_IMCF);
@@ -1633,13 +634,6 @@ public class ModCreativeModeTabs {
                         output.accept(ModBlocks.MLS_SLCSC);
                         output.accept(ModBlocks.MLS_LAG);
                         output.accept(ModBlocks.MLS_SKC);
-                    }).build());
-
-    public static final Supplier<CreativeModeTab> SCOREBOARD_BLOCKS = CREATIVE_MODE_TAB.register("scoreboard_blocks",
-            () -> CreativeModeTab.builder().icon(() -> new ItemStack(Items.BOOK))
-                    .withTabsBefore(ResourceLocation.fromNamespaceAndPath(JSMenu.MOD_ID, "mls_teams"))
-                    .title(Component.translatable("creativetab.jsmenu.scoreboard_blocks"))
-                    .displayItems((itemDisplayParameters, output) -> {
                         output.accept(ModBlocks.ONE);
                         output.accept(ModBlocks.TWO);
                         output.accept(ModBlocks.THREE);
@@ -1654,10 +648,140 @@ public class ModCreativeModeTabs {
                         output.accept(ModBlocks.LOADED_BASE);
                     }).build());
 
-    public static final Supplier<CreativeModeTab> FRUITS = CREATIVE_MODE_TAB.register("fruits",
+    public static final Supplier<CreativeModeTab> CONCRETE_ADDITION = CREATIVE_MODE_TAB.register("concrete_addition",
+            () -> CreativeModeTab.builder().icon(() -> new ItemStack(Blocks.RED_CONCRETE))
+                    .withTabsBefore(ResourceLocation.fromNamespaceAndPath(JSMenu.MOD_ID, "sports_update"))
+                    .title(Component.translatable("creativetab.jsmenu.concrete_addition"))
+                    .displayItems((itemDisplayParameters, output) -> {
+                        output.accept(ModBlocks.PURPLE_HEART_CONCRETE.get());
+                        output.accept(ModBlocks.ROBIN_EGG_BLUE_CONCRETE.get());
+                        output.accept(ModBlocks.VIVID_TANGERINE_CONCRETE.get());
+                        output.accept(ModBlocks.NEON_CARROT_CONCRETE.get());
+                        output.accept(ModBlocks.CARIBBEAN_GREEN_CONCRETE.get());
+                        output.accept(ModBlocks.SILVER_CONCRETE.get());
+                        output.accept(ModBlocks.GRANNY_SMITH_APPLE_CONCRETE.get());
+                        output.accept(ModBlocks.GREEN_YELLOW_CONCRETE.get());
+                        output.accept(ModBlocks.VIOLET_RED_CONCRETE.get());
+                        output.accept(ModBlocks.LASER_LEMON_CONCRETE.get());
+                        output.accept(ModBlocks.SALMON_CONCRETE.get());
+                        output.accept(ModBlocks.ALMOND_CONCRETE.get());
+                        output.accept(ModBlocks.BEAVER_CONCRETE.get());
+                        output.accept(ModBlocks.MOUNTAIN_MEADOW_CONCRETE.get());
+                        output.accept(ModBlocks.MAUVELOUS_CONCRETE.get());
+                        output.accept(ModBlocks.PINE_GREEN_CONCRETE.get());
+                        output.accept(ModBlocks.WISTERIA_CONCRETE.get());
+                        output.accept(ModBlocks.INDIGO_CONCRETE.get());
+                        output.accept(ModBlocks.PINK_SHERBET_CONCRETE.get());
+                        output.accept(ModBlocks.WILD_WATERMELON_CONCRETE.get());
+                        output.accept(ModBlocks.SPRING_GREEN_CONCRETE.get());
+                        output.accept(ModBlocks.AQUAMARINE_CONCRETE.get());
+                        output.accept(ModBlocks.SHOCKING_PINK_CONCRETE.get());
+                        output.accept(ModBlocks.LAVENDER_CONCRETE.get());
+                        output.accept(ModBlocks.SEPIA_CONCRETE.get());
+                        output.accept(ModBlocks.COPPER_CONCRETE.get());
+                        output.accept(ModBlocks.BURNT_ORANGE_CONCRETE.get());
+                        output.accept(ModBlocks.MANGO_TANGO_CONCRETE.get());
+                        output.accept(ModBlocks.TIMBERWOLF_CONCRETE.get());
+                        output.accept(ModBlocks.HOT_MAGENTA_CONCRETE.get());
+                        output.accept(ModBlocks.RAZZMATAZZ_CONCRETE.get());
+                        output.accept(ModBlocks.CADET_BLUE_CONCRETE.get());
+                        output.accept(ModBlocks.WILD_STRAWBERRY_CONCRETE.get());
+                        output.accept(ModBlocks.SCREAMIN_GREEN_CONCRETE.get());
+                        output.accept(ModBlocks.OUTRAGEOUS_ORANGE_CONCRETE.get());
+                        output.accept(ModBlocks.CHESTNUT_CONCRETE.get());
+                        output.accept(ModBlocks.SEA_GREEN_CONCRETE.get());
+                        output.accept(ModBlocks.CANARY_CONCRETE.get());
+                        output.accept(ModBlocks.APRICOT_CONCRETE.get());
+                        output.accept(ModBlocks.DENIM_CONCRETE.get());
+                        output.accept(ModBlocks.FERN_CONCRETE.get());
+                        output.accept(ModBlocks.FUZZY_WUZZY_CONCRETE.get());
+                        output.accept(ModBlocks.BLUE_GREEN_CONCRETE.get());
+                        output.accept(ModBlocks.NAVY_BLUE_CONCRETE.get());
+                        output.accept(ModBlocks.RED_ORANGE_CONCRETE.get());
+                        output.accept(ModBlocks.ASPARAGUS_CONCRETE.get());
+                        output.accept(ModBlocks.CERISE_CONCRETE.get());
+                        output.accept(ModBlocks.YELLOW_GREEN_CONCRETE.get());
+                        output.accept(ModBlocks.OUTER_SPACE_CONCRETE.get());
+                        output.accept(ModBlocks.SUNSET_ORANGE_CONCRETE.get());
+                        output.accept(ModBlocks.BLUE_VIOLET_CONCRETE.get());
+                        output.accept(ModBlocks.PACIFIC_BLUE_CONCRETE.get());
+                        output.accept(ModBlocks.TURQUOISE_BLUE_CONCRETE.get());
+                        output.accept(ModBlocks.CARNATION_PINK_CONCRETE.get());
+                        output.accept(ModBlocks.SKY_BLUE_CONCRETE.get());
+                        output.accept(ModBlocks.RADICAL_RED_CONCRETE.get());
+                        output.accept(ModBlocks.PERIWINKLE_CONCRETE.get());
+                        output.accept(ModBlocks.VIVID_PURPLE_CONCRETE.get());
+                        output.accept(ModBlocks.YELLOW_ORANGE_CONCRETE.get());
+                        output.accept(ModBlocks.UNMELLOW_YELLOW_CONCRETE.get());
+                        output.accept(ModBlocks.PLUM_CONCRETE.get());
+                        output.accept(ModBlocks.GOLD_CONCRETE.get());
+                        output.accept(ModBlocks.PIGGY_PINK_CONCRETE.get());
+                        output.accept(ModBlocks.RAW_SIENNA_CONCRETE.get());
+                        output.accept(ModBlocks.RED_VIOLET_CONCRETE.get());
+                        output.accept(ModBlocks.RAZZLE_DAZZLE_ROSE_CONCRETE.get());
+                        output.accept(ModBlocks.JAZZBERRY_JAM_CONCRETE.get());
+                        output.accept(ModBlocks.PURPLE_PIZZAZZ_CONCRETE.get());
+                        output.accept(ModBlocks.TUMBLEWEED_CONCRETE.get());
+                        output.accept(ModBlocks.INCHWORM_CONCRETE.get());
+                        output.accept(ModBlocks.MANATEE_CONCRETE.get());
+                        output.accept(ModBlocks.MAROON_CONCRETE.get());
+                        output.accept(ModBlocks.TICKLE_ME_PINK_CONCRETE.get());
+                        output.accept(ModBlocks.OLIVE_GREEN_CONCRETE.get());
+                        output.accept(ModBlocks.CORNFLOWER_CONCRETE.get());
+                        output.accept(ModBlocks.PURPLE_MOUNTAINS_MAJESTY_CONCRETE.get());
+                        output.accept(ModBlocks.BANANA_MANIA_CONCRETE.get());
+                        output.accept(ModBlocks.TROPICAL_RAIN_FOREST_CONCRETE.get());
+                        output.accept(ModBlocks.DESERT_SAND_CONCRETE.get());
+                        output.accept(ModBlocks.CERULEAN_CONCRETE.get());
+                        output.accept(ModBlocks.ROYAL_PURPLE_CONCRETE.get());
+                        output.accept(ModBlocks.PEACH_CONCRETE.get());
+                        output.accept(ModBlocks.SCARLET_CONCRETE.get());
+                        output.accept(ModBlocks.SHAMROCK_CONCRETE.get());
+                        output.accept(ModBlocks.MELON_CONCRETE.get());
+                        output.accept(ModBlocks.ANTIQUE_BRASS_CONCRETE.get());
+                        output.accept(ModBlocks.BLUSH_CONCRETE.get());
+                        output.accept(ModBlocks.WILD_BLUE_YONDER_CONCRETE.get());
+                        output.accept(ModBlocks.SHADOW_CONCRETE.get());
+                        output.accept(ModBlocks.BURNT_SIENNA_CONCRETE.get());
+                        output.accept(ModBlocks.TAN_CONCRETE.get());
+                        output.accept(ModBlocks.BITTERSWEET_CONCRETE.get());
+                        output.accept(ModBlocks.BLUE_BELL_CONCRETE.get());
+                        output.accept(ModBlocks.BLUETIFUL_CONCRETE.get());
+                        output.accept(ModBlocks.COTTON_CANDY_CONCRETE.get());
+                        output.accept(ModBlocks.FUCHSIA_CONCRETE.get());
+                        output.accept(ModBlocks.MACARONI_AND_CHEESE_CONCRETE.get());
+                        output.accept(ModBlocks.ORCHID_CONCRETE.get());
+                        output.accept(ModBlocks.EGGPLANT_CONCRETE.get());
+                        output.accept(ModBlocks.GOLDENROD_CONCRETE.get());
+                        output.accept(ModBlocks.MIDNIGHT_BLUE_CONCRETE.get());
+                        output.accept(ModBlocks.ELECTRIC_LIME_CONCRETE.get());
+                        output.accept(ModBlocks.ATOMIC_TANGERINE_CONCRETE.get());
+                        output.accept(ModBlocks.JUNGLE_GREEN_CONCRETE.get());
+                        output.accept(ModBlocks.MAHOGANY_CONCRETE.get());
+                        output.accept(ModBlocks.PINK_FLAMINGO_CONCRETE.get());
+                        output.accept(ModBlocks.BRICK_RED_CONCRETE.get());
+                        output.accept(ModBlocks.PALE_CYAN_CONCRETE.get());
+                        output.accept(ModBlocks.LIGHT_MAGENTA_CONCRETE.get());
+                        output.accept(ModBlocks.BRIGHT_CYAN_CONCRETE.get());
+                        output.accept(ModBlocks.BRIGHT_GREEN_CONCRETE.get());
+                        output.accept(ModBlocks.BRIGHT_PINK_CONCRETE.get());
+                        output.accept(ModBlocks.DEEP_PURPLE_CONCRETE.get());
+                        output.accept(ModBlocks.LIGHT_PINK_CONCRETE.get());
+                        output.accept(ModBlocks.MINT_GREEN_CONCRETE.get());
+                        output.accept(ModBlocks.PALE_GREEN_CONCRETE.get());
+                        output.accept(ModBlocks.PALE_YELLOW_CONCRETE.get());
+                        output.accept(ModBlocks.PINK_LACE_CHIFFON_CONCRETE.get());
+                        output.accept(ModBlocks.SOFT_BLUE_CONCRETE.get());
+                        output.accept(ModBlocks.SOFT_ORANGE_CONCRETE.get());
+                        output.accept(ModBlocks.SOFT_PURPLE_CONCRETE.get());
+                        output.accept(ModBlocks.SOFT_RED_CONCRETE.get());
+                        output.accept(ModBlocks.ADIRONDACK_BLUE_CONCRETE.get());
+                    }).build());
+
+    public static final Supplier<CreativeModeTab> FRUITS_UPDATE = CREATIVE_MODE_TAB.register("fruits_update",
             () -> CreativeModeTab.builder().icon(() -> new ItemStack(Items.APPLE))
-                    .withTabsBefore(ResourceLocation.fromNamespaceAndPath(JSMenu.MOD_ID, "scoreboard_blocks"))
-                    .title(Component.translatable("creativetab.jsmenu.fruits"))
+                    .withTabsBefore(ResourceLocation.fromNamespaceAndPath(JSMenu.MOD_ID, "concrete_addition"))
+                    .title(Component.translatable("creativetab.jsmenu.fruits_update"))
                     .displayItems((itemDisplayParameters, output) -> {
                         output.accept(ModItems.STRAWBERRY);
                         output.accept(ModItems.RASPBERRY);
@@ -1747,12 +871,12 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.BLACK_MISSION_FIG);
                         output.accept(ModItems.BLACK_VELVET_TAMARIND);
                         output.accept(ModItems.BLACK_DIAMOND_APPLE);
-                    }).build());
+                      }).build());
 
-    public static final Supplier<CreativeModeTab> VEGETABLES = CREATIVE_MODE_TAB.register("vegetables",
+    public static final Supplier<CreativeModeTab> VEGETABLES_UPDATE = CREATIVE_MODE_TAB.register("vegetables_update",
             () -> CreativeModeTab.builder().icon(() -> new ItemStack(Items.BEETROOT))
-                    .withTabsBefore(ResourceLocation.fromNamespaceAndPath(JSMenu.MOD_ID, "fruits"))
-                    .title(Component.translatable("creativetab.jsmenu.vegetables"))
+                    .withTabsBefore(ResourceLocation.fromNamespaceAndPath(JSMenu.MOD_ID, "fruits_update"))
+                    .title(Component.translatable("creativetab.jsmenu.vegetables_update"))
                     .displayItems((itemDisplayParameters, output) -> {
                         output.accept(ModItems.TOMATO);
                         output.accept(ModItems.RED_BELL_PEPPER);
@@ -1851,10 +975,10 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.FORBIDDEN_RICE);
                     }).build());
 
-    public static final Supplier<CreativeModeTab> FLOWERS = CREATIVE_MODE_TAB.register("flowers",
+    public static final Supplier<CreativeModeTab> FLOWERS_UPDATE = CREATIVE_MODE_TAB.register("flowers_update",
             () -> CreativeModeTab.builder().icon(() -> new ItemStack(Items.DANDELION))
-                    .withTabsBefore(ResourceLocation.fromNamespaceAndPath(JSMenu.MOD_ID, "vegetables"))
-                    .title(Component.translatable("creativetab.jsmenu.flowers"))
+                    .withTabsBefore(ResourceLocation.fromNamespaceAndPath(JSMenu.MOD_ID, "vegetables_update"))
+                    .title(Component.translatable("creativetab.jsmenu.flowers_update"))
                     .displayItems((itemDisplayParameters, output) -> {
                         output.accept(ModBlocks.MOUNTAIN_DAISY);
                         output.accept(ModBlocks.SPRING_MORNING);
@@ -1925,6 +1049,139 @@ public class ModCreativeModeTabs {
                         output.accept(ModBlocks.TULIP_GAMEORA);
                         output.accept(ModBlocks.SPRING_TOUCH);
                         output.accept(ModBlocks.ALL_HALLOWS_EVE);
+                    }).build());
+
+    public static final Supplier<CreativeModeTab> SPACE_OF_LIFE_UPDATE = CREATIVE_MODE_TAB.register("space_of_life_update",
+            () -> CreativeModeTab.builder().icon(() -> new ItemStack(StarBlocks.SOLAR_ASH.get()))
+                    .withTabsBefore(ResourceLocation.fromNamespaceAndPath(JSMenu.MOD_ID, "flowers_update"))
+                    .title(Component.translatable("creativetab.jsmenu.space_of_life_update"))
+                    .displayItems((itemDisplayParameters, output) -> {
+                        output.accept(StarBlocks.SOLAR_ASH);
+                        output.accept(StarBlocks.IGNITED_SOLAR_ASH);
+                        output.accept(StarBlocks.SOLAR_STONE);
+                        output.accept(StarBlocks.CORESTONE);
+                        output.accept(ModItems.SOLARITE);
+                        output.accept(StarBlocks.SOLARITE_ORE);
+                        output.accept(StarBlocks.SOLARITE_BLOCK);
+                        output.accept(ModItems.BLAZESTONE);
+                        output.accept(StarBlocks.BLAZESTONE_ORE);
+                        output.accept(StarBlocks.BLAZESTONE_BLOCK);
+                        output.accept(ModItems.RADIANT_CRYSTAL);
+                        output.accept(StarBlocks.RADIANT_CRYSTAL_ORE);
+                        output.accept(StarBlocks.RADIANT_CRYSTAL_BLOCK);
+                        output.accept(ModItems.CORE_FRAGMENT);
+                        output.accept(StarBlocks.CORE_FRAGMENT_ORE);
+                        output.accept(StarBlocks.CORE_FRAGMENT_BLOCK);
+                        output.accept(StarBlocks.FLAREWOOD_LOG);
+                        output.accept(StarBlocks.FLAREWOOD_WOOD);
+                        output.accept(StarBlocks.STRIPPED_FLAREWOOD_LOG);
+                        output.accept(StarBlocks.STRIPPED_FLAREWOOD_WOOD);
+                        output.accept(StarBlocks.FLAREWOOD_PLANKS);
+                        output.accept(StarBlocks.FLAREWOOD_LEAVES);
+                        output.accept(StarBlocks.FLAREWOOD_SAPLING);
+                        output.accept(StarBlocks.FLAREWOOD_STAIRS);
+                        output.accept(StarBlocks.FLAREWOOD_SLAB);
+                        output.accept(StarBlocks.FLAREWOOD_PRESSURE_PLATE);
+                        output.accept(StarBlocks.FLAREWOOD_BUTTON);
+                        output.accept(StarBlocks.FLAREWOOD_FENCE);
+                        output.accept(StarBlocks.FLAREWOOD_FENCE_GATE);
+                        output.accept(StarBlocks.FLAREWOOD_DOOR);
+                        output.accept(StarBlocks.FLAREWOOD_TRAPDOOR);
+                        output.accept(StarBlocks.CORONA_BLOOM_LOG);
+                        output.accept(StarBlocks.CORONA_BLOOM_WOOD);
+                        output.accept(StarBlocks.STRIPPED_CORONA_BLOOM_LOG);
+                        output.accept(StarBlocks.STRIPPED_CORONA_BLOOM_WOOD);
+                        output.accept(StarBlocks.CORONA_BLOOM_PLANKS);
+                        output.accept(StarBlocks.CORONA_BLOOM_LEAVES);
+                        output.accept(StarBlocks.CORONA_BLOOM_SAPLING);
+                        output.accept(StarBlocks.CORONA_BLOOM_STAIRS);
+                        output.accept(StarBlocks.CORONA_BLOOM_SLAB);
+                        output.accept(StarBlocks.CORONA_BLOOM_PRESSURE_PLATE);
+                        output.accept(StarBlocks.CORONA_BLOOM_BUTTON);
+                        output.accept(StarBlocks.CORONA_BLOOM_FENCE);
+                        output.accept(StarBlocks.CORONA_BLOOM_FENCE_GATE);
+                        output.accept(StarBlocks.CORONA_BLOOM_DOOR);
+                        output.accept(StarBlocks.CORONA_BLOOM_TRAPDOOR);
+                        output.accept(ModBlocks.LUNAR_SOIL);
+                        output.accept(ModBlocks.LUNAR_GRASS);
+                        output.accept(ModBlocks.FROZEN_LUNAR_GRASS_BLOCK);
+                        output.accept(ModBlocks.GLOWGRASS);
+                        output.accept(ModBlocks.SHORT_LUNAR_GRASS);
+                        output.accept(ModBlocks.LUNAR_TALLGRASS);
+                        output.accept(ModBlocks.LUNAR_STONE);
+                        output.accept(ModBlocks.INNER_STONE);
+                        output.accept(ModItems.CRISRA);
+                        output.accept(ModBlocks.CRISRA_ORE);
+                        output.accept(ModBlocks.CRISRA_BLOCK);
+                        output.accept(ModItems.LUNAR_GEM);
+                        output.accept(ModBlocks.LUNAR_ORE);
+                        output.accept(ModBlocks.LUNAR_BLOCK);
+                        output.accept(ModItems.GRADIENT_MOON_GEM);
+                        output.accept(ModBlocks.GRADIENT_ORE);
+                        output.accept(ModBlocks.GRADIENT_BLOCK);
+                        output.accept(ModItems.BRAGSTONE);
+                        output.accept(ModBlocks.BRAGSTONE_ORE);
+                        output.accept(ModBlocks.BRAGSTONE_BLOCK);
+                        output.accept(ModBlocks.LUNAR_LOG);
+                        output.accept(ModBlocks.LUNAR_WOOD);
+                        output.accept(ModBlocks.STRIPPED_LUNAR_LOG);
+                        output.accept(ModBlocks.STRIPPED_LUNAR_WOOD);
+                        output.accept(ModBlocks.LUNAR_PLANKS);
+                        output.accept(ModBlocks.LUNAR_LEAVES);
+                        output.accept(ModBlocks.LUNAR_SAPLING);
+                        output.accept(ModBlocks.LUNAR_STAIRS);
+                        output.accept(ModBlocks.LUNAR_SLAB);
+                        output.accept(ModBlocks.LUNAR_PRESSURE_PLATE);
+                        output.accept(ModBlocks.LUNAR_BUTTON);
+                        output.accept(ModBlocks.LUNAR_FENCE);
+                        output.accept(ModBlocks.LUNAR_FENCE_GATE);
+                        output.accept(ModBlocks.LUNAR_DOOR);
+                        output.accept(ModBlocks.LUNAR_TRAPDOOR);
+                        output.accept(ModBlocks.VACUUM_LOG);
+                        output.accept(ModBlocks.VACUUM_WOOD);
+                        output.accept(ModBlocks.STRIPPED_VACUUM_LOG);
+                        output.accept(ModBlocks.STRIPPED_VACUUM_WOOD);
+                        output.accept(ModBlocks.VACUUM_PLANKS);
+                        output.accept(ModBlocks.VACUUM_LEAVES);
+                        output.accept(ModBlocks.VACUUM_SAPLING);
+                        output.accept(ModBlocks.VACUUM_STAIRS);
+                        output.accept(ModBlocks.VACUUM_SLAB);
+                        output.accept(ModBlocks.VACUUM_PRESSURE_PLATE);
+                        output.accept(ModBlocks.VACUUM_BUTTON);
+                        output.accept(ModBlocks.VACUUM_FENCE);
+                        output.accept(ModBlocks.VACUUM_FENCE_GATE);
+                        output.accept(ModBlocks.VACUUM_DOOR);
+                        output.accept(ModBlocks.VACUUM_TRAPDOOR);
+                        output.accept(ModBlocks.DRIFT_LOG);
+                        output.accept(ModBlocks.DRIFT_WOOD);
+                        output.accept(ModBlocks.STRIPPED_DRIFT_LOG);
+                        output.accept(ModBlocks.STRIPPED_DRIFT_WOOD);
+                        output.accept(ModBlocks.DRIFT_PLANKS);
+                        output.accept(ModBlocks.DRIFT_LEAVES);
+                        output.accept(ModBlocks.DRIFT_SAPLING);
+                        output.accept(ModBlocks.DRIFT_STAIRS);
+                        output.accept(ModBlocks.DRIFT_SLAB);
+                        output.accept(ModBlocks.DRIFT_PRESSURE_PLATE);
+                        output.accept(ModBlocks.DRIFT_BUTTON);
+                        output.accept(ModBlocks.DRIFT_FENCE);
+                        output.accept(ModBlocks.DRIFT_FENCE_GATE);
+                        output.accept(ModBlocks.DRIFT_DOOR);
+                        output.accept(ModBlocks.DRIFT_TRAPDOOR);
+                        output.accept(ModBlocks.BLOOM_LOG);
+                        output.accept(ModBlocks.BLOOM_WOOD);
+                        output.accept(ModBlocks.STRIPPED_BLOOM_LOG);
+                        output.accept(ModBlocks.STRIPPED_BLOOM_WOOD);
+                        output.accept(ModBlocks.BLOOM_PLANKS);
+                        output.accept(ModBlocks.BLOOM_LEAVES);
+                        output.accept(ModBlocks.BLOOM_SAPLING);
+                        output.accept(ModBlocks.BLOOM_STAIRS);
+                        output.accept(ModBlocks.BLOOM_SLAB);
+                        output.accept(ModBlocks.BLOOM_PRESSURE_PLATE);
+                        output.accept(ModBlocks.BLOOM_BUTTON);
+                        output.accept(ModBlocks.BLOOM_FENCE);
+                        output.accept(ModBlocks.BLOOM_FENCE_GATE);
+                        output.accept(ModBlocks.BLOOM_DOOR);
+                        output.accept(ModBlocks.BLOOM_TRAPDOOR);
                     }).build());
     public static void register(IEventBus eventBus) {
         CREATIVE_MODE_TAB.register(eventBus);

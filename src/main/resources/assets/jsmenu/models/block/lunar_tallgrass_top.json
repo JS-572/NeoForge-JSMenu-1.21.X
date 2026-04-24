@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/tinted_cross",
+  "textures": {
+    "cross": "jsmenu:block/lunar_tallgrass_top"
+  }
+}
