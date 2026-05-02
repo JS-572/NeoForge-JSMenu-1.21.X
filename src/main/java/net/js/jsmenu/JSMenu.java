@@ -2,7 +2,6 @@ package net.js.jsmenu;
 
 import net.js.jsmenu.block.ModBlocks;
 import net.js.jsmenu.block.StarBlocks;
-import net.js.jsmenu.client.HeldLightSphereHandler;
 import net.js.jsmenu.fluid.types.ModFluidTypes;
 import net.js.jsmenu.item.ModCreativeModeTabs;
 import net.js.jsmenu.item.ModItems;
@@ -10,20 +9,18 @@ import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
-import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent;
 import org.slf4j.Logger;
 
 import com.mojang.logging.LogUtils;
 
 import net.js.jsmenu.fluid.ModFluids;
 
-import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.Mod;
 import net.neoforged.fml.config.ModConfig;
 import net.neoforged.fml.ModContainer;
-import net.neoforged.fml.common.EventBusSubscriber;
+import net.neoforged.fml.loading.FMLEnvironment;
 import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.neoforged.neoforge.common.NeoForge;
 import net.neoforged.neoforge.event.BuildCreativeModeTabContentsEvent;
@@ -58,7 +55,9 @@ public class JSMenu {
         modEventBus.addListener(this::addCreative);
         // Register our mod's ModConfigSpec so that FML can create and load the config file for us
         modContainer.registerConfig(ModConfig.Type.COMMON, Config.SPEC);
-        JSMenuClient.init(modEventBus);
+        if (FMLEnvironment.dist.isClient()) {
+            JSMenuClient.init(modEventBus);
+        }
     }
 
     private void commonSetup(FMLCommonSetupEvent event) {
@@ -81,14 +80,5 @@ public class JSMenu {
     @SubscribeEvent
     public void onServerStarting(ServerStartingEvent event) {
 
-    }
-
-    // You can use EventBusSubscriber to automatically register all static methods in the class annotated with @SubscribeEvent
-    @EventBusSubscriber(modid = JSMenu.MOD_ID, bus = EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
-    public static class ClientModEvents {
-        @SubscribeEvent
-        public static void onClientSetup(FMLClientSetupEvent event) {
-            HeldLightSphereHandler.register();
-        }
     }
 }

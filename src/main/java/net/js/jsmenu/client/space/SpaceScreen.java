@@ -565,6 +565,8 @@ public class SpaceScreen extends Screen {
                 guiGraphics.fill(markerX + 4, markerY + 4, markerX + markerHalfSize - 3, markerY + markerHalfSize - 5, 0xFF77D27B);
             } else if (isMoon(object)) {
                 guiGraphics.fill(markerX - markerHalfSize, markerY - markerHalfSize, markerX + markerHalfSize + 1, markerY + markerHalfSize + 1, 0xFF808080);
+            } else if (isMercury(object)) {
+                guiGraphics.fill(markerX - markerHalfSize, markerY - markerHalfSize, markerX + markerHalfSize + 1, markerY + markerHalfSize + 1, 0xFF808080);
             }
                 else {
                 int color = object == selectedObject ? 0xFFFFE08A : 0xFFE3D3B2;
@@ -656,6 +658,9 @@ public class SpaceScreen extends Screen {
         if (isMoon(object)) {
             return Math.max(2, (int) Math.round(3 * zoom));
         }
+        if (isMercury(object)) {
+            return Math.max(3, (int) Math.round(3 * zoom));
+        }
         return 4;
     }
 
@@ -669,6 +674,10 @@ public class SpaceScreen extends Screen {
 
     private boolean isMoon(SpaceObject object) {
         return "moon".equals(object.getId());
+    }
+
+    private boolean isMercury(SpaceObject object) {
+        return "mercury".equals(object.getId());
     }
 
     private int getVisibleEntryCount() {

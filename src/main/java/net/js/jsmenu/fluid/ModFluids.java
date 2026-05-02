@@ -3,15 +3,9 @@ package net.js.jsmenu.fluid;
 import net.js.jsmenu.JSMenu;
 import net.js.jsmenu.fluid.*;
 import net.js.jsmenu.fluid.types.*;
-import net.minecraft.client.renderer.ItemBlockRenderTypes;
-import net.minecraft.client.renderer.RenderType;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.world.level.material.FlowingFluid;
 import net.minecraft.world.level.material.Fluid;
-import net.neoforged.api.distmarker.Dist;
-import net.neoforged.bus.api.SubscribeEvent;
-import net.neoforged.fml.common.EventBusSubscriber;
-import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent;
 import net.neoforged.neoforge.registries.DeferredHolder;
 import net.neoforged.neoforge.registries.DeferredRegister;
 
@@ -44,39 +38,4 @@ public class ModFluids {
     public static final DeferredHolder<Fluid, FlowingFluid> FLOWING_BROWN_LAVA = REGISTRY.register("flowing_brown_lava", () -> new BrownLavaFluid.Flowing());
     public static final DeferredHolder<Fluid, FlowingFluid> BLACK_LAVA = REGISTRY.register("black_lava", () -> new BlackLavaFluid.Source());
     public static final DeferredHolder<Fluid, FlowingFluid> FLOWING_BLACK_LAVA = REGISTRY.register("flowing_black_lava", () -> new BlackLavaFluid.Flowing());
-
-    @EventBusSubscriber(bus = EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
-    public static class FluidsClientSideHandler {
-        @SubscribeEvent
-        public static void clientSetup(FMLClientSetupEvent event) {
-            ItemBlockRenderTypes.setRenderLayer(BROMINE.get(), RenderType.translucent());
-            ItemBlockRenderTypes.setRenderLayer(FLOWING_BROMINE.get(), RenderType.translucent());
-            ItemBlockRenderTypes.setRenderLayer(MERCURY.get(), RenderType.translucent());
-            ItemBlockRenderTypes.setRenderLayer(FLOWING_MERCURY.get(), RenderType.translucent());
-
-            ItemBlockRenderTypes.setRenderLayer(RED_LAVA.get(), RenderType.translucent());
-            ItemBlockRenderTypes.setRenderLayer(FLOWING_RED_LAVA.get(), RenderType.translucent());
-            ItemBlockRenderTypes.setRenderLayer(LIGHT_YELLOW_LAVA.get(), RenderType.translucent());
-            ItemBlockRenderTypes.setRenderLayer(FLOWING_LIGHT_YELLOW_LAVA.get(), RenderType.translucent());
-            ItemBlockRenderTypes.setRenderLayer(YELLOW_LAVA.get(), RenderType.translucent());
-            ItemBlockRenderTypes.setRenderLayer(FLOWING_YELLOW_LAVA.get(), RenderType.translucent());
-            ItemBlockRenderTypes.setRenderLayer(GREEN_LAVA.get(), RenderType.translucent());
-            ItemBlockRenderTypes.setRenderLayer(FLOWING_GREEN_LAVA.get(), RenderType.translucent());
-            ItemBlockRenderTypes.setRenderLayer(LIGHT_BLUE_LAVA.get(), RenderType.translucent());
-            ItemBlockRenderTypes.setRenderLayer(FLOWING_LIGHT_BLUE_LAVA.get(), RenderType.translucent());
-            ItemBlockRenderTypes.setRenderLayer(BLUE_LAVA.get(), RenderType.translucent());
-            ItemBlockRenderTypes.setRenderLayer(FLOWING_BLUE_LAVA.get(), RenderType.translucent());
-            ItemBlockRenderTypes.setRenderLayer(PURPLE_LAVA.get(), RenderType.translucent());
-            ItemBlockRenderTypes.setRenderLayer(FLOWING_PURPLE_LAVA.get(), RenderType.translucent());
-            ItemBlockRenderTypes.setRenderLayer(PINK_LAVA.get(), RenderType.translucent());
-            ItemBlockRenderTypes.setRenderLayer(FLOWING_PINK_LAVA.get(), RenderType.translucent());
-            ItemBlockRenderTypes.setRenderLayer(WHITE_LAVA.get(), RenderType.translucent());
-            ItemBlockRenderTypes.setRenderLayer(FLOWING_WHITE_LAVA.get(), RenderType.translucent());
-            ItemBlockRenderTypes.setRenderLayer(BROWN_LAVA.get(), RenderType.translucent());
-            ItemBlockRenderTypes.setRenderLayer(FLOWING_BROWN_LAVA.get(), RenderType.translucent());
-            ItemBlockRenderTypes.setRenderLayer(BLACK_LAVA.get(), RenderType.translucent());
-            ItemBlockRenderTypes.setRenderLayer(FLOWING_BLACK_LAVA.get(), RenderType.translucent());
-
-        }
-    }
 }

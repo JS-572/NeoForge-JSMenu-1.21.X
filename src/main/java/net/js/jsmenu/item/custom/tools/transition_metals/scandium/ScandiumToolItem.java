@@ -26,7 +26,7 @@ public abstract class ScandiumToolItem extends Item {
             double y = entity.getY() + 1.0 + (level.random.nextDouble() - 0.5) * 0.1;
             double z = entity.getZ() + (level.random.nextDouble() - 0.5) * 0.2;
             // single small end rod particle per tick (very subtle)
-            ((net.minecraft.client.multiplayer.ClientLevel) level).addParticle(ParticleTypes.END_ROD, x, y, z, 0.0, 0.01, 0.0);
+            level.addParticle(ParticleTypes.END_ROD, x, y, z, 0.0, 0.01, 0.0);
         }
 
         // Night Vision trick: server-side add short potion effect so player can see in dark while holding
