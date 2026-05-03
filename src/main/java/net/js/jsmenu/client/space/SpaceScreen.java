@@ -1,7 +1,8 @@
 package net.js.jsmenu.client.space;
 
 import net.js.jsmenu.item.ModItems;
-import net.js.jsmenu.space.SpaceDimensions;
+import net.js.jsmenu.network.SpaceTravelHandler;
+import net.js.jsmenu.network.payload.RequestLandingPayload;
 import net.js.jsmenu.space.SpaceObject;
 import net.js.jsmenu.space.SpaceObjectType;
 import net.js.jsmenu.space.SpaceObjects;
@@ -13,16 +14,15 @@ import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.components.Button;
 import net.minecraft.client.gui.components.EditBox;
 import net.minecraft.client.gui.screens.Screen;
-import net.minecraft.core.BlockPos;
 import net.minecraft.network.chat.Component;
 import net.minecraft.server.MinecraftServer;
-import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.util.Mth;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.Level;
+import net.neoforged.neoforge.network.PacketDistributor;
 
 import java.util.ArrayList;
 import java.util.Comparator;
@@ -204,16 +204,8 @@ public class SpaceScreen extends Screen {
         }
 
         if (shouldShowLandAsPrimary() && canCurrentSelectionLand()) {
-            if (tryLandSingleplayer(minecraft, selectedObject)) {
-                onClose();
-                return;
-            }
-
-            minecraft.player.displayClientMessage(
-                    Component.translatable("screen.jsmenu.space.land_pending", selectedObject.getDisplayName())
-                            .withStyle(ChatFormatting.AQUA),
-                    false
-            );
+            requestLanding(selectedObject);
+            onClose();
             return;
         }
 
@@ -223,16 +215,8 @@ public class SpaceScreen extends Screen {
         }
 
         if (canCurrentSelectionLand()) {
-            if (tryLandSingleplayer(minecraft, selectedObject)) {
-                onClose();
-                return;
-            }
-
-            minecraft.player.displayClientMessage(
-                    Component.translatable("screen.jsmenu.space.land_pending", selectedObject.getDisplayName())
-                            .withStyle(ChatFormatting.AQUA),
-                    false
-            );
+            requestLanding(selectedObject);
+            onClose();
         }
     }
 
@@ -245,35 +229,8 @@ public class SpaceScreen extends Screen {
         openHarvestPrompt(minecraft);
     }
 
-    private boolean tryLandSingleplayer(Minecraft minecraft, SpaceObject object) {
-        if (!minecraft.hasSingleplayerServer() || getTargetDimensionKey(object) == null) {
-            return false;
-        }
-
-        MinecraftServer server = minecraft.getSingleplayerServer();
-        if (server == null) {
-            return false;
-        }
-
-        server.execute(() -> {
-            ServerPlayer serverPlayer = server.getPlayerList().getPlayer(minecraft.player.getUUID());
-            ServerLevel targetLevel = server.getLevel(getTargetDimensionKey(object));
-            if (serverPlayer == null || targetLevel == null) {
-                return;
-            }
-
-            if (getTargetDimensionKey(object) == Level.OVERWORLD) {
-                BlockPos spawnPos = targetLevel.getSharedSpawnPos();
-                serverPlayer.teleportTo(targetLevel, spawnPos.getX() + 0.5D, spawnPos.getY() + 1.0D, spawnPos.getZ() + 0.5D, serverPlayer.getYRot(), serverPlayer.getXRot());
-            } else if (getTargetDimensionKey(object) == SpaceDimensions.SUN) {
-                serverPlayer.teleportTo(targetLevel, 0.5D, 66.0D, 0.5D, serverPlayer.getYRot(), serverPlayer.getXRot());
-            } else {
-                serverPlayer.teleportTo(targetLevel, 0.5D, 120.0D, 0.5D, serverPlayer.getYRot(), serverPlayer.getXRot());
-            }
-            serverPlayer.fallDistance = 0.0F;
-        });
-
-        return true;
+    private void requestLanding(SpaceObject object) {
+        PacketDistributor.sendToServer(new RequestLandingPayload(object.getId(), mode == SpaceScreenMode.SPACE_OF_LIFE));
     }
 
     private void openHarvestPrompt(Minecraft minecraft) {
@@ -863,6 +820,10 @@ public class SpaceScreen extends Screen {
 
     private boolean canObjectLand(SpaceObject object) {
         if (object == null || getTargetDimensionKey(object) == null) {
+            return false;
+        }
+
+        if (!SpaceTravelHandler.isLandingImplemented(object, mode == SpaceScreenMode.SPACE_OF_LIFE)) {
             return false;
         }
 
