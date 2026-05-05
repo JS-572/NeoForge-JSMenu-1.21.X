@@ -346,7 +346,7 @@ public class OreTurnerItem extends Item {
         if (newBlock != null) {
             level.setBlockAndUpdate(pos, newBlock.defaultBlockState());
 
-            context.getItemInHand().hurtAndBreak(1, (ServerLevel) level, context.getPlayer(),
+            context.getItemInHand().hurtAndBreak(0, (ServerLevel) level, context.getPlayer(),
                     item -> context.getPlayer().onEquippedItemBroken(item,
                             context.getHand() == InteractionHand.MAIN_HAND ? EquipmentSlot.MAINHAND : EquipmentSlot.OFFHAND));
 
