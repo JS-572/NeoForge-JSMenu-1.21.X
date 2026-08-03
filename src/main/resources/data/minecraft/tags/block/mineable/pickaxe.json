@@ -112,6 +112,7 @@
     "jsmenu:livermorium_ore",
     "jsmenu:tennessine_ore",
     "jsmenu:oganesson_ore",
+    "jsmenu:hydrogen_block",
     "jsmenu:lithium_block",
     "jsmenu:beryllium_block",
     "jsmenu:boron_block",
@@ -374,6 +375,20 @@
     "jsmenu:lunar_ore",
     "jsmenu:lunar_block",
     "jsmenu:bragstone_ore",
-    "jsmenu:bragstone_block"
+    "jsmenu:bragstone_block",
+
+    "jsmenu:mercurian_basalt",
+    "jsmenu:compressed_corestone",
+    "jsmenu:solar_iron_ore",
+    "jsmenu:solar_iron_block",
+    "jsmenu:raw_solar_iron_block",
+    "jsmenu:gold_vein_cluster_ore",
+    "jsmenu:gold_vein_cluster_block",
+    "jsmenu:sulfur_crystal_ore",
+    "jsmenu:sulfur_crystal_block",
+    "jsmenu:thermium_ore",
+    "jsmenu:thermium_block",
+    "jsmenu:magnetite_ore",
+    "jsmenu:magnetite_block"
   ]
 }

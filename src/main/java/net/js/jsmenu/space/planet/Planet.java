@@ -7,6 +7,7 @@ import net.minecraft.world.level.Level;
 
 public class Planet extends SpaceObject {
     private final PlanetType planetType;
+    private final PlanetRotation rotation;
 
     public Planet(
             String id,
@@ -16,7 +17,8 @@ public class Planet extends SpaceObject {
             String description,
             ResourceKey<Level> spaceDimension,
             ResourceKey<Level> lifeDimension,
-            PlanetType planetType
+            PlanetType planetType,
+            PlanetRotation rotation
     ) {
         super(
                 id,
@@ -28,10 +30,16 @@ public class Planet extends SpaceObject {
                 spaceDimension,
                 lifeDimension
         );
+
         this.planetType = planetType;
+        this.rotation = rotation;
     }
 
     public PlanetType getPlanetType() {
         return planetType;
+    }
+
+    public PlanetRotation getRotation() {
+        return rotation;
     }
 }

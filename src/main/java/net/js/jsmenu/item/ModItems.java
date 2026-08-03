@@ -152,7 +152,7 @@ public class ModItems {
     public static final DeferredItem<Item> TENNESSINE = ITEMS.register("tennessine", () -> new Item(new Item.Properties()));
     public static final DeferredItem<Item> OGANESSON = ITEMS.register("oganesson", () -> new Item(new Item.Properties()));
 
-    public static final DeferredItem<SwordItem> HELIUM_SWORD = ITEMS.register("helium_sword", ()  -> new HeliumSwordItem(ModToolTiers.HELIUM, 1, -2.4F, new Item.Properties().stacksTo(1)));
+    public static final DeferredItem<SwordItem> HELIUM_SWORD = ITEMS.register("helium_sword", ()  -> new HeliumSwordItem(ModToolTiers.HELIUM, 1, 2.4F, new Item.Properties().stacksTo(1)));
 
     public static final DeferredItem<OreTurnerItem> ORE_TURNER = ITEMS.register("ore_turner", () -> new OreTurnerItem(new Item.Properties().stacksTo(1).durability(1)));
 
@@ -367,6 +367,13 @@ public class ModItems {
     public static final DeferredItem<Item> CRISRA = ITEMS.register("crisra", () -> new Item(new Item.Properties()));
     public static final DeferredItem<Item> LUNAR_GEM = ITEMS.register("lunar_gem", () -> new Item(new Item.Properties()));
     public static final DeferredItem<Item> GRADIENT_MOON_GEM = ITEMS.register("gradient_moon_gem", () -> new Item(new Item.Properties()));
+
+    public static final DeferredItem<Item> RAW_SOLAR_IRON = ITEMS.register("raw_solar_iron", () -> new Item(new Item.Properties()));
+    public static final DeferredItem<Item> SOLAR_IRON_INGOT = ITEMS.register("solar_iron_ingot", () -> new Item(new Item.Properties()));
+    public static final DeferredItem<Item> GOLD_VEIN_CLUSTERS = ITEMS.register("gold_vein_clusters", () -> new Item(new Item.Properties()));
+    public static final DeferredItem<Item> SULFUR_CRYSTAL = ITEMS.register("sulfur_crystal", () -> new Item(new Item.Properties()));
+    public static final DeferredItem<Item> THERMIUM = ITEMS.register("thermium", () -> new Item(new Item.Properties()));
+    public static final DeferredItem<Item> MAGNETITE = ITEMS.register("magnetite", () -> new Item(new Item.Properties()));
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);
     }

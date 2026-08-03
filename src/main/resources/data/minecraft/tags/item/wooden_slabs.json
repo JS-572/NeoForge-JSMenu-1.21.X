@@ -5,6 +5,11 @@
     "jsmenu:lunar_slab",
     "jsmenu:bloom_slab",
     "jsmenu:drift_slab",
-    "jsmenu:vacuum_slab"
+    "jsmenu:vacuum_slab",
+    "jsmenu:heliospire_slab",
+    "jsmenu:umbra_root_slab",
+    "jsmenu:terminus_split_slab",
+    "jsmenu:ferric_spine_slab",
+    "jsmenu:cryostem_slab"
   ]
 }

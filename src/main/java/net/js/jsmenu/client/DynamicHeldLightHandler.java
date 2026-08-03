@@ -9,10 +9,12 @@ import net.minecraft.world.level.block.Blocks;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.neoforge.client.event.ClientTickEvent;
 import net.neoforged.neoforge.common.NeoForge;
+import java.util.*;
 
 public class DynamicHeldLightHandler {
 
-    private BlockPos lastLightPos = null;
+    private final Set<BlockPos> lightPositions = new HashSet<>();
+    private static final int LIGHT_RADIUS = 8;
 
     public static void register() {
         NeoForge.EVENT_BUS.register(new DynamicHeldLightHandler());
@@ -41,26 +43,51 @@ public class DynamicHeldLightHandler {
                         mc.player.getItemBySlot(EquipmentSlot.MAINHAND).is(Items.REDSTONE_TORCH) ||
                         mc.player.getItemBySlot(EquipmentSlot.OFFHAND).is(Items.REDSTONE_TORCH);
 
-        BlockPos pos = mc.player.blockPosition();
+        BlockPos playerPos = mc.player.blockPosition();
 
         if (holdingLight) {
+            // Generate sphere of light positions around the player
+            Set<BlockPos> newLightPositions = new HashSet<>();
+            BlockPos.MutableBlockPos mutable = new BlockPos.MutableBlockPos();
 
-            if (!pos.equals(lastLightPos)) {
+            for (int x = -LIGHT_RADIUS; x <= LIGHT_RADIUS; x++) {
+                for (int y = -LIGHT_RADIUS; y <= LIGHT_RADIUS; y++) {
+                    for (int z = -LIGHT_RADIUS; z <= LIGHT_RADIUS; z++) {
+                        // Check if within sphere radius
+                        if (x * x + y * y + z * z <= LIGHT_RADIUS * LIGHT_RADIUS) {
+                            mutable.set(playerPos.getX() + x, playerPos.getY() + y, playerPos.getZ() + z);
+                            BlockPos pos = mutable.immutable();
 
-                if (lastLightPos != null) {
-                    mc.level.setBlock(lastLightPos, Blocks.AIR.defaultBlockState(), 3);
+                            // Only place light in air blocks
+                            if (mc.level.getBlockState(pos).isAir()) {
+                                newLightPositions.add(pos);
+
+                                // If this position didn't have a light before, place one
+                                if (!lightPositions.contains(pos)) {
+                                    mc.level.setBlock(pos, Blocks.LIGHT.defaultBlockState(), 3);
+                                }
+                            }
+                        }
+                    }
                 }
-
-                mc.level.setBlock(pos, Blocks.LIGHT.defaultBlockState(), 3);
-
-                lastLightPos = pos;
             }
 
-        } else if (lastLightPos != null) {
+            // Remove light blocks that are no longer in the sphere
+            for (BlockPos pos : lightPositions) {
+                if (!newLightPositions.contains(pos)) {
+                    mc.level.setBlock(pos, Blocks.AIR.defaultBlockState(), 3);
+                }
+            }
 
-            mc.level.setBlock(lastLightPos, Blocks.AIR.defaultBlockState(), 3);
-            lastLightPos = null;
+            lightPositions.clear();
+            lightPositions.addAll(newLightPositions);
 
+        } else if (!lightPositions.isEmpty()) {
+            // Remove all light blocks when not holding light
+            for (BlockPos pos : lightPositions) {
+                mc.level.setBlock(pos, Blocks.AIR.defaultBlockState(), 3);
+            }
+            lightPositions.clear();
         }
     }
 }

@@ -5,6 +5,11 @@
     "jsmenu:lunar_trapdoor",
     "jsmenu:bloom_trapdoor",
     "jsmenu:drift_trapdoor",
-    "jsmenu:vacuum_trapdoor"
+    "jsmenu:vacuum_trapdoor",
+    "jsmenu:heliospire_trapdoor",
+    "jsmenu:umbra_root_trapdoor",
+    "jsmenu:terminus_split_trapdoor",
+    "jsmenu:ferric_spine_trapdoor",
+    "jsmenu:cryostem_trapdoor"
   ]
 }

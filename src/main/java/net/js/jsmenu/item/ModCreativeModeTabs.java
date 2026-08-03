@@ -440,7 +440,7 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.ORE_TURNER);
                     }).build());
 
-    public static final Supplier<CreativeModeTab> CARBON_UPDATE = CREATIVE_MODE_TAB.register("transition_metals",
+    public static final Supplier<CreativeModeTab> CARBON_UPDATE = CREATIVE_MODE_TAB.register("carbon_update",
             () -> CreativeModeTab.builder().icon(() -> new ItemStack(ModItems.CARBON.get()))
                     .withTabsBefore(ResourceLocation.fromNamespaceAndPath(JSMenu.MOD_ID, "ore_turner_update"))
                     .title(Component.translatable("creativetab.jsmenu.carbon_update"))
@@ -1182,6 +1182,109 @@ public class ModCreativeModeTabs {
                         output.accept(ModBlocks.BLOOM_FENCE_GATE);
                         output.accept(ModBlocks.BLOOM_DOOR);
                         output.accept(ModBlocks.BLOOM_TRAPDOOR);
+                    }).build());
+
+    public static final Supplier<CreativeModeTab> THE_SOLAR_SYSTEM = CREATIVE_MODE_TAB.register("the_solar_system",
+            () -> CreativeModeTab.builder().icon(() -> new ItemStack(ModBlocks.SOLAR_CRUST.get()))
+                    .withTabsBefore(ResourceLocation.fromNamespaceAndPath(JSMenu.MOD_ID, "space_of_life_update"))
+                    .title(Component.translatable("creativetab.jsmenu.the_solar_system"))
+                    .displayItems((itemDisplayParameters, output) -> {
+                        output.accept(ModBlocks.SCORCHED_REGOLITH);
+                        output.accept(ModBlocks.SOLAR_CRUST);
+                        output.accept(ModBlocks.MERCURIAN_BASALT);
+                        output.accept(ModBlocks.COMPRESSED_CORESTONE);
+                        output.accept(ModBlocks.SOLAR_IRON_ORE);
+                        output.accept(ModBlocks.SOLAR_IRON_BLOCK);
+                        output.accept(ModBlocks.RAW_SOLAR_IRON_BLOCK);
+                        output.accept(ModItems.RAW_SOLAR_IRON);
+                        output.accept(ModItems.SOLAR_IRON_INGOT);
+                        output.accept(ModBlocks.GOLD_VEIN_CLUSTER_ORE);
+                        output.accept(ModBlocks.GOLD_VEIN_CLUSTER_BLOCK);
+                        output.accept(ModItems.GOLD_VEIN_CLUSTERS);
+                        output.accept(ModBlocks.SULFUR_CRYSTAL_ORE);
+                        output.accept(ModBlocks.SULFUR_CRYSTAL_BLOCK);
+                        output.accept(ModItems.SULFUR_CRYSTAL);
+                        output.accept(ModBlocks.THERMIUM_ORE);
+                        output.accept(ModBlocks.THERMIUM_BLOCK);
+                        output.accept(ModItems.THERMIUM);
+                        output.accept(ModBlocks.MAGNETITE_ORE);
+                        output.accept(ModBlocks.MAGNETITE_BLOCK);
+                        output.accept(ModItems.MAGNETITE);
+                        output.accept(ModBlocks.HELIOSPIRE_LOG);
+                        output.accept(ModBlocks.HELIOSPIRE_WOOD);
+                        output.accept(ModBlocks.STRIPPED_HELIOSPIRE_LOG);
+                        output.accept(ModBlocks.STRIPPED_HELIOSPIRE_WOOD);
+                        output.accept(ModBlocks.HELIOSPIRE_PLANKS);
+                        output.accept(ModBlocks.HELIOSPIRE_LEAVES);
+                        output.accept(ModBlocks.HELIOSPIRE_SAPLING);
+                        output.accept(ModBlocks.HELIOSPIRE_STAIRS);
+                        output.accept(ModBlocks.HELIOSPIRE_SLAB);
+                        output.accept(ModBlocks.HELIOSPIRE_PRESSURE_PLATE);
+                        output.accept(ModBlocks.HELIOSPIRE_BUTTON);
+                        output.accept(ModBlocks.HELIOSPIRE_FENCE);
+                        output.accept(ModBlocks.HELIOSPIRE_FENCE_GATE);
+                        output.accept(ModBlocks.HELIOSPIRE_DOOR);
+                        output.accept(ModBlocks.HELIOSPIRE_TRAPDOOR);
+                        output.accept(ModBlocks.UMBRA_ROOT_LOG);
+                        output.accept(ModBlocks.UMBRA_ROOT_WOOD);
+                        output.accept(ModBlocks.STRIPPED_UMBRA_ROOT_LOG);
+                        output.accept(ModBlocks.STRIPPED_UMBRA_ROOT_WOOD);
+                        output.accept(ModBlocks.UMBRA_ROOT_PLANKS);
+                        output.accept(ModBlocks.UMBRA_ROOT_LEAVES);
+                        output.accept(ModBlocks.UMBRA_ROOT_SAPLING);
+                        output.accept(ModBlocks.UMBRA_ROOT_STAIRS);
+                        output.accept(ModBlocks.UMBRA_ROOT_SLAB);
+                        output.accept(ModBlocks.UMBRA_ROOT_PRESSURE_PLATE);
+                        output.accept(ModBlocks.UMBRA_ROOT_BUTTON);
+                        output.accept(ModBlocks.UMBRA_ROOT_FENCE);
+                        output.accept(ModBlocks.UMBRA_ROOT_FENCE_GATE);
+                        output.accept(ModBlocks.UMBRA_ROOT_DOOR);
+                        output.accept(ModBlocks.UMBRA_ROOT_TRAPDOOR);
+                        output.accept(ModBlocks.TERMINUS_SPLIT_LOG);
+                        output.accept(ModBlocks.TERMINUS_SPLIT_WOOD);
+                        output.accept(ModBlocks.STRIPPED_TERMINUS_SPLIT_LOG);
+                        output.accept(ModBlocks.STRIPPED_TERMINUS_SPLIT_WOOD);
+                        output.accept(ModBlocks.TERMINUS_SPLIT_PLANKS);
+                        output.accept(ModBlocks.TERMINUS_SPLIT_LEAVES);
+                        output.accept(ModBlocks.TERMINUS_SPLIT_SAPLING);
+                        output.accept(ModBlocks.TERMINUS_SPLIT_STAIRS);
+                        output.accept(ModBlocks.TERMINUS_SPLIT_SLAB);
+                        output.accept(ModBlocks.TERMINUS_SPLIT_PRESSURE_PLATE);
+                        output.accept(ModBlocks.TERMINUS_SPLIT_BUTTON);
+                        output.accept(ModBlocks.TERMINUS_SPLIT_FENCE);
+                        output.accept(ModBlocks.TERMINUS_SPLIT_FENCE_GATE);
+                        output.accept(ModBlocks.TERMINUS_SPLIT_DOOR);
+                        output.accept(ModBlocks.TERMINUS_SPLIT_TRAPDOOR);
+                        output.accept(ModBlocks.FERRIC_SPINE_LOG);
+                        output.accept(ModBlocks.FERRIC_SPINE_WOOD);
+                        output.accept(ModBlocks.STRIPPED_FERRIC_SPINE_LOG);
+                        output.accept(ModBlocks.STRIPPED_FERRIC_SPINE_WOOD);
+                        output.accept(ModBlocks.FERRIC_SPINE_PLANKS);
+                        output.accept(ModBlocks.FERRIC_SPINE_LEAVES);
+                        output.accept(ModBlocks.FERRIC_SPINE_SAPLING);
+                        output.accept(ModBlocks.FERRIC_SPINE_STAIRS);
+                        output.accept(ModBlocks.FERRIC_SPINE_SLAB);
+                        output.accept(ModBlocks.FERRIC_SPINE_PRESSURE_PLATE);
+                        output.accept(ModBlocks.FERRIC_SPINE_BUTTON);
+                        output.accept(ModBlocks.FERRIC_SPINE_FENCE);
+                        output.accept(ModBlocks.FERRIC_SPINE_FENCE_GATE);
+                        output.accept(ModBlocks.FERRIC_SPINE_DOOR);
+                        output.accept(ModBlocks.FERRIC_SPINE_TRAPDOOR);
+                        output.accept(ModBlocks.CRYOSTEM_LOG);
+                        output.accept(ModBlocks.CRYOSTEM_WOOD);
+                        output.accept(ModBlocks.STRIPPED_CRYOSTEM_LOG);
+                        output.accept(ModBlocks.STRIPPED_CRYOSTEM_WOOD);
+                        output.accept(ModBlocks.CRYOSTEM_PLANKS);
+                        output.accept(ModBlocks.CRYOSTEM_LEAVES);
+                        output.accept(ModBlocks.CRYOSTEM_SAPLING);
+                        output.accept(ModBlocks.CRYOSTEM_STAIRS);
+                        output.accept(ModBlocks.CRYOSTEM_SLAB);
+                        output.accept(ModBlocks.CRYOSTEM_PRESSURE_PLATE);
+                        output.accept(ModBlocks.CRYOSTEM_BUTTON);
+                        output.accept(ModBlocks.CRYOSTEM_FENCE);
+                        output.accept(ModBlocks.CRYOSTEM_FENCE_GATE);
+                        output.accept(ModBlocks.CRYOSTEM_DOOR);
+                        output.accept(ModBlocks.CRYOSTEM_TRAPDOOR);
                     }).build());
     public static void register(IEventBus eventBus) {
         CREATIVE_MODE_TAB.register(eventBus);

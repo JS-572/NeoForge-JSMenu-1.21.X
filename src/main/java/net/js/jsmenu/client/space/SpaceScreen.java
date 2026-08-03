@@ -2,6 +2,7 @@ package net.js.jsmenu.client.space;
 
 import net.js.jsmenu.item.ModItems;
 import net.js.jsmenu.network.SpaceTravelHandler;
+import net.js.jsmenu.network.payload.HarvestLavaPayload;
 import net.js.jsmenu.network.payload.RequestLandingPayload;
 import net.js.jsmenu.space.SpaceObject;
 import net.js.jsmenu.space.SpaceObjectType;
@@ -15,7 +16,6 @@ import net.minecraft.client.gui.components.Button;
 import net.minecraft.client.gui.components.EditBox;
 import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.network.chat.Component;
-import net.minecraft.server.MinecraftServer;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.util.Mth;
 import net.minecraft.world.item.Item;
@@ -155,7 +155,8 @@ public class SpaceScreen extends Screen {
             selectedObject = null;
             listScroll = 0;
         } else if (selectedObject == null || !filteredObjects.contains(selectedObject)) {
-            selectedObject = filteredObjects.getFirst();
+            // ArrayList doesn't have getFirst(), use get(0)
+            selectedObject = filteredObjects.get(0);
             listScroll = 0;
         } else {
             clampScroll();
@@ -275,42 +276,21 @@ public class SpaceScreen extends Screen {
     }
 
     private boolean performHarvestSingleplayer(Minecraft minecraft, int amount, HarvestOptions options) {
-        if (!minecraft.hasSingleplayerServer() || !(selectedObject instanceof Star star)) {
+        if (minecraft.player == null || !(selectedObject instanceof Star)) {
             return false;
         }
 
-        Item lavaBucketItem = getLavaBucketForStarClass(star.getStarClass());
-        if (lavaBucketItem == null) {
-            minecraft.player.displayClientMessage(
-                    Component.translatable("screen.jsmenu.space.unsupported_star_class", star.getStarClass().name()).withStyle(ChatFormatting.RED),
-                    false
-            );
+        harvestAmount = Math.min(amount, options.maxBuckets());
+        if (harvestAmount <= 0) {
             return false;
         }
 
-        MinecraftServer server = minecraft.getSingleplayerServer();
-        if (server == null) {
-            return false;
-        }
-
-        int harvestCount = Math.min(amount, options.maxBuckets());
-        server.execute(() -> {
-            ServerPlayer serverPlayer = server.getPlayerList().getPlayer(minecraft.player.getUUID());
-            if (serverPlayer == null) {
-                return;
-            }
-
-            int bucketsToUse = Math.min(harvestCount, options.bucketCount());
-            int ironBucketsToCraft = harvestCount - bucketsToUse;
-            if (!removeItems(serverPlayer, Items.BUCKET, bucketsToUse)) {
-                return;
-            }
-            if (!removeItems(serverPlayer, Items.IRON_INGOT, ironBucketsToCraft * 3)) {
-                return;
-            }
-
-            addItems(serverPlayer, new ItemStack(lavaBucketItem, harvestCount));
-        });
+        PacketDistributor.sendToServer(
+                new HarvestLavaPayload(
+                        selectedObject.getId(),
+                        harvestAmount
+                )
+        );
         return true;
     }
 
@@ -523,9 +503,8 @@ public class SpaceScreen extends Screen {
             } else if (isMoon(object)) {
                 guiGraphics.fill(markerX - markerHalfSize, markerY - markerHalfSize, markerX + markerHalfSize + 1, markerY + markerHalfSize + 1, 0xFF808080);
             } else if (isMercury(object)) {
-                guiGraphics.fill(markerX - markerHalfSize, markerY - markerHalfSize, markerX + markerHalfSize + 1, markerY + markerHalfSize + 1, 0xFF808080);
-            }
-                else {
+                guiGraphics.fill(markerX - markerHalfSize, markerY - markerHalfSize, markerX + markerHalfSize + 2, markerY + markerHalfSize + 1, 0xFF808080);
+            } else {
                 int color = object == selectedObject ? 0xFFFFE08A : 0xFFE3D3B2;
                 guiGraphics.fill(markerX - 2, markerY - 2, markerX + 3, markerY + 3, color);
             }
@@ -616,7 +595,7 @@ public class SpaceScreen extends Screen {
             return Math.max(2, (int) Math.round(3 * zoom));
         }
         if (isMercury(object)) {
-            return Math.max(3, (int) Math.round(3 * zoom));
+            return Math.max(3, (int) Math.round(4 * zoom));
         }
         return 4;
     }
@@ -734,7 +713,7 @@ public class SpaceScreen extends Screen {
     }
 
     private void updateHarvestPromptButtons() {
-        boolean visible = false;
+        boolean visible = harvestPromptOpen;
         harvestDecreaseButton.visible = visible;
         harvestIncreaseButton.visible = visible;
         harvestConfirmButton.visible = visible;

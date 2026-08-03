@@ -1,6 +1,7 @@
 package net.js.jsmenu.item.custom;
 
 import net.js.jsmenu.block.ModBlocks;
+import net.js.jsmenu.block.StarBlocks;
 import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.InteractionHand;
@@ -175,6 +176,26 @@ public class OreTurnerItem extends Item {
             ModBlocks.COPERNICIUM_ORE
     );
 
+    public static final List<Supplier<? extends Block>> SUN_ORES = List.of(
+            StarBlocks.BLAZESTONE_ORE,
+            StarBlocks.RADIANT_CRYSTAL_ORE,
+            StarBlocks.SOLARITE_ORE
+    );
+
+    public static final List<Supplier<? extends Block>> SUN_DEEPSLATE_ORES = List.of(
+            StarBlocks.CORE_FRAGMENT_ORE
+    );
+
+    public static final List<Supplier<? extends Block>> MOON_ORES = List.of(
+            ModBlocks.CRISRA_ORE,
+            ModBlocks.GRADIENT_ORE,
+            ModBlocks.LUNAR_ORE
+    );
+
+    public static final List<Supplier<? extends Block>> MOON_DEEPSLATE_ORES = List.of(
+            ModBlocks.BRAGSTONE_ORE
+    );
+
     public static final Map<Block, Block> ORE_TURNER_MAP = Map.ofEntries(
             entry(Blocks.COAL_ORE, Blocks.COAL_BLOCK),
             entry(Blocks.COPPER_ORE, Blocks.COPPER_BLOCK),
@@ -306,7 +327,15 @@ public class OreTurnerItem extends Item {
             entry(ModBlocks.MOSCOVIUM_ORE.get(), ModBlocks.MOSCOVIUM_BLOCK.get()),
             entry(ModBlocks.LIVERMORIUM_ORE.get(), ModBlocks.LIVERMORIUM_BLOCK.get()),
             entry(ModBlocks.TENNESSINE_ORE.get(), ModBlocks.TENNESSINE_BLOCK.get()),
-            entry(ModBlocks.OGANESSON_ORE.get(), ModBlocks.OGANESSON_BLOCK.get())
+            entry(ModBlocks.OGANESSON_ORE.get(), ModBlocks.OGANESSON_BLOCK.get()),
+            entry(StarBlocks.BLAZESTONE_ORE.get(), StarBlocks.BLAZESTONE_BLOCK.get()),
+            entry(StarBlocks.CORE_FRAGMENT_ORE.get(), StarBlocks.CORE_FRAGMENT_BLOCK.get()),
+            entry(StarBlocks.SOLARITE_ORE.get(), StarBlocks.SOLARITE_BLOCK.get()),
+            entry(StarBlocks.RADIANT_CRYSTAL_ORE.get(), StarBlocks.RADIANT_CRYSTAL_BLOCK.get()),
+            entry(ModBlocks.CRISRA_ORE.get(), ModBlocks.CRISRA_BLOCK.get()),
+            entry(ModBlocks.BRAGSTONE_ORE.get(), ModBlocks.BRAGSTONE_BLOCK.get()),
+            entry(ModBlocks.LUNAR_ORE.get(), ModBlocks.LUNAR_BLOCK.get()),
+            entry(ModBlocks.GRADIENT_ORE.get(), ModBlocks.GRADIENT_BLOCK.get())
     );
 
     public OreTurnerItem(Properties properties) {
@@ -341,6 +370,14 @@ public class OreTurnerItem extends Item {
             newBlock = ANDESITE_ORES.get(random.nextInt(ANDESITE_ORES.size())).get();
         } else if (clickedBlock == Blocks.TUFF) {
             newBlock = TUFF_ORES.get(random.nextInt(TUFF_ORES.size())).get();
+        } else if (clickedBlock == StarBlocks.SOLAR_STONE.get()) {
+            newBlock = SUN_ORES.get(random.nextInt(SUN_ORES.size())).get();
+        } else if (clickedBlock == ModBlocks.LUNAR_STONE.get()) {
+            newBlock = MOON_ORES.get(random.nextInt(MOON_ORES.size())).get();
+        } else if (clickedBlock == StarBlocks.CORESTONE.get()) {
+            newBlock = SUN_DEEPSLATE_ORES.get(random.nextInt(SUN_DEEPSLATE_ORES.size())).get();
+        } else if (clickedBlock == ModBlocks.INNER_STONE.get()) {
+            newBlock = MOON_DEEPSLATE_ORES.get(random.nextInt(MOON_DEEPSLATE_ORES.size())).get();
         }
 
         if (newBlock != null) {

@@ -5,6 +5,11 @@
     "jsmenu:lunar_planks",
     "jsmenu:bloom_planks",
     "jsmenu:drift_planks",
-    "jsmenu:vacuum_planks"
+    "jsmenu:vacuum_planks",
+    "jsmenu:heliospire_planks",
+    "jsmenu:umbra_root_planks",
+    "jsmenu:terminus_split_planks",
+    "jsmenu:ferric_spine_planks",
+    "jsmenu:cryostem_planks"
   ]
 }

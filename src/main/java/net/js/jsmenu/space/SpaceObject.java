@@ -1,5 +1,7 @@
 package net.js.jsmenu.space;
 
+import net.js.jsmenu.space.star.Star;
+import net.js.jsmenu.space.star.StarClass;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.level.Level;
 
@@ -90,5 +92,12 @@ public abstract class SpaceObject {
 
     public boolean canHarvestLava() {
         return type == SpaceObjectType.STAR;
+    }
+
+    public StarClass getStarClass() {
+        if (this instanceof Star star) {
+            return star.getStarClass();
+        }
+        return null;
     }
 }

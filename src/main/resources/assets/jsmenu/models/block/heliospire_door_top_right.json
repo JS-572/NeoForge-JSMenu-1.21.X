@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/door_top_right",
+  "textures": {
+    "bottom": "jsmenu:block/heliospire_door_bottom",
+    "top": "jsmenu:block/heliospire_door_top"
+  }
+}

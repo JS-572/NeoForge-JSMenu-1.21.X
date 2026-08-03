@@ -1,8 +1,8 @@
 package net.js.jsmenu.block;
 
 import net.js.jsmenu.JSMenu;
-import net.js.jsmenu.block.custom.CoronaBloomSaplingBlock;
-import net.js.jsmenu.block.custom.FlarewoodSaplingBlock;
+import net.js.jsmenu.block.custom.saplings.star.Sun.CoronaBloomSaplingBlock;
+import net.js.jsmenu.block.custom.saplings.star.Sun.FlarewoodSaplingBlock;
 import net.js.jsmenu.block.custom.IgnitedSolarAshBlock;
 import net.js.jsmenu.block.custom.SolarAshBlock;
 import net.js.jsmenu.item.ModItems;
@@ -25,11 +25,11 @@ public class StarBlocks {
     public static final DeferredRegister.Blocks BLOCKS =
             DeferredRegister.createBlocks(JSMenu.MOD_ID);
 
-    public static final DeferredBlock<Block> SOLAR_ASH = registerBlock("solar_ash", () -> new SolarAshBlock(BlockBehaviour.Properties.of().strength(0.7f).requiresCorrectToolForDrops().sound(SoundType.SAND).randomTicks()));
-    public static final DeferredBlock<Block> IGNITED_SOLAR_ASH = registerBlock("ignited_solar_ash", () -> new IgnitedSolarAshBlock(BlockBehaviour.Properties.of().strength(0.8f).requiresCorrectToolForDrops().sound(SoundType.SAND).lightLevel(state -> 12).randomTicks(), SOLAR_ASH.get()));
-    public static final DeferredBlock<Block> SOLAR_STONE = registerBlock("solar_stone", () -> new Block(BlockBehaviour.Properties.of().strength(2.5f).requiresCorrectToolForDrops().requiresCorrectToolForDrops().sound(SoundType.STONE)));
-    public static final DeferredBlock<Block> CORESTONE = registerBlock("corestone", () -> new Block(BlockBehaviour.Properties.of().strength(4.5f).requiresCorrectToolForDrops().requiresCorrectToolForDrops().sound(SoundType.DEEPSLATE)));
-    public static final DeferredBlock<Block> SOLARITE_ORE = registerBlock("solarite_ore", () -> new Block(BlockBehaviour.Properties.of().strength(3.0f).requiresCorrectToolForDrops().requiresCorrectToolForDrops().sound(SoundType.STONE)));
+    public static final DeferredBlock<Block> SOLAR_ASH = registerBlock("solar_ash", () -> new SolarAshBlock(BlockBehaviour.Properties.of().strength(0.7f).sound(SoundType.SAND).randomTicks()));
+    public static final DeferredBlock<Block> IGNITED_SOLAR_ASH = registerBlock("ignited_solar_ash", () -> new IgnitedSolarAshBlock(BlockBehaviour.Properties.of().strength(0.8f).sound(SoundType.SAND).lightLevel(state -> 12).randomTicks(), SOLAR_ASH.get()));
+    public static final DeferredBlock<Block> SOLAR_STONE = registerBlock("solar_stone", () -> new Block(BlockBehaviour.Properties.of().strength(2.5f).requiresCorrectToolForDrops().sound(SoundType.STONE)));
+    public static final DeferredBlock<Block> CORESTONE = registerBlock("corestone", () -> new Block(BlockBehaviour.Properties.of().strength(4.5f).requiresCorrectToolForDrops().sound(SoundType.DEEPSLATE)));
+    public static final DeferredBlock<Block> SOLARITE_ORE = registerBlock("solarite_ore", () -> new Block(BlockBehaviour.Properties.of().strength(3.0f).requiresCorrectToolForDrops().sound(SoundType.STONE)));
     public static final DeferredBlock<Block> BLAZESTONE_ORE = registerBlock("blazestone_ore", () -> new Block(BlockBehaviour.Properties.of().strength(3.3f).requiresCorrectToolForDrops().lightLevel(state -> 7).sound(SoundType.STONE)));
     public static final DeferredBlock<Block> RADIANT_CRYSTAL_ORE = registerBlock("radiant_crystal_ore", () -> new Block(BlockBehaviour.Properties.of().strength(3.6f).requiresCorrectToolForDrops().lightLevel(state -> 10).sound(SoundType.AMETHYST)));
     public static final DeferredBlock<Block> CORE_FRAGMENT_ORE = registerBlock("core_fragment_ore", () -> new Block(BlockBehaviour.Properties.of().strength(5.0f).requiresCorrectToolForDrops().sound(SoundType.DEEPSLATE)));

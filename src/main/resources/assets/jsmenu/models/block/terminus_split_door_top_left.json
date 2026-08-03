@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/door_top_left",
+  "textures": {
+    "bottom": "jsmenu:block/terminus_split_door_bottom",
+    "top": "jsmenu:block/terminus_split_door_top"
+  }
+}

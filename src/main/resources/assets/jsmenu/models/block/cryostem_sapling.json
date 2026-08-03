@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cross",
+  "textures": {
+    "cross": "jsmenu:block/cryostem_sapling"
+  }
+}

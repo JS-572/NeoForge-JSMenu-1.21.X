@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/door_bottom_right",
+  "textures": {
+    "bottom": "jsmenu:block/cryostem_door_bottom",
+    "top": "jsmenu:block/cryostem_door_top"
+  }
+}

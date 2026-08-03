@@ -7,6 +7,7 @@ import net.minecraft.world.level.Level;
 
 public class Star extends SpaceObject {
     private final StarClass starClass;
+    private final StarType starType;
 
     public Star(
             String id,
@@ -16,7 +17,8 @@ public class Star extends SpaceObject {
             String description,
             ResourceKey<Level> spaceDimension,
             ResourceKey<Level> lifeDimension,
-            StarClass starClass
+            StarClass starClass,
+            StarType starType
     ) {
         super(
                 id,
@@ -29,9 +31,13 @@ public class Star extends SpaceObject {
                 lifeDimension
         );
         this.starClass = starClass;
+        this.starType = starType;
     }
 
     public StarClass getStarClass() {
         return starClass;
+    }
+    public StarType getStarType() {
+        return starType;
     }
 }

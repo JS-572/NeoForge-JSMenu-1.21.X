@@ -6,7 +6,7 @@ import java.util.List;
 import java.util.Optional;
 
 public class Moons {
-    public static final Moon MOON = new Moon("moon", "Moon",145.0D, 50.0D, "Our only moon and our most well-known. The Moon! Earth's natural satellite maintains the ocean tides and keeps the Earth's axial tilt steady.", SpaceDimensions.MOON, SpaceDimensions.MOON_LIFE);
+    public static final Moon MOON = new Moon("moon", "Moon",455.0D, 50.0D, "Our only moon and our most well-known. The Moon! Earth's natural satellite maintains the ocean tides and keeps the Earth's axial tilt steady.", SpaceDimensions.MOON, SpaceDimensions.MOON_LIFE);
 
     private static final List<Moon> MOONS = List.of(MOON);
 

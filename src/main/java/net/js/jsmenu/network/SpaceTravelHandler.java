@@ -61,6 +61,8 @@ public final class SpaceTravelHandler {
             return false;
         }
 
-        return targetKey != SpaceDimensions.MERCURY && targetKey != SpaceDimensions.MERCURY_LIFE;
+        // Landing is considered implemented for any space object that has a target dimension
+        // (previously Mercury was explicitly excluded here, which prevented landing on Mercury)
+        return true;
     }
 }

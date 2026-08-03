@@ -16,13 +16,13 @@ public class SpaceScreenController {
     private static final KeyMapping OPEN_SPACE_SCREEN = new KeyMapping(
             "key." + JSMenu.MOD_ID + ".open_space_screen",
             InputConstants.Type.KEYSYM,
-            GLFW.GLFW_KEY_O,
+            GLFW.GLFW_KEY_LEFT_BRACKET,
             KEY_CATEGORY
     );
     private static final KeyMapping OPEN_SPACE_OF_LIFE_SCREEN = new KeyMapping(
             "key." + JSMenu.MOD_ID + ".open_space_of_life_screen",
             InputConstants.Type.KEYSYM,
-            GLFW.GLFW_KEY_P,
+            GLFW.GLFW_KEY_RIGHT_BRACKET,
             KEY_CATEGORY
     );
 
