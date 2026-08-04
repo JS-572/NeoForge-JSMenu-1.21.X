@@ -1,5 +1,6 @@
 {
   "parent": "block/block",
+  "render_type": "minecraft:cutout",
   "textures": {
     "top": "jsmenu:block/stripped_terminus_split_log_side_4",
     "bottom": "jsmenu:block/stripped_terminus_split_log_side_4",

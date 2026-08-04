@@ -1,5 +1,6 @@
 {
   "ambientocclusion": false,
+  "render_type": "minecraft:cutout",
   "textures": {
     "particle": "jsmenu:block/terminus_split_sapling_3",
     "east_tex": "jsmenu:block/terminus_split_sapling_1",
