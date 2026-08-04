@@ -1,7 +1,6 @@
 package net.js.jsmenu.fluid;
 
 import net.js.jsmenu.JSMenu;
-import net.js.jsmenu.fluid.*;
 import net.js.jsmenu.fluid.types.*;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.world.level.material.FlowingFluid;
