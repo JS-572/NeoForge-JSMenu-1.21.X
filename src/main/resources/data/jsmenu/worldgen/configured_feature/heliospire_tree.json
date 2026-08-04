@@ -4,7 +4,7 @@
     "decorators": [],
     "dirt_provider": {
       "type": "minecraft:simple_state_provider",
-      "state": { "Name": "jsmenu:lunar_grass" }
+      "state": { "Name": "jsmenu:scorched_regolith" }
     },
     "foliage_placer": {
       "type": "minecraft:blob_foliage_placer",
@@ -15,7 +15,7 @@
     "foliage_provider": {
       "type": "minecraft:simple_state_provider",
       "state": {
-        "Name": "jsmenu:bloom_leaves",
+        "Name": "jsmenu:heliospire_leaves",
         "Properties": {
           "distance": "7",
           "persistent": "false",
@@ -40,7 +40,7 @@
     "trunk_provider": {
       "type": "minecraft:simple_state_provider",
       "state": {
-        "Name": "jsmenu:bloom_log",
+        "Name": "jsmenu:heliospire_log",
         "Properties": {
           "axis": "y"
         }
