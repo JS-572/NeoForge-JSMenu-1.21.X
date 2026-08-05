@@ -1,6 +1,7 @@
 
 package net.js.jsmenu.network.payload;
 
+import com.mojang.datafixers.types.Type;
 import net.js.jsmenu.JSMenu;
 import net.minecraft.network.RegistryFriendlyByteBuf;
 import net.minecraft.network.codec.StreamCodec;
