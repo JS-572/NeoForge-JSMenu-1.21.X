@@ -1,6 +1,5 @@
 package net.js.jsmenu.client.space;
 
-import net.js.jsmenu.item.ModItems;
 import net.js.jsmenu.network.SpaceTravelHandler;
 import net.js.jsmenu.network.payload.HarvestLavaPayload;
 import net.js.jsmenu.network.payload.RequestLandingPayload;
@@ -8,7 +7,6 @@ import net.js.jsmenu.space.SpaceObject;
 import net.js.jsmenu.space.SpaceObjectType;
 import net.js.jsmenu.space.SpaceObjects;
 import net.js.jsmenu.space.star.Star;
-import net.js.jsmenu.space.star.StarClass;
 import net.minecraft.ChatFormatting;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiGraphics;
@@ -771,23 +769,6 @@ public class SpaceScreen extends Screen {
             }
         }
         player.inventoryMenu.broadcastChanges();
-    }
-
-    private Item getLavaBucketForStarClass(StarClass starClass) {
-        return switch (starClass) {
-            case O -> ModItems.BLUE_LAVA_BUCKET.get();
-            case B -> ModItems.LIGHT_BLUE_LAVA_BUCKET.get();
-            case A -> ModItems.WHITE_LAVA_BUCKET.get();
-            case F -> ModItems.LIGHT_YELLOW_LAVA_BUCKET.get();
-            case G -> ModItems.YELLOW_LAVA_BUCKET.get();
-            case M -> ModItems.RED_LAVA_BUCKET.get();
-            case B2 -> ModItems.GREEN_LAVA_BUCKET.get();
-            case M_MINUS -> ModItems.BROWN_LAVA_BUCKET.get();
-            case Misc -> ModItems.PINK_LAVA_BUCKET.get();
-            case BLACK_DWARF -> ModItems.BLACK_LAVA_BUCKET.get();
-            case K -> Items.LAVA_BUCKET;
-            case R2 -> ModItems.PURPLE_LAVA_BUCKET.get();
-        };
     }
 
     private record HarvestOptions(int bucketCount, int maxBuckets, Star star) {

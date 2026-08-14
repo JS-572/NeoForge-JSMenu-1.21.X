@@ -1,7 +1,7 @@
 package net.js.jsmenu.network;
 
-import net.js.jsmenu.item.ModItems;
-import net.js.jsmenu.network.payload.RequestLandingPayload;
+import net.js.jsmenu.network.payload.HarvestLavaPayload;
+import net.js.jsmenu.space.LavaBucketHelper;
 import net.js.jsmenu.space.SpaceObject;
 import net.js.jsmenu.space.SpaceObjects;
 import net.js.jsmenu.space.star.Star;
@@ -54,7 +54,7 @@ public final class SpaceHarvestLava {
         MinecraftServer server = minecraft.getSingleplayerServer();
         if (server == null) return;
 
-        Item lavaBucketItem = getLavaBucketForStarClass(star.getStarClass());
+        Item lavaBucketItem = LavaBucketHelper.getLavaBucketForStarClass(star.getStarClass());
         if (lavaBucketItem == null) {
             minecraft.player.displayClientMessage(
                     Component.translatable(
@@ -82,15 +82,9 @@ public final class SpaceHarvestLava {
         });
     }
 
-    private static void performMultiplayerHarvest(
-            Minecraft minecraft,
-            Star star,
-            int amount,
-            HarvestOptions options
-    ) {
-        // You can expand later for server-side packet handling
+    private static void performMultiplayerHarvest(Minecraft minecraft, Star star, int amount, HarvestOptions options) {
         PacketDistributor.sendToServer(
-                new RequestLandingPayload(star.getId(), false)
+                new HarvestLavaPayload(star.getId(), amount)
         );
     }
 
@@ -149,22 +143,15 @@ public final class SpaceHarvestLava {
 
         player.inventoryMenu.broadcastChanges();
     }
+    private static ItemStack getLavaBucketForStarClass(SpaceObject object) {
+        StarClass starClass = object.getStarClass();
+        if (starClass == null) {
+            return ItemStack.EMPTY;
+        }
 
-    private static Item getLavaBucketForStarClass(StarClass starClass) {
-        return switch (starClass) {
-            case O -> ModItems.BLUE_LAVA_BUCKET.get();
-            case B -> ModItems.LIGHT_BLUE_LAVA_BUCKET.get();
-            case A -> ModItems.WHITE_LAVA_BUCKET.get();
-            case F -> ModItems.LIGHT_YELLOW_LAVA_BUCKET.get();
-            case G -> ModItems.YELLOW_LAVA_BUCKET.get();
-            case M -> ModItems.RED_LAVA_BUCKET.get();
-            case B2 -> ModItems.GREEN_LAVA_BUCKET.get();
-            case M_MINUS -> ModItems.BROWN_LAVA_BUCKET.get();
-            case Misc -> ModItems.PINK_LAVA_BUCKET.get();
-            case BLACK_DWARF -> ModItems.BLACK_LAVA_BUCKET.get();
-            case K -> Items.LAVA_BUCKET;
-            case R2 -> ModItems.PURPLE_LAVA_BUCKET.get();
-        };
+        return new ItemStack(
+                LavaBucketHelper.getLavaBucketForStarClass(starClass)
+        );
     }
 
     public static void harvestLava(ServerPlayer player, String starId, int amount) {
@@ -183,67 +170,28 @@ public final class SpaceHarvestLava {
         if (reward == null || reward.isEmpty()) {
             return;
         }
+        var inventory = player.getInventory();
 
-        // 3. Multiply reward by amount (if needed)
+        int availableBuckets = countItem(inventory.items, Items.BUCKET);
+        int availableIron = countItem(inventory.items, Items.IRON_INGOT);
+
+        int bucketsToUse = Math.min(amount, availableBuckets);
+
+        int ironBucketsToCraft = amount - bucketsToUse;
+        int totalIronRequired = ironBucketsToCraft * 3;
+
+        if (availableIron < totalIronRequired) {
+            return;
+        }
+
+        removeItems(player, Items.BUCKET, bucketsToUse);
+        removeItems(player, Items.IRON_INGOT, totalIronRequired);
         reward.setCount(amount);
-
-        // 4. Give item
         if (!player.getInventory().add(reward.copy())) {
             player.drop(reward.copy(), false);
         }
-    }
 
-    private static ItemStack getLavaBucketForStarClass(SpaceObject object) {
-        StarClass starClass = object.getStarClass();
-
-        if (starClass == StarClass.O) {
-            return new ItemStack(ModItems.BLUE_LAVA_BUCKET.get());
-        }
-
-        if (starClass == StarClass.B) {
-            return new ItemStack(ModItems.LIGHT_BLUE_LAVA_BUCKET.get());
-        }
-
-        if (starClass == StarClass.A) {
-            return new ItemStack(ModItems.WHITE_LAVA_BUCKET.get());
-        }
-
-        if (starClass == StarClass.F) {
-            return new ItemStack(ModItems.LIGHT_YELLOW_LAVA_BUCKET.get());
-        }
-
-        if (starClass == StarClass.G) {
-            return new ItemStack(ModItems.YELLOW_LAVA_BUCKET.get());
-        }
-
-        if (starClass == StarClass.K) {
-            return new ItemStack(Items.LAVA_BUCKET);
-        }
-
-        if (starClass == StarClass.M) {
-            return new ItemStack(ModItems.RED_LAVA_BUCKET.get());
-        }
-
-        if (starClass == StarClass.B2) {
-            return new ItemStack(ModItems.GREEN_LAVA_BUCKET.get());
-        }
-
-        if (starClass == StarClass.M_MINUS) {
-            return new ItemStack(ModItems.BROWN_LAVA_BUCKET.get());
-        }
-
-        if (starClass == StarClass.Misc) {
-            return new ItemStack(ModItems.PINK_LAVA_BUCKET.get());
-        }
-
-        if (starClass == StarClass.BLACK_DWARF) {
-            return new ItemStack(ModItems.BLACK_LAVA_BUCKET.get());
-        }
-
-        if (starClass == StarClass.R2) {
-            return new ItemStack(ModItems.PURPLE_LAVA_BUCKET.get());
-        }
-        return ItemStack.EMPTY;
+        player.containerMenu.broadcastChanges();
     }
 
     private record HarvestOptions(int bucketCount, int maxBuckets) {}

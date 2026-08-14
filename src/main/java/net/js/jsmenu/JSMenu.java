@@ -5,16 +5,10 @@ import net.js.jsmenu.block.StarBlocks;
 import net.js.jsmenu.fluid.types.ModFluidTypes;
 import net.js.jsmenu.item.ModCreativeModeTabs;
 import net.js.jsmenu.item.ModItems;
-import net.js.jsmenu.network.payload.HarvestLavaPayload;
-import net.js.jsmenu.network.payload.RequestLandingPayload;
-import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
-import net.neoforged.neoforge.network.event.RegisterPayloadHandlersEvent;
-import net.neoforged.neoforge.network.handling.IPayloadContext;
-import net.neoforged.neoforge.network.registration.PayloadRegistrar;
 import org.slf4j.Logger;
 
 import com.mojang.logging.LogUtils;
@@ -65,30 +59,7 @@ public class JSMenu {
             JSMenuClient.init(modEventBus);
         }
     }
-    private void registerNetworkPackets(final RegisterPayloadHandlersEvent event) {
-        final PayloadRegistrar registrar = event.registrar("1.0");
-        registrar.playToServer(
-                HarvestLavaPayload.TYPE,
-                HarvestLavaPayload.STREAM_CODEC,
-                this::handleHarvestLavaPacket
-        );
 
-        registrar.playToServer(
-                RequestLandingPayload.TYPE,
-                RequestLandingPayload.STREAM_CODEC,
-                this::handleRequestLandingPacket
-        );
-    }
-    private void handleHarvestLavaPacket(final HarvestLavaPayload payload, final IPayloadContext context) {
-        context.enqueueWork(() -> {
-            Player player = context.player();
-        });
-    }
-    private void handleRequestLandingPacket(final RequestLandingPayload payload, final IPayloadContext context) {
-        context.enqueueWork(() -> {
-            Player player = context.player();
-        });
-    }
 
     private void commonSetup(FMLCommonSetupEvent event) {
         event.enqueueWork(() -> {
