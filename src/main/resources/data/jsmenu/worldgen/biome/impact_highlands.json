@@ -1,0 +1,38 @@
+{
+  "has_precipitation": false,
+  "temperature": 0.8,
+  "downfall": 0.0,
+  "effects": {
+    "fog_color": 11119017,
+    "sky_color": 12089448,
+    "water_color": 4159204,
+    "water_fog_color": 329011,
+    "grass_color": 8355711,
+    "foliage_color": 7829367
+  },
+  "carvers": {},
+  "features": [
+    [],
+    [],
+    [],
+    [],
+    [],
+    [],
+    ["jsmenu:aetherium_ore_placed"],
+    [],
+    [],
+    [],
+    []
+  ],
+  "spawn_costs": {},
+  "spawners": {
+    "ambient": [],
+    "axolotls": [],
+    "creature": [],
+    "misc": [],
+    "monster": [],
+    "underground_water_creature": [],
+    "water_ambient": [],
+    "water_creature": []
+  }
+}

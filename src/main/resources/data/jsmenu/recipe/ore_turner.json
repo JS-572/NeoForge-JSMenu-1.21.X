@@ -3,31 +3,31 @@
   "category": "misc",
   "ingredients": [
     {
-      "item": "minecraft:coal"
+      "item": "minecraft:coal_block"
     },
     {
-      "item": "minecraft:copper_ingot"
+      "item": "minecraft:copper_block"
     },
     {
-      "item": "minecraft:iron_ingot"
+      "item": "minecraft:iron_block"
     },
     {
-      "item": "minecraft:gold_ingot"
+      "item": "minecraft:gold_block"
     },
     {
-      "item": "minecraft:lapis_lazuli"
+      "item": "minecraft:lapis_block"
     },
     {
-      "item": "minecraft:redstone"
+      "item": "minecraft:redstone_block"
     },
     {
-      "item": "minecraft:emerald"
+      "item": "minecraft:emerald_block"
     },
     {
-      "item": "minecraft:diamond"
+      "item": "minecraft:diamond_block"
     },
     {
-      "item": "minecraft:quartz"
+      "item": "minecraft:quartz_block"
     }
   ],
   "result": {

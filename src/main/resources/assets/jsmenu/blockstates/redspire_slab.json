@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "jsmenu:block/redspire_slab"
+    },
+    "type=double": {
+      "model": "jsmenu:block/redspire_block"
+    },
+    "type=top": {
+      "model": "jsmenu:block/redspire_slab_top"
+    }
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "jsmenu:block/ashwood_slab"
+    },
+    "type=double": {
+      "model": "jsmenu:block/ashwood_block"
+    },
+    "type=top": {
+      "model": "jsmenu:block/ashwood_slab_top"
+    }
+  }
+}

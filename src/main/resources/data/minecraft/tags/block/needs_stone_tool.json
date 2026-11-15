@@ -66,6 +66,9 @@
     "jsmenu:yttrium_block",
     "jsmenu:zirconium_block",
     "jsmenu:niobium_block",
-    "jsmenu:molybdenum_block"
+    "jsmenu:molybdenum_block",
+
+    "jsmenu:aetherium_ore",
+    "jsmenu:aetherium_block"
   ]
 }

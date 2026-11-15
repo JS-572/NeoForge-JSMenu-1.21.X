@@ -8,6 +8,8 @@
     "jsmenu:umbra_root_log",
     "jsmenu:terminus_split_log",
     "jsmenu:ferric_spine_log",
-    "jsmenu:cryostem_log"
+    "jsmenu:cryostem_log",
+    "jsmenu:ashwood_log",
+    "jsmenu:sulfurwood_log"
   ]
 }

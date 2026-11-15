@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "jsmenu:block/dustwillow_slab"
+    },
+    "type=double": {
+      "model": "jsmenu:block/dustwillow_block"
+    },
+    "type=top": {
+      "model": "jsmenu:block/dustwillow_slab_top"
+    }
+  }
+}

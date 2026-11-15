@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/stairs",
+  "textures": {
+    "bottom": "jsmenu:block/ashwood_planks",
+    "side": "jsmenu:block/ashwood_planks",
+    "top": "jsmenu:block/ashwood_planks"
+  }
+}

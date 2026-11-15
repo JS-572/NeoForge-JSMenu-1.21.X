@@ -1,7 +1,7 @@
 {
   "parent": "minecraft:block/orientable",
   "textures": {
-    "front": "jsmenu:block/mlb_ari",
+    "front": "jsmenu:block/arizona_diamondbacks",
     "side": "minecraft:block/white_concrete",
     "top": "minecraft:block/white_concrete"
   }

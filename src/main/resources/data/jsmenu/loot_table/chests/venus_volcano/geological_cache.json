@@ -1,0 +1,67 @@
+{
+  "type": "minecraft:chest",
+  "pools": [
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "jsmenu:pyrite",
+          "weight": 5
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:polished_basalt",
+          "weight": 2
+        },
+        {
+          "type": "minecraft:item",
+          "name": "jsmenu:solvarium",
+          "weight": 0.5
+        },
+        {
+          "type": "minecraft:item",
+          "name": "jsmenu:cryonite",
+          "weight": 0.5
+        },
+        {
+          "type": "minecraft:item",
+          "name": "jsmenu:sulfur",
+          "weight": 0.2
+        },
+        {
+          "type": "minecraft:item",
+          "functions": [
+            {
+              "add": false,
+              "count": {
+                "type": "minecraft:uniform",
+                "max": 1.0,
+                "min": 1.0
+              },
+              "function": "minecraft:set_count"
+            },
+            {
+              "function": "minecraft:set_potion",
+              "id": "minecraft:fire_resistance"
+            }
+          ],
+          "name": "minecraft:potion",
+          "weight": 0.2
+        }
+      ],
+      "rolls": 1.0
+    },
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "jsmenu:telescope_goggle",
+          "weight": 0.01
+        }
+      ]
+    }
+  ],
+  "random_sequence": "jsmenu:chests/venus_volcano/geological_cache"
+}

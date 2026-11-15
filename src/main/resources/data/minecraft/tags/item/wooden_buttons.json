@@ -8,6 +8,8 @@
     "jsmenu:umbra_root_button",
     "jsmenu:terminus_split_button",
     "jsmenu:ferric_spine_button",
-    "jsmenu:cryostem_button"
+    "jsmenu:cryostem_button",
+    "jsmenu:ashwood_button",
+    "jsmenu:sulfurwood_button"
   ]
 }

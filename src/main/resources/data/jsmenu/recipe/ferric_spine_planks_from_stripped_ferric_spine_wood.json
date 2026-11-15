@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "jsmenu:stripped_ferric_spine_wood"
+    }
+  ],
+  "result": {
+    "count": 4,
+    "id": "jsmenu:ferric_spine_planks"
+  }
+}

@@ -32,6 +32,11 @@
     "jsmenu:hafnium_ore",
     "jsmenu:tantalum_ore",
     "jsmenu:tungsten_ore",
-    "jsmenu:rhenium_ore"
+    "jsmenu:rhenium_ore",
+
+    "jsmenu:pyrite_ore",
+    "jsmenu:pyrite_block",
+    "jsmenu:venurite_ore",
+    "jsmenu:venurite_block"
   ]
 }

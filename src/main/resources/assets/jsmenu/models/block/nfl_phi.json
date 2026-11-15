@@ -1,7 +1,7 @@
 {
   "parent": "minecraft:block/orientable",
   "textures": {
-    "front": "jsmenu:block/nfl_phi",
+    "front": "jsmenu:block/philadelphia_eagles",
     "side": "minecraft:block/white_concrete",
     "top": "minecraft:block/white_concrete"
   }

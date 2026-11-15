@@ -1,0 +1,151 @@
+{
+  "type": "minecraft:chest",
+  "pools": [
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "jsmenu:carbon",
+          "weight": 20,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "add": false,
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 1,
+                "max": 5
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "jsmenu:oxygen",
+          "weight": 20
+        },
+        {
+          "type": "minecraft:item",
+          "name": "jsmenu:beryllium",
+          "weight": 20,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "add": false,
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 1,
+                "max": 5
+              }
+            }
+          ]
+        }
+      ],
+      "rolls": 2.0
+    },
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:diamond",
+          "weight": 20,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "add": false,
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 1,
+                "max": 5
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:emerald",
+          "weight": 20,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "add": false,
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 1,
+                "max": 5
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:raw_iron",
+          "weight": 10,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "add": false,
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 1,
+                "max": 3
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:raw_gold",
+          "weight": 10,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "add": false,
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 1,
+                "max": 3
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:iron_ingot",
+          "weight": 5,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "add": false,
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 1,
+                "max": 3
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "jsmenu:hydrogen",
+          "weight": 2,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "add": false,
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 2,
+                "max": 4
+              }
+            }
+          ]
+        }
+      ],
+      "rolls": 1.0
+    }
+  ],
+  "random_sequence": "jsmenu:chests/venus_volcano/sealed_vault"
+}

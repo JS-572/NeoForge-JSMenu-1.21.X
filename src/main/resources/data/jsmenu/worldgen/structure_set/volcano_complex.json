@@ -1,0 +1,17 @@
+{
+  "structures": [
+    {
+      "structure": "jsmenu:volcano_complex",
+      "weight": 1
+    }
+  ],
+  "placement": {
+    "type": "minecraft:random_spread",
+    "spacing": 40,
+    "separation": 10,
+    "salt": 19783541,
+    "frequency": 0.02,
+    "frequency_reduction_method": "default",
+    "spread_type": "linear"
+  }
+}

@@ -1,5 +1,5 @@
 {
-  "type": "minecraft:the_end",
+  "type": "jsmenu:moon_type",
   "generator": {
     "type": "minecraft:noise",
     "biome_source": {

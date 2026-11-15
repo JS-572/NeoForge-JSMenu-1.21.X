@@ -1,5 +1,5 @@
 {
-  "type": "minecraft:the_end",
+  "type": "jsmenu:mercury_life_type",
   "generator": {
     "type": "minecraft:noise",
     "biome_source": {
@@ -8,8 +8,8 @@
         {
           "biome": "jsmenu:sunscorch_plains",
           "parameters": {
-            "temperature": [1.2, 1.8],
-            "humidity": 0.0,
+            "temperature": [0.2, 0.6],
+            "humidity": [-1.0, 1.0],
             "continentalness": 0.0,
             "erosion": 0.0,
             "weirdness": 0.0,
@@ -20,8 +20,8 @@
         {
           "biome": "jsmenu:terminator_ridge",
           "parameters": {
-            "temperature": 1.2,
-            "humidity": 0.05,
+            "temperature": [-0.2, 0.2],
+            "humidity": [-1.0, 1.0],
             "continentalness": 0.0,
             "erosion": 0.0,
             "weirdness": 0.0,
@@ -32,8 +32,8 @@
         {
           "biome": "jsmenu:frozen_shadow_craters",
           "parameters": {
-            "temperature": -0.2,
-            "humidity": 0.1,
+            "temperature": [-1.0, -0.6],
+            "humidity": [-1.0, 1.0],
             "continentalness": 0.0,
             "erosion": 0.0,
             "weirdness": 0.0,
@@ -44,8 +44,8 @@
         {
           "biome": "jsmenu:molten_basin",
           "parameters": {
-            "temperature": [1.5, 2.0],
-            "humidity": 1.0,
+            "temperature": [0.6, 1.0],
+            "humidity": [-1.0, 1.0],
             "continentalness": 0.0,
             "erosion": 0.0,
             "weirdness": 0.0,
@@ -56,8 +56,8 @@
         {
           "biome": "jsmenu:metallic_highlands",
           "parameters": {
-            "temperature": 1.0,
-            "humidity": 0.0,
+            "temperature": [-0.6, -0.2],
+            "humidity": [-1.0, 1.0],
             "continentalness": 0.0,
             "erosion": 0.0,
             "weirdness": 0.0,
@@ -74,7 +74,7 @@
   },
   "spawn": {
     "x": 0.0,
-    "y": 128.0,
+    "y": 80.0,
     "z": 0.0
   }
 }

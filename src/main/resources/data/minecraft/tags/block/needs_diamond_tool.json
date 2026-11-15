@@ -60,6 +60,9 @@
     "jsmenu:moscovium_block",
     "jsmenu:livermorium_block",
     "jsmenu:tennessine_block",
-    "jsmenu:oganesson_block"
+    "jsmenu:oganesson_block",
+
+    "jsmenu:solvarium_ore",
+    "jsmenu:solvarium_block"
   ]
 }

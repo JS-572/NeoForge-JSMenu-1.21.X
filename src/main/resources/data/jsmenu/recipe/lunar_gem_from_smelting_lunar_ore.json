@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:smelting",
+  "category": "misc",
+  "cookingtime": 200,
+  "experience": 0.25,
+  "group": "lunar_gems",
+  "ingredient": {
+    "item": "jsmenu:lunar_ore"
+  },
+  "result": {
+    "count": 1,
+    "id": "jsmenu:lunar_gem"
+  }
+}

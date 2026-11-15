@@ -6,7 +6,7 @@
     "targets": [
       {
         "state": {
-          "Name": "jsmenu:hydrogen_ore"
+          "Name": "jsmenu:arsenic_ore"
         },
         "target": {
           "predicate_type": "minecraft:tag_match",

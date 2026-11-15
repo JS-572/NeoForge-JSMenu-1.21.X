@@ -646,6 +646,7 @@ public class ModCreativeModeTabs {
                         output.accept(ModBlocks.ZERO);
                         output.accept(ModBlocks.UNLOADED_BASE);
                         output.accept(ModBlocks.LOADED_BASE);
+                        output.accept(ModItems.SCOREBOARD_UPDATER);
                     }).build());
 
     public static final Supplier<CreativeModeTab> CONCRETE_ADDITION = CREATIVE_MODE_TAB.register("concrete_addition",
@@ -1184,10 +1185,10 @@ public class ModCreativeModeTabs {
                         output.accept(ModBlocks.BLOOM_TRAPDOOR);
                     }).build());
 
-    public static final Supplier<CreativeModeTab> THE_SOLAR_SYSTEM = CREATIVE_MODE_TAB.register("the_solar_system",
+    public static final Supplier<CreativeModeTab> MERCURY_UPDATE = CREATIVE_MODE_TAB.register("mercury_update",
             () -> CreativeModeTab.builder().icon(() -> new ItemStack(ModBlocks.SOLAR_CRUST.get()))
                     .withTabsBefore(ResourceLocation.fromNamespaceAndPath(JSMenu.MOD_ID, "space_of_life_update"))
-                    .title(Component.translatable("creativetab.jsmenu.the_solar_system"))
+                    .title(Component.translatable("creativetab.jsmenu.mercury_update"))
                     .displayItems((itemDisplayParameters, output) -> {
                         output.accept(ModBlocks.SCORCHED_REGOLITH);
                         output.accept(ModBlocks.SOLAR_CRUST);
@@ -1285,6 +1286,109 @@ public class ModCreativeModeTabs {
                         output.accept(ModBlocks.CRYOSTEM_FENCE_GATE);
                         output.accept(ModBlocks.CRYOSTEM_DOOR);
                         output.accept(ModBlocks.CRYOSTEM_TRAPDOOR);
+                    }).build());
+
+    public static final Supplier<CreativeModeTab> VENUS_AND_MARS_UPDATE = CREATIVE_MODE_TAB.register("venus_and_mars_update",
+            () -> CreativeModeTab.builder().icon(() -> new ItemStack(ModBlocks.REGOLITH.get()))
+                    .withTabsBefore(ResourceLocation.fromNamespaceAndPath(JSMenu.MOD_ID, "mercury_update"))
+                    .title(Component.translatable("creativetab.jsmenu.venus_and_mars_update"))
+                    .displayItems((itemDisplayParameters, output) -> {
+                        output.accept(ModItems.TELESCOPE_GOGGLE.get());
+                        output.accept(ModBlocks.REGOLITH.get());
+                        output.accept(ModBlocks.VOLCANIC_GROWTH.get());
+                        output.accept(ModBlocks.SCORCHED_ROCK.get());
+                        output.accept(ModBlocks.COMPRESSED_ROCK.get());
+                        output.accept(ModBlocks.PYRITE_ORE.get());
+                        output.accept(ModBlocks.PYRITE_BLOCK.get());
+                        output.accept(ModItems.PYRITE);
+                        output.accept(ModBlocks.VENURITE_ORE.get());
+                        output.accept(ModBlocks.VENURITE_BLOCK.get());
+                        output.accept(ModItems.VENURITE);
+                        output.accept(ModBlocks.SOLVARIUM_ORE.get());
+                        output.accept(ModBlocks.SOLVARIUM_BLOCK.get());
+                        output.accept(ModItems.SOLVARIUM);
+                        output.accept(ModBlocks.SULFURWOOD_LOG.get());
+                        output.accept(ModBlocks.SULFURWOOD_WOOD.get());
+                        output.accept(ModBlocks.STRIPPED_SULFURWOOD_LOG.get());
+                        output.accept(ModBlocks.STRIPPED_SULFURWOOD_WOOD.get());
+                        output.accept(ModBlocks.SULFURWOOD_PLANKS.get());
+                        output.accept(ModBlocks.SULFURWOOD_LEAVES.get());
+                        output.accept(ModBlocks.SULFURWOOD_SAPLING.get());
+                        output.accept(ModBlocks.SULFURWOOD_STAIRS.get());
+                        output.accept(ModBlocks.SULFURWOOD_SLAB.get());
+                        output.accept(ModBlocks.SULFURWOOD_PRESSURE_PLATE.get());
+                        output.accept(ModBlocks.SULFURWOOD_BUTTON.get());
+                        output.accept(ModBlocks.SULFURWOOD_FENCE.get());
+                        output.accept(ModBlocks.SULFURWOOD_FENCE_GATE.get());
+                        output.accept(ModBlocks.SULFURWOOD_DOOR.get());
+                        output.accept(ModBlocks.SULFURWOOD_TRAPDOOR.get());
+                        output.accept(ModBlocks.ASHWOOD_LOG.get());
+                        output.accept(ModBlocks.ASHWOOD_WOOD.get());
+                        output.accept(ModBlocks.STRIPPED_ASHWOOD_LOG.get());
+                        output.accept(ModBlocks.STRIPPED_ASHWOOD_WOOD.get());
+                        output.accept(ModBlocks.ASHWOOD_PLANKS.get());
+                        output.accept(ModBlocks.ASHWOOD_LEAVES.get());
+                        output.accept(ModBlocks.ASHWOOD_SAPLING.get());
+                        output.accept(ModBlocks.ASHWOOD_STAIRS.get());
+                        output.accept(ModBlocks.ASHWOOD_SLAB.get());
+                        output.accept(ModBlocks.ASHWOOD_PRESSURE_PLATE.get());
+                        output.accept(ModBlocks.ASHWOOD_BUTTON.get());
+                        output.accept(ModBlocks.ASHWOOD_FENCE.get());
+                        output.accept(ModBlocks.ASHWOOD_FENCE_GATE.get());
+                        output.accept(ModBlocks.ASHWOOD_DOOR.get());
+                        output.accept(ModBlocks.ASHWOOD_TRAPDOOR.get());
+                        output.accept(ModBlocks.REDGRASS_BLOCK.get());
+                        output.accept(ModBlocks.RUSTSOIL.get());
+                        output.accept(ModBlocks.CRIMSONSTONE.get());
+                        output.accept(ModBlocks.MARROWSTONE.get());
+                        output.accept(ModBlocks.FERRICITE_ORE.get());
+                        output.accept(ModBlocks.FERRICITE_BLOCK.get());
+                        output.accept(ModItems.FERRICITE.get());
+                        output.accept(ModBlocks.CRYONITE_ORE.get());
+                        output.accept(ModBlocks.CRYONITE_BLOCK.get());
+                        output.accept(ModItems.CRYONITE.get());
+                        output.accept(ModBlocks.AETHERIUM_ORE.get());
+                        output.accept(ModBlocks.AETHERIUM_BLOCK.get());
+                        output.accept(ModItems.AETHERIUM.get());
+                        output.accept(ModBlocks.URANINITE_ORE.get());
+                        output.accept(ModBlocks.URANINITE_BLOCK.get());
+                        output.accept(ModItems.URANINITE.get());
+                        output.accept(ModBlocks.REDSPIRE_LOG.get());
+                        output.accept(ModBlocks.REDSPIRE_WOOD.get());
+                        output.accept(ModBlocks.STRIPPED_REDSPIRE_LOG.get());
+                        output.accept(ModBlocks.STRIPPED_REDSPIRE_WOOD.get());
+                        output.accept(ModBlocks.REDSPIRE_ROOTS.get());
+                        output.accept(ModBlocks.REDSPIRE_LEAVES.get());
+                        output.accept(ModBlocks.REDSPIRE_SAPLING.get());
+                        output.accept(ModBlocks.REDSPIRE_STAIRS.get());
+                        output.accept(ModBlocks.REDSPIRE_SLAB.get());
+                        output.accept(ModBlocks.REDSPIRE_PRESSURE_PLATE.get());
+                        output.accept(ModBlocks.REDSPIRE_BUTTON.get());
+                        output.accept(ModBlocks.REDSPIRE_FENCE.get());
+                        output.accept(ModBlocks.REDSPIRE_FENCE_GATE.get());
+                        output.accept(ModBlocks.REDSPIRE_DOOR.get());
+                        output.accept(ModBlocks.REDSPIRE_TRAPDOOR.get());
+                        output.accept(ModBlocks.DUSTWILLOW_LOG.get());
+                        output.accept(ModBlocks.DUSTWILLOW_WOOD.get());
+                        output.accept(ModBlocks.STRIPPED_DUSTWILLOW_LOG.get());
+                        output.accept(ModBlocks.STRIPPED_DUSTWILLOW_WOOD.get());
+                        output.accept(ModBlocks.DUSTWILLOW_ROOTS.get());
+                        output.accept(ModBlocks.DUSTWILLOW_LEAVES.get());
+                        output.accept(ModBlocks.DUSTWILLOW_PLANKS.get());
+                        output.accept(ModBlocks.DUSTWILLOW_SAPLING.get());
+                        output.accept(ModBlocks.DUSTWILLOW_STAIRS.get());
+                        output.accept(ModBlocks.DUSTWILLOW_SLAB.get());
+                        output.accept(ModBlocks.DUSTWILLOW_PRESSURE_PLATE.get());
+                        output.accept(ModBlocks.DUSTWILLOW_BUTTON.get());
+                        output.accept(ModBlocks.DUSTWILLOW_FENCE.get());
+                        output.accept(ModBlocks.DUSTWILLOW_FENCE_GATE.get());
+                        output.accept(ModBlocks.DUSTWILLOW_DOOR.get());
+                        output.accept(ModBlocks.DUSTWILLOW_TRAPDOOR.get());
+                        output.accept(ModItems.PLANET_MERCURY_MUSIC_DISC);
+                        output.accept(ModItems.PLANET_VENUS_MUSIC_DISC);
+                        output.accept(ModItems.PLANET_EARTH_MUSIC_DISC);
+                        output.accept(ModItems.PLANET_MARS_MUSIC_DISC);
+                        output.accept(ModItems.STAR_SUN_MUSIC_DISC);
                     }).build());
     public static void register(IEventBus eventBus) {
         CREATIVE_MODE_TAB.register(eventBus);

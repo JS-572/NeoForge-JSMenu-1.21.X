@@ -1,0 +1,44 @@
+{
+  "has_precipitation": false,
+  "temperature": -0.7,
+  "downfall": 0.0,
+  "effects": {
+    "fog_color": 13882323,
+    "sky_color": 12089448,
+    "water_color": 5263615,
+    "water_fog_color": 3947580,
+    "grass_color": 10070220,
+    "foliage_color": 9286372,
+    "particle": {
+      "options": {
+        "type": "minecraft:snowflake"
+      },
+      "probability": 0.003
+    }
+  },
+  "carvers": {},
+  "features": [
+    [],
+    [],
+    [],
+    [],
+    [],
+    [],
+    ["jsmenu:cryonite_ore_placed"],
+    [],
+    [],
+    ["jsmenu:dustwillow_tree_placed"],
+    []
+  ],
+  "spawn_costs": {},
+  "spawners": {
+    "ambient": [],
+    "axolotls": [],
+    "creature": [],
+    "misc": [],
+    "monster": [],
+    "underground_water_creature": [],
+    "water_ambient": [],
+    "water_creature": []
+  }
+}

@@ -1,7 +1,7 @@
 {
   "parent": "minecraft:block/orientable",
   "textures": {
-    "front": "jsmenu:block/mlb_sd",
+    "front": "jsmenu:block/san_diego_padres",
     "side": "minecraft:block/white_concrete",
     "top": "minecraft:block/white_concrete"
   }

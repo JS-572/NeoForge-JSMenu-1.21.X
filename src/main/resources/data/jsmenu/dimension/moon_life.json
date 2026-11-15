@@ -1,5 +1,5 @@
 {
-  "type": "minecraft:the_end",
+  "type": "jsmenu:moon_life_type",
   "generator": {
     "type": "minecraft:noise",
     "biome_source": {
@@ -8,8 +8,8 @@
         {
           "biome": "jsmenu:lunar_plains",
           "parameters": {
-            "temperature": 0.15,
-            "humidity": 0.25,
+            "temperature": [-0.2, 0.2],
+            "humidity": [-1.0, 1.0],
             "continentalness": 0.0,
             "erosion": 0.0,
             "weirdness": 0.0,
@@ -20,8 +20,8 @@
         {
           "biome": "jsmenu:glowfields",
           "parameters": {
-            "temperature": 0.65,
-            "humidity": 0.7,
+            "temperature": [0.6, 1.0],
+            "humidity": [-1.0, 1.0],
             "continentalness": 0.0,
             "erosion": 0.0,
             "weirdness": 0.0,
@@ -32,8 +32,8 @@
         {
           "biome": "jsmenu:crater_gardens",
           "parameters": {
-            "temperature": -0.65,
-            "humidity": 0.05,
+            "temperature": [-0.6, -0.2],
+            "humidity": [-1.0, 1.0],
             "continentalness": 0.0,
             "erosion": 0.0,
             "weirdness": 0.0,
@@ -44,8 +44,8 @@
         {
           "biome": "jsmenu:frozen_silence",
           "parameters": {
-            "temperature": -0.85,
-            "humidity": -0.65,
+            "temperature": [-1.0, -0.6],
+            "humidity": [-1.0, 1.0],
             "continentalness": 0.0,
             "erosion": 0.0,
             "weirdness": 0.0,
@@ -56,8 +56,8 @@
         {
           "biome": "jsmenu:whispering_fields",
           "parameters": {
-            "temperature": 0.35,
-            "humidity": -0.55,
+            "temperature": [0.2, 0.6],
+            "humidity": [-1.0, 1.0],
             "continentalness": 0.0,
             "erosion": 0.0,
             "weirdness": 0.0,

@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:blasting",
+  "category": "misc",
+  "cookingtime": 100,
+  "experience": 0.25,
+  "group": "core_fragment",
+  "ingredient": {
+    "item": "jsmenu:core_fragment_ore"
+  },
+  "result": {
+    "count": 1,
+    "id": "jsmenu:core_fragment"
+  }
+}

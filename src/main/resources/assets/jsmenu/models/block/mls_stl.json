@@ -1,7 +1,7 @@
 {
   "parent": "minecraft:block/orientable",
   "textures": {
-    "front": "jsmenu:block/mls_stl",
+    "front": "jsmenu:block/st_louis_city_sc",
     "side": "minecraft:block/white_concrete",
     "top": "minecraft:block/white_concrete"
   }

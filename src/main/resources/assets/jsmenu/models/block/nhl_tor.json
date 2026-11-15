@@ -1,7 +1,7 @@
 {
   "parent": "minecraft:block/orientable",
   "textures": {
-    "front": "jsmenu:block/nhl_tor",
+    "front": "jsmenu:block/toronto_maple_leafs",
     "side": "minecraft:block/white_concrete",
     "top": "minecraft:block/white_concrete"
   }

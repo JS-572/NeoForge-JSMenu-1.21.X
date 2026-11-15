@@ -3,6 +3,16 @@
   "values": [
     "jsmenu:bromine",
     "jsmenu:mercury",
-    "jsmenu:space"
+    "jsmenu:red_lava",
+    "jsmenu:yellow_lava",
+    "jsmenu:light_yellow_lava",
+    "jsmenu:green_lava",
+    "jsmenu:light_blue_lava",
+    "jsmenu:blue_lava",
+    "jsmenu:purple_lava",
+    "jsmenu:pink_lava",
+    "jsmenu:brown_lava",
+    "jsmenu:white_lava",
+    "jsmenu:black_lava"
   ]
 }

@@ -1,7 +1,7 @@
 {
   "parent": "minecraft:block/orientable",
   "textures": {
-    "front": "jsmenu:block/nba_mil",
+    "front": "jsmenu:block/milwaukee_bucks",
     "side": "minecraft:block/white_concrete",
     "top": "minecraft:block/white_concrete"
   }

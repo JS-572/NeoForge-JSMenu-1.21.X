@@ -5,6 +5,12 @@
     },
     "jsmenu:lithium_block": {
       "burn_time": 23040
+    },
+    "jsmenu:solar_ash": {
+      "burn_time": 1000
+    },
+    "jsmenu:ignited_solar_ash": {
+      "burn_time": 2000
     }
   }
 }

@@ -196,6 +196,26 @@ public class OreTurnerItem extends Item {
             ModBlocks.BRAGSTONE_ORE
     );
 
+    public static final List<Supplier<? extends Block>> MERCURY_ORES = List.of(
+            ModBlocks.SOLAR_IRON_ORE,
+            ModBlocks.GOLD_VEIN_CLUSTER_ORE,
+            ModBlocks.SULFUR_CRYSTAL_ORE
+    );
+
+    public static final List<Supplier<? extends Block>> MERCURY_DEEPSLATE_ORES = List.of(
+            ModBlocks.THERMIUM_ORE,
+            ModBlocks.MAGNETITE_ORE
+    );
+
+    public static final List<Supplier<? extends Block>> VENUS_ORES = List.of(
+            ModBlocks.PYRITE_ORE
+    );
+
+    public static final List<Supplier<? extends Block>> VENUS_DEEPSLATE_ORES = List.of(
+            ModBlocks.VENURITE_ORE,
+            ModBlocks.SOLVARIUM_ORE
+    );
+
     public static final Map<Block, Block> ORE_TURNER_MAP = Map.ofEntries(
             entry(Blocks.COAL_ORE, Blocks.COAL_BLOCK),
             entry(Blocks.COPPER_ORE, Blocks.COPPER_BLOCK),
@@ -335,7 +355,15 @@ public class OreTurnerItem extends Item {
             entry(ModBlocks.CRISRA_ORE.get(), ModBlocks.CRISRA_BLOCK.get()),
             entry(ModBlocks.BRAGSTONE_ORE.get(), ModBlocks.BRAGSTONE_BLOCK.get()),
             entry(ModBlocks.LUNAR_ORE.get(), ModBlocks.LUNAR_BLOCK.get()),
-            entry(ModBlocks.GRADIENT_ORE.get(), ModBlocks.GRADIENT_BLOCK.get())
+            entry(ModBlocks.GRADIENT_ORE.get(), ModBlocks.GRADIENT_BLOCK.get()),
+            entry(ModBlocks.SOLAR_IRON_ORE.get(), ModBlocks.SOLAR_IRON_BLOCK.get()),
+            entry(ModBlocks.GOLD_VEIN_CLUSTER_ORE.get(), ModBlocks.GOLD_VEIN_CLUSTER_BLOCK.get()),
+            entry(ModBlocks.SULFUR_CRYSTAL_ORE.get(), ModBlocks.SULFUR_CRYSTAL_BLOCK.get()),
+            entry(ModBlocks.THERMIUM_ORE.get(), ModBlocks.THERMIUM_BLOCK.get()),
+            entry(ModBlocks.MAGNETITE_ORE.get(), ModBlocks.MAGNETITE_BLOCK.get()),
+            entry(ModBlocks.PYRITE_ORE.get(), ModBlocks.PYRITE_BLOCK.get()),
+            entry(ModBlocks.VENURITE_ORE.get(), ModBlocks.VENURITE_BLOCK.get()),
+            entry(ModBlocks.SOLVARIUM_ORE.get(), ModBlocks.SOLVARIUM_BLOCK.get())
     );
 
     public OreTurnerItem(Properties properties) {
@@ -378,6 +406,14 @@ public class OreTurnerItem extends Item {
             newBlock = SUN_DEEPSLATE_ORES.get(random.nextInt(SUN_DEEPSLATE_ORES.size())).get();
         } else if (clickedBlock == ModBlocks.INNER_STONE.get()) {
             newBlock = MOON_DEEPSLATE_ORES.get(random.nextInt(MOON_DEEPSLATE_ORES.size())).get();
+        } else if (clickedBlock == ModBlocks.MERCURIAN_BASALT.get()) {
+            newBlock = MERCURY_ORES.get(random.nextInt(MERCURY_ORES.size())).get();
+        } else if (clickedBlock == ModBlocks.COMPRESSED_CORESTONE.get()) {
+            newBlock = MERCURY_DEEPSLATE_ORES.get(random.nextInt(MERCURY_DEEPSLATE_ORES.size())).get();
+        } else if (clickedBlock == ModBlocks.SCORCHED_ROCK.get()) {
+            newBlock = VENUS_ORES.get(random.nextInt(VENUS_ORES.size())).get();
+        } else if (clickedBlock == ModBlocks.COMPRESSED_ROCK.get()) {
+            newBlock = VENUS_DEEPSLATE_ORES.get(random.nextInt(VENUS_DEEPSLATE_ORES.size())).get();
         }
 
         if (newBlock != null) {

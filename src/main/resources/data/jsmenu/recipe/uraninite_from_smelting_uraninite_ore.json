@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:smelting",
+  "category": "misc",
+  "cookingtime": 200,
+  "experience": 0.25,
+  "group": "uraninite",
+  "ingredient": {
+    "item": "jsmenu:uraninite_ore"
+  },
+  "result": {
+    "count": 1,
+    "id": "jsmenu:uraninite"
+  }
+}

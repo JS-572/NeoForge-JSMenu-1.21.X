@@ -130,6 +130,18 @@
     "jsmenu:crisra_ore",
     "jsmenu:lunar_ore",
     "jsmenu:gradient_ore",
-    "jsmenu:bragstone_ore"
+    "jsmenu:bragstone_ore",
+    "jsmenu:solar_iron_ore",
+    "jsmenu:gold_vein_cluster_ore",
+    "jsmenu:sulfur_crystal_ore",
+    "jsmenu:thermium_ore",
+    "jsmenu:magnetite_ore",
+    "jsmenu:pyrite_ore",
+    "jsmenu:venurite_ore",
+    "jsmenu:solvarium_ore",
+    "jsmenu:ferricite_ore",
+    "jsmenu:cryonite_ore",
+    "jsmenu:aetherium_ore",
+    "jsmenu:uraninite_ore"
   ]
 }

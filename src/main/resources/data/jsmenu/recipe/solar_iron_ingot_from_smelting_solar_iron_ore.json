@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:smelting",
+  "category": "misc",
+  "cookingtime": 200,
+  "experience": 0.25,
+  "group": "solar_iron",
+  "ingredient": {
+    "item": "jsmenu:solar_iron_ore"
+  },
+  "result": {
+    "count": 1,
+    "id": "jsmenu:solar_iron_ingot"
+  }
+}

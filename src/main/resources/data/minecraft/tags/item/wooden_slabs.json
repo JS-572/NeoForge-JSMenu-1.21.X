@@ -10,6 +10,8 @@
     "jsmenu:umbra_root_slab",
     "jsmenu:terminus_split_slab",
     "jsmenu:ferric_spine_slab",
-    "jsmenu:cryostem_slab"
+    "jsmenu:cryostem_slab",
+    "jsmenu:ashwood_slab",
+    "jsmenu:sulfurwood_slab"
   ]
 }

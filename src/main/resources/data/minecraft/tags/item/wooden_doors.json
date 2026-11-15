@@ -8,6 +8,8 @@
     "jsmenu:umbra_root_door",
     "jsmenu:terminus_split_door",
     "jsmenu:ferric_spine_door",
-    "jsmenu:cryostem_door"
+    "jsmenu:cryostem_door",
+    "jsmenu:ashwood_door",
+    "jsmenu:sulfurwood_door"
   ]
 }

@@ -1,7 +1,7 @@
 {
   "parent": "minecraft:block/orientable",
   "textures": {
-    "front": "jsmenu:block/nhl_veg",
+    "front": "jsmenu:block/vegas_golden_knights",
     "side": "minecraft:block/white_concrete",
     "top": "minecraft:block/white_concrete"
   }

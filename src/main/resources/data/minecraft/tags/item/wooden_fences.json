@@ -8,6 +8,8 @@
     "jsmenu:umbra_root_fence",
     "jsmenu:terminus_split_fence",
     "jsmenu:ferric_spine_fence",
-    "jsmenu:cryostem_fence"
+    "jsmenu:cryostem_fence",
+    "jsmenu:ashwood_fence",
+    "jsmenu:sulfurwood_fence"
   ]
 }

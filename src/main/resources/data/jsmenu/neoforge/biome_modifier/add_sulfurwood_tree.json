@@ -1,0 +1,9 @@
+{
+  "type": "neoforge:add_features",
+  "biomes": [
+    "jsmenu:volcanic_plains",
+    "jsmenu:sulfur_wastes"
+  ],
+  "features": "jsmenu:sulfurwood_tree_placed",
+  "step": "vegetal_decoration"
+}

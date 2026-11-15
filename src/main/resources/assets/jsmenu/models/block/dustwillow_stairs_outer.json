@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/outer_stairs",
+  "textures": {
+    "bottom": "jsmenu:block/dustwillow_planks",
+    "side": "jsmenu:block/dustwillow_planks",
+    "top": "jsmenu:block/dustwillow_planks"
+  }
+}

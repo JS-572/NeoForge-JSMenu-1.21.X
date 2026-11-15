@@ -10,6 +10,8 @@
     "jsmenu:umbra_root_planks",
     "jsmenu:terminus_split_planks",
     "jsmenu:ferric_spine_planks",
-    "jsmenu:cryostem_planks"
+    "jsmenu:cryostem_planks",
+    "jsmenu:ashwood_planks",
+    "jsmenu:sulfurwood_planks"
   ]
 }

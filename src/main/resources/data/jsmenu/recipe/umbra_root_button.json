@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "jsmenu:umbra_root_planks"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "jsmenu:umbra_root_button"
+  }
+}

@@ -4,7 +4,12 @@
     "jsmenu:ignited_solar_ash",
     "jsmenu:lunar_soil",
     "jsmenu:lunar_grass",
-    "jsmenu:glowgrass",
-    "jsmenu:frozen_lunar_grass"
+    "jsmenu:frozen_lunar_grass_block",
+    "jsmenu:scorched_regolith",
+    "jsmenu:solar_crust",
+    "jsmenu:volcanic_growth",
+    "jsmenu:regolith",
+    "jsmenu:redgrass_block",
+    "jsmenu:rustsoil"
   ]
 }

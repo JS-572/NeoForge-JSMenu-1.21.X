@@ -237,6 +237,12 @@ public class RadioactiveDamageTypes {
     public static final ResourceKey<DamageType> OTHER_RADIATION_MINING = createKey("other_radiation_mining");
     public static final ResourceKey<DamageType> OTHER_RADIATION_KARMA = createKey("other_radiation_karma");
 
+    public static final ResourceKey<DamageType> URANINITE_ORE_STEP = createKey("uraninite_ore_step");
+    public static final ResourceKey<DamageType> URANINITE_ORE_MINING = createKey("uraninite_ore_mining");
+    public static final ResourceKey<DamageType> URANINITE_ORE_KARMA = createKey("uraninite_ore_karma");
+    public static final ResourceKey<DamageType> URANINITE_BLOCK_STEP = createKey("uraninite_block_step");
+    public static final ResourceKey<DamageType> URANINITE_BLOCK_MINING = createKey("uraninite_block_mining");
+    public static final ResourceKey<DamageType> URANINITE_BLOCK_KARMA = createKey("uraninite_block_karma");
 
     private static ResourceKey<DamageType> createKey(String name) {
         return ResourceKey.create(Registries.DAMAGE_TYPE, ResourceLocation.fromNamespaceAndPath("jsmenu",  name));

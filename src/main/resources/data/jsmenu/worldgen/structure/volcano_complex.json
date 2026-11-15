@@ -1,0 +1,7 @@
+{
+  "type": "jsmenu:volcano_complex",
+  "biomes": "#jsmenu:has_structure/volcano_complex",
+  "spawn_overrides": {},
+  "step": "surface_structures",
+  "terrain_adaptation": "beard_thin"
+}

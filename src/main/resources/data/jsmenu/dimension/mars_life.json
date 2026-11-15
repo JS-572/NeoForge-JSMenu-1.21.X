@@ -1,0 +1,188 @@
+{
+  "type": "jsmenu:mars_life_type",
+  "generator": {
+    "type": "minecraft:noise",
+    "biome_source": {
+      "type": "minecraft:multi_noise",
+      "biomes": [
+        {
+          "biome": "jsmenu:redgrass_plains",
+          "parameters": {
+            "temperature": -0.75,
+            "humidity": -0.75,
+            "continentalness": 0.0,
+            "erosion": 0.0,
+            "weirdness": 0.0,
+            "depth": 0.0,
+            "offset": 0.0
+          }
+        },
+        {
+          "biome": "jsmenu:redgrass_plains",
+          "parameters": {
+            "temperature": -0.75,
+            "humidity": 0.0,
+            "continentalness": 0.0,
+            "erosion": 0.0,
+            "weirdness": 0.0,
+            "depth": 0.0,
+            "offset": 0.0
+          }
+        },
+        {
+          "biome": "jsmenu:redgrass_plains",
+          "parameters": {
+            "temperature": -0.75,
+            "humidity": 0.75,
+            "continentalness": 0.0,
+            "erosion": 0.0,
+            "weirdness": 0.0,
+            "depth": 0.0,
+            "offset": 0.0
+          }
+        },
+        {
+          "biome": "jsmenu:redgrass_plains",
+          "parameters": {
+            "temperature": 0.0,
+            "humidity": -0.75,
+            "continentalness": 0.0,
+            "erosion": 0.0,
+            "weirdness": 0.0,
+            "depth": 0.0,
+            "offset": 0.0
+          }
+        },
+        {
+          "biome": "jsmenu:redgrass_plains",
+          "parameters": {
+            "temperature": 0.0,
+            "humidity": 0.0,
+            "continentalness": 0.0,
+            "erosion": 0.0,
+            "weirdness": 0.0,
+            "depth": 0.0,
+            "offset": 0.0
+          }
+        },
+        {
+          "biome": "jsmenu:redgrass_plains",
+          "parameters": {
+            "temperature": 0.0,
+            "humidity": 0.75,
+            "continentalness": 0.0,
+            "erosion": 0.0,
+            "weirdness": 0.0,
+            "depth": 0.0,
+            "offset": 0.0
+          }
+        },
+        {
+          "biome": "jsmenu:redgrass_plains",
+          "parameters": {
+            "temperature": 0.75,
+            "humidity": -0.75,
+            "continentalness": 0.0,
+            "erosion": 0.0,
+            "weirdness": 0.0,
+            "depth": 0.0,
+            "offset": 0.0
+          }
+        },
+        {
+          "biome": "jsmenu:redgrass_plains",
+          "parameters": {
+            "temperature": 0.75,
+            "humidity": 0.0,
+            "continentalness": 0.0,
+            "erosion": 0.0,
+            "weirdness": 0.0,
+            "depth": 0.0,
+            "offset": 0.0
+          }
+        },
+        {
+          "biome": "jsmenu:redgrass_plains",
+          "parameters": {
+            "temperature": 0.75,
+            "humidity": 0.75,
+            "continentalness": 0.0,
+            "erosion": 0.0,
+            "weirdness": 0.0,
+            "depth": 0.0,
+            "offset": 0.0
+          }
+        },
+        {
+          "biome": "jsmenu:cryofrost_fields",
+          "parameters": {
+            "temperature": -0.9,
+            "humidity": 0.9,
+            "continentalness": 0.0,
+            "erosion": 0.0,
+            "weirdness": 0.0,
+            "depth": 0.0,
+            "offset": 0.0
+          }
+        },
+        {
+          "biome": "jsmenu:cryofrost_fields",
+          "parameters": {
+            "temperature": -0.9,
+            "humidity": 0.55,
+            "continentalness": 0.0,
+            "erosion": 0.0,
+            "weirdness": 0.0,
+            "depth": 0.0,
+            "offset": 0.0
+          }
+        },
+        {
+          "biome": "jsmenu:impact_highlands",
+          "parameters": {
+            "temperature": 0.95,
+            "humidity": 0.95,
+            "continentalness": 0.0,
+            "erosion": -0.8,
+            "weirdness": 0.9,
+            "depth": 1.0,
+            "offset": 0.0
+          }
+        },
+        {
+          "biome": "jsmenu:umbral_badlands",
+          "parameters": {
+            "temperature": 0.9,
+            "humidity": -0.9,
+            "continentalness": 0.0,
+            "erosion": 0.0,
+            "weirdness": 0.0,
+            "depth": 0.0,
+            "offset": 0.0
+          }
+        },
+        {
+          "biome": "jsmenu:umbral_badlands",
+          "parameters": {
+            "temperature": 0.9,
+            "humidity": -0.55,
+            "continentalness": 0.0,
+            "erosion": 0.0,
+            "weirdness": 0.0,
+            "depth": 0.0,
+            "offset": 0.0
+          }
+        }
+      ]
+    },
+    "settings": "jsmenu:mars_life"
+  },
+  "time_settings": {
+    "day_length": 24622.8
+  },
+  "spawn": {
+    "x": 0.0,
+    "y": 128.0,
+    "z": 0.0
+  }
+}

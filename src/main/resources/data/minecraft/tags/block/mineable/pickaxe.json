@@ -389,6 +389,26 @@
     "jsmenu:thermium_ore",
     "jsmenu:thermium_block",
     "jsmenu:magnetite_ore",
-    "jsmenu:magnetite_block"
+    "jsmenu:magnetite_block",
+
+    "jsmenu:scorched_rock",
+    "jsmenu:compressed_rock",
+    "jsmenu:pyrite_ore",
+    "jsmenu:venurite_ore",
+    "jsmenu:solvarium_ore",
+    "jsmenu:pyrite_block",
+    "jsmenu:venurite_block",
+    "jsmenu:solvarium_block",
+
+    "jsmenu:crimsonstone",
+    "jsmenu:marrowstone",
+    "jsmenu:ferricite_ore",
+    "jsmenu:ferricite_block",
+    "jsmenu:cryonite_ore",
+    "jsmenu:cryonite_block",
+    "jsmenu:aetherium_ore",
+    "jsmenu:aetherium_block",
+    "jsmenu:uraninite_ore",
+    "jsmenu:uraninite_block"
   ]
 }

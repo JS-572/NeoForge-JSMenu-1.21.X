@@ -5,6 +5,8 @@ import net.js.jsmenu.block.StarBlocks;
 import net.js.jsmenu.fluid.types.ModFluidTypes;
 import net.js.jsmenu.item.ModCreativeModeTabs;
 import net.js.jsmenu.item.ModItems;
+import net.js.jsmenu.sound.ModSounds;
+import net.js.jsmenu.worldgen.ModStructures;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraft.world.item.ItemStack;
@@ -48,9 +50,11 @@ public class JSMenu {
         ModItems.register(modEventBus);
         ModBlocks.register(modEventBus);
         StarBlocks.register(modEventBus);
+        ModSounds.register(modEventBus);
 
         ModFluids.REGISTRY.register(modEventBus);
         ModFluidTypes.REGISTRY.register(modEventBus);
+        ModStructures.register(modEventBus);
         // Register the item to a creative tab
         modEventBus.addListener(this::addCreative);
         // Register our mod's ModConfigSpec so that FML can create and load the config file for us

@@ -1,0 +1,42 @@
+{
+  "planet_mercury": {
+    "sounds": [
+      {
+        "name": "jsmenu:planet_mercury",
+        "stream": true
+      }
+    ]
+  },
+  "planet_venus": {
+    "sounds": [
+      {
+        "name": "jsmenu:planet_venus",
+        "stream": true
+      }
+    ]
+  },
+  "planet_earth": {
+    "sounds": [
+      {
+        "name": "jsmenu:planet_earth",
+        "stream": true
+      }
+    ]
+  },
+  "planet_mars": {
+    "sounds": [
+      {
+        "name": "jsmenu:planet_mars",
+        "stream": true
+      }
+    ]
+  },
+  "star_sun": {
+    "sounds": [
+      {
+        "name": "jsmenu:star_sun",
+        "stream": true
+      }
+    ]
+  }
+}

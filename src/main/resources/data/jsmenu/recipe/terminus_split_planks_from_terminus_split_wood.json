@@ -1,0 +1,14 @@
+
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "jsmenu:terminus_split_wood"
+    }
+  ],
+  "result": {
+    "count": 4,
+    "id": "jsmenu:terminus_split_planks"
+  }
+}

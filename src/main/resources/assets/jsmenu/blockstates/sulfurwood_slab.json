@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "jsmenu:block/sulfurwood_slab"
+    },
+    "type=double": {
+      "model": "jsmenu:block/sulfurwood_block"
+    },
+    "type=top": {
+      "model": "jsmenu:block/sulfurwood_slab_top"
+    }
+  }
+}

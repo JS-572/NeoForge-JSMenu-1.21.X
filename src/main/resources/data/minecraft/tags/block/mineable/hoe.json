@@ -5,6 +5,15 @@
     "jsmenu:lunar_leaves",
     "jsmenu:bloom_leaves",
     "jsmenu:drift_leaves",
-    "jsmenu:vacuum_leaves"
+    "jsmenu:vacuum_leaves",
+    "jsmenu:heliospire_leaves",
+    "jsmenu:umbra_root_leaves",
+    "jsmenu:terminus_split_leaves",
+    "jsmenu:ferric_spine_leaves",
+    "jsmenu:cryostem_leaves",
+    "jsmenu:ashwood_leaves",
+    "jsmenu:sulfurwood_leaves",
+    "jsmenu:redspire_leaves",
+    "jsmenu:dustwillow_leaves"
   ]
 }

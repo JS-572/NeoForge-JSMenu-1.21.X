@@ -14,6 +14,7 @@ import net.minecraft.client.gui.components.Button;
 import net.minecraft.client.gui.components.EditBox;
 import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.network.chat.Component;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.util.Mth;
 import net.minecraft.world.item.Item;
@@ -103,12 +104,12 @@ public class SpaceScreen extends Screen {
                 .build());
         secondaryActionButton.visible = false;
 
-        zoomInButton = addRenderableWidget(Button.builder(Component.literal("+"), button -> zoom = Math.min(3.0D, zoom + 0.25D))
+        zoomInButton = addRenderableWidget(Button.builder(Component.literal("+"), button -> zoom = Math.min(10.0D, zoom + 0.25D))
                 .bounds(layout.mapRight - 35, layout.mapBottom - 59, 28, 28)
                 .build());
         zoomInButton.visible = false;
 
-        zoomOutButton = addRenderableWidget(Button.builder(Component.literal("-"), button -> zoom = Math.max(0.5D, zoom - 0.25D))
+        zoomOutButton = addRenderableWidget(Button.builder(Component.literal("-"), button -> zoom = Math.max(10.0D, zoom - 0.25D))
                 .bounds(layout.mapRight - 35, layout.mapBottom - 31, 28, 28)
                 .build());
         zoomOutButton.visible = false;
@@ -351,11 +352,11 @@ public class SpaceScreen extends Screen {
             return true;
         }
         if (zoomInRect().contains(mouseX, mouseY)) {
-            zoom = Math.min(3.0D, zoom + 0.25D);
+            zoom = Math.min(10.0D, zoom + 0.25D);
             return true;
         }
         if (zoomOutRect().contains(mouseX, mouseY)) {
-            zoom = Math.max(0.5D, zoom - 0.25D);
+            zoom = Math.max(10.0D, zoom - 0.25D);
             return true;
         }
 
@@ -490,18 +491,109 @@ public class SpaceScreen extends Screen {
             int markerHalfSize = getMarkerHalfSize(object);
 
             if (isSun(object)) {
-                guiGraphics.fill(markerX - markerHalfSize, markerY - markerHalfSize, markerX + markerHalfSize + 1, markerY + markerHalfSize + 1, 0xFFFFDE59);
-                guiGraphics.fill(markerX - markerHalfSize + 6, markerY - markerHalfSize + 6, markerX + markerHalfSize - 5, markerY + markerHalfSize - 5, 0xFFF4F4F4);
-            } else if (isEarth(object)) {
-                guiGraphics.fill(markerX - markerHalfSize, markerY - markerHalfSize, markerX + markerHalfSize + 1, markerY + markerHalfSize + 1, 0xFF2C5FB5);
-                guiGraphics.fill(markerX - markerHalfSize + 2, markerY - markerHalfSize + 4, markerX - markerHalfSize + 7, markerY + 1, 0xFF63C26A);
-                guiGraphics.fill(markerX + 1, markerY - markerHalfSize + 2, markerX + markerHalfSize - 2, markerY + 3, 0xFF6DCD73);
-                guiGraphics.fill(markerX - 4, markerY + 2, markerX + 2, markerY + markerHalfSize - 2, 0xFF58B85F);
-                guiGraphics.fill(markerX + 4, markerY + 4, markerX + markerHalfSize - 3, markerY + markerHalfSize - 5, 0xFF77D27B);
-            } else if (isMoon(object)) {
-                guiGraphics.fill(markerX - markerHalfSize, markerY - markerHalfSize, markerX + markerHalfSize + 1, markerY + markerHalfSize + 1, 0xFF808080);
+                ResourceLocation texture = ResourceLocation.fromNamespaceAndPath("jsmenu", "textures/space_objects/star/sun.png");
+                int scale = 3;
+                int textureWidth = 5;
+                int textureHeight = 5;
+
+                int width = textureWidth * scale;
+                int height = textureHeight * scale;
+
+                int x = markerX - width / 2;
+                int y = markerY - height / 2;
+
+                guiGraphics.blit(texture, x, y, 0, 0, textureWidth, textureHeight, textureWidth, textureHeight);
             } else if (isMercury(object)) {
-                guiGraphics.fill(markerX - markerHalfSize, markerY - markerHalfSize, markerX + markerHalfSize + 2, markerY + markerHalfSize + 1, 0xFF808080);
+                ResourceLocation texture = ResourceLocation.fromNamespaceAndPath("jsmenu", "textures/space_objects/planet/mercury.png");
+                int scale = 1;
+                int textureWidth = 2;
+                int textureHeight = 2;
+
+                int width = textureWidth * scale;
+                int height = textureHeight * scale;
+
+                int x = markerX - width / 2;
+                int y = markerY - height / 2;
+
+                guiGraphics.blit(texture, x, y, 0, 0, textureWidth, textureHeight, textureWidth, textureHeight);
+            } else if (isVenus(object)) {
+                ResourceLocation texture = ResourceLocation.fromNamespaceAndPath("jsmenu", "textures/space_objects/planet/venus.png");
+                int scale = 2;
+                int textureWidth = 5;
+                int textureHeight = 5;
+
+                int width = textureWidth * scale;
+                int height = textureHeight * scale;
+
+                int x = markerX - width / 2;
+                int y = markerY - height / 2;
+
+                guiGraphics.blit(texture, x, y, 0, 0, textureWidth, textureHeight, textureWidth, textureHeight);
+            } else if (isEarth(object)) {
+                ResourceLocation texture = ResourceLocation.fromNamespaceAndPath("jsmenu", "textures/space_objects/planet/earth.png");
+                int scale = 2;
+                int textureWidth = 5;
+                int textureHeight = 5;
+
+                int width = textureWidth * scale;
+                int height = textureHeight * scale;
+
+                int x = markerX - width / 2;
+                int y = markerY - height / 2;
+
+                guiGraphics.blit(texture, x, y, 0, 0, textureWidth, textureHeight, textureWidth, textureHeight);
+            } else if (isMars(object)) {
+                ResourceLocation texture = ResourceLocation.fromNamespaceAndPath("jsmenu", "textures/space_objects/planet/mars.png");
+                int scale = 2;
+                int textureWidth = 2;
+                int textureHeight = 2;
+
+                int width = textureWidth * scale;
+                int height = textureHeight * scale;
+
+                int x = markerX - width / 2;
+                int y = markerY - height / 2;
+
+                guiGraphics.blit(texture, x, y, 0, 0, textureWidth, textureHeight, textureWidth, textureHeight);
+            } else if (isMoon(object)) {
+                ResourceLocation texture = ResourceLocation.fromNamespaceAndPath("jsmenu", "textures/space_objects/moon/moon.png");
+                int scale = 1;
+                int textureWidth = 2;
+                int textureHeight = 2;
+
+                int width = textureWidth * scale;
+                int height = textureHeight * scale;
+
+                int x = markerX - width / 2;
+                int y = markerY - height / 2;
+
+                guiGraphics.blit(texture, x, y, 0, 0, textureWidth, textureHeight, textureWidth, textureHeight);
+            } else if (isPhobos(object)) {
+                ResourceLocation texture = ResourceLocation.fromNamespaceAndPath("jsmenu", "textures/space_objects/moon/moon.png");
+                int scale = 1;
+                int textureWidth = 1;
+                int textureHeight = 1;
+
+                int width = textureWidth * scale;
+                int height = textureHeight * scale;
+
+                int x = markerX - width;
+                int y = markerY - height;
+
+                guiGraphics.blit(texture, x, y, 0, 0, textureWidth, textureHeight, textureWidth, textureHeight);
+            } else if (isDeimos(object)) {
+                ResourceLocation texture = ResourceLocation.fromNamespaceAndPath("jsmenu", "textures/space_objects/moon/moon.png");
+                int scale = 1;
+                int textureWidth = 1;
+                int textureHeight = 1;
+
+                int width = textureWidth * scale;
+                int height = textureHeight * scale;
+
+                int x = markerX - width;
+                int y = markerY - height;
+
+                guiGraphics.blit(texture, x, y, 0, 0, textureWidth, textureHeight, textureWidth, textureHeight);
             } else {
                 int color = object == selectedObject ? 0xFFFFE08A : 0xFFE3D3B2;
                 guiGraphics.fill(markerX - 2, markerY - 2, markerX + 3, markerY + 3, color);
@@ -510,6 +602,7 @@ public class SpaceScreen extends Screen {
             if (object == selectedObject || isMouseOverMarker(object, mouseX, mouseY, layout)) {
                 guiGraphics.drawString(font, object.getDisplayName(), markerX + markerHalfSize + 6, markerY - 4, 0xFFF6E9CE, false);
             }
+
         }
     }
 
@@ -601,19 +694,27 @@ public class SpaceScreen extends Screen {
     private boolean isSun(SpaceObject object) {
         return "sun".equals(object.getId());
     }
-
-    private boolean isEarth(SpaceObject object) {
-        return "earth".equals(object.getId());
-    }
-
-    private boolean isMoon(SpaceObject object) {
-        return "moon".equals(object.getId());
-    }
-
     private boolean isMercury(SpaceObject object) {
         return "mercury".equals(object.getId());
     }
-
+    private boolean isVenus(SpaceObject object) {
+        return "venus".equals(object.getId());
+    }
+    private boolean isEarth(SpaceObject object) {
+        return "earth".equals(object.getId());
+    }
+    private boolean isMoon(SpaceObject object) {
+        return "moon".equals(object.getId());
+    }
+    private boolean isMars(SpaceObject object) {
+        return "mars".equals(object.getId());
+    }
+    private boolean isPhobos(SpaceObject object) {
+        return "phobos".equals(object.getId());
+    }
+    private boolean isDeimos(SpaceObject object) {
+        return "deimos".equals(object.getId());
+    }
     private int getVisibleEntryCount() {
         return Math.max(1, (layout().sidebarHeight() - 170) / (ENTRY_HEIGHT + ENTRY_GAP));
     }

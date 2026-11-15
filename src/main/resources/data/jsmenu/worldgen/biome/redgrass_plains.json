@@ -1,0 +1,38 @@
+{
+  "has_precipitation": false,
+  "temperature": 1.4,
+  "downfall": 0.0,
+  "effects": {
+    "fog_color": 12303291,
+    "sky_color": 12089448,
+    "water_color": 4159204,
+    "water_fog_color": 329011,
+    "grass_color": 10027008,
+    "foliage_color": 12058624
+  },
+  "carvers": {},
+  "features": [
+    [],
+    [],
+    [],
+    [],
+    [],
+    [],
+    ["jsmenu:ferricite_ore_placed"],
+    [],
+    [],
+    ["jsmenu:redspire_tree_placed"],
+    []
+  ],
+  "spawn_costs": {},
+  "spawners": {
+    "ambient": [],
+    "axolotls": [],
+    "creature": [],
+    "misc": [],
+    "monster": [],
+    "underground_water_creature": [],
+    "water_ambient": [],
+    "water_creature": []
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "comparator_output": 3,
+  "description": {
+    "translate": "item.jsmenu.planet_earth_music_disc.disc"
+  },
+  "length_in_seconds": 241.0,
+  "sound_event": "jsmenu:planet_earth"
+}

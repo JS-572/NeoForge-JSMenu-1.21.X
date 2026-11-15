@@ -1,7 +1,7 @@
 {
   "parent": "minecraft:block/orientable",
   "textures": {
-    "front": "jsmenu:block/mlb_atl",
+    "front": "jsmenu:block/atlanta_braves",
     "side": "minecraft:block/white_concrete",
     "top": "minecraft:block/white_concrete"
   }

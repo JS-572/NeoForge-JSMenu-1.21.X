@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:smelting",
+  "category": "misc",
+  "cookingtime": 200,
+  "experience": 0.25,
+  "group": "sulfur_crystal",
+  "ingredient": {
+    "item": "jsmenu:sulfur_crystal_ore"
+  },
+  "result": {
+    "count": 1,
+    "id": "jsmenu:sulfur_crystal"
+  }
+}

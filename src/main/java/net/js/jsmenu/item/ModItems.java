@@ -2,10 +2,14 @@ package net.js.jsmenu.item;
 
 import net.js.jsmenu.JSMenu;
 import net.js.jsmenu.item.custom.OreTurnerItem;
+import net.js.jsmenu.item.custom.ScoreboardUpdaterItem;
+import net.js.jsmenu.item.custom.TelescopeGoggleItem;
 import net.js.jsmenu.item.custom.bucket.*;
 import net.js.jsmenu.item.custom.tools.HeliumSwordItem;
 import net.js.jsmenu.item.custom.tools.transition_metals.scandium.*;
+import net.js.jsmenu.sound.ModSounds;
 import net.minecraft.world.item.*;
+import net.minecraft.world.entity.EquipmentSlot;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredItem;
 import net.neoforged.neoforge.registries.DeferredRegister;
@@ -362,6 +366,7 @@ public class ModItems {
     public static final DeferredItem<Item> BLAZESTONE = ITEMS.register("blazestone", () -> new Item(new Item.Properties().fireResistant()));
     public static final DeferredItem<Item> RADIANT_CRYSTAL = ITEMS.register("radiant_crystal", () -> new Item(new Item.Properties().fireResistant()));
     public static final DeferredItem<Item> CORE_FRAGMENT = ITEMS.register("core_fragment", () -> new Item(new Item.Properties().fireResistant()));
+    public static final DeferredItem<Item> STAR_SUN_MUSIC_DISC = ITEMS.register("star_sun_music_disc", () -> new Item(new Item.Properties().jukeboxPlayable(ModSounds.STAR_SUN_KEY).stacksTo(1)));
 
     public static final DeferredItem<Item> BRAGSTONE = ITEMS.register("bragstone", () -> new Item(new Item.Properties()));
     public static final DeferredItem<Item> CRISRA = ITEMS.register("crisra", () -> new Item(new Item.Properties()));
@@ -374,6 +379,23 @@ public class ModItems {
     public static final DeferredItem<Item> SULFUR_CRYSTAL = ITEMS.register("sulfur_crystal", () -> new Item(new Item.Properties()));
     public static final DeferredItem<Item> THERMIUM = ITEMS.register("thermium", () -> new Item(new Item.Properties()));
     public static final DeferredItem<Item> MAGNETITE = ITEMS.register("magnetite", () -> new Item(new Item.Properties()));
+    public static final DeferredItem<Item> PLANET_MERCURY_MUSIC_DISC = ITEMS.register("planet_mercury_music_disc", () -> new Item(new Item.Properties().jukeboxPlayable(ModSounds.PLANET_MERCURY_KEY).stacksTo(1)));
+
+    public static final DeferredItem<Item> PYRITE = ITEMS.register("pyrite", () -> new Item(new Item.Properties()));
+    public static final DeferredItem<Item> SOLVARIUM = ITEMS.register("solvarium", () -> new Item(new Item.Properties()));
+    public static final DeferredItem<Item> VENURITE = ITEMS.register("venurite", () -> new Item(new Item.Properties()));
+    public static final DeferredItem<Item> PLANET_VENUS_MUSIC_DISC = ITEMS.register("planet_venus_music_disc", () -> new Item(new Item.Properties().jukeboxPlayable(ModSounds.PLANET_VENUS_KEY).stacksTo(1)));
+    public static final DeferredItem<Item> PLANET_EARTH_MUSIC_DISC = ITEMS.register("planet_earth_music_disc", () -> new Item(new Item.Properties().jukeboxPlayable(ModSounds.PLANET_EARTH_KEY).stacksTo(1)));
+
+    public static final DeferredItem<Item> FERRICITE = ITEMS.register("ferricite", () -> new Item(new Item.Properties()));
+    public static final DeferredItem<Item> CRYONITE = ITEMS.register("cryonite", () -> new Item(new Item.Properties()));
+    public static final DeferredItem<Item> AETHERIUM = ITEMS.register("aetherium", () -> new Item(new Item.Properties()));
+    public static final DeferredItem<Item> URANINITE = ITEMS.register("uraninite", () -> new Item(new Item.Properties()));
+    public static final DeferredItem<Item> PLANET_MARS_MUSIC_DISC = ITEMS.register("planet_mars_music_disc", () -> new Item(new Item.Properties().jukeboxPlayable(ModSounds.PLANET_MARS_KEY).stacksTo(1)));
+
+
+    public static final DeferredItem<ScoreboardUpdaterItem> SCOREBOARD_UPDATER = ITEMS.register("scoreboard_updater", () -> new ScoreboardUpdaterItem(new Item.Properties().stacksTo(1).durability(1)));
+    public static final DeferredItem<TelescopeGoggleItem> TELESCOPE_GOGGLE = ITEMS.register("telescope_goggle", () -> new TelescopeGoggleItem(ArmorMaterials.LEATHER, new Item.Properties().stacksTo(1).durability(55)));
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);
     }

@@ -1,0 +1,8 @@
+{
+  "comparator_output": 4,
+  "description": {
+    "translate": "item.jsmenu.planet_mars_music_disc.disc"
+  },
+  "length_in_seconds": 218.0,
+  "sound_event": "jsmenu:planet_mars"
+}

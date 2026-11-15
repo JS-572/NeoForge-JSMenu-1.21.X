@@ -1,0 +1,10 @@
+{
+  "type": "neoforge:add_features",
+  "biomes": [
+    "jsmenu:volcanic_plains",
+    "jsmenu:sulfur_wastes",
+    "jsmenu:ashen_highlands"
+  ],
+  "features": "jsmenu:venurite_ore_placed",
+  "step": "underground_ores"
+}

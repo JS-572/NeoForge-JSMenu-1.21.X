@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "jsmenu:ferric_spine_log"
+    }
+  ],
+  "result": {
+    "count": 4,
+    "id": "jsmenu:ferric_spine_planks"
+  }
+}

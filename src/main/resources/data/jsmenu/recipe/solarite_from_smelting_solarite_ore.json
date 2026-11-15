@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:smelting",
+  "category": "misc",
+  "cookingtime": 200,
+  "experience": 0.25,
+  "group": "solarite",
+  "ingredient": {
+    "item": "jsmenu:solarite_ore"
+  },
+  "result": {
+    "count": 1,
+    "id": "jsmenu:solarite"
+  }
+}

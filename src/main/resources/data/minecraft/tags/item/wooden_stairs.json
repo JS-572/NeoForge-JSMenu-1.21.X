@@ -8,6 +8,8 @@
     "jsmenu:umbra_root_stairs",
     "jsmenu:terminus_split_stairs",
     "jsmenu:ferric_spine_stairs",
-    "jsmenu:cryostem_stairs"
+    "jsmenu:cryostem_stairs",
+    "jsmenu:ashwood_stairs",
+    "jsmenu:sulfurwood_stairs"
   ]
 }

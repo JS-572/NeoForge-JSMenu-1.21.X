@@ -1,7 +1,7 @@
 {
   "parent": "minecraft:block/orientable",
   "textures": {
-    "front": "jsmenu:block/nhl_nyi",
+    "front": "jsmenu:block/new_york_islanders",
     "side": "minecraft:block/white_concrete",
     "top": "minecraft:block/white_concrete"
   }

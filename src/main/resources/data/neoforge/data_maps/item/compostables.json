@@ -1,4 +1,927 @@
 {
   "values": {
+    "jsmenu:strawberry": {
+      "chance": 0.65
+    },
+    "jsmenu:raspberry": {
+      "chance": 0.65
+    },
+    "jsmenu:cherry": {
+      "chance": 0.65
+    },
+    "jsmenu:cranberry": {
+      "chance": 0.65
+    },
+    "jsmenu:pomegranate": {
+      "chance": 0.65
+    },
+    "jsmenu:dragon_fruit": {
+      "chance": 0.65
+    },
+    "jsmenu:lychee": {
+      "chance": 0.65
+    },
+    "jsmenu:rambutan": {
+      "chance": 0.65
+    },
+    "jsmenu:orange": {
+      "chance": 0.65
+    },
+    "jsmenu:tangerine": {
+      "chance": 0.65
+    },
+    "jsmenu:peach": {
+      "chance": 0.65
+    },
+    "jsmenu:mandarin": {
+      "chance": 0.65
+    },
+    "jsmenu:clementine": {
+      "chance": 0.65
+    },
+    "jsmenu:satsuma": {
+      "chance": 0.65
+    },
+    "jsmenu:apricot": {
+      "chance": 0.65
+    },
+    "jsmenu:nectarine": {
+      "chance": 0.65
+    },
+    "jsmenu:mango": {
+      "chance": 0.65
+    },
+    "jsmenu:papaya": {
+      "chance": 0.65
+    },
+    "jsmenu:cantaloupe": {
+      "chance": 0.65
+    },
+    "jsmenu:persimmon": {
+      "chance": 0.65
+    },
+    "jsmenu:kumquat": {
+      "chance": 0.65
+    },
+    "jsmenu:butternut": {
+      "chance": 0.65
+    },
+    "jsmenu:kabocha": {
+      "chance": 0.65
+    },
+    "jsmenu:banana": {
+      "chance": 0.65
+    },
+    "jsmenu:lemon": {
+      "chance": 0.65
+    },
+    "jsmenu:pineapple": {
+      "chance": 0.65
+    },
+    "jsmenu:golden_kiwi": {
+      "chance": 0.65
+    },
+    "jsmenu:starfruit": {
+      "chance": 0.65
+    },
+    "jsmenu:durian": {
+      "chance": 0.65
+    },
+    "jsmenu:jackfruit": {
+      "chance": 0.65
+    },
+    "jsmenu:quince": {
+      "chance": 0.65
+    },
+    "jsmenu:yuzu": {
+      "chance": 0.65
+    },
+    "jsmenu:canary_melon": {
+      "chance": 0.65
+    },
+    "jsmenu:pear": {
+      "chance": 0.65
+    },
+    "jsmenu:kiwi": {
+      "chance": 0.65
+    },
+    "jsmenu:honeydew_melon": {
+      "chance": 0.65
+    },
+    "jsmenu:lime": {
+      "chance": 0.65
+    },
+    "jsmenu:pomelo": {
+      "chance": 0.65
+    },
+    "jsmenu:avocado": {
+      "chance": 0.65
+    },
+    "jsmenu:breadfruit": {
+      "chance": 0.65
+    },
+    "jsmenu:soursop": {
+      "chance": 0.65
+    },
+    "jsmenu:chayote": {
+      "chance": 0.65
+    },
+    "jsmenu:blueberry": {
+      "chance": 0.65
+    },
+    "jsmenu:bilberry": {
+      "chance": 0.65
+    },
+    "jsmenu:elderberry": {
+      "chance": 0.65
+    },
+    "jsmenu:huckleberry": {
+      "chance": 0.65
+    },
+    "jsmenu:honeyberry": {
+      "chance": 0.65
+    },
+    "jsmenu:concord_grape": {
+      "chance": 0.65
+    },
+    "jsmenu:damson_plum": {
+      "chance": 0.65
+    },
+    "jsmenu:blue_marble_fruit": {
+      "chance": 0.65
+    },
+    "jsmenu:blue_sausage_fruit": {
+      "chance": 0.65
+    },
+    "jsmenu:grape": {
+      "chance": 0.65
+    },
+    "jsmenu:plum": {
+      "chance": 0.65
+    },
+    "jsmenu:prune": {
+      "chance": 0.65
+    },
+    "jsmenu:fig": {
+      "chance": 0.65
+    },
+    "jsmenu:passion_fruit": {
+      "chance": 0.65
+    },
+    "jsmenu:mangosteen": {
+      "chance": 0.65
+    },
+    "jsmenu:acai_berry": {
+      "chance": 0.65
+    },
+    "jsmenu:coconut": {
+      "chance": 0.65
+    },
+    "jsmenu:longan": {
+      "chance": 0.65
+    },
+    "jsmenu:cherimoya": {
+      "chance": 0.65
+    },
+    "jsmenu:pineberry": {
+      "chance": 0.65
+    },
+    "jsmenu:snowberry": {
+      "chance": 0.65
+    },
+    "jsmenu:ya_pear": {
+      "chance": 0.65
+    },
+    "jsmenu:dates": {
+      "chance": 0.65
+    },
+    "jsmenu:bosc_pear": {
+      "chance": 0.65
+    },
+    "jsmenu:sapodilla": {
+      "chance": 0.65
+    },
+    "jsmenu:tamarind": {
+      "chance": 0.65
+    },
+    "jsmenu:salak": {
+      "chance": 0.65
+    },
+    "jsmenu:asian_brown_pear": {
+      "chance": 0.65
+    },
+    "jsmenu:black_sapote": {
+      "chance": 0.65
+    },
+    "jsmenu:medlar": {
+      "chance": 0.65
+    },
+    "jsmenu:baobab": {
+      "chance": 0.65
+    },
+    "jsmenu:chestnut": {
+      "chance": 0.65
+    },
+    "jsmenu:cacao_pods": {
+      "chance": 0.65
+    },
+    "jsmenu:kumato": {
+      "chance": 0.65
+    },
+    "jsmenu:blackberry": {
+      "chance": 0.65
+    },
+    "jsmenu:blackcurrant": {
+      "chance": 0.65
+    },
+    "jsmenu:black_raspberry": {
+      "chance": 0.65
+    },
+    "jsmenu:aronia": {
+      "chance": 0.65
+    },
+    "jsmenu:black_cherry": {
+      "chance": 0.65
+    },
+    "jsmenu:black_plum": {
+      "chance": 0.65
+    },
+    "jsmenu:black_mission_fig": {
+      "chance": 0.65
+    },
+    "jsmenu:black_velvet_tamarind": {
+      "chance": 0.65
+    },
+    "jsmenu:black_diamond_apple": {
+      "chance": 0.65
+    },
+
+    "jsmenu:tomato": {
+      "can_villager_compost": true,
+      "chance": 0.85
+    },
+    "jsmenu:red_bell_pepper": {
+      "can_villager_compost": true,
+      "chance": 0.85
+    },
+    "jsmenu:red_onion": {
+      "can_villager_compost": true,
+      "chance": 0.85
+    },
+    "jsmenu:radish": {
+    "can_villager_compost": true,
+      "chance": 0.85
+    },
+    "jsmenu:red_cabbage": {
+      "can_villager_compost": true,
+      "chance": 0.85
+    },
+    "jsmenu:radicchio": {
+      "can_villager_compost": true,
+      "chance": 0.85
+    },
+    "jsmenu:red_leaf_lettuce": {
+      "can_villager_compost": true,
+      "chance": 0.85
+    },
+    "jsmenu:rhubarb": {
+      "can_villager_compost": true,
+      "chance": 0.85
+    },
+    "jsmenu:red_chili_pepper": {
+      "can_villager_compost": true,
+      "chance": 0.85
+    },
+    "jsmenu:butternut_squash": {
+      "can_villager_compost": true,
+      "chance": 0.85
+    },
+    "jsmenu:orange_bell_pepper": {
+      "can_villager_compost": true,
+      "chance": 0.85
+    },
+    "jsmenu:orange_cauliflower": {
+      "can_villager_compost": true,
+      "chance": 0.85
+    },
+    "jsmenu:turkish_orange_eggplant": {
+      "can_villager_compost": true,
+      "chance": 0.85
+    },
+    "jsmenu:jing_orange_okra": {
+      "can_villager_compost": true,
+      "chance": 0.85
+    },
+    "jsmenu:orange_heirloom": {
+      "can_villager_compost": true,
+      "chance": 0.85
+    },
+    "jsmenu:turmeric": {
+      "can_villager_compost": true,
+      "chance": 0.85
+    },
+    "jsmenu:acorn_squash": {
+      "can_villager_compost": true,
+      "chance": 0.85
+    },
+    "jsmenu:kabocha_squash": {
+      "can_villager_compost": true,
+      "chance": 0.85
+    },
+    "jsmenu:hubbard_squash": {
+      "can_villager_compost": true,
+      "chance": 0.85
+    },
+    "jsmenu:corn": {
+      "can_villager_compost": true,
+      "chance": 0.85
+    },
+    "jsmenu:yellow_bell_pepper": {
+      "can_villager_compost": true,
+      "chance": 0.85
+    },
+    "jsmenu:summer_squash": {
+      "can_villager_compost": true,
+      "chance": 0.85
+    },
+    "jsmenu:yellow_zucchini": {
+      "can_villager_compost": true,
+      "chance": 0.85
+    },
+    "jsmenu:yellow_wax_bean": {
+      "can_villager_compost": true,
+      "chance": 0.85
+    },
+    "jsmenu:yellow_cauliflower": {
+      "can_villager_compost": true,
+      "chance": 0.85
+    },
+    "jsmenu:golden_sweet_snow_pea": {
+      "can_villager_compost": true,
+      "chance": 0.85
+    },
+    "jsmenu:yellow_heirloom_tomato": {
+      "can_villager_compost": true,
+      "chance": 0.85
+    },
+    "jsmenu:yellow_swiss_chard": {
+      "can_villager_compost": true,
+      "chance": 0.85
+    },
+    "jsmenu:spinach": {
+      "can_villager_compost": true,
+      "chance": 0.85
+    },
+    "jsmenu:kale": {
+      "can_villager_compost": true,
+      "chance": 0.85
+    },
+    "jsmenu:swiss_chard": {
+      "can_villager_compost": true,
+      "chance": 0.85
+    },
+    "jsmenu:arugula": {
+      "can_villager_compost": true,
+      "chance": 0.85
+    },
+    "jsmenu:broccoli": {
+      "can_villager_compost": true,
+      "chance": 0.85
+    },
+    "jsmenu:brussels_sprout": {
+      "can_villager_compost": true,
+      "chance": 0.85
+    },
+    "jsmenu:bok_choy": {
+      "can_villager_compost": true,
+      "chance": 0.85
+    },
+    "jsmenu:cabbage": {
+      "can_villager_compost": true,
+      "chance": 0.85
+    },
+    "jsmenu:asparagus": {
+      "can_villager_compost": true,
+      "chance": 0.85
+    },
+    "jsmenu:green_pea": {
+      "can_villager_compost": true,
+      "chance": 0.85
+    },
+    "jsmenu:green_beans": {
+      "can_villager_compost": true,
+      "chance": 0.85
+    },
+    "jsmenu:zucchini": {
+      "can_villager_compost": true,
+      "chance": 0.85
+    },
+    "jsmenu:cucumber": {
+      "can_villager_compost": true,
+      "chance": 0.85
+    },
+    "jsmenu:celery": {
+      "can_villager_compost": true,
+      "chance": 0.85
+    },
+    "jsmenu:romanesco": {
+      "can_villager_compost": true,
+      "chance": 0.85
+    },
+    "jsmenu:artichoke": {
+      "can_villager_compost": true,
+      "chance": 0.85
+    },
+    "jsmenu:okra": {
+      "can_villager_compost": true,
+      "chance": 0.85
+    },
+    "jsmenu:blue_corn": {
+      "can_villager_compost": true,
+      "chance": 0.85
+    },
+    "jsmenu:blue_hubbard_squash": {
+      "can_villager_compost": true,
+      "chance": 0.85
+    },
+    "jsmenu:non_heirloom_blue_carrot": {
+      "can_villager_compost": true,
+      "chance": 0.85
+    },
+    "jsmenu:blue_kale": {
+      "can_villager_compost": true,
+      "chance": 0.85
+    },
+    "jsmenu:blue_cabbage": {
+      "can_villager_compost": true,
+      "chance": 0.85
+    },
+    "jsmenu:blue_green_broccoli": {
+      "can_villager_compost": true,
+      "chance": 0.85
+    },
+    "jsmenu:blue_tomato": {
+      "can_villager_compost": true,
+      "chance": 0.85
+    },
+    "jsmenu:filius_blue_pepper": {
+      "can_villager_compost": true,
+      "chance": 0.85
+    },
+    "jsmenu:purple_cabbage": {
+      "can_villager_compost": true,
+      "chance": 0.85
+    },
+    "jsmenu:eggplant": {
+      "can_villager_compost": true,
+      "chance": 0.85
+    },
+    "jsmenu:purple_onion": {
+      "can_villager_compost": true,
+      "chance": 0.85
+    },
+    "jsmenu:purple_kale": {
+      "can_villager_compost": true,
+      "chance": 0.85
+    },
+    "jsmenu:purple_cauliflower": {
+      "can_villager_compost": true,
+      "chance": 0.85
+    },
+    "jsmenu:purple_broccoli": {
+      "can_villager_compost": true,
+      "chance": 0.85
+    },
+    "jsmenu:purple_asparagus": {
+      "can_villager_compost": true,
+      "chance": 0.85
+    },
+    "jsmenu:purple_brussels_sprout": {
+      "can_villager_compost": true,
+      "chance": 0.85
+    },
+    "jsmenu:purple_wax_beans": {
+      "can_villager_compost": true,
+      "chance": 0.85
+    },
+    "jsmenu:purple_bell_peppers": {
+      "can_villager_compost": true,
+      "chance": 0.85
+    },
+    "jsmenu:pink_cauliflower": {
+      "can_villager_compost": true,
+      "chance": 0.85
+    },
+    "jsmenu:pink_peppercorn": {
+      "can_villager_compost": true,
+      "chance": 0.85
+    },
+    "jsmenu:cauliflower": {
+      "can_villager_compost": true,
+      "chance": 0.85
+    },
+    "jsmenu:garlic": {
+      "can_villager_compost": true,
+      "chance": 0.85
+    },
+    "jsmenu:onion": {
+      "can_villager_compost": true,
+      "chance": 0.85
+    },
+    "jsmenu:parsnip": {
+      "can_villager_compost": true,
+      "chance": 0.85
+    },
+    "jsmenu:turnip": {
+      "can_villager_compost": true,
+      "chance": 0.85
+    },
+    "jsmenu:daikon_radish": {
+      "can_villager_compost": true,
+      "chance": 0.85
+    },
+    "jsmenu:jicama": {
+      "can_villager_compost": true,
+      "chance": 0.85
+    },
+    "jsmenu:white_asparagus": {
+      "can_villager_compost": true,
+      "chance": 0.85
+    },
+    "jsmenu:kohlrabi": {
+      "can_villager_compost": true,
+      "chance": 0.85
+    },
+    "jsmenu:white_eggplant": {
+      "can_villager_compost": true,
+      "chance": 0.85
+    },
+    "jsmenu:white_corn": {
+      "can_villager_compost": true,
+      "chance": 0.85
+    },
+    "jsmenu:cremini": {
+      "can_villager_compost": true,
+      "chance": 0.85
+    },
+    "jsmenu:portobello": {
+      "can_villager_compost": true,
+      "chance": 0.85
+    },
+    "jsmenu:shiitake": {
+      "can_villager_compost": true,
+      "chance": 0.85
+    },
+    "jsmenu:porcini": {
+      "can_villager_compost": true,
+      "chance": 0.85
+    },
+    "jsmenu:maitake": {
+      "can_villager_compost": true,
+      "chance": 0.85
+    },
+    "jsmenu:ginger": {
+      "can_villager_compost": true,
+      "chance": 0.85
+    },
+    "jsmenu:jerusalem_artichoke": {
+      "can_villager_compost": true,
+      "chance": 0.85
+    },
+    "jsmenu:taro": {
+      "can_villager_compost": true,
+      "chance": 0.85
+    },
+    "jsmenu:brown_lentils": {
+      "can_villager_compost": true,
+      "chance": 0.85
+    },
+    "jsmenu:chickpeas": {
+      "can_villager_compost": true,
+      "chance": 0.85
+    },
+    "jsmenu:brown_rice": {
+      "can_villager_compost": true,
+      "chance": 0.85
+    },
+    "jsmenu:black_beans": {
+      "can_villager_compost": true,
+      "chance": 0.85
+    },
+    "jsmenu:black_garlic": {
+      "can_villager_compost": true,
+      "chance": 0.85
+    },
+    "jsmenu:black_radish": {
+      "can_villager_compost": true,
+      "chance": 0.85
+    },
+    "jsmenu:black_kale": {
+      "can_villager_compost": true,
+      "chance": 0.85
+    },
+    "jsmenu:black_tuscan_cabbage": {
+      "can_villager_compost": true,
+      "chance": 0.85
+    },
+    "jsmenu:black_beauty_eggplant": {
+      "can_villager_compost": true,
+      "chance": 0.85
+    },
+    "jsmenu:black_olive": {
+      "can_villager_compost": true,
+      "chance": 0.85
+    },
+    "jsmenu:forbidden_rice": {
+      "can_villager_compost": true,
+      "chance": 0.85
+    },
+
+    "jsmenu:mountain_daisy": {
+      "chance": 0.3
+    },
+    "jsmenu:spring_morning": {
+      "chance": 0.3
+    },
+    "jsmenu:tiger_bell": {
+      "chance": 0.3
+    },
+    "jsmenu:starburst": {
+      "chance": 0.3
+    },
+    "jsmenu:rain_drop": {
+      "chance": 0.3
+    },
+    "jsmenu:dew_crystal": {
+      "chance": 0.3
+    },
+    "jsmenu:emperor": {
+      "chance": 0.3
+    },
+    "jsmenu:snow_lily": {
+      "chance": 0.3
+    },
+    "jsmenu:meadow_lily": {
+      "chance": 0.3
+    },
+    "jsmenu:golden_rays": {
+      "chance": 0.3
+    },
+    "jsmenu:lantern_bowl": {
+      "chance": 0.3
+    },
+    "jsmenu:sunset_tulip": {
+      "chance": 0.3
+    },
+    "jsmenu:iris_mantle": {
+      "chance": 0.3
+    },
+    "jsmenu:cala": {
+      "chance": 0.3
+    },
+    "jsmenu:rainbow_stars": {
+      "chance": 0.3
+    },
+    "jsmenu:fire_lily": {
+      "chance": 0.3
+    },
+    "jsmenu:royal_rose": {
+      "chance": 0.3
+    },
+    "jsmenu:wild_rose": {
+      "chance": 0.3
+    },
+    "jsmenu:paradise_flower": {
+      "chance": 0.3
+    },
+    "jsmenu:sugarplum": {
+      "chance": 0.3
+    },
+    "jsmenu:sparkle": {
+      "chance": 0.3
+    },
+    "jsmenu:evensong": {
+      "chance": 0.3
+    },
+    "jsmenu:warm_welcome": {
+      "chance": 0.3
+    },
+    "jsmenu:wedding_bell": {
+      "chance": 0.3
+    },
+    "jsmenu:bunny_ears": {
+      "chance": 0.3
+    },
+    "jsmenu:sunset_daisy": {
+      "chance": 0.3
+    },
+    "jsmenu:xmas_thistle": {
+      "chance": 0.3
+    },
+    "jsmenu:ladys_gown": {
+      "chance": 0.3
+    },
+    "jsmenu:frost_berry": {
+      "chance": 0.3
+    },
+    "jsmenu:spring_buttercup": {
+      "chance": 0.3
+    },
+    "jsmenu:ladys_button": {
+      "chance": 0.3
+    },
+    "jsmenu:heart_bowl": {
+      "chance": 0.3
+    },
+    "jsmenu:pink_grace": {
+      "chance": 0.3
+    },
+    "jsmenu:mothers_rose": {
+      "chance": 0.3
+    },
+    "jsmenu:inner_peace": {
+      "chance": 0.3
+    },
+    "jsmenu:wishing_tulip": {
+      "chance": 0.3
+    },
+    "jsmenu:orange_bell": {
+      "chance": 0.3
+    },
+    "jsmenu:dream_stars": {
+      "chance": 0.3
+    },
+    "jsmenu:aradia": {
+      "chance": 0.3
+    },
+    "jsmenu:sempiternal": {
+      "chance": 0.3
+    },
+    "jsmenu:noon_dream": {
+      "chance": 0.3
+    },
+    "jsmenu:prairie_heart": {
+      "chance": 0.3
+    },
+    "jsmenu:aurora": {
+      "chance": 0.3
+    },
+    "jsmenu:friendship_rose": {
+      "chance": 0.3
+    },
+    "jsmenu:xanas_charm": {
+      "chance": 0.3
+    },
+    "jsmenu:love_everlasting": {
+      "chance": 0.3
+    },
+    "jsmenu:remembrance": {
+      "chance": 0.3
+    },
+    "jsmenu:icy_drop": {
+      "chance": 0.3
+    },
+    "jsmenu:winter_solace": {
+      "chance": 0.3
+    },
+    "jsmenu:poinsettia": {
+      "chance": 0.3
+    },
+    "jsmenu:edelweiss": {
+      "chance": 0.3
+    },
+    "jsmenu:lavender_star": {
+      "chance": 0.3
+    },
+    "jsmenu:blue_lys": {
+      "chance": 0.3
+    },
+    "jsmenu:queens_guard": {
+      "chance": 0.3
+    },
+    "jsmenu:winters_end": {
+      "chance": 0.3
+    },
+    "jsmenu:new_years_wish": {
+      "chance": 0.3
+    },
+    "jsmenu:skys_edge": {
+      "chance": 0.3
+    },
+    "jsmenu:foys_treasure": {
+      "chance": 0.3
+    },
+    "jsmenu:snappy_flower": {
+      "chance": 0.3
+    },
+    "jsmenu:may_flower": {
+      "chance": 0.3
+    },
+    "jsmenu:128petals": {
+      "chance": 0.3
+    },
+    "jsmenu:summer_fingers": {
+      "chance": 0.3
+    },
+    "jsmenu:p_gameralum": {
+      "chance": 0.3
+    },
+    "jsmenu:purple_tendrils": {
+      "chance": 0.3
+    },
+    "jsmenu:moon_craver": {
+      "chance": 0.3
+    },
+    "jsmenu:appera_blossom": {
+      "chance": 0.3
+    },
+    "jsmenu:tulip_gameora": {
+      "chance": 0.3
+    },
+    "jsmenu:spring_touch": {
+      "chance": 0.3
+    },
+    "jsmenu:all_hallows_eve": {
+      "chance": 0.3
+    },
+
+    "jsmenu:flarewood_leaves": {
+      "chance": 0.3
+    },
+    "jsmenu:flarewood_sapling": {
+      "chance": 0.3
+    },
+    "jsmenu:corona_bloom_leaves": {
+      "chance": 0.3
+    },
+    "jsmenu:corona_bloom_sapling": {
+      "chance": 0.3
+    },
+    "jsmenu:bloom_leaves": {
+      "chance": 0.3
+    },
+    "jsmenu:bloom_sapling": {
+      "chance": 0.3
+    },
+    "jsmenu:drift_leaves": {
+      "chance": 0.3
+    },
+    "jsmenu:drift_sapling": {
+      "chance": 0.3
+    },
+    "jsmenu:lunar_leaves": {
+      "chance": 0.3
+    },
+    "jsmenu:lunar_sapling": {
+      "chance": 0.3
+    },
+    "jsmenu:vacuum_leaves": {
+      "chance": 0.3
+    },
+    "jsmenu:vacuum_sapling": {
+      "chance": 0.3
+    },
+    "jsmenu:heliospire_leaves": {
+      "chance": 0.3
+    },
+    "jsmenu:heliospire_sapling": {
+      "chance": 0.3
+    },
+    "jsmenu:umbra_root_leaves": {
+      "chance": 0.3
+    },
+    "jsmenu:umbra_root_sapling": {
+      "chance": 0.3
+    },
+    "jsmenu:terminus_split_leaves": {
+      "chance": 0.3
+    },
+    "jsmenu:terminus_split_sapling": {
+      "chance": 0.3
+    },
+    "jsmenu:ferric_spine_leaves": {
+      "chance": 0.3
+    },
+    "jsmenu:ferric_spine_sapling": {
+      "chance": 0.3
+    },
+    "jsmenu:cryostem_leaves": {
+      "chance": 0.3
+    },
+    "jsmenu:cryostem_sapling": {
+      "chance": 0.3
+    },
+    "jsmenu:ashwood_leaves": {
+      "chance": 0.3
+    },
+    "jsmenu:ashwood_sapling": {
+      "chance": 0.3
+    },
+    "jsmenu:sulfurwood_leaves": {
+      "chance": 0.3
+    },
+    "jsmenu:sulfurwood_sapling": {
+      "chance": 0.3
+    }
   }
 }

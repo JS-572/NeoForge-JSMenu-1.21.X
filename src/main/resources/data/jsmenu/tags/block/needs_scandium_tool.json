@@ -10,6 +10,21 @@
     "jsmenu:astatine_ore",
     "jsmenu:radon_ore",
     "jsmenu:francium_ore",
-    "jsmenu:radium_ore"
+    "jsmenu:radium_ore",
+
+    "jsmenu:osmium_block",
+    "jsmenu:iridium_block",
+    "jsmenu:platinum_block",
+    "jsmenu:thallium_block",
+    "jsmenu:lead_block",
+    "jsmenu:bismuth_block",
+    "jsmenu:polonium_block",
+    "jsmenu:astatine_block",
+    "jsmenu:radon_block",
+    "jsmenu:francium_block",
+    "jsmenu:radium_block",
+
+    "jsmenu:uraninite_ore",
+    "jsmenu:uraninite_block"
   ]
 }

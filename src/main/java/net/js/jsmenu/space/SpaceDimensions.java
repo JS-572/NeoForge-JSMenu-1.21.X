@@ -16,6 +16,10 @@ public class SpaceDimensions {
     public static final ResourceKey<Level> MERCURY_LIFE = ResourceKey.create(Registries.DIMENSION, ResourceLocation.fromNamespaceAndPath(JSMenu.MOD_ID, "mercury_life"));
     public static final ResourceKey<Level> VENUS = ResourceKey.create(Registries.DIMENSION, ResourceLocation.fromNamespaceAndPath(JSMenu.MOD_ID, "venus"));
     public static final ResourceKey<Level> VENUS_LIFE = ResourceKey.create(Registries.DIMENSION, ResourceLocation.fromNamespaceAndPath(JSMenu.MOD_ID, "venus_life"));
+    public static final ResourceKey<Level> MARS = ResourceKey.create(Registries.DIMENSION, ResourceLocation.fromNamespaceAndPath(JSMenu.MOD_ID, "mars"));
+    public static final ResourceKey<Level> MARS_LIFE = ResourceKey.create(Registries.DIMENSION, ResourceLocation.fromNamespaceAndPath(JSMenu.MOD_ID, "mars_life"));
+    public static final ResourceKey<Level> PHOBOS = ResourceKey.create(Registries.DIMENSION, ResourceLocation.fromNamespaceAndPath(JSMenu.MOD_ID, "phobos"));
+    public static final ResourceKey<Level> DEIMOS = ResourceKey.create(Registries.DIMENSION, ResourceLocation.fromNamespaceAndPath(JSMenu.MOD_ID, "deimos"));
     private SpaceDimensions() {
     }
 }

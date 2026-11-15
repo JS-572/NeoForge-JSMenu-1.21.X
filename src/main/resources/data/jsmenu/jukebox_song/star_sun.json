@@ -1,0 +1,8 @@
+{
+  "comparator_output": 11,
+  "description": {
+    "translate": "item.jsmenu.star_sun_music_disc.disc"
+  },
+  "length_in_seconds": 429.0,
+  "sound_event": "jsmenu:star_sun"
+}
