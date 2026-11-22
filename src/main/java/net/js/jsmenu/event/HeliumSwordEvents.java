@@ -1,7 +1,8 @@
-package net.js.jsmenu.item.custom.tools;
+package net.js.jsmenu.event;
 
 import net.js.jsmenu.JSMenu;
 import net.js.jsmenu.damage.HeliumDamageTypes;
+import net.js.jsmenu.item.custom.tools.HeliumSwordItem;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.entity.Entity;

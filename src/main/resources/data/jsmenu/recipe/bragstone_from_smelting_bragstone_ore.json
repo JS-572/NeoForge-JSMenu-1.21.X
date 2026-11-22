@@ -3,12 +3,12 @@
   "category": "misc",
   "cookingtime": 200,
   "experience": 0.25,
-  "group": "bragsstone",
+  "group": "bragstone",
   "ingredient": {
-    "item": "jsmenu:bragsstone_ore"
+    "item": "jsmenu:bragstone_ore"
   },
   "result": {
     "count": 1,
-    "id": "jsmenu:bragsstone"
+    "id": "jsmenu:bragstone"
   }
 }

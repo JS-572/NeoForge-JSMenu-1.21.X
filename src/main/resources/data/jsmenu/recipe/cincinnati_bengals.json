@@ -9,7 +9,7 @@
       "item": "minecraft:orange_dye"
     },
     {
-      "item": "#minecraft:meat"
+      "tag": "minecraft:meat"
     },
     {
       "item": "minecraft:wheat"
