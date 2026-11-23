@@ -699,7 +699,7 @@ public class ModBlocks {
     public static final DeferredBlock<ButtonBlock> LUNAR_BUTTON = registerBlock("lunar_button", () -> new ButtonBlock(BlockSetType.CHERRY, 20, BlockBehaviour.Properties.of().strength(2f).noCollission()));
     public static final DeferredBlock<FenceBlock> LUNAR_FENCE = registerBlock("lunar_fence", () -> new FenceBlock(BlockBehaviour.Properties.of().strength(2f)));
     public static final DeferredBlock<FenceGateBlock> LUNAR_FENCE_GATE = registerBlock("lunar_fence_gate", () -> new FenceGateBlock(WoodType.CHERRY, BlockBehaviour.Properties.of().strength(2f)));
-    public static final DeferredBlock<DoorBlock> LUNAR_DOOR = registerBlock("lunar_door", () -> new DoorBlock(BlockSetType.CHERRY, BlockBehaviour.Properties.of().strength(2f)));
+    public static final DeferredBlock<DoorBlock> LUNAR_DOOR = registerBlock("lunar_door", () -> new DoorBlock(BlockSetType.CHERRY, BlockBehaviour.Properties.of().strength(2f).noOcclusion()));
     public static final DeferredBlock<TrapDoorBlock> LUNAR_TRAPDOOR = registerBlock("lunar_trapdoor", () -> new TrapDoorBlock(BlockSetType.CHERRY, BlockBehaviour.Properties.of().strength(2f).noOcclusion()));
     public static final DeferredBlock<Block> GLOWGRASS = registerBlock("glowgrass", () -> new ShortLunarGrassBlock(BlockBehaviour.Properties.of().instabreak().sound(SoundType.GRASS).noCollission()) {
         protected boolean mayPlaceOn(BlockState state, BlockGetter level, BlockPos pos) {
@@ -726,7 +726,7 @@ public class ModBlocks {
     public static final DeferredBlock<ButtonBlock> VACUUM_BUTTON = registerBlock("vacuum_button", () -> new ButtonBlock(BlockSetType.CHERRY, 20, BlockBehaviour.Properties.of().strength(2f).noCollission()));
     public static final DeferredBlock<FenceBlock> VACUUM_FENCE = registerBlock("vacuum_fence", () -> new FenceBlock(BlockBehaviour.Properties.of().strength(2f)));
     public static final DeferredBlock<FenceGateBlock> VACUUM_FENCE_GATE = registerBlock("vacuum_fence_gate", () -> new FenceGateBlock(WoodType.CHERRY, BlockBehaviour.Properties.of().strength(2f)));
-    public static final DeferredBlock<DoorBlock> VACUUM_DOOR = registerBlock("vacuum_door", () -> new DoorBlock(BlockSetType.CHERRY, BlockBehaviour.Properties.of().strength(2f)));
+    public static final DeferredBlock<DoorBlock> VACUUM_DOOR = registerBlock("vacuum_door", () -> new DoorBlock(BlockSetType.CHERRY, BlockBehaviour.Properties.of().strength(2f).noOcclusion()));
     public static final DeferredBlock<TrapDoorBlock> VACUUM_TRAPDOOR = registerBlock("vacuum_trapdoor", () -> new TrapDoorBlock(BlockSetType.CHERRY, BlockBehaviour.Properties.of().strength(2f).noOcclusion()));
     public static final DeferredBlock<Block> DRIFT_LOG = registerBlock("drift_log", () -> new RotatedPillarBlock(BlockBehaviour.Properties.of().strength(2.0f).sound(SoundType.WOOD).ignitedByLava()));
     public static final DeferredBlock<Block> DRIFT_WOOD = registerBlock("drift_wood", () -> new RotatedPillarBlock(BlockBehaviour.Properties.of().strength(2.0f).sound(SoundType.WOOD).ignitedByLava()));
@@ -741,7 +741,7 @@ public class ModBlocks {
     public static final DeferredBlock<ButtonBlock> DRIFT_BUTTON = registerBlock("drift_button", () -> new ButtonBlock(BlockSetType.CHERRY, 20, BlockBehaviour.Properties.of().strength(2f).noCollission()));
     public static final DeferredBlock<FenceBlock> DRIFT_FENCE = registerBlock("drift_fence", () -> new FenceBlock(BlockBehaviour.Properties.of().strength(2f)));
     public static final DeferredBlock<FenceGateBlock> DRIFT_FENCE_GATE = registerBlock("drift_fence_gate", () -> new FenceGateBlock(WoodType.CHERRY, BlockBehaviour.Properties.of().strength(2f)));
-    public static final DeferredBlock<DoorBlock> DRIFT_DOOR = registerBlock("drift_door", () -> new DoorBlock(BlockSetType.CHERRY, BlockBehaviour.Properties.of().strength(2f)));
+    public static final DeferredBlock<DoorBlock> DRIFT_DOOR = registerBlock("drift_door", () -> new DoorBlock(BlockSetType.CHERRY, BlockBehaviour.Properties.of().strength(2f).noOcclusion()));
     public static final DeferredBlock<TrapDoorBlock> DRIFT_TRAPDOOR = registerBlock("drift_trapdoor", () -> new TrapDoorBlock(BlockSetType.CHERRY, BlockBehaviour.Properties.of().strength(2f).noOcclusion()));
     public static final DeferredBlock<Block> BLOOM_LOG = registerBlock("bloom_log", () -> new RotatedPillarBlock(BlockBehaviour.Properties.of().strength(2.0f).sound(SoundType.WOOD).ignitedByLava()));
     public static final DeferredBlock<Block> BLOOM_WOOD = registerBlock("bloom_wood", () -> new RotatedPillarBlock(BlockBehaviour.Properties.of().strength(2.0f).sound(SoundType.WOOD).ignitedByLava()));
@@ -756,7 +756,7 @@ public class ModBlocks {
     public static final DeferredBlock<ButtonBlock> BLOOM_BUTTON = registerBlock("bloom_button", () -> new ButtonBlock(BlockSetType.CHERRY, 20, BlockBehaviour.Properties.of().strength(2f).noCollission()));
     public static final DeferredBlock<FenceBlock> BLOOM_FENCE = registerBlock("bloom_fence", () -> new FenceBlock(BlockBehaviour.Properties.of().strength(2f)));
     public static final DeferredBlock<FenceGateBlock> BLOOM_FENCE_GATE = registerBlock("bloom_fence_gate", () -> new FenceGateBlock(WoodType.CHERRY, BlockBehaviour.Properties.of().strength(2f)));
-    public static final DeferredBlock<DoorBlock> BLOOM_DOOR = registerBlock("bloom_door", () -> new DoorBlock(BlockSetType.CHERRY, BlockBehaviour.Properties.of().strength(2f)));
+    public static final DeferredBlock<DoorBlock> BLOOM_DOOR = registerBlock("bloom_door", () -> new DoorBlock(BlockSetType.CHERRY, BlockBehaviour.Properties.of().strength(2f).noOcclusion()));
     public static final DeferredBlock<TrapDoorBlock> BLOOM_TRAPDOOR = registerBlock("bloom_trapdoor", () -> new TrapDoorBlock(BlockSetType.CHERRY, BlockBehaviour.Properties.of().strength(2f).noOcclusion()));
 
     public static final DeferredBlock<Block> SCORCHED_REGOLITH = registerBlock("scorched_regolith", () -> new Block(BlockBehaviour.Properties.of().strength(0.7f).sound(SoundType.GRAVEL).randomTicks()));
@@ -787,7 +787,7 @@ public class ModBlocks {
     public static final DeferredBlock<ButtonBlock> HELIOSPIRE_BUTTON = registerBlock("heliospire_button", () -> new ButtonBlock(BlockSetType.CHERRY, 20, BlockBehaviour.Properties.of().strength(2f).noCollission()));
     public static final DeferredBlock<FenceBlock> HELIOSPIRE_FENCE = registerBlock("heliospire_fence", () -> new FenceBlock(BlockBehaviour.Properties.of().strength(2f).sound(SoundType.WOOD)));
     public static final DeferredBlock<FenceGateBlock> HELIOSPIRE_FENCE_GATE = registerBlock("heliospire_fence_gate", () -> new FenceGateBlock(WoodType.CHERRY, BlockBehaviour.Properties.of().strength(2f)));
-    public static final DeferredBlock<DoorBlock> HELIOSPIRE_DOOR = registerBlock("heliospire_door", () -> new DoorBlock(BlockSetType.CHERRY, BlockBehaviour.Properties.of().strength(2f)));
+    public static final DeferredBlock<DoorBlock> HELIOSPIRE_DOOR = registerBlock("heliospire_door", () -> new DoorBlock(BlockSetType.CHERRY, BlockBehaviour.Properties.of().strength(2f).noOcclusion()));
     public static final DeferredBlock<TrapDoorBlock> HELIOSPIRE_TRAPDOOR = registerBlock("heliospire_trapdoor", () -> new TrapDoorBlock(BlockSetType.CHERRY, BlockBehaviour.Properties.of().strength(2f).noOcclusion()));
     public static final DeferredBlock<Block> UMBRA_ROOT_LOG = registerBlock("umbra_root_log", () -> new RotatedPillarBlock(BlockBehaviour.Properties.of().strength(2.0f).sound(SoundType.WOOD).ignitedByLava()));
     public static final DeferredBlock<Block> UMBRA_ROOT_WOOD = registerBlock("umbra_root_wood", () -> new RotatedPillarBlock(BlockBehaviour.Properties.of().strength(2.0f).sound(SoundType.WOOD).ignitedByLava()));
@@ -802,7 +802,7 @@ public class ModBlocks {
     public static final DeferredBlock<ButtonBlock> UMBRA_ROOT_BUTTON = registerBlock("umbra_root_button", () -> new ButtonBlock(BlockSetType.CHERRY, 20, BlockBehaviour.Properties.of().strength(2f).noCollission()));
     public static final DeferredBlock<FenceBlock> UMBRA_ROOT_FENCE = registerBlock("umbra_root_fence", () -> new FenceBlock(BlockBehaviour.Properties.of().strength(2f).sound(SoundType.WOOD)));
     public static final DeferredBlock<FenceGateBlock> UMBRA_ROOT_FENCE_GATE = registerBlock("umbra_root_fence_gate", () -> new FenceGateBlock(WoodType.CHERRY, BlockBehaviour.Properties.of().strength(2f)));
-    public static final DeferredBlock<DoorBlock> UMBRA_ROOT_DOOR = registerBlock("umbra_root_door", () -> new DoorBlock(BlockSetType.CHERRY, BlockBehaviour.Properties.of().strength(2f)));
+    public static final DeferredBlock<DoorBlock> UMBRA_ROOT_DOOR = registerBlock("umbra_root_door", () -> new DoorBlock(BlockSetType.CHERRY, BlockBehaviour.Properties.of().strength(2f).noOcclusion()));
     public static final DeferredBlock<TrapDoorBlock> UMBRA_ROOT_TRAPDOOR = registerBlock("umbra_root_trapdoor", () -> new TrapDoorBlock(BlockSetType.CHERRY, BlockBehaviour.Properties.of().strength(2f).noOcclusion()));
     public static final DeferredBlock<Block> TERMINUS_SPLIT_LOG = registerBlock("terminus_split_log", () -> new SolarAlignedLogBlock(BlockBehaviour.Properties.of().strength(2.0f).sound(SoundType.WOOD).ignitedByLava()));
     public static final DeferredBlock<Block> TERMINUS_SPLIT_WOOD = registerBlock("terminus_split_wood", () -> new SolarAlignedLogBlock(BlockBehaviour.Properties.of().strength(2.0f).sound(SoundType.WOOD).ignitedByLava()));
@@ -817,7 +817,7 @@ public class ModBlocks {
     public static final DeferredBlock<ButtonBlock> TERMINUS_SPLIT_BUTTON = registerBlock("terminus_split_button", () -> new ButtonBlock(BlockSetType.CHERRY, 20, BlockBehaviour.Properties.of().strength(2f).noCollission()));
     public static final DeferredBlock<FenceBlock> TERMINUS_SPLIT_FENCE = registerBlock("terminus_split_fence", () -> new FenceBlock(BlockBehaviour.Properties.of().strength(2f).sound(SoundType.WOOD)));
     public static final DeferredBlock<FenceGateBlock> TERMINUS_SPLIT_FENCE_GATE = registerBlock("terminus_split_fence_gate", () -> new FenceGateBlock(WoodType.CHERRY, BlockBehaviour.Properties.of().strength(2f)));
-    public static final DeferredBlock<DoorBlock> TERMINUS_SPLIT_DOOR = registerBlock("terminus_split_door", () -> new DoorBlock(BlockSetType.CHERRY, BlockBehaviour.Properties.of().strength(2f)));
+    public static final DeferredBlock<DoorBlock> TERMINUS_SPLIT_DOOR = registerBlock("terminus_split_door", () -> new DoorBlock(BlockSetType.CHERRY, BlockBehaviour.Properties.of().strength(2f).noOcclusion()));
     public static final DeferredBlock<TrapDoorBlock> TERMINUS_SPLIT_TRAPDOOR = registerBlock("terminus_split_trapdoor", () -> new TrapDoorBlock(BlockSetType.CHERRY, BlockBehaviour.Properties.of().strength(2f).noOcclusion()));
     public static final DeferredBlock<Block> FERRIC_SPINE_LOG = registerBlock("ferric_spine_log", () -> new RotatedPillarBlock(BlockBehaviour.Properties.of().strength(2.0f).sound(SoundType.WOOD).ignitedByLava()));
     public static final DeferredBlock<Block> FERRIC_SPINE_WOOD = registerBlock("ferric_spine_wood", () -> new RotatedPillarBlock(BlockBehaviour.Properties.of().strength(2.0f).sound(SoundType.WOOD).ignitedByLava()));
@@ -832,7 +832,7 @@ public class ModBlocks {
     public static final DeferredBlock<ButtonBlock> FERRIC_SPINE_BUTTON = registerBlock("ferric_spine_button", () -> new ButtonBlock(BlockSetType.CHERRY, 20, BlockBehaviour.Properties.of().strength(2f).noCollission()));
     public static final DeferredBlock<FenceBlock> FERRIC_SPINE_FENCE = registerBlock("ferric_spine_fence", () -> new FenceBlock(BlockBehaviour.Properties.of().strength(2f).sound(SoundType.WOOD)));
     public static final DeferredBlock<FenceGateBlock> FERRIC_SPINE_FENCE_GATE = registerBlock("ferric_spine_fence_gate", () -> new FenceGateBlock(WoodType.CHERRY, BlockBehaviour.Properties.of().strength(2f)));
-    public static final DeferredBlock<DoorBlock> FERRIC_SPINE_DOOR = registerBlock("ferric_spine_door", () -> new DoorBlock(BlockSetType.CHERRY, BlockBehaviour.Properties.of().strength(2f)));
+    public static final DeferredBlock<DoorBlock> FERRIC_SPINE_DOOR = registerBlock("ferric_spine_door", () -> new DoorBlock(BlockSetType.CHERRY, BlockBehaviour.Properties.of().strength(2f).noOcclusion()));
     public static final DeferredBlock<TrapDoorBlock> FERRIC_SPINE_TRAPDOOR = registerBlock("ferric_spine_trapdoor", () -> new TrapDoorBlock(BlockSetType.CHERRY, BlockBehaviour.Properties.of().strength(2f).noOcclusion()));
     public static final DeferredBlock<Block> CRYOSTEM_LOG = registerBlock("cryostem_log", () -> new RotatedPillarBlock(BlockBehaviour.Properties.of().strength(2.0f).sound(SoundType.WOOD).ignitedByLava()));
     public static final DeferredBlock<Block> CRYOSTEM_WOOD = registerBlock("cryostem_wood", () -> new RotatedPillarBlock(BlockBehaviour.Properties.of().strength(2.0f).sound(SoundType.WOOD).ignitedByLava()));
@@ -847,7 +847,7 @@ public class ModBlocks {
     public static final DeferredBlock<ButtonBlock> CRYOSTEM_BUTTON = registerBlock("cryostem_button", () -> new ButtonBlock(BlockSetType.CHERRY, 20, BlockBehaviour.Properties.of().strength(2f).noCollission()));
     public static final DeferredBlock<FenceBlock> CRYOSTEM_FENCE = registerBlock("cryostem_fence", () -> new FenceBlock(BlockBehaviour.Properties.of().strength(2f).sound(SoundType.WOOD)));
     public static final DeferredBlock<FenceGateBlock> CRYOSTEM_FENCE_GATE = registerBlock("cryostem_fence_gate", () -> new FenceGateBlock(WoodType.CHERRY, BlockBehaviour.Properties.of().strength(2f)));
-    public static final DeferredBlock<DoorBlock> CRYOSTEM_DOOR = registerBlock("cryostem_door", () -> new DoorBlock(BlockSetType.CHERRY, BlockBehaviour.Properties.of().strength(2f)));
+    public static final DeferredBlock<DoorBlock> CRYOSTEM_DOOR = registerBlock("cryostem_door", () -> new DoorBlock(BlockSetType.CHERRY, BlockBehaviour.Properties.of().strength(2f).noOcclusion()));
     public static final DeferredBlock<TrapDoorBlock> CRYOSTEM_TRAPDOOR = registerBlock("cryostem_trapdoor", () -> new TrapDoorBlock(BlockSetType.CHERRY, BlockBehaviour.Properties.of().strength(2f).noOcclusion()));
 
     public static final DeferredBlock<Block> REGOLITH = registerBlock("regolith", () -> new Block(BlockBehaviour.Properties.of().strength(2f).sound(SoundType.GRAVEL).randomTicks()));
@@ -873,7 +873,7 @@ public class ModBlocks {
     public static final DeferredBlock<ButtonBlock> SULFURWOOD_BUTTON = registerBlock( "sulfurwood_button", () -> new ButtonBlock(BlockSetType.CHERRY, 20, BlockBehaviour.Properties.of().strength(2f).noCollission()));
     public static final DeferredBlock<FenceBlock> SULFURWOOD_FENCE = registerBlock( "sulfurwood_fence", () -> new FenceBlock(BlockBehaviour.Properties.of().strength(2f).sound(SoundType.WOOD)));
     public static final DeferredBlock<FenceGateBlock> SULFURWOOD_FENCE_GATE = registerBlock( "sulfurwood_fence_gate", () -> new FenceGateBlock(WoodType.CHERRY, BlockBehaviour.Properties.of().strength(2f)));
-    public static final DeferredBlock<DoorBlock> SULFURWOOD_DOOR = registerBlock( "sulfurwood_door", () -> new DoorBlock(BlockSetType.CHERRY, BlockBehaviour.Properties.of().strength(2f)));
+    public static final DeferredBlock<DoorBlock> SULFURWOOD_DOOR = registerBlock( "sulfurwood_door", () -> new DoorBlock(BlockSetType.CHERRY, BlockBehaviour.Properties.of().strength(2f).noOcclusion()));
     public static final DeferredBlock<TrapDoorBlock> SULFURWOOD_TRAPDOOR = registerBlock( "sulfurwood_trapdoor", () -> new TrapDoorBlock(BlockSetType.CHERRY, BlockBehaviour.Properties.of().strength(2f).noOcclusion()));
     public static final DeferredBlock<Block> ASHWOOD_LOG = registerBlock("ashwood_log", () -> new RotatedPillarBlock(BlockBehaviour.Properties.of().strength(2.0f).sound(SoundType.WOOD).ignitedByLava()));
     public static final DeferredBlock<Block> ASHWOOD_WOOD = registerBlock("ashwood_wood", () -> new RotatedPillarBlock(BlockBehaviour.Properties.of().strength(2.0f).sound(SoundType.WOOD).ignitedByLava()));
@@ -888,7 +888,7 @@ public class ModBlocks {
     public static final DeferredBlock<ButtonBlock> ASHWOOD_BUTTON = registerBlock("ashwood_button", () -> new ButtonBlock(BlockSetType.CHERRY, 20, BlockBehaviour.Properties.of().strength(2f).noCollission()));
     public static final DeferredBlock<FenceBlock> ASHWOOD_FENCE = registerBlock("ashwood_fence", () -> new FenceBlock(BlockBehaviour.Properties.of().strength(2f).sound(SoundType.WOOD)));
     public static final DeferredBlock<FenceGateBlock> ASHWOOD_FENCE_GATE = registerBlock("ashwood_fence_gate", () -> new FenceGateBlock(WoodType.CHERRY, BlockBehaviour.Properties.of().strength(2f)));
-    public static final DeferredBlock<DoorBlock> ASHWOOD_DOOR = registerBlock("ashwood_door", () -> new DoorBlock(BlockSetType.CHERRY, BlockBehaviour.Properties.of().strength(2f)));
+    public static final DeferredBlock<DoorBlock> ASHWOOD_DOOR = registerBlock("ashwood_door", () -> new DoorBlock(BlockSetType.CHERRY, BlockBehaviour.Properties.of().strength(2f).noOcclusion()));
     public static final DeferredBlock<TrapDoorBlock> ASHWOOD_TRAPDOOR = registerBlock("ashwood_trapdoor", () -> new TrapDoorBlock(BlockSetType.CHERRY, BlockBehaviour.Properties.of().strength(2f).noOcclusion()));
 
     public static final DeferredBlock<Block> RUSTSOIL = registerBlock("rustsoil", () -> new Block(BlockBehaviour.Properties.of().strength(2f).sound(SoundType.GRAVEL).randomTicks()));
@@ -917,7 +917,7 @@ public class ModBlocks {
     public static final DeferredBlock<ButtonBlock> REDSPIRE_BUTTON = registerBlock("redspire_button", () -> new ButtonBlock(BlockSetType.CHERRY, 20, BlockBehaviour.Properties.of().strength(2f).noCollission()));
     public static final DeferredBlock<FenceBlock> REDSPIRE_FENCE = registerBlock("redspire_fence", () -> new FenceBlock(BlockBehaviour.Properties.of().strength(2f).sound(SoundType.WOOD)));
     public static final DeferredBlock<FenceGateBlock> REDSPIRE_FENCE_GATE = registerBlock("redspire_fence_gate", () -> new FenceGateBlock(WoodType.CHERRY, BlockBehaviour.Properties.of().strength(2f)));
-    public static final DeferredBlock<DoorBlock> REDSPIRE_DOOR = registerBlock("redspire_door", () -> new DoorBlock(BlockSetType.CHERRY, BlockBehaviour.Properties.of().strength(2f)));
+    public static final DeferredBlock<DoorBlock> REDSPIRE_DOOR = registerBlock("redspire_door", () -> new DoorBlock(BlockSetType.CHERRY, BlockBehaviour.Properties.of().strength(2f).noOcclusion()));
     public static final DeferredBlock<TrapDoorBlock> REDSPIRE_TRAPDOOR = registerBlock("redspire_trapdoor", () -> new TrapDoorBlock(BlockSetType.CHERRY, BlockBehaviour.Properties.of().strength(2f).noOcclusion()));
     public static final DeferredBlock<Block> DUSTWILLOW_LOG = registerBlock("dustwillow_log", () -> new RotatedPillarBlock(BlockBehaviour.Properties.of().strength(2.0f).sound(SoundType.WOOD).ignitedByLava()));
     public static final DeferredBlock<Block> DUSTWILLOW_WOOD = registerBlock("dustwillow_wood", () -> new RotatedPillarBlock(BlockBehaviour.Properties.of().strength(2.0f).sound(SoundType.WOOD).ignitedByLava()));
@@ -933,7 +933,7 @@ public class ModBlocks {
     public static final DeferredBlock<ButtonBlock> DUSTWILLOW_BUTTON = registerBlock("dustwillow_button", () -> new ButtonBlock(BlockSetType.CHERRY, 20, BlockBehaviour.Properties.of().strength(2f).noCollission()));
     public static final DeferredBlock<FenceBlock> DUSTWILLOW_FENCE = registerBlock("dustwillow_fence", () -> new FenceBlock(BlockBehaviour.Properties.of().strength(2f).sound(SoundType.WOOD)));
     public static final DeferredBlock<FenceGateBlock> DUSTWILLOW_FENCE_GATE = registerBlock("dustwillow_fence_gate", () -> new FenceGateBlock(WoodType.CHERRY, BlockBehaviour.Properties.of().strength(2f)));
-    public static final DeferredBlock<DoorBlock> DUSTWILLOW_DOOR = registerBlock("dustwillow_door", () -> new DoorBlock(BlockSetType.CHERRY, BlockBehaviour.Properties.of().strength(2f)));
+    public static final DeferredBlock<DoorBlock> DUSTWILLOW_DOOR = registerBlock("dustwillow_door", () -> new DoorBlock(BlockSetType.CHERRY, BlockBehaviour.Properties.of().strength(2f).noOcclusion()));
     public static final DeferredBlock<TrapDoorBlock> DUSTWILLOW_TRAPDOOR = registerBlock("dustwillow_trapdoor", () -> new TrapDoorBlock(BlockSetType.CHERRY, BlockBehaviour.Properties.of().strength(2f).noOcclusion()));
     private static <T extends Block> DeferredBlock<T> registerBlock(String name, Supplier<T> block) {
         DeferredBlock<T> toReturn = BLOCKS.register(name, block);

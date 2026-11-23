@@ -1,3 +1,8 @@
+import groovy.json.JsonSlurper
+import java.awt.Color
+import java.awt.image.BufferedImage
+import javax.imageio.ImageIO
+
 plugins {
     id 'java-library'
     id 'maven-publish'
@@ -185,5 +190,54 @@ idea {
     module {
         downloadSources = true
         downloadJavadoc = true
+    }
+}
+
+tasks.register('fixSportsTexturesFromModels') {
+    def modelDir = file('src/main/resources/assets/jsmenu/models/block')
+    def texDir = file('src/main/resources/assets/jsmenu/textures/block')
+
+    doLast {
+        if (!modelDir.exists() || !texDir.exists()) return
+        def slurper = new JsonSlurper()
+
+        Color customColor = new Color(255, 255, 255)
+        int oldGray = new Color(207, 213, 214).getRGB()
+
+        modelDir.eachFileMatch(~/^(mlb_|mls_|nba_|nfl_|nhl_).*\.json$/) { modelFile ->
+            def json = slurper.parse(modelFile)
+            String frontTex = json?.textures?.front
+
+            if (frontTex != null && frontTex.startsWith('jsmenu:block/')) {
+                String texName = frontTex.replace('jsmenu:block/', '') + '.png'
+                File texFile = new File(texDir, texName)
+
+                if (texFile.exists()) {
+                    BufferedImage img = ImageIO.read(texFile)
+                    if (img != null) {
+                        // Erase the old #CFD5D6 gray bars from the earlier run
+                        for (int x = 0; x < img.width; x++) {
+                            for (int y = 0; y < img.height; y++) {
+                                if (img.getRGB(x, y) == oldGray) {
+                                    img.setRGB(x, y, 0x00000000)
+                                }
+                            }
+                        }
+
+                        int size = Math.max(img.width, img.height)
+                        BufferedImage canvas = new BufferedImage(size, size, BufferedImage.TYPE_INT_ARGB)
+                        def g = canvas.createGraphics()
+
+                        g.setColor(customColor)
+                        g.fillRect(0, 0, size, size)
+                        g.drawImage(img, (size - img.width).intdiv(2), (size - img.height).intdiv(2), null)
+                        g.dispose()
+
+                        ImageIO.write(canvas, "PNG", texFile)
+                        println "Fixed ${texName} (from ${modelFile.name})"
+                    }
+                }
+            }
+        }
     }
 }

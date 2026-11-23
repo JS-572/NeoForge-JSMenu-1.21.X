@@ -57,7 +57,7 @@ public class StarBlocks {
     public static final DeferredBlock<ButtonBlock> FLAREWOOD_BUTTON = registerBlock("flarewood_button", () -> new ButtonBlock(BlockSetType.CHERRY, 20, BlockBehaviour.Properties.of().strength(2f).noCollission()));
     public static final DeferredBlock<FenceBlock> FLAREWOOD_FENCE = registerBlock("flarewood_fence", () -> new FenceBlock(BlockBehaviour.Properties.of().strength(2f)));
     public static final DeferredBlock<FenceGateBlock> FLAREWOOD_FENCE_GATE = registerBlock("flarewood_fence_gate", () -> new FenceGateBlock(WoodType.CHERRY, BlockBehaviour.Properties.of().strength(2f)));
-    public static final DeferredBlock<DoorBlock> FLAREWOOD_DOOR = registerBlock("flarewood_door", () -> new DoorBlock(BlockSetType.CHERRY, BlockBehaviour.Properties.of().strength(2f)));
+    public static final DeferredBlock<DoorBlock> FLAREWOOD_DOOR = registerBlock("flarewood_door", () -> new DoorBlock(BlockSetType.CHERRY, BlockBehaviour.Properties.of().strength(2f).noOcclusion()));
     public static final DeferredBlock<TrapDoorBlock> FLAREWOOD_TRAPDOOR = registerBlock("flarewood_trapdoor", () -> new TrapDoorBlock(BlockSetType.CHERRY, BlockBehaviour.Properties.of().strength(2f).noOcclusion()));
     public static final DeferredBlock<StairBlock> CORONA_BLOOM_STAIRS = registerBlock("corona_bloom_stairs", () -> new StairBlock(StarBlocks.CORONA_BLOOM_PLANKS.get().defaultBlockState(), BlockBehaviour.Properties.of().strength(2f)));
     public static final DeferredBlock<SlabBlock> CORONA_BLOOM_SLAB = registerBlock("corona_bloom_slab", () -> new SlabBlock(BlockBehaviour.Properties.of().strength(2f)));
@@ -65,7 +65,7 @@ public class StarBlocks {
     public static final DeferredBlock<ButtonBlock> CORONA_BLOOM_BUTTON = registerBlock("corona_bloom_button", () -> new ButtonBlock(BlockSetType.CHERRY, 20, BlockBehaviour.Properties.of().strength(2f).noCollission()));
     public static final DeferredBlock<FenceBlock> CORONA_BLOOM_FENCE = registerBlock("corona_bloom_fence", () -> new FenceBlock(BlockBehaviour.Properties.of().strength(2f)));
     public static final DeferredBlock<FenceGateBlock> CORONA_BLOOM_FENCE_GATE = registerBlock("corona_bloom_fence_gate", () -> new FenceGateBlock(WoodType.CHERRY, BlockBehaviour.Properties.of().strength(2f)));
-    public static final DeferredBlock<DoorBlock> CORONA_BLOOM_DOOR = registerBlock("corona_bloom_door", () -> new DoorBlock(BlockSetType.CHERRY, BlockBehaviour.Properties.of().strength(2f)));
+    public static final DeferredBlock<DoorBlock> CORONA_BLOOM_DOOR = registerBlock("corona_bloom_door", () -> new DoorBlock(BlockSetType.CHERRY, BlockBehaviour.Properties.of().strength(2f).noOcclusion()));
     public static final DeferredBlock<TrapDoorBlock> CORONA_BLOOM_TRAPDOOR = registerBlock("corona_bloom_trapdoor", () -> new TrapDoorBlock(BlockSetType.CHERRY, BlockBehaviour.Properties.of().strength(2f).noOcclusion()));
 
     private static <T extends Block> DeferredBlock<T> registerBlock(String name, Supplier<T> block) {
